@@ -1,0 +1,6 @@
+
+ENEMY
+	FILENAME data/GAMEDATA/Enemy00.txt
+ENEMYEND
+
+END
