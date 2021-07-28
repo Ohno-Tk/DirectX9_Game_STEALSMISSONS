@@ -1,12 +1,10 @@
 /*=============================================================================
 
-Õ“Ë”»’è[ Collision.h ]
+ï¿½Õ“Ë”ï¿½ï¿½ï¿½[ Collision.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/18
 =============================================================================*/
 
@@ -20,45 +18,45 @@ Class
 2D
 -----------------------------------------------------------------------------*/
 class Collision_Rectangle
-{	//	‹éŒ`
+{	//	ï¿½ï¿½`
 public:
 	Collision_Rectangle(const D3DXVECTOR3 Pos, const D3DXVECTOR3 Size) :m_Pos(Pos), m_Size(Size) {}
 
-	//	Õ“Ë”»’è
+	//	ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 	bool Judge(const D3DXVECTOR3 OtherPos, const D3DXVECTOR3 OtherSize);
 
 private:
-	D3DXVECTOR3 m_Pos; // À•W
-	D3DXVECTOR3 m_Size; // ‘å‚«‚³
+	D3DXVECTOR3 m_Pos; // ï¿½ï¿½ï¿½W
+	D3DXVECTOR3 m_Size; // ï¿½å‚«ï¿½ï¿½
 };
 
 class Collision_Circle
-{	//	‰~
+{	//	ï¿½~
 public:
 	Collision_Circle(const D3DXVECTOR3 Pos, const float Radius) :m_Pos(Pos), m_Radius(Radius) {}
 
-	//	Õ“Ë”»’è
+	//	ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 	bool Judge(const D3DXVECTOR3 OtherPos, const float OtherRadius);
 
 private:
-	D3DXVECTOR3 m_Pos; // À•W
-	float m_Radius;	 // ”¼Œa
+	D3DXVECTOR3 m_Pos; // ï¿½ï¿½ï¿½W
+	float m_Radius;	 // ï¿½ï¿½ï¿½a
 };
 
 /*-----------------------------------------------------------------------------
 3D
 -----------------------------------------------------------------------------*/
 class Collision_Sphere
-{	//	‹…
+{	//	ï¿½ï¿½
 public:
 	Collision_Sphere(const D3DXVECTOR3 Pos, const float Radius) :m_Pos(Pos), m_Radius(Radius) {}
 
-	//	Õ“Ë”»’è
+	//	ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 	bool Judge(const D3DXVECTOR3 OtherPos, const float OtherRadius);
 
 private:
-	D3DXVECTOR3 m_Pos; // À•W
-	float m_Radius;	 // ”¼Œa
+	D3DXVECTOR3 m_Pos; // ï¿½ï¿½ï¿½W
+	float m_Radius;	 // ï¿½ï¿½ï¿½a
 };
 
 #endif

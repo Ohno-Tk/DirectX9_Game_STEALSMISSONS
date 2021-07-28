@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€æ“¾UI[ ItemGetUI.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½æ“¾UI[ ItemGetUI.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -21,7 +19,7 @@ class ItemGetUI:public Object
 public:
 	ItemGetUI(int priolity):Object(priolity),m_Color(D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f)) ,m_Active(false){}
 
-	void Uninitialize(void)override;// I—¹
+	void Uninitialize(void)override;// ï¿½Iï¿½ï¿½
 
 	//Setter
 	void SetColor(const D3DXCOLOR color){ m_Color = color; }
@@ -29,7 +27,7 @@ public:
 
 private:
 	D3DXCOLOR m_Color;
-	bool m_Active;// ‰Â‹‰»
+	bool m_Active;// ï¿½Âï¿½ï¿½ï¿½
 
 protected:
 	D3DXCOLOR GetColor(void){ return m_Color; }

@@ -1,13 +1,11 @@
 /*=============================================================================
 
-‹¤’Ê•”•ª[ Common.h ]
-( ŽŸ‰ñŽg—pŽž‚ÍRenderer.h‚ÌŽŸ‚ÉƒCƒ“ƒNƒ‹[ƒh‚·‚é
- ƒƒ‚ƒŠƒŠ[ƒNŒŸo‚ªd3dxmath.h‚Ì‘O‚É‹Lq‚·‚é‚ÆƒGƒ‰[‚ðŒŸo)
+ï¿½ï¿½ï¿½Ê•ï¿½ï¿½ï¿½[ Common.h ]
+( ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½Renderer.hï¿½ÌŽï¿½ï¿½ÉƒCï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½oï¿½ï¿½d3dxmath.hï¿½Ì‘Oï¿½É‹Lï¿½qï¿½ï¿½ï¿½ï¿½ÆƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½o)
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -29,19 +27,19 @@ Include Files
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-//#define new ::new(_NORMAL_BLOCK, __FILE__, __LINE__)	//	ƒƒ‚ƒŠƒŠ[ƒNŒŸo(o—ÍƒfƒoƒbƒO‚É•\Ž¦‚³‚ê‚é)
+//#define new ::new(_NORMAL_BLOCK, __FILE__, __LINE__)	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½o(ï¿½oï¿½Íƒfï¿½oï¿½bï¿½Oï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 
-#define SCREEN_WIDTH   ( 800 ) // ‰æ–ÊƒTƒCƒY(‰¡)
-#define SCREEN_HEIGHT  ( 600 ) // ‰æ–ÊƒTƒCƒY(c)
+#define SCREEN_WIDTH   ( 800 ) // ï¿½ï¿½ÊƒTï¿½Cï¿½Y(ï¿½ï¿½)
+#define SCREEN_HEIGHT  ( 600 ) // ï¿½ï¿½ÊƒTï¿½Cï¿½Y(ï¿½c)
 
-#define TEXTURE_PATH "data/TEXTURE/" // ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-#define MODEL_PATH   "data/MODEL/"   // ƒ‚ƒfƒ‹‚ÌƒpƒX
-#define MOTION_PATH  "data/MOTION/"	 //	ƒ‚[ƒVƒ‡ƒ“‚ÌƒpƒX
-#define SHADER_PATH  "data/SHADER/"  // ƒVƒF[ƒ_[‚ÌƒpƒX
+#define TEXTURE_PATH "data/TEXTURE/" // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
+#define MODEL_PATH   "data/MODEL/"   // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒpï¿½X
+#define MOTION_PATH  "data/MOTION/"	 //	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½X
+#define SHADER_PATH  "data/SHADER/"  // ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìƒpï¿½X
 
-#define SAFE_UNINIT(p)      if(p){ p->Uninitialize(); delete p; p = NULL; }// ƒ|ƒCƒ“ƒ^‚ÌI—¹ˆ—ƒ}ƒNƒ
-#define SAFE_DELETE(p)      if(p){ delete p; p = NULL; }             // ƒ|ƒCƒ“ƒ^‚Ì‰ð•úˆ—ƒ}ƒNƒ
-#define SAFE_ARRAYDELETE(p) if(p){ delete[] p; p = NULL; }           // ”z—ñ‚Ì‰ð•úƒ}ƒNƒ
+#define SAFE_UNINIT(p)      if(p){ p->Uninitialize(); delete p; p = NULL; }// ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ÌIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½Nï¿½ï¿½
+#define SAFE_DELETE(p)      if(p){ delete p; p = NULL; }             // ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½Nï¿½ï¿½
+#define SAFE_ARRAYDELETE(p) if(p){ delete[] p; p = NULL; }           // ï¿½zï¿½ï¿½Ì‰ï¿½ï¿½ï¿½}ï¿½Nï¿½ï¿½
 
 #define ENABLE_SOUND
 #undef ENABLE_SOUND

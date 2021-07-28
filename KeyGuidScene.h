@@ -3,10 +3,8 @@
 [ KeyGuidScene.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/02/23
 =============================================================================*/
 
@@ -30,7 +28,7 @@ public:
 	void Draw(void)override;
 
 private:
-	void SceneChange(void); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+	void SceneChange(void); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 
 private:
 	XInput* m_XInput;

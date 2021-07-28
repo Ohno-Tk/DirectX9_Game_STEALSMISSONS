@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒƒbƒVƒ…ƒGƒtƒFƒNƒg[ MeshEffect.h ]
+ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½Gï¿½tï¿½Fï¿½Nï¿½g[ MeshEffect.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -32,27 +30,27 @@ public:
 	void SetVertexPosition(const D3DXVECTOR3 topPosition, const D3DXVECTOR3 bottomPosition){ m_TopPosition = topPosition; m_ButtomPosition = bottomPosition; }
 
 private:
-	void MakeVerTex(LPDIRECT3DDEVICE9 Device);	// ’¸“_‚Ìì¬
-	void SetUpVerTex(void);	                    // ’¸“_‚Ìİ’è
-	void MakeIndex(LPDIRECT3DDEVICE9 Device);   // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬
-	void SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y); // ’¸“_”‚ÌŒvZ
-	void SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y);   // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌŒvZ
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);                     // ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	void MakeVerTex(LPDIRECT3DDEVICE9 Device);	// ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void SetUpVerTex(void);	                    // ï¿½ï¿½ï¿½_ï¿½Ìİ’ï¿½
+	void MakeIndex(LPDIRECT3DDEVICE9 Device);   // ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìì¬
+	void SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y); // ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÌŒvï¿½Z
+	void SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y);   // ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ÌŒvï¿½Z
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);                     // ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
 private:
-	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer; //	’¸“_ƒoƒbƒtƒ@
-	LPDIRECT3DINDEXBUFFER9	m_IndexBuffer; //	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@
+	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer; //	ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
+	LPDIRECT3DINDEXBUFFER9	m_IndexBuffer; //	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@
 
 	D3DXVECTOR3 m_TopPosition;
 	D3DXVECTOR3 m_ButtomPosition;
 
-	D3DXVECTOR2 m_TexturePositon;	//	ƒeƒNƒXƒ`ƒƒÀ•W
+	D3DXVECTOR2 m_TexturePositon;	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 
-	UINT m_NumBlock_X;		//	‰¡‚Ì–‡”
-	UINT m_NumBlock_Y;		//	c‚Ì–‡”
+	UINT m_NumBlock_X;		//	ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
+	UINT m_NumBlock_Y;		//	ï¿½cï¿½Ì–ï¿½ï¿½ï¿½
 
-	int m_NumVertex;		//	’¸“_”
-	int m_NumIndexBuffer;	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@”
+	int m_NumVertex;		//	ï¿½ï¿½ï¿½_ï¿½ï¿½
+	int m_NumIndexBuffer;	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½
 
 	std::vector<D3DXVECTOR3> m_VertexPosition;
 };

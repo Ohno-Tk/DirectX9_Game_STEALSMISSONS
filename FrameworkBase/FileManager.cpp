@@ -1,12 +1,11 @@
 /*=============================================================================
 
-ƒtƒ@ƒCƒ‹ŠÇ—[ FileManager.cpp ]
+ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ç—ï¿½[ FileManager.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+
+ï¿½ï¿½  Create
 	2017/08/25
 =============================================================================*/
 
@@ -25,17 +24,17 @@ using namespace std;
 /*-----------------------------------------------------------------------------
 Function:   ifstream FileManager::ReadFile(string fileName, const ios_base::openmode mode)
 Parameter:  string FileName
-              ƒtƒ@ƒCƒ‹–¼
+              ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
             const ios_base::openmode Mode
-			  ƒtƒ@ƒCƒ‹‚ÌŠJ‚­‚Æ‚«‚Ìƒ‚[ƒh
-Overview:   ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+			  ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ÌŠJï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
+Overview:   ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 ifstream FileManager::ReadFile(string fileName, const ios_base::openmode mode)
 {
 	ifstream readingFile(fileName.c_str(), mode);
 
-	// ƒGƒ‰[ƒ`ƒFƒbƒN
-	fileName += "‚ªŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½";
+	// ï¿½Gï¿½ï¿½ï¿½[ï¿½`ï¿½Fï¿½bï¿½N
+	fileName += "ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½";
 	if (!readingFile){ Debug::Assert(fileName, "FileManager.cpp", "37"); }
 
 	fileName.clear();
@@ -47,18 +46,18 @@ ifstream FileManager::ReadFile(string fileName, const ios_base::openmode mode)
 /*-----------------------------------------------------------------------------
 Function:   ofstream FileManager::WriteFile(const string fileName, const ios_base::openmode mode)
 Parameter:  const string FileName
-              ƒtƒ@ƒCƒ‹–¼
+              ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
             const ios_base::openmode Mode
-			  ƒtƒ@ƒCƒ‹‚ÌŠJ‚­‚Æ‚«‚Ìƒ‚[ƒh
-Overview:   ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+			  ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ÌŠJï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
+Overview:   ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 ofstream FileManager::WriteFile(string fileName, const ios_base::openmode mode)
 {
 	ofstream writeingFile(fileName.c_str(), mode);
 
-	// ƒGƒ‰[ƒ`ƒFƒbƒN
-	fileName += "‚ªŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½";
-	if (!writeingFile){ Debug::Assert("FileManager.cpp", "54", fileName + "‚ªŠJ‚¯‚Ü‚¹‚ñ‚Å‚µ‚½"); }
+	// ï¿½Gï¿½ï¿½ï¿½[ï¿½`ï¿½Fï¿½bï¿½N
+	fileName += "ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½";
+	if (!writeingFile){ Debug::Assert("FileManager.cpp", "54", fileName + "ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½"); }
 
 	fileName.clear();
 	string().swap(fileName);

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒJƒƒ‰ó‘Ô(åŠÏ)[ CameraStateSubjectivity.cpp ]
+ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½)[ CameraStateSubjectivity.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/19
 =============================================================================*/
 
@@ -23,7 +21,7 @@ Include Files
 
 CameraStateSubjectivity::CameraStateSubjectivity(CameraDirectX* owner):m_Owner(owner)
 {
-	Debug::Log("ƒJƒƒ‰ : ’Ç]ó‘Ô");
+	Debug::Log("ï¿½Jï¿½ï¿½ï¿½ï¿½ : ï¿½Ç]ï¿½ï¿½ï¿½");
 }
 void CameraStateSubjectivity::Update(void)
 {

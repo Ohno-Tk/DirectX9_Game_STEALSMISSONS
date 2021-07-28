@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“G[ Enemy.h ]
+ï¿½G[ Enemy.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -33,24 +31,24 @@ class Enemy:public Human
 public:
 	struct LINEAR
 	{
-		D3DXVECTOR3 ControlPoint;	//	§Œä“_
-		D3DXVECTOR3 ControlVector;	//	ÚüƒxƒNƒgƒ‹
+		D3DXVECTOR3 ControlPoint;	//	ï¿½ï¿½ï¿½ï¿½_
+		D3DXVECTOR3 ControlVector;	//	ï¿½Úï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½
 		D3DXVECTOR3 ControlVectorNext;
-		D3DXVECTOR3 InitControlVector;	//	ÚüƒxƒNƒgƒ‹
+		D3DXVECTOR3 InitControlVector;	//	ï¿½Úï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½
 		D3DXVECTOR3 InitControlVectorNext;
-		int FrameTime;	//	ƒtƒŒ[ƒ€ŠÔ
-		int WaitTime;	//	‘Ò‹@ŠÔ
-		float Rot;			//	Šp“x
+		int FrameTime;	//	ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int WaitTime;	//	ï¿½Ò‹@ï¿½ï¿½ï¿½ï¿½
+		float Rot;			//	ï¿½pï¿½x
 	};
 
 	Enemy(int Priolity = 3);
 
-	static Enemy* Create(char* filename); // ¶¬
+	static Enemy* Create(char* filename); // ï¿½ï¿½ï¿½ï¿½
 
-	bool VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance); //	‹ŠE‚Ì”»’è
-	bool AttackRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance); // UŒ‚”»’è
-	bool AttackCollision(D3DXVECTOR3 Position); // UŒ‚‚Ì”»’è
-	bool DistanceWithinCollision(float distance); // ˆê’è‹——£ˆÈ“à‚Ì”»’è
+	bool VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance); //	ï¿½ï¿½ï¿½Eï¿½Ì”ï¿½ï¿½ï¿½
+	bool AttackRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance); // ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	bool AttackCollision(D3DXVECTOR3 Position); // ï¿½Uï¿½ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
+	bool DistanceWithinCollision(float distance); // ï¿½ï¿½è‹—ï¿½ï¿½ï¿½È“ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
 
 	// Setter
 	void SetOldPosition(void){ Object::SetPosition(m_OldPosision); }
@@ -74,27 +72,27 @@ private:
 	void Uninitialize(void)override;
 	void Update(void)override;
 	void Draw(void)override;
-	void RoadFile(void); //	ƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è
+	void RoadFile(void); //	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½
 	bool ObstacleCollision(D3DXVECTOR3 aabbmin, D3DXVECTOR3 aabbmax, D3DXMATRIX inverse);
 
 private:
 	D3DXVECTOR3 m_OldPosision;
 	D3DXVECTOR3 m_FrontVector;
 
-	int m_NumLinear;	//	‚¢‚­‚Â•âŠÔ‚·‚é‚©
+	int m_NumLinear;	//	ï¿½ï¿½ï¿½ï¿½ï¿½Â•ï¿½Ô‚ï¿½ï¿½é‚©
 	int m_CountLinear;
-	int m_VisionAngle; // ‹ŠEŠp“x
-	int m_VisionDistance; // ‹ŠE‹——£
-	int m_AttackRange; // UŒ‚”ÍˆÍ
-	int m_AttackPower; // UŒ‚—Í
+	int m_VisionAngle; // ï¿½ï¿½ï¿½Eï¿½pï¿½x
+	int m_VisionDistance; // ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½ï¿½
+	int m_AttackRange; // ï¿½Uï¿½ï¿½ï¿½Íˆï¿½
+	int m_AttackPower; // ï¿½Uï¿½ï¿½ï¿½ï¿½
 
 	float m_NowRotation;
 
-	char* m_FileName;//	ƒtƒ@ƒCƒ‹–¼
+	char* m_FileName;//	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
 
-	LINEAR* m_Linear; // •âŠÔ\‘¢‘Ì
+	LINEAR* m_Linear; // ï¿½ï¿½Ô\ï¿½ï¿½ï¿½ï¿½
 
-	StencilShadow* m_Shadow; // ‰e
+	StencilShadow* m_Shadow; // ï¿½e
 	HeadMark* m_HeadMark;
 	Vision* m_Vision;
 };

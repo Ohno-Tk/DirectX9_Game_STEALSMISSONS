@@ -1,12 +1,10 @@
 /*=============================================================================
 
-‹ŠE( ƒfƒoƒbƒO—p )[ Vision.h ]
+ï¿½ï¿½ï¿½E( ï¿½fï¿½oï¿½bï¿½Oï¿½p )[ Vision.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/28
 =============================================================================*/
 
@@ -33,18 +31,18 @@ public:
 	void SetOwnerMatrix(D3DXMATRIX matrix){ m_OwnerMatrix = matrix; }
 
 private:
-	void MakeVerTex(void);						//	’¸“_‚Ìì¬
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	void MakeVerTex(void);						//	ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;
 	D3DXVECTOR3 m_Rotation;
 
-	D3DXMATRIX m_OwnerMatrix; // Š—LÒ‚Ìƒ}ƒgƒŠƒNƒX
+	D3DXMATRIX m_OwnerMatrix; // ï¿½ï¿½ï¿½Lï¿½Ò‚Ìƒ}ï¿½gï¿½ï¿½ï¿½Nï¿½X
 
 	bool m_Active;
-	float m_VisionDistance;	//	‹Šo‹——£
-	float m_Angle;			//	Šp“x
+	float m_VisionDistance;	//	ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½
+	float m_Angle;			//	ï¿½pï¿½x
 };
 
 #endif

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒfƒoƒbƒOƒƒjƒ…[[ DebugMenu.cpp ]
+ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[[ DebugMenu.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/12/19
 =============================================================================*/
 
@@ -130,30 +128,30 @@ void DebugMenu::Draw(void)
 
 
 	RECT rect = { 0, y, SCREEN_WIDTH, SCREEN_HEIGHT };
-	wsprintf(str, "< ƒfƒoƒbƒOƒƒjƒ…[ >\n");
+	wsprintf(str, "< ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ >\n");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 25;
-	wsprintf(str, "ƒfƒoƒbƒOƒƒjƒ…[I—¹[ 0 ]");
+	wsprintf(str, "ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½jï¿½ï¿½ï¿½[ï¿½Iï¿½ï¿½[ 0 ]");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 50;
-	wsprintf(str, "ƒƒCƒ„[ƒtƒŒ[ƒ€[ 1 ] : %s", m_WireFrameActive ? "ON" : "OFF");
+	wsprintf(str, "ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½[ 1 ] : %s", m_WireFrameActive ? "ON" : "OFF");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 75;
-	wsprintf(str, "“G‚Ì‹ŠE[ 2 ] : %s", m_VisionActive ? "ON" : "OFF");
+	wsprintf(str, "ï¿½Gï¿½Ìï¿½ï¿½E[ 2 ] : %s", m_VisionActive ? "ON" : "OFF");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 100;
-	wsprintf(str, "ƒvƒŒƒCƒ„[‚Ì‘Ì—Í‘S‰ñ•œ[ 3 ]");
+	wsprintf(str, "ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì‘Ì—Í‘Sï¿½ï¿½[ 3 ]");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 125;
-	wsprintf(str, "ƒ|[ƒY[ 4 ] : %s", m_GameStop ? "ON" : "OFF");
+	wsprintf(str, "ï¿½|ï¿½[ï¿½Y[ 4 ] : %s", m_GameStop ? "ON" : "OFF");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 
 	rect.top = y + 150;
-	wsprintf(str, "§Œä“_•\¦[ 5 ] : %s", m_ControlPointActive ? "ON" : "OFF");
+	wsprintf(str, "ï¿½ï¿½ï¿½ï¿½_ï¿½\ï¿½ï¿½[ 5 ] : %s", m_ControlPointActive ? "ON" : "OFF");
 	m_Font->DrawText(NULL, str, -1, &rect, format, color);
 }

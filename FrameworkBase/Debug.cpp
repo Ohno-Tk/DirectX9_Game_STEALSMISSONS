@@ -1,12 +1,11 @@
 /*=============================================================================
 
-ƒfƒoƒbƒO—p[ Debug.cpp ]
+ï¿½fï¿½oï¿½bï¿½Oï¿½p[ Debug.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -33,55 +32,55 @@ using namespace std;
 /*-----------------------------------------------------------------------------
 Function:   void CDebug::Assert(string message)
 Parameter:  string message
-              ƒRƒ“ƒ\[ƒ‹‚É•\¦‚³‚¹‚é•¶š—ñ
-Overview:   ğŒ‚ğƒAƒT[ƒg‚µA¸”s‚ÉƒGƒ‰[ƒƒbƒZ[ƒW‚ğ‹L˜^
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é•¶ï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Tï¿½[ï¿½gï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÉƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½ï¿½Lï¿½^
 -----------------------------------------------------------------------------*/
 void Debug::Assert(string message)
 {
-	// ƒeƒLƒXƒgo—Í
+	// ï¿½eï¿½Lï¿½Xï¿½gï¿½oï¿½ï¿½
 	ofstream ofs(ERROR_FILENAME,ios::app);
 	ofs << message.c_str() << endl;
 	ofs.close();
 
-	// ƒRƒ“ƒ\[ƒ‹o—Í
+	// ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½oï¿½ï¿½
 	Console::SetColor(CONSOLE_RED);
-	cout << "ƒGƒ‰[ƒƒbƒZ[ƒW" << endl;
+	cout << "ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½W" << endl;
 	cout << message << endl;
 
-	assert(!"ƒRƒ“ƒ\[ƒ‹‚ÉƒGƒ‰[‚ğ•\¦‚µ‚Ü‚· and ErrorLog.txt‚Éo—Í‚µ‚Ü‚·");
+	assert(!"ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½ÉƒGï¿½ï¿½ï¿½[ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ and ErrorLog.txtï¿½Éoï¿½Í‚ï¿½ï¿½Ü‚ï¿½");
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void CDebug::Assert(string message, string filename, string line)
 Parameter:  string message
-              ƒRƒ“ƒ\[ƒ‹‚É•\¦‚³‚¹‚é•¶š—ñ
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é•¶ï¿½ï¿½ï¿½ï¿½
             string filename
-              ƒRƒ“ƒ\[ƒ‹‚ÉƒGƒ‰[ƒtƒ@ƒCƒ‹‚ğ•\¦
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½ÉƒGï¿½ï¿½ï¿½[ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½
             string line
-              ƒRƒ“ƒ\[ƒ‹‚És”‚ğ•\¦
-Overview:   ğŒ‚ğƒAƒT[ƒg‚µA¸”s‚ÉƒGƒ‰[ƒƒbƒZ[ƒW‚ğ‹L˜^
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½Ésï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Tï¿½[ï¿½gï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ÉƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½ï¿½Lï¿½^
 -----------------------------------------------------------------------------*/
 void Debug::Assert(string message, string filename, string line)
 {
-	// ƒeƒLƒXƒgo—Í
+	// ï¿½eï¿½Lï¿½Xï¿½gï¿½oï¿½ï¿½
 	ofstream ofs(ERROR_FILENAME,ios::out);
-	ofs << filename.c_str() << "  " << line.c_str() << "s–Ú" << "  " << message.c_str() << endl;
+	ofs << filename.c_str() << "  " << line.c_str() << "ï¿½sï¿½ï¿½" << "  " << message.c_str() << endl;
 	ofs.close();
 	
-	// ƒRƒ“ƒ\[ƒ‹o—Í
+	// ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½oï¿½ï¿½
 	Console::SetColor(CONSOLE_RED);
-	cout << "ƒGƒ‰[ƒƒbƒZ[ƒW" << endl;
-	cout << "ƒtƒ@ƒCƒ‹–¼ : " << filename << endl;
-	cout << "s” : " << line << endl;
+	cout << "ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½W" << endl;
+	cout << "ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ : " << filename << endl;
+	cout << "ï¿½sï¿½ï¿½ : " << line << endl;
 
-	assert(!"ƒRƒ“ƒ\[ƒ‹‚ÉƒGƒ‰[‚ğ•\¦‚µ‚Ü‚· and ErrorLog.txt‚Éo—Í‚µ‚Ü‚·");
+	assert(!"ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½ÉƒGï¿½ï¿½ï¿½[ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ and ErrorLog.txtï¿½Éoï¿½Í‚ï¿½ï¿½Ü‚ï¿½");
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void Debug::Log(string message)
 Parameter:  string message
-              ƒRƒ“ƒ\[ƒ‹‚É•\¦‚³‚¹‚é•¶š—ñ
-Overview:   ƒRƒ“ƒ\[ƒ‹‚ÉƒƒOƒƒbƒZ[ƒW‚ğo—Í
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é•¶ï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½Éƒï¿½ï¿½Oï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½ï¿½ï¿½oï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Debug::Log(string message)
 {
@@ -91,10 +90,10 @@ void Debug::Log(string message)
 /*-----------------------------------------------------------------------------
 Function:   void Debug::Log(string message, PROCESSPATTERN pattern)
 Parameter:  string message
-              ƒRƒ“ƒ\[ƒ‹‚É•\¦‚³‚¹‚é•¶š—ñ
+              ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é•¶ï¿½ï¿½ï¿½ï¿½
             PROCESSPATTERN pattern
-			  ƒRƒ“ƒ\[ƒ‹‚Ì•¶šF‚ğ•Ï‚¦‚é
-Overview:   ƒRƒ“ƒ\[ƒ‹‚É•\¦‚³‚¹‚é•¶š—ñ
+			  ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½Fï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+Overview:   ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é•¶ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Debug::Log(string message, PROCESSPATTERN pattern)
 {
@@ -110,5 +109,5 @@ void Debug::Log(string message, PROCESSPATTERN pattern)
 
 	cout << message << endl;
 
-	Console::SetColor();	//	F‚ğŒ³‚É–ß‚·
+	Console::SetColor();	//	ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 }

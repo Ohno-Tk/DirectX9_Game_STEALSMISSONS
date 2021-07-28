@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒV[ƒ“[ GameScene.cpp ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½[ GameScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -67,7 +65,7 @@ using namespace std;
 
 void GameScene::Initialize(void)
 {
-	Debug::Log("ƒQ[ƒ€ƒV[ƒ“");
+	Debug::Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½");
 
 #ifndef ENABLE_SOUND
 	m_Sound = Game::GetInstance()->GetSound();
@@ -157,14 +155,14 @@ void GameScene::Initialize(void)
 
 	m_ItemUI = ItemUIRation::Create(D3DXVECTOR3(50.0f, 460.0f,0.0f));
 
-	// HPƒQ[ƒWUI
+	// HPï¿½Qï¿½[ï¿½WUI
 	Sprite2D::Create(D3DXVECTOR3(25.0f,25.0f,0.0f),D3DXVECTOR2(250.0f,50.0f),TEXTURE_PATH"GAME/GuageBar_Frame.png", D3DXVECTOR4(1.0f,1.0f,1.0f,1.0f),5);
 
-	// Life•¶š
+	// Lifeï¿½ï¿½ï¿½ï¿½
 	Sprite2D::Create(D3DXVECTOR3(25.0f,60.0f,0.0f),D3DXVECTOR2(65.0f,30.0f),TEXTURE_PATH"GAME/Life_logo.png", D3DXVECTOR4(1.0f,1.0f,1.0f,1.0f),5);
 
 
-	// ‰Šú‰»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	m_GameClear = false;
 	m_GameOver = false;
 	m_SceneChangeFlag = false;
@@ -181,24 +179,24 @@ void GameScene::Uninitialize(void)
 	m_GameOver = false;
 	m_SceneChangeFlag = false;
 
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void GameScene::Update(void)
 {
-	SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+	SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 }
 
 void GameScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void GameScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameScene::SceneChange(void)
 {

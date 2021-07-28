@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒŒƒ“ƒ_ƒ‰[[ Renderer.h ]
+ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[[ Renderer.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/14
 =============================================================================*/
 
@@ -29,8 +27,8 @@ public:
 	virtual void DrawBegin(void) = 0;
 	virtual void DrawEnd(void) = 0;
 
-	virtual void Normal(void) = 0; // ’Êí
-	virtual void WireFrame(void) = 0; // ƒƒCƒ„[ƒtƒŒ[ƒ€
+	virtual void Normal(void) = 0; // ï¿½Êí
+	virtual void WireFrame(void) = 0; // ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½
 };
 
 #endif

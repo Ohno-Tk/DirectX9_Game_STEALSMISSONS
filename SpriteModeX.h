@@ -1,12 +1,10 @@
 /*=============================================================================
 
-Xƒ‚ƒfƒ‹•`‰æ[ SpriteModeX.h ]
-( Maybe-Later:std::string‚Ìƒƒ‚ƒŠ‰ğ•ú‚ªo—ˆ‚Ä‚¢‚È‚¢ )
+Xï¿½ï¿½ï¿½fï¿½ï¿½ï¿½`ï¿½ï¿½[ SpriteModeX.h ]
+( Maybe-Later:std::stringï¿½Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ )
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/08/25
 =============================================================================*/
 
@@ -42,17 +40,17 @@ public:
 	D3DXMATRIX GetMatrix(void){ return m_MatrixWorld; }
 
 private:
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ConfigShader(LPDIRECT3DDEVICE9 device);// ƒVƒF[ƒ_[‚Ìİ’è
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ConfigShader(LPDIRECT3DDEVICE9 device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 private:
-	D3DXVECTOR3	m_Rotation;	//	‰ñ“]
-	D3DXVECTOR3	m_Scale;	//	Šg‘å—¦
+	D3DXVECTOR3	m_Rotation;	//	ï¿½ï¿½]
+	D3DXVECTOR3	m_Scale;	//	ï¿½gï¿½å—¦
 
 	D3DXMATRIX m_MatrixWorld;
 
-	MODEL_PARAM m_ModelParam;	//	ƒ‚ƒfƒ‹\‘¢‘Ì
-	char* m_ModelFilePath;	//	ƒ‚ƒfƒ‹‚ÌƒpƒX
+	MODEL_PARAM m_ModelParam;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
+	char* m_ModelFilePath;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒpï¿½X
 
 	VertexShader* m_VertexShader;
 	PixelShader* m_PixelShader;

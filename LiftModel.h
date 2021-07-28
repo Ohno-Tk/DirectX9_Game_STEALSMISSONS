@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒŠƒtƒgƒ‚ƒfƒ‹[ LiftModel.h ]
+ï¿½ï¿½ï¿½tï¿½gï¿½ï¿½ï¿½fï¿½ï¿½[ LiftModel.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/02/07
 =============================================================================*/
 
@@ -32,13 +30,13 @@ public:
 	void Draw(void)override;
 
 private:
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ConfigShader(LPDIRECT3DDEVICE9 Device);// ƒVƒF[ƒ_[‚Ìİ’è
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ConfigShader(LPDIRECT3DDEVICE9 Device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 private:
 	D3DXMATRIX m_MatrixWorld;
 
-	MODEL_PARAM m_ModelParam;	//	ƒ‚ƒfƒ‹\‘¢‘Ì
+	MODEL_PARAM m_ModelParam;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 
 	VertexShader* m_VertexShader;
 	PixelShader* m_PixelShader;

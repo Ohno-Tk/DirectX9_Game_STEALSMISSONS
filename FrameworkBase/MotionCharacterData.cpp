@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‚[ƒVƒ‡ƒ“ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^[ MotionCharacterData.cpp ]
-(Maybe-Later:Uninitialize‚ÅƒGƒ‰[‚ğ“f‚¢‚Ä‚¢‚é)
+ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^[ MotionCharacterData.cpp ]
+(Maybe-Later:Uninitializeï¿½ÅƒGï¿½ï¿½ï¿½[ï¿½ï¿½fï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½)
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -50,7 +48,7 @@ MotionCharacterData::MotionCharacterData()
 	m_TextFileToken.push_back("FRAME");
 	m_TextFileToken.push_back("KEY");
 	m_TextFileToken.push_back("END_KEY");
-	m_TextFileToken.push_back("‚±‚Ìs‚Íâ‘ÎÁ‚³‚È‚¢‚±‚ÆI");
+	m_TextFileToken.push_back("ï¿½ï¿½ï¿½Ìsï¿½Íï¿½Îï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ÆI");
 }
 
 void MotionCharacterData::Initialize(void)
@@ -63,12 +61,12 @@ void MotionCharacterData::Initialize(void)
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::Load(string motionFilePass)
 Parameter:  string motionFilePass
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-Overview:   ƒ[ƒh
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
+Overview:   ï¿½ï¿½ï¿½[ï¿½h
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::Load(string motionFilePass)
 {
-	//	“¯‚¶ƒtƒ@ƒCƒ‹‚ª‘¶İ‚·‚é‚©‚Ìƒ`ƒFƒbƒN
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½é‚©ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	auto it = m_Motion_Map.find(motionFilePass);
 
 	if (it != m_Motion_Map.end()) { return; }
@@ -83,12 +81,12 @@ void MotionCharacterData::Load(string motionFilePass)
 
 	ZeroMemory(&m_CharacterData, sizeof(CHARACTERDATA));
 
-	ReadText(motionFilePass); // ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+	ReadText(motionFilePass); // ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 
-	//	ƒL[‚Æ’l‚ğ˜AŒ‹‚³‚¹‚é
+	//	ï¿½Lï¿½[ï¿½Æ’lï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	m_Motion_Map[motionFilePass] = m_CharacterData;
 
-	// ‰ğ•úˆ—
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	//for(int i = 0 ; i < MAX_MOTION ; i++)
 	//{
 	//	for(int j = 0 ; j < m_CharacterData.Motion[i].NumKey ; j++)
@@ -101,7 +99,7 @@ void MotionCharacterData::Load(string motionFilePass)
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::UnloadAll(void)
-Overview:   ƒ‚[ƒVƒ‡ƒ“ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ì‘Síœ
+Overview:   ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ì‘Sï¿½íœ
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::UnloadAll(void)
 {
@@ -113,13 +111,13 @@ void MotionCharacterData::UnloadAll(void)
 			{
 //				SAFE_DELETE(it->second.Motion[i].Next[j].Position);
 				if(it->second.Motion[i].Next[j].Position)
-				{	//	À•W
+				{	//	ï¿½ï¿½ï¿½W
 
 					delete it->second.Motion[i].Next[j].Position;
 					it->second.Motion[i].Next[j].Position = NULL;
 				}
 				if(it->second.Motion[i].Next[j].Rotation)
-				{	//	À•W
+				{	//	ï¿½ï¿½ï¿½W
 
 					delete it->second.Motion[i].Next[j].Rotation;
 					it->second.Motion[i].Next[j].Rotation = NULL;
@@ -130,9 +128,9 @@ void MotionCharacterData::UnloadAll(void)
 			}
 
 			if(m_CharacterData.Motion[i].Frame != NULL)
-			{	//	ƒ‹[ƒv‚·‚é‚©
+			{	//	ï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½é‚©
 
-				delete m_CharacterData.Motion[i].Frame;	//	‰ğ•ú
+				delete m_CharacterData.Motion[i].Frame;	//	ï¿½ï¿½ï¿½
 				m_CharacterData.Motion[i].Frame = NULL;
 			}
 
@@ -155,10 +153,10 @@ void MotionCharacterData::UnloadAll(void)
 
 		SAFE_ARRAYDELETE(it->second.PartInfo);
 	}
-	m_Motion_Map.clear(); // ‘S—v‘f‚Ìíœ
+	m_Motion_Map.clear(); // ï¿½Sï¿½vï¿½fï¿½Ìíœ
 
-	m_TextFileToken.clear(); // —v‘f‚Ì‰ğ•ú
-	vector<string>().swap(m_TextFileToken); // ƒƒ‚ƒŠ‚Ì‰ğ•ú
+	m_TextFileToken.clear(); // ï¿½vï¿½fï¿½Ì‰ï¿½ï¿½
+	vector<string>().swap(m_TextFileToken); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½ï¿½
 	m_Buffer.clear();
 	string().swap(m_Buffer);
 }
@@ -166,17 +164,17 @@ void MotionCharacterData::UnloadAll(void)
 /*-----------------------------------------------------------------------------
 Function:   const MotionCharacterData::CHARACTERDATA MotionCharacterData::GetCharacterData(std::string motionFilePass)const
 Parameter:  string motionFilePass
-			  ƒ‚[ƒVƒ‡ƒ“‚ÌƒpƒX
-Overview:   ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^‚Ìæ“¾
+			  ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½X
+Overview:   ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ìæ“¾
 -----------------------------------------------------------------------------*/
 const MotionCharacterData::CHARACTERDATA MotionCharacterData::GetCharacterData(string motionFilePass)const
 {
-	//	ƒtƒ@ƒCƒ‹‚ª‘¶İ‚·‚é‚©‚Ìƒ`ƒFƒbƒN
+	//	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½é‚©ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	auto it = m_Motion_Map.find(motionFilePass);
 
-	if (it != m_Motion_Map.end()){ return it->second; } //	‘¶İ‚µ‚Ä‚¢‚½‚ç
+	if (it != m_Motion_Map.end()){ return it->second; } //	ï¿½ï¿½ï¿½İ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	motionFilePass += "‚ªæ“¾‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½";
+	motionFilePass += "ï¿½ï¿½ï¿½æ“¾ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½";
 	Debug::Assert(motionFilePass, "MotionCharacterData.cpp", "");
 
 	CHARACTERDATA error;
@@ -186,12 +184,12 @@ const MotionCharacterData::CHARACTERDATA MotionCharacterData::GetCharacterData(s
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::InitCharaData(void)			  
-Overview:   ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ì‰Šú‰»
+Overview:   ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::InitCharaData(void)
 {
 	for(int i = 0 ; i < m_CharacterData.NumModel ; i++)
-	{	//	‰Šú‰»
+	{	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		m_CharacterData.PartInfo[i].Index = 0;
 		m_CharacterData.PartInfo[i].Parent = 0;
@@ -213,14 +211,14 @@ void MotionCharacterData::InitCharaData(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::InitMotionData(const int countMotion)		  
-Overview:   ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^‚Ì‰Šú‰»
+Overview:   ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::InitMotionData(const int countMotion)
 {
 	for(int i = 0; i < m_CharacterData.Motion[countMotion].NumKey; i++ )
-	{	//	‰Šú‰»
+	{	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for(int j = 0; j < m_CharacterData.NumModel; j++ )
-		{	//	ƒ‚ƒfƒ‹”•ª
+		{	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 			m_CharacterData.Motion[countMotion].Next[i].Position[j] = D3DXVECTOR3(0.0f,0.0f,0.0f);
 			m_CharacterData.Motion[countMotion].Next[i].Rotation[j] = D3DXVECTOR3(0.0f,0.0f,0.0f);
@@ -231,8 +229,8 @@ void MotionCharacterData::InitMotionData(const int countMotion)
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadText(string motionFilePass)
 Parameter:  string motionFilePass
-			  ƒ‚[ƒVƒ‡ƒ“‚ÌƒpƒX			  
-Overview:   ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+			  ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìƒpï¿½X			  
+Overview:   ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadText(string motionFilePass)
 {
@@ -245,10 +243,10 @@ void MotionCharacterData::ReadText(string motionFilePass)
 
 		if( MatchFileToken(m_Buffer, m_TextFileToken[SCRIPT]) )
 		{
-			ReadNumModel();			// ƒ‚ƒfƒ‹”‚Ì“Ç‚İ‚İ
-			ReadModelFileName();	// ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼‚Ì“Ç‚İ‚İ
-			ReadCharacterInfo();	//	ƒLƒƒƒ‰ƒNƒ^î•ñ‚Ì“Ç‚İ‚İ
-			ReadMotion();			//	ƒ‚[ƒVƒ‡ƒ“î•ñ‚Ì“Ç‚İ‚İ
+			ReadNumModel();			// ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+			ReadModelFileName();	// ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+			ReadCharacterInfo();	//	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+			ReadMotion();			//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 		}
 	}
 
@@ -257,7 +255,7 @@ void MotionCharacterData::ReadText(string motionFilePass)
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadNumModel(void)			  
-Overview:   ƒ‚ƒfƒ‹”‚Ì“Ç‚İ‚İ
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadNumModel(void)
 {
@@ -267,14 +265,14 @@ void MotionCharacterData::ReadNumModel(void)
 
 		if( MatchFileToken(m_Buffer, m_TextFileToken[NUM_MODEL]) )
 		{
-			m_ReadFile >> m_Buffer; // u = v
+			m_ReadFile >> m_Buffer; // ï¿½u = ï¿½v
 
-			m_ReadFile >> m_Buffer; // ƒ‚ƒfƒ‹”
+			m_ReadFile >> m_Buffer; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½
 			m_CharacterData.NumModel = stoi(m_Buffer.c_str());
 
 			m_CharacterData.PartInfo = new PART[m_CharacterData.NumModel];
 
-			InitCharaData(); // ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ì‰Šú‰»
+			InitCharaData(); // ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 			break;
 		}
 	}
@@ -282,23 +280,23 @@ void MotionCharacterData::ReadNumModel(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadModelFileName(void)			  
-Overview:   ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼‚Ì“Ç‚İ‚İ
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadModelFileName(void)
 {
 	int nummodel = 0;
 
 	while(nummodel != m_CharacterData.NumModel)
-	{	//	ƒ‚ƒfƒ‹”•ª
+	{	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		m_ReadFile >> m_Buffer;
 
 		if( MatchFileToken(m_Buffer, m_TextFileToken[MODEL_FILENAME]) )
 		{
-			m_ReadFile >> m_Buffer;	//u = v
+			m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-			m_ReadFile >> m_Buffer; // ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼
-			LoadModel(nummodel, m_Buffer); // ƒ‚ƒfƒ‹‚Ìƒ[ƒh
+			m_ReadFile >> m_Buffer; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+			LoadModel(nummodel, m_Buffer); // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
 			nummodel++;
 		}
 	}
@@ -307,38 +305,38 @@ void MotionCharacterData::ReadModelFileName(void)
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::LoadModel(const int nummodel, string modelfilename)
 Parameter:  const int nummodel
-              ƒ‚ƒfƒ‹‚ÌƒCƒ“ƒfƒbƒNƒX
+              ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ÌƒCï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½X
             string modelfilename
-              ƒ‚ƒfƒ‹‚Ìƒtƒ@ƒCƒ‹–¼
-Overview:   ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼‚Ì“Ç‚İ‚İ
+              ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::LoadModel(const int nummodel, string modelfilename)
 {
-	//	ƒfƒoƒCƒX‚Ìæ“¾
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìæ“¾
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
 	HRESULT hr;
 
-	// “Ç‚İ‚İ
-	hr = D3DXLoadMeshFromX(		modelfilename.c_str(),		//	ƒtƒ@ƒCƒ‹–¼
+	// ï¿½Ç‚İï¿½ï¿½ï¿½
+	hr = D3DXLoadMeshFromX(		modelfilename.c_str(),		//	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
 								D3DXMESH_SYSTEMMEM,
-								Device,				//	ƒfƒoƒCƒX
-								NULL,					//	—×Úƒoƒbƒtƒ@
-								&m_CharacterData.PartInfo[nummodel].ModelParam.BufferMaterial,	//	ƒ}ƒeƒŠƒAƒ‹î•ñ‚ğŠi”[
+								Device,				//	ï¿½fï¿½oï¿½Cï¿½X
+								NULL,					//	ï¿½×Úƒoï¿½bï¿½tï¿½@
+								&m_CharacterData.PartInfo[nummodel].ModelParam.BufferMaterial,	//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½[
 								NULL,
-								&m_CharacterData.PartInfo[nummodel].ModelParam.NumMaterial,	//	ƒ}ƒeƒŠƒAƒ‹”
-								&m_CharacterData.PartInfo[nummodel].ModelParam.Mesh );	//	ƒƒbƒVƒ…
+								&m_CharacterData.PartInfo[nummodel].ModelParam.NumMaterial,	//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½
+								&m_CharacterData.PartInfo[nummodel].ModelParam.Mesh );	//	ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½
 
-	//	ƒ‚ƒfƒ‹‚ÌƒGƒ‰[ƒ`ƒFƒbƒN
+	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ÌƒGï¿½ï¿½ï¿½[ï¿½`ï¿½Fï¿½bï¿½N
 	if(FAILED(hr))
 	{
 		MessageBox( NULL , modelfilename.c_str() , "Motion.cpp" , MB_OK | MB_ICONHAND );
 	}
 
-	//	ƒ}ƒeƒŠƒAƒ‹î•ñ‚Ìƒ|ƒCƒ“ƒ^‚Æ‚µ‚Äƒoƒbƒtƒ@‚ÌƒAƒhƒŒƒX‚ğæ“¾
+	//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½Æ‚ï¿½ï¿½Äƒoï¿½bï¿½tï¿½@ï¿½ÌƒAï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_CharacterData.PartInfo[nummodel].ModelParam.Material = ( D3DXMATERIAL* )m_CharacterData.PartInfo[nummodel].ModelParam.BufferMaterial->GetBufferPointer();
 
-	//	ƒeƒNƒXƒ`ƒƒ‚Ì“®“IŠm•Û
+	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì“ï¿½ï¿½Iï¿½mï¿½ï¿½
 	m_CharacterData.PartInfo[nummodel].ModelParam.Texture = new LPDIRECT3DTEXTURE9[m_CharacterData.PartInfo[nummodel].ModelParam.NumMaterial];
 
 
@@ -356,10 +354,10 @@ void MotionCharacterData::LoadModel(const int nummodel, string modelfilename)
 
 			hr = D3DXCreateTextureFromFile( Device, filePath, &m_CharacterData.PartInfo[nummodel].ModelParam.Texture[j]);
 
-			//	ƒeƒNƒXƒ`ƒƒ‚ÌƒGƒ‰[ƒ`ƒFƒbƒN
+			//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ÌƒGï¿½ï¿½ï¿½[ï¿½`ï¿½Fï¿½bï¿½N
 			if(FAILED(hr))
 			{
-				MessageBox( NULL , "ƒ‚ƒfƒ‹‚ÌƒeƒNƒXƒ`ƒƒƒpƒX‚ª‚¨‚©‚µ‚¢‚Å‚·" , "MotionCharacterData.cpp" , MB_OK | MB_ICONHAND );
+				MessageBox( NULL , "ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒeï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½pï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½" , "MotionCharacterData.cpp" , MB_OK | MB_ICONHAND );
 			}
 		}
 	}
@@ -367,7 +365,7 @@ void MotionCharacterData::LoadModel(const int nummodel, string modelfilename)
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadCharacterInfo(void)		  
-Overview:   ƒLƒƒƒ‰ƒNƒ^î•ñ‚Ì“Ç‚İ‚İ
+Overview:   ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadCharacterInfo(void)
 {
@@ -376,28 +374,28 @@ void MotionCharacterData::ReadCharacterInfo(void)
 		m_ReadFile >> m_Buffer;
 
 		if( MatchFileToken(m_Buffer, m_TextFileToken[CHARACTERSET]) )
-		{	//	CHARACTERSET‚ÌŒŸõ
+		{	//	CHARACTERSETï¿½ÌŒï¿½ï¿½ï¿½
 
-			ReadPartsSet(); //	ƒLƒƒƒ‰ƒNƒ^‚Ìƒp[ƒcî•ñ‚Ì“Ç‚İ‚İ
+			ReadPartsSet(); //	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Ìƒpï¿½[ï¿½cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 		}
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadPartsSet(void)		  
-Overview:   ƒLƒƒƒ‰ƒNƒ^‚Ìƒp[ƒcî•ñ‚Ì“Ç‚İ‚İ
+Overview:   ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Ìƒpï¿½[ï¿½cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadPartsSet(void)
 {
 	int nummodel = 0;
 
 	while( nummodel != m_CharacterData.NumModel )
-	{	//	ƒ‚ƒfƒ‹”•ª
+	{	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		m_ReadFile >> m_Buffer;
 
 		if( MatchFileToken(m_Buffer, m_TextFileToken[PARTSSET]) )
-		{	//	PARTSSET‚ÌŒŸõ
+		{	//	PARTSSETï¿½ÌŒï¿½ï¿½ï¿½
 
 			for(;;)
 			{
@@ -405,25 +403,25 @@ void MotionCharacterData::ReadPartsSet(void)
 
 				if( MatchFileToken(m_Buffer, m_TextFileToken[INDEX]) )
 				{
-					m_ReadFile >> m_Buffer;	//u = v
+					m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-					m_ReadFile >> m_Buffer; // ƒp[ƒc”Ô†
+					m_ReadFile >> m_Buffer; // ï¿½pï¿½[ï¿½cï¿½Ôï¿½
 					m_CharacterData.PartInfo[nummodel].Index = stoi(m_Buffer.c_str());
 				}
 
 				else if( MatchFileToken(m_Buffer, m_TextFileToken[PARENT]) )
 				{
-					m_ReadFile >> m_Buffer;//u = v
+					m_ReadFile >> m_Buffer;//ï¿½u = ï¿½v
 
-					m_ReadFile >> m_Buffer;//	eq\‘¢
+					m_ReadFile >> m_Buffer;//	ï¿½eï¿½qï¿½\ï¿½ï¿½
 					m_CharacterData.PartInfo[nummodel].Parent = stoi(m_Buffer.c_str());
 				}
 
 				else if( MatchFileToken(m_Buffer, m_TextFileToken[POS]) )
 				{
-					m_ReadFile >> m_Buffer;//u = v
+					m_ReadFile >> m_Buffer;//ï¿½u = ï¿½v
 
-					//	À•W‚Ì“Ç‚İ‚İ
+					//	ï¿½ï¿½ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 					m_ReadFile >> m_Buffer;
 					m_CharacterData.PartInfo[nummodel].OffsetPosition.x = stof(m_Buffer.c_str());
 
@@ -436,9 +434,9 @@ void MotionCharacterData::ReadPartsSet(void)
 
 				else if( MatchFileToken(m_Buffer, m_TextFileToken[ROT]) )
 				{
-					m_ReadFile >> m_Buffer;//u = v
+					m_ReadFile >> m_Buffer;//ï¿½u = ï¿½v
 
-					//	‰ñ“]‚Ì“Ç‚İ‚İ
+					//	ï¿½ï¿½]ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 					m_ReadFile >> m_Buffer;
 					m_CharacterData.PartInfo[nummodel].OffsetRotation.x = stof(m_Buffer.c_str());
 
@@ -452,14 +450,14 @@ void MotionCharacterData::ReadPartsSet(void)
 			}
 		}
 
-		//	END_PARTSSET‚ÌŒŸõ
+		//	END_PARTSSETï¿½ÌŒï¿½ï¿½ï¿½
 		if( MatchFileToken(m_Buffer, m_TextFileToken[END_PARTSSET]) ){ nummodel++; }
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void MotionCharacterData::ReadMotion(void)	  
-Overview:   ƒ‚[ƒVƒ‡ƒ“î•ñ‚Ì“Ç‚İ‚İ
+Overview:   ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void MotionCharacterData::ReadMotion(void)
 {
@@ -477,16 +475,16 @@ void MotionCharacterData::ReadMotion(void)
 
 				if( MatchFileToken(m_Buffer, m_TextFileToken[LOOP]) )
 				{
-					m_ReadFile >> m_Buffer;	//u = v
+					m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-					m_ReadFile >> m_Buffer; // ƒ‹[ƒv‚·‚é‚©
+					m_ReadFile >> m_Buffer; // ï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½é‚©
 					m_CharacterData.Motion[cntMotion].Loop = stoi(m_Buffer.c_str());
 				}
 				else if( MatchFileToken(m_Buffer, m_TextFileToken[NUMKEY]) )
 				{
-					m_ReadFile >> m_Buffer;	//u = v
+					m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-					m_ReadFile >> m_Buffer; // ƒL[”
+					m_ReadFile >> m_Buffer; // ï¿½Lï¿½[ï¿½ï¿½
 					m_CharacterData.Motion[cntMotion].NumKey = stoi(m_Buffer.c_str());
 
 					m_CharacterData.Motion[cntMotion].Frame = new int[m_CharacterData.Motion[cntMotion].NumKey];
@@ -494,12 +492,12 @@ void MotionCharacterData::ReadMotion(void)
 					m_CharacterData.Motion[cntMotion].Next = new KEYINFO[ m_CharacterData.Motion[cntMotion].NumKey ];
 
 					for(int i = 0 ; i < m_CharacterData.Motion[cntMotion].NumKey ; i++ )
-					{	//	ƒL[”•ª
+					{	//	ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½
 						m_CharacterData.Motion[cntMotion].Next[i].Position = new D3DXVECTOR3[m_CharacterData.NumModel];
 						m_CharacterData.Motion[cntMotion].Next[i].Rotation = new D3DXVECTOR3[m_CharacterData.NumModel];
 					}
 
-					InitMotionData(cntMotion); // ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^‚Ì‰Šú‰»
+					InitMotionData(cntMotion); // ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 					break;
 				}
 			}
@@ -507,33 +505,33 @@ void MotionCharacterData::ReadMotion(void)
 			int numKey = 0;
 
 			while(numKey != m_CharacterData.Motion[cntMotion].NumKey)
-			{	//	ƒL[”•ª
+			{	//	ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½
 
 				m_ReadFile >> m_Buffer;
 
 				if( MatchFileToken(m_Buffer, m_TextFileToken[KEYSET]) )
-				{	//	KEYSET‚ÌŒŸõ
+				{	//	KEYSETï¿½ÌŒï¿½ï¿½ï¿½
 
 					int numModel = 0;
 
 					while( numModel != m_CharacterData.NumModel )
-					{	//	ƒ‚ƒfƒ‹”•ª
+					{	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 						m_ReadFile >> m_Buffer;
 
 						if( MatchFileToken(m_Buffer, m_TextFileToken[FRAME]) )
 						{
-							m_ReadFile >> m_Buffer;	//u = v
+							m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-							m_ReadFile >> m_Buffer;// ƒtƒŒ[ƒ€”
+							m_ReadFile >> m_Buffer;// ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
 							m_CharacterData.Motion[cntMotion].Frame[numKey] = stoi(m_Buffer.c_str());
 						}
 
 						else if( MatchFileToken(m_Buffer, m_TextFileToken[POS]) )
-						{	//	POS‚ÌŒŸõ
-							m_ReadFile >> m_Buffer;	//u = v
+						{	//	POSï¿½ÌŒï¿½ï¿½ï¿½
+							m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 
-							//	À•W‚Ì“Ç‚İ‚İ
+							//	ï¿½ï¿½ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 							m_ReadFile >> m_Buffer;
 							m_CharacterData.Motion[cntMotion].Next[numKey].Position[numModel].x = stof(m_Buffer.c_str());
 
@@ -545,10 +543,10 @@ void MotionCharacterData::ReadMotion(void)
 						}
 
 						else if( MatchFileToken(m_Buffer, m_TextFileToken[ROT]) )
-						{	//	ROT‚ÌŒŸõ
-							m_ReadFile >> m_Buffer;	//u = v
+						{	//	ROTï¿½ÌŒï¿½ï¿½ï¿½
+							m_ReadFile >> m_Buffer;	//ï¿½u = ï¿½v
 							
-							//	‰ñ“]‚Ì“Ç‚İ‚İ
+							//	ï¿½ï¿½]ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 							m_ReadFile >> m_Buffer;
 							m_CharacterData.Motion[cntMotion].Next[numKey].Rotation[numModel].x = stof(m_Buffer.c_str());
 
@@ -559,17 +557,17 @@ void MotionCharacterData::ReadMotion(void)
 							m_CharacterData.Motion[cntMotion].Next[numKey].Rotation[numModel].z = stof(m_Buffer.c_str());
 						}
 
-						else if( MatchFileToken(m_Buffer, m_TextFileToken[END_KEY]) ){ numModel++; }//	END_KEY‚ÌŒŸõ
+						else if( MatchFileToken(m_Buffer, m_TextFileToken[END_KEY]) ){ numModel++; }//	END_KEYï¿½ÌŒï¿½ï¿½ï¿½
 					}
 				}
 
-				else if( MatchFileToken(m_Buffer, m_TextFileToken[END_KEYSET]) ){ numKey++; }//	END_KEYSET‚ÌŒŸõ
+				else if( MatchFileToken(m_Buffer, m_TextFileToken[END_KEYSET]) ){ numKey++; }//	END_KEYSETï¿½ÌŒï¿½ï¿½ï¿½
 			}
 		}
 	
-		if( MatchFileToken(m_Buffer, m_TextFileToken[END_MOTIONSET]) ){	cntMotion++; } //	END_MOTIONSET‚ÌŒŸõ
+		if( MatchFileToken(m_Buffer, m_TextFileToken[END_MOTIONSET]) ){	cntMotion++; } //	END_MOTIONSETï¿½ÌŒï¿½ï¿½ï¿½
 
-		//	END_SCRIPT‚ÌŒŸõ
+		//	END_SCRIPTï¿½ÌŒï¿½ï¿½ï¿½
 		if ( MatchFileToken(m_Buffer, m_TextFileToken[END_SCRIPT]) )
 		{
 			for (UINT j = 0; j < (UINT)m_CharacterData.NumModel; j++)
@@ -584,7 +582,7 @@ void MotionCharacterData::ReadMotion(void)
 
 /*-----------------------------------------------------------------------------
 Function:   bool MotionCharacterData::MatchFileToken(string buffer, string fileToken)	  
-Overview:   ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ìˆê’v
+Overview:   ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ìˆï¿½v
 -----------------------------------------------------------------------------*/
 bool MotionCharacterData::MatchFileToken(string buffer, string fileToken)
 {
@@ -595,7 +593,7 @@ bool MotionCharacterData::MatchFileToken(string buffer, string fileToken)
 
 /*-----------------------------------------------------------------------------
 Function:   bool MotionCharacterData::MisMatchFileToken(string buffer, string fileToken)	  
-Overview:   ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ì•sˆê’v
+Overview:   ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ì•sï¿½ï¿½v
 -----------------------------------------------------------------------------*/
 bool MotionCharacterData::MisMatchFileToken(string buffer, string fileToken)
 {

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒNƒŠƒAƒV[ƒ“[ GameClearScene.cpp ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Aï¿½Vï¿½[ï¿½ï¿½[ GameClearScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -29,9 +27,9 @@ Include Files
 
 void GameClearScene::Initialize(void)
 {
-	Debug::Log("ƒQ[ƒ€ƒNƒŠƒAƒV[ƒ“");
+	Debug::Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½Aï¿½Vï¿½[ï¿½ï¿½");
 
-	// ‰Šú‰»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	m_KeyBoard = Game::GetInstance()->GetKeyboard();
 	m_XInput = Game::GetInstance()->GetXInput();
 
@@ -64,14 +62,14 @@ void GameClearScene::Uninitialize(void)
 	m_EndLogo = NULL;
 	m_SelectFrame = NULL;
 
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void GameClearScene::Update(void)
 {
 	KeyboardControl();
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 
 #ifdef _DEBUG
 	if(m_KeyBoard->GetKeyTrigger(DIK_SPACE))
@@ -83,18 +81,18 @@ void GameClearScene::Update(void)
 
 void GameClearScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameClearScene::SceneChange(void)
 {
 	switch (m_Select)
 	{
-	case SELECT_CONTINUE:	//	ƒRƒ“ƒeƒBƒjƒ…[
+	case SELECT_CONTINUE:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
 		Fade::SetFade(Fade::FADE_OUT, new GameScene);
 
 #ifndef ENABLE_SOUND
@@ -103,7 +101,7 @@ void GameClearScene::SceneChange(void)
 #endif
 
 		break;
-	case SELECT_END:	//	ƒGƒ“ƒh
+	case SELECT_END:	//	ï¿½Gï¿½ï¿½ï¿½h
 
 		Fade::SetFade(Fade::FADE_OUT, new TitleScene);
 
@@ -121,7 +119,7 @@ void GameClearScene::SelectMode(void)
 
 	switch (m_Select)
 	{
-	case SELECT_CONTINUE:	//	ƒRƒ“ƒeƒBƒjƒ…[
+	case SELECT_CONTINUE:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
 
 		m_ContiueLogo->SetFadeFlag(true);
 		m_EndLogo->SetFadeFlag(false);
@@ -129,7 +127,7 @@ void GameClearScene::SelectMode(void)
 
 		m_SelectFrame->SetPosition(m_ContiueLogo->GetPosition());
 		break;
-	case SELECT_END:	//	ƒGƒ“ƒh
+	case SELECT_END:	//	ï¿½Gï¿½ï¿½ï¿½h
 
 		m_ContiueLogo->SetFadeFlag(false);
 		m_ContiueLogo->SetAlphaColor(0.5f);
@@ -154,7 +152,7 @@ void GameClearScene::KeyboardControl(void)
 			m_Select = SELECT_CONTINUE;
 		}
 
-		SelectMode(); // ‘I‘ğ
+		SelectMode(); // ï¿½Iï¿½ï¿½ï¿½ï¿½
 	}
 	else if (m_KeyBoard->GetKeyTrigger(DIK_D) || AnalogX > 0.99f)
 	{
@@ -165,11 +163,11 @@ void GameClearScene::KeyboardControl(void)
 			m_Select = SELECT_MAX - 1;
 		}
 
-		SelectMode(); // ‘I‘ğ
+		SelectMode(); // ï¿½Iï¿½ï¿½ï¿½ï¿½
 	}
 
 	if(m_KeyBoard->GetKeyTrigger(DIK_RETURN) ||  m_XInput->GetKeyTrigger(XInput::CONTROLLER_1, XINPUT_GAMEPAD_B))
 	{
-		SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+		SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 	}
 }

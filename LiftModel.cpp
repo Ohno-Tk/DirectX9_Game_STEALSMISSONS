@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒŠƒtƒgƒ‚ƒfƒ‹[ LiftModel.cpp ]
+ï¿½ï¿½ï¿½tï¿½gï¿½ï¿½ï¿½fï¿½ï¿½[ LiftModel.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/02/07
 =============================================================================*/
 
@@ -29,7 +27,7 @@ Macro
 #define OBJECT_MODEL_PATH (MODEL_PATH"Lift.x")
 #define MODEL_VERTEXSHADER_PATH (SHADER_PATH"Obstacle_Vertex.hlsl")
 #define MODEL_PIXELSHADER_PATH (SHADER_PATH"Obstacle_Pixel.hlsl")
-#define SCALE (1.0f)// Šg‘å’l
+#define SCALE (1.0f)// ï¿½gï¿½ï¿½l
 
 
 LiftModel::LiftModel(int Priolity)
@@ -71,9 +69,9 @@ void LiftModel::Draw(void)
 
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	WorldTransform(Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	WorldTransform(Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
-	ConfigShader(Device);// ƒVƒF[ƒ_[‚Ìİ’è
+	ConfigShader(Device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 	D3DVERTEXELEMENT9 elements[] = {
 	{0 ,0 ,D3DDECLTYPE_FLOAT3, D3DDECLMETHOD_DEFAULT, D3DDECLUSAGE_POSITION, 0},
@@ -86,10 +84,10 @@ void LiftModel::Draw(void)
 	Device->SetVertexShader(m_VertexShader->GetVertexShader());
 	Device->SetPixelShader(m_PixelShader->GetPixelShader());
 
-	// Œ»İƒfƒoƒCƒX‚Éİ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚Ìæ“¾
+	// ï¿½ï¿½ï¿½İƒfï¿½oï¿½Cï¿½Xï¿½Éİ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	UINT samplerIndex0 = m_PixelShader->GetPixelShaderConstantTable()->GetSamplerIndex("sampler0");
@@ -98,17 +96,17 @@ void LiftModel::Draw(void)
 	{
 		m_PixelShader->GetPixelShaderConstantTable()->SetValue(RendererDirectX::GetDevice(), "Diffuse", &m_ModelParam.Material[CountMaterial].MatD3D.Diffuse, sizeof(m_ModelParam.Material[CountMaterial].MatD3D.Diffuse));
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚Ìİ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetTexture(samplerIndex0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ğŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
@@ -119,7 +117,7 @@ void LiftModel::WorldTransform(LPDIRECT3DDEVICE9 Device)
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
 	D3DXMatrixScaling(&matrixScale,
 		SCALE,

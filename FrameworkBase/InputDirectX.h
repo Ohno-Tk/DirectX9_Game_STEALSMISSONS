@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“ü—ÍƒfƒoƒCƒX(DirectX)[ InputDirectX.h ]
+ï¿½ï¿½ï¿½Íƒfï¿½oï¿½Cï¿½X(DirectX)[ InputDirectX.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -16,7 +14,7 @@
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-#define NUM_KEY_MAX ( 256 )	//	ƒL[‚ÌÅ‘å”
+#define NUM_KEY_MAX ( 256 )	//	ï¿½Lï¿½[ï¿½ÌÅ‘å”
 #define XBOX_KEY_MAX (16)
 
 /*-----------------------------------------------------------------------------
@@ -32,8 +30,8 @@ public:
 	virtual void Update(void) = 0;
 
 protected:
-	static LPDIRECTINPUT8 m_DInput;	// DirectInputƒIƒuƒWƒFƒNƒg‚Ö‚Ìƒ|ƒCƒ“ƒ^
-	LPDIRECTINPUTDEVICE8 m_DIDevice;	// “ü—ÍƒfƒoƒCƒX(ƒL[ƒ{[ƒh)‚Ö‚Ìƒ|ƒCƒ“ƒ^
+	static LPDIRECTINPUT8 m_DInput;	// DirectInputï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
+	LPDIRECTINPUTDEVICE8 m_DIDevice;	// ï¿½ï¿½ï¿½Íƒfï¿½oï¿½Cï¿½X(ï¿½Lï¿½[ï¿½{ï¿½[ï¿½h)ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 };
 
 class DirectXKeyboard :public InputDirectX
@@ -45,23 +43,23 @@ public:
 	void Uninitialize(void);
 	void Update(void)override;
 
-	BOOL AnyKey(void); // ‘SƒL[”»’è( ƒvƒŒƒX )
-	BOOL AnyKeyDown(void); // ‘SƒL[”»’è( ƒgƒŠƒK[ )
+	BOOL AnyKey(void); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½vï¿½ï¿½ï¿½X )
+	BOOL AnyKeyDown(void); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½gï¿½ï¿½ï¿½Kï¿½[ )
 
-	//	ˆø”:DIK_W‚È‚ÇDIK_`
-	//	ƒL[ƒ{[ƒhƒf[ƒ^æ“¾
-	BOOL GetKeyPress(int nKey) { return (m_KeyState[nKey] & 0x80) ? TRUE : FALSE; } // ƒvƒŒƒX
-	BOOL GetKeyTrigger(int nKey) { return (m_KeyStateTrigger[nKey] & 0x80) ? TRUE : FALSE; } // ƒgƒŠƒK[
-	BOOL GetKeyRepeat(int nKey) { return (m_KeyStateRepeat[nKey] & 0x80) ? TRUE : FALSE; }// ƒŠƒs[ƒg
-	BOOL GetKeyRelease(int nKey) { return (m_KeyStateRelease[nKey] & 0x80) ? TRUE : FALSE; } // ƒŠƒŠ[ƒX
-	void FlushKeyTrigger(int nKey) { m_KeyStateTrigger[nKey] = 0; } // ƒL[ƒ{[ƒhƒf[ƒ^íœ( ƒgƒŠƒK[ )
+	//	ï¿½ï¿½ï¿½ï¿½:DIK_Wï¿½È‚ï¿½DIK_ï¿½`
+	//	ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½fï¿½[ï¿½^ï¿½æ“¾
+	BOOL GetKeyPress(int nKey) { return (m_KeyState[nKey] & 0x80) ? TRUE : FALSE; } // ï¿½vï¿½ï¿½ï¿½X
+	BOOL GetKeyTrigger(int nKey) { return (m_KeyStateTrigger[nKey] & 0x80) ? TRUE : FALSE; } // ï¿½gï¿½ï¿½ï¿½Kï¿½[
+	BOOL GetKeyRepeat(int nKey) { return (m_KeyStateRepeat[nKey] & 0x80) ? TRUE : FALSE; }// ï¿½ï¿½ï¿½sï¿½[ï¿½g
+	BOOL GetKeyRelease(int nKey) { return (m_KeyStateRelease[nKey] & 0x80) ? TRUE : FALSE; } // ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½X
+	void FlushKeyTrigger(int nKey) { m_KeyStateTrigger[nKey] = 0; } // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½fï¿½[ï¿½^ï¿½íœ( ï¿½gï¿½ï¿½ï¿½Kï¿½[ )
 
 private:
-	BYTE m_KeyState[NUM_KEY_MAX]; // ƒL[ƒ{[ƒh‚Ì“ü—Íî•ñƒ[ƒN
-	BYTE m_KeyStateTrigger[NUM_KEY_MAX]; // ƒL[ƒ{[ƒh‚ÌƒgƒŠƒK[î•ñƒ[ƒN
-	BYTE m_KeyStateRelease[NUM_KEY_MAX]; // ƒL[ƒ{[ƒh‚ÌƒŠƒŠ[ƒXî•ñƒ[ƒN
-	BYTE m_KeyStateRepeat[NUM_KEY_MAX];	// ƒL[ƒ{[ƒh‚ÌƒŠƒs[ƒgî•ñƒ[ƒN
-	int	 m_KeyStateRepeatCnt[NUM_KEY_MAX]; // ƒL[ƒ{[ƒh‚ÌƒŠƒs[ƒgƒJƒEƒ“ƒ^
+	BYTE m_KeyState[NUM_KEY_MAX]; // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ì“ï¿½ï¿½Íï¿½ñƒ[ï¿½N
+	BYTE m_KeyStateTrigger[NUM_KEY_MAX]; // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ìƒgï¿½ï¿½ï¿½Kï¿½[ï¿½ï¿½ñƒ[ï¿½N
+	BYTE m_KeyStateRelease[NUM_KEY_MAX]; // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ìƒï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½ï¿½ñƒ[ï¿½N
+	BYTE m_KeyStateRepeat[NUM_KEY_MAX];	// ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ìƒï¿½ï¿½sï¿½[ï¿½gï¿½ï¿½ñƒ[ï¿½N
+	int	 m_KeyStateRepeatCnt[NUM_KEY_MAX]; // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ìƒï¿½ï¿½sï¿½[ï¿½gï¿½Jï¿½Eï¿½ï¿½ï¿½^
 };
 
 class DirectXMouse :public InputDirectX
@@ -69,38 +67,38 @@ class DirectXMouse :public InputDirectX
 public:
 	enum MOUSE_BUTTOM
 	{
-		MOUSE_LEFT = 0,	//	¶ƒNƒŠƒbƒN
-		MOUSE_RIGHT,	//	‰EƒNƒŠƒbƒN
-		MOUSE_WHEEL,	//	ƒzƒC[ƒ‹
+		MOUSE_LEFT = 0,	//	ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½N
+		MOUSE_RIGHT,	//	ï¿½Eï¿½Nï¿½ï¿½ï¿½bï¿½N
+		MOUSE_WHEEL,	//	ï¿½zï¿½Cï¿½[ï¿½ï¿½
 	};
 
 	void Initialize(HINSTANCE instance, HWND wnd);
 	void Uninitialize(void);
 	void Update(void)override;
 
-	BOOL AnyKey(void); // ‘SƒL[”»’è( ƒvƒŒƒX )
-	BOOL AnyKeyDown(void); // ‘SƒL[”»’è( ƒgƒŠƒK[ )
+	BOOL AnyKey(void); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½vï¿½ï¿½ï¿½X )
+	BOOL AnyKeyDown(void); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½gï¿½ï¿½ï¿½Kï¿½[ )
 
-	//	ˆø” : MOUSEBUTTOM\‘¢‘Ì‚ğg‚¤
-	//	ƒ}ƒEƒXƒf[ƒ^æ“¾
-	BOOL GetKeyPress(int Key) { return (m_MouseState.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ƒvƒŒƒX
-	BOOL GetKeyTrigger(int Key) { return (m_MouseStateTrigger.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ƒgƒŠƒK[
-	BOOL GetKeyRepeat(int Key) { return (m_MouseStateRepeat.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ƒŠƒs[ƒg
-	BOOL GetKeyRelease(int nKey) { return (m_MouseStateRelease.rgbButtons[nKey] & 0x80) ? TRUE : FALSE; }	//	ƒŠƒŠ[ƒX
+	//	ï¿½ï¿½ï¿½ï¿½ : MOUSEBUTTOMï¿½\ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½gï¿½ï¿½
+	//	ï¿½}ï¿½Eï¿½Xï¿½fï¿½[ï¿½^ï¿½æ“¾
+	BOOL GetKeyPress(int Key) { return (m_MouseState.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ï¿½vï¿½ï¿½ï¿½X
+	BOOL GetKeyTrigger(int Key) { return (m_MouseStateTrigger.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ï¿½gï¿½ï¿½ï¿½Kï¿½[
+	BOOL GetKeyRepeat(int Key) { return (m_MouseStateRepeat.rgbButtons[Key] & 0x80) ? TRUE : FALSE; }//	ï¿½ï¿½ï¿½sï¿½[ï¿½g
+	BOOL GetKeyRelease(int nKey) { return (m_MouseStateRelease.rgbButtons[nKey] & 0x80) ? TRUE : FALSE; }	//	ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½X
 
-	// ‘OƒtƒŒ[ƒ€‚©‚ç‚Ì·•ªÀ•W
+	// ï¿½Oï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½W
 	LONG GetAxisX(void) { return m_MouseState.lX; }
 	LONG GetAxisY(void) { return m_MouseState.lY; }
 	LONG GetAxisZ(void) { return m_MouseState.lZ; }
 
-	const POINT& GetPosWorld(void) { return m_PosMouseWorld; }// ƒ}ƒEƒX‚ÌƒXƒNƒŠ[ƒ“À•Wæ“¾
+	const POINT& GetPosWorld(void) { return m_PosMouseWorld; }// ï¿½}ï¿½Eï¿½Xï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½æ“¾
 
 private:
-	DIMOUSESTATE2 m_MouseState; // ƒ}ƒEƒX‚Ìó‘Ô‚ğó‚¯‚éƒ[ƒN
-	DIMOUSESTATE2 m_MouseStateTrigger; // ƒgƒŠƒK[‚Ìƒ[ƒN
-	DIMOUSESTATE2 m_MouseStateRelease; // ƒŠƒŠ[ƒX‚Ìƒ[ƒN
-	DIMOUSESTATE2 m_MouseStateRepeat; // ƒŠƒs[ƒg‚Ìƒ[ƒN
-	POINT		  m_PosMouseWorld; // ƒ}ƒEƒX‚ÌƒXƒNƒŠ[ƒ“À•W
+	DIMOUSESTATE2 m_MouseState; // ï¿½}ï¿½Eï¿½Xï¿½Ìï¿½Ô‚ï¿½ï¿½ó‚¯‚éƒï¿½[ï¿½N
+	DIMOUSESTATE2 m_MouseStateTrigger; // ï¿½gï¿½ï¿½ï¿½Kï¿½[ï¿½Ìƒï¿½ï¿½[ï¿½N
+	DIMOUSESTATE2 m_MouseStateRelease; // ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½Ìƒï¿½ï¿½[ï¿½N
+	DIMOUSESTATE2 m_MouseStateRepeat; // ï¿½ï¿½ï¿½sï¿½[ï¿½gï¿½Ìƒï¿½ï¿½[ï¿½N
+	POINT		  m_PosMouseWorld; // ï¿½}ï¿½Eï¿½Xï¿½ÌƒXï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½W
 };
 
 class XInput
@@ -124,25 +122,25 @@ public:
 	XInput();
 	void Update(void);
 
-	BOOL AnyKey(CONTROLLER_NUM Idx); // ‘SƒL[”»’è( ƒvƒŒƒX )
-	BOOL AnyKeyDown(CONTROLLER_NUM Idx); // ‘SƒL[”»’è( ƒgƒŠƒK[ )
+	BOOL AnyKey(CONTROLLER_NUM Idx); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½vï¿½ï¿½ï¿½X )
+	BOOL AnyKeyDown(CONTROLLER_NUM Idx); // ï¿½Sï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½( ï¿½gï¿½ï¿½ï¿½Kï¿½[ )
 
-	bool GetKeyPress(CONTROLLER_NUM index, WORD Key); // XBOXƒRƒ“ƒgƒ[ƒ‰[‚Ì“ü—Í
-	bool GetKeyTrigger(CONTROLLER_NUM index, WORD Key); // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒgƒŠƒK[
-	bool GetKeyRepeat(CONTROLLER_NUM index, WORD Key); // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒŠƒs[ƒg
-	bool GetKeyRelease(CONTROLLER_NUM index, WORD Key); // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒŠƒŠ[ƒX
+	bool GetKeyPress(CONTROLLER_NUM index, WORD Key); // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ì“ï¿½ï¿½ï¿½
+	bool GetKeyTrigger(CONTROLLER_NUM index, WORD Key); // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒgï¿½ï¿½ï¿½Kï¿½[
+	bool GetKeyRepeat(CONTROLLER_NUM index, WORD Key); // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒï¿½ï¿½sï¿½[ï¿½g
+	bool GetKeyRelease(CONTROLLER_NUM index, WORD Key); // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒï¿½ï¿½ï¿½ï¿½[ï¿½X
 	void FlushKeyTrigger(CONTROLLER_NUM index, WORD Key);
-	D3DXVECTOR2 GetAnalogValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type); // ƒAƒiƒƒO‚Ì’l‚ğ•Ô‚·(-1`1)
-	int GetTriggerValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type); // LT‚Ì’l‚ğ•Ô‚·(0`255)
+	D3DXVECTOR2 GetAnalogValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type); // ï¿½Aï¿½iï¿½ï¿½ï¿½Oï¿½Ì’lï¿½ï¿½Ô‚ï¿½(-1ï¿½`1)
+	int GetTriggerValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type); // LTï¿½Ì’lï¿½ï¿½Ô‚ï¿½(0ï¿½`255)
 
 	bool GetActive(CONTROLLER_NUM index){return m_Active[index];}
 
 private:
-	WORD		m_KeyState[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXƒRƒ“ƒgƒ[ƒ‰[‚Ì“ü—Íî•ñƒ[ƒN
-	WORD		m_KeyStateTrigger[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒgƒŠƒK[î•ñƒ[ƒN
-	WORD		m_KeyStateRelease[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒŠƒŠ[ƒXî•ñƒ[ƒN
-	WORD		m_KeyStateRepeat[CONTROLLER_MAX][XBOX_KEY_MAX];	// XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒŠƒs[ƒgî•ñƒ[ƒN
-	WORD		m_KeyStateRepeatCnt[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXƒRƒ“ƒgƒ[ƒ‰[‚ÌƒŠƒs[ƒgƒJƒEƒ“ƒ^
+	WORD		m_KeyState[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ì“ï¿½ï¿½Íï¿½ñƒ[ï¿½N
+	WORD		m_KeyStateTrigger[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒgï¿½ï¿½ï¿½Kï¿½[ï¿½ï¿½ñƒ[ï¿½N
+	WORD		m_KeyStateRelease[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½ï¿½ñƒ[ï¿½N
+	WORD		m_KeyStateRepeat[CONTROLLER_MAX][XBOX_KEY_MAX];	// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒï¿½ï¿½sï¿½[ï¿½gï¿½ï¿½ñƒ[ï¿½N
+	WORD		m_KeyStateRepeatCnt[CONTROLLER_MAX][XBOX_KEY_MAX]; // XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½Ìƒï¿½ï¿½sï¿½[ï¿½gï¿½Jï¿½Eï¿½ï¿½ï¿½^
 	D3DXVECTOR2 m_Analog[CONTROLLER_MAX][TYPE_MAX];
 	int			m_Trigger[CONTROLLER_MAX][TYPE_MAX];
 

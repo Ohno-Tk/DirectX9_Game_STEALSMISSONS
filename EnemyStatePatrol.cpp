@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( „‰ñ )[ EnemyStatePatrol.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½ï¿½ )[ EnemyStatePatrol.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/20
 =============================================================================*/
 
@@ -29,8 +27,8 @@ EnemyStatePatrol::EnemyStatePatrol(Enemy* owner)
 {
 	m_Owner = owner;
 
-	m_LinearCnt = m_Owner->GetCountLinear(); //	•âŠÔƒJƒEƒ“ƒ^
-	m_FrameTimeCount = 0; //	ƒtƒŒ[ƒ€ŽžŠÔƒJƒEƒ“ƒg
+	m_LinearCnt = m_Owner->GetCountLinear(); //	ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½^
+	m_FrameTimeCount = 0; //	ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½g
 	m_NowRotation = m_Owner->GetNowRotation();
 
 	m_NumLinear = m_Owner->GetNumLinear();
@@ -47,7 +45,7 @@ EnemyStatePatrol::EnemyStatePatrol(Enemy* owner)
 	m_InverseFrontVector = m_Owner->GetFrontVector();
 	m_InverseFrontVector *= -1;
 
-	Debug::Log("“G : „‰ñó‘Ô");
+	Debug::Log("ï¿½G : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 }
 
 void EnemyStatePatrol::Uninitialize(void)
@@ -60,7 +58,7 @@ void EnemyStatePatrol::Update(D3DXVECTOR3 position)
 	m_Owner->SetMotionIndex(1);
 
 	if(m_Owner->VisionRangeCollision(position, m_Owner->GetVisionAngle(), m_Owner->GetVisionDistance()))
-	{ // Ž‹ŠE‚Ì”»’è
+	{ // ï¿½ï¿½ï¿½Eï¿½Ì”ï¿½ï¿½ï¿½
 		m_Owner->SetState(new EnemyStateChase(m_Owner));
 	}
 	else
@@ -82,7 +80,7 @@ void EnemyStatePatrol::Patrol(D3DXVECTOR3* position)
 	m_Owner->SetPosition(*position);
 
 	if (m_Linear[m_LinearCnt].FrameTime < m_FrameTimeCount)
-	{ // ƒtƒŒ[ƒ€”‚ð’´‚¦‚½‚ç
+	{ // ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ð’´‚ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		m_NowRotation = m_Owner->GetRotation().y;
 		
@@ -90,7 +88,7 @@ void EnemyStatePatrol::Patrol(D3DXVECTOR3* position)
 		m_LinearCnt++;
 		
 		if (m_NumLinear <= m_LinearCnt)
-		{	//	‹K’è”‚ð’´‚¦‚½‚ç
+		{	//	ï¿½Kï¿½è”ï¿½ð’´‚ï¿½ï¿½ï¿½ï¿½ï¿½
 			m_LinearCnt = 0;
 		}
 

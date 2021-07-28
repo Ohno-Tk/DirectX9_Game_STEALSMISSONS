@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒtƒF[ƒhƒIƒuƒWƒFƒNƒg(2D)[ Fade2DObject.h ]
+ï¿½tï¿½Fï¿½[ï¿½hï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g(2D)[ Fade2DObject.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/17
 =============================================================================*/
 
@@ -33,20 +31,20 @@ public:
 	void SetFadeFlag(const bool flag){ m_FadeFlag = flag; }
 
 private:
-	void Fade(void); // ƒtƒF[ƒh
+	void Fade(void); // ï¿½tï¿½Fï¿½[ï¿½h
 
 private:
 	enum FADE_STATE
-	{	//	ƒtƒF[ƒh‚Ìó‘Ô
-		FADE_IN = 0,	//	ƒtƒF[ƒhƒCƒ“
-		FADE_OUT,	//	ƒtƒF[ƒhƒAƒEƒg
+	{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Ìï¿½ï¿½
+		FADE_IN = 0,	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½
+		FADE_OUT,	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½g
 	};
 
 	FADE_STATE m_FadeState;
 
-	float m_UpperLimit; // ãŒÀ
-	float m_LowerLimit; // ‰ºŒÀ
-	float m_FadeRate; // ƒtƒF[ƒh‚·‚éŠ„‡
+	float m_UpperLimit; // ï¿½ï¿½ï¿½
+	float m_LowerLimit; // ï¿½ï¿½ï¿½ï¿½
+	float m_FadeRate; // ï¿½tï¿½Fï¿½[ï¿½hï¿½ï¿½ï¿½éŠ„ï¿½ï¿½
 
 	bool m_FadeFlag;
 };

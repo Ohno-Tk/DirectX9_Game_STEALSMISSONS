@@ -1,15 +1,14 @@
 /*=============================================================================
 
-	ƒRƒ“ƒ\[ƒ‹[ Console.h ]
+	ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½[ Console.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+
+ï¿½ï¿½  Create
 	2017/10/15
 ------------------------------------------------------------------------------- 
-¡  Update
+ï¿½ï¿½  Update
 	2017/10/28
 =============================================================================*/
 
@@ -43,7 +42,7 @@ enum CONSOLECOLOR
 	CONSOLE_VIOLET = 0x0d,
 	CONSOLE_YELLOW = 0x0e,
 	CONSOLE_WHITE = 0x0f,
-	CONSOLE_INTENSITY = 0x08, //	‚‹P“xƒ}ƒXƒN
+	CONSOLE_INTENSITY = 0x08, //	ï¿½ï¿½ï¿½Pï¿½xï¿½}ï¿½Xï¿½N
 	CONSOLE_RED_MASK = 0x04,
 	CONSOLE_GREEN_MASK = 0x02,
 	CONSOLE_BLUE_MASK = 0x01,
@@ -61,7 +60,7 @@ public:
 	static void SetColor(CONSOLECOLOR text = CONSOLE_GRAY, CONSOLECOLOR background = CONSOLE_BLACK);
 
 private:
-	static HANDLE ConsoleHandle; // ƒRƒ“ƒ\[ƒ‹ƒnƒ“ƒhƒ‹
+	static HANDLE ConsoleHandle; // ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½hï¿½ï¿½
 };
 
 #endif

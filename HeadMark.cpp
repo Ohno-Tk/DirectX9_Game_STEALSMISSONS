@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“ªãƒ}[ƒN[ HeadMark.cpp ]
+ï¿½ï¿½ï¿½ï¿½}ï¿½[ï¿½N[ HeadMark.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/24
 =============================================================================*/
 
@@ -70,12 +68,12 @@ void HeadMark::Draw(void)
 
 	WorldTransform(Device);
 
-	// ‘S‘Ì‚Ìƒ‰ƒCƒg‚ð–³Œø‚É‚·‚é
+	// ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, FALSE);
 
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 
-	//	‘S‘Ì‚Ìƒ‰ƒCƒg‚ð—LŒø‚É‚·‚é
+	//	ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
@@ -83,7 +81,7 @@ void HeadMark::MakeVertex(LPDIRECT3DDEVICE9 Device)
 {
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_3D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚ÉŽ¸”s", "HeadMark.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "HeadMark.cpp", MB_OK | MB_ICONHAND);
 	}
 
 	VERTEX_3D* Vtx;
@@ -114,7 +112,7 @@ void HeadMark::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
 	D3DXVECTOR3 Position = Object::GetPosition();
 
-	//	ƒrƒ…[s—ñ‚Ì‹ts—ñ‚ðŽæ“¾
+	//	ï¿½rï¿½ï¿½ï¿½[ï¿½sï¿½ï¿½Ì‹tï¿½sï¿½ï¿½ï¿½ï¿½æ“¾
 	D3DXMATRIX mtxViewInverse = Game::GetInstance()->GetCamera()->GetInversedView();
 
 

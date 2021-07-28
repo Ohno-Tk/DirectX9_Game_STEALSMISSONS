@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( §Œä“_‚Ö‰ñ“] )[ EnemyStateControlPointRotation.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½ï¿½_ï¿½Ö‰ï¿½] )[ EnemyStateControlPointRotation.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/12/04
 =============================================================================*/
 
@@ -47,7 +45,7 @@ EnemyStateControlPointRotation::EnemyStateControlPointRotation(Enemy* owner)
 	m_Owner->SetRotation(D3DXVECTOR3(0.0f, m_NowRotation, 0.0f));
 
 
-	// §Œä“_‚Ö‚ÌŠp“xŒvŽZ
+	// ï¿½ï¿½ï¿½ï¿½_ï¿½Ö‚ÌŠpï¿½xï¿½vï¿½Z
 	m_CountLinear = m_Owner->GetCountLinear();
 	D3DXVECTOR3 controlPoint = m_Owner->GetLinearStruct(m_CountLinear).ControlPoint;
 	D3DXVECTOR3 enemyToControlPoint = controlPoint - m_Owner->GetPosition();
@@ -63,13 +61,13 @@ EnemyStateControlPointRotation::EnemyStateControlPointRotation(Enemy* owner)
 		m_Angle -= 360;
 	}
 
-	Debug::Log("“G : §Œä“_‚Ö‰ñ“]ó‘Ô");
+	Debug::Log("ï¿½G : ï¿½ï¿½ï¿½ï¿½_ï¿½Ö‰ï¿½]ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateControlPointRotation::Update(D3DXVECTOR3 position)
 {
 	if(m_Owner->VisionRangeCollision(position, m_Owner->GetVisionAngle(), m_Owner->GetVisionDistance()))
-	{ // Ž‹ŠE‚Ì”»’è
+	{ // ï¿½ï¿½ï¿½Eï¿½Ì”ï¿½ï¿½ï¿½
 		m_Owner->SetState(new EnemyStateChase(m_Owner));
 	}
 	else

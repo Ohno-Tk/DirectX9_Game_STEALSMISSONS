@@ -1,12 +1,10 @@
 /*=============================================================================
 
-2Dï`âÊ[ Sprite2D.cpp ]
+2DÔøΩ`ÔøΩÔøΩ[ Sprite2D.cpp ]
 
 -------------------------------------------------------------------------------
-Å°  Author
-Ohno Takuya
 
-Å°  Create
+ÔøΩÔøΩ  Create
 2017/11/17
 =============================================================================*/
 
@@ -37,16 +35,16 @@ Sprite2D::Sprite2D(int Priolity):Object(Priolity)
 /*-----------------------------------------------------------------------------
 Function:   Sprite2D* Sprite2D::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, char* texturePath,D3DXVECTOR4 color, int priolity)
 Parameter:  D3DXVECTOR3 positon
-              ç¿ïW
+              ÔøΩÔøΩÔøΩW
             D3DXVECTOR2 size
-			  ëÂÇ´Ç≥
+			  ÔøΩÂÇ´ÔøΩÔøΩ
             char* texturePath
-			  ÉeÉNÉXÉ`ÉÉÇÃÉpÉX
+			  ÔøΩeÔøΩNÔøΩXÔøΩ`ÔøΩÔøΩÔøΩÃÉpÔøΩX
 			 D3DXVECTOR4 color
-			  êF
+			  ÔøΩF
 			int priolity
-			  óDêÊìx
-Overview:   ê∂ê¨
+			  ÔøΩDÔøΩÔøΩx
+Overview:   ÔøΩÔøΩÔøΩÔøΩ
 -----------------------------------------------------------------------------*/
 Sprite2D* Sprite2D::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, char* texturePath, D3DXVECTOR4 color, int priolity)
 {
@@ -89,16 +87,16 @@ void Sprite2D::Draw(void)
 	Device->SetVertexShader(NULL);
 	Device->SetPixelShader(NULL);
 
-	// í∏ì_ÉoÉbÉtÉ@ÇÉfÅ[É^ÉXÉgÉäÅ[ÉÄÇ…ê›íË
+	// ÔøΩÔøΩÔøΩ_ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÔøΩÔøΩfÔøΩ[ÔøΩ^ÔøΩXÔøΩgÔøΩÔøΩÔøΩ[ÔøΩÔøΩÔøΩ…ê›íÔøΩ
 	Device->SetStreamSource(0, m_VertexBuffer, 0, sizeof(VERTEX_2D));
 
-	// í∏ì_ÉtÉHÅ[É}ÉbÉgÇÃê›íË
+	// ÔøΩÔøΩÔøΩ_ÔøΩtÔøΩHÔøΩ[ÔøΩ}ÔøΩbÔøΩgÔøΩÃê›íÔøΩ
 	Device->SetFVF(FVF_VERTEX_2D);
 
-	// ÉeÉNÉXÉ`ÉÉÇÃê›íË
+	// ÔøΩeÔøΩNÔøΩXÔøΩ`ÔøΩÔøΩÔøΩÃê›íÔøΩ
 	Device->SetTexture(0, Game::GetInstance()->GetTextureManager()->GetTextureInfo(m_TexturePath).Texture);
 
-	// ï`âÊ
+	// ÔøΩ`ÔøΩÔøΩ
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 }
 
@@ -107,19 +105,19 @@ void Sprite2D::MakeVertex(LPDIRECT3DDEVICE9 Device)
 	D3DXVECTOR3 position = Object::GetPosition();
 
 
-	// í∏ì_ÉoÉbÉtÉ@ÇÃê∂ê¨
+	// ÔøΩÔøΩÔøΩ_ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÃêÔøΩÔøΩÔøΩ
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "í∏ì_ÉoÉbÉtÉ@ÇÃê∂ê¨Ç…é∏îs", "Sprite2D.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ÔøΩÔøΩÔøΩ_ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÃêÔøΩÔøΩÔøΩÔøΩ…éÔøΩÔøΩs", "Sprite2D.cpp", MB_OK | MB_ICONHAND);
 	}
 
-	// í∏ì_èÓïÒÇê›íË
+	// ÔøΩÔøΩÔøΩ_ÔøΩÔøΩÔøΩÔøΩ›íÔøΩ
 	VERTEX_2D* Vtx;
 
-	// ÉoÉbÉtÉ@ÇÉçÉbÉNÇµÅAâºëzÉAÉhÉåÉXÇéÊìæ
+	// ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÔøΩÔøΩÔøΩÔøΩbÔøΩNÔøΩÔøΩÔøΩAÔøΩÔøΩÔøΩzÔøΩAÔøΩhÔøΩÔøΩÔøΩXÔøΩÔøΩÔøΩÊìæ
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
-	//	í∏ì_ç¿ïW
+	//	ÔøΩÔøΩÔøΩ_ÔøΩÔøΩÔøΩW
 	Vtx[0].Pos = D3DXVECTOR3(position.x           , position.y, 0.0f);
 	Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x, position.y, 0.0f);
 	Vtx[2].Pos = D3DXVECTOR3(position.x           , position.y + m_Size.y, 0.0f);
@@ -127,17 +125,17 @@ void Sprite2D::MakeVertex(LPDIRECT3DDEVICE9 Device)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		Vtx[CountVertex].Rhw = 1.0f;//	ç¿ïWïœä∑çœÇ›í∏ì_ÉtÉâÉO
-		Vtx[CountVertex].Color = m_Color;// í∏ì_ÉJÉâÅ[
+		Vtx[CountVertex].Rhw = 1.0f;//	ÔøΩÔøΩÔøΩWÔøΩœäÔøΩÔøΩœÇ›íÔøΩÔøΩ_ÔøΩtÔøΩÔøΩÔøΩO
+		Vtx[CountVertex].Color = m_Color;// ÔøΩÔøΩÔøΩ_ÔøΩJÔøΩÔøΩÔøΩ[
 	}
 
-	// ÉeÉNÉXÉ`ÉÉç¿ïW
+	// ÔøΩeÔøΩNÔøΩXÔøΩ`ÔøΩÔøΩÔøΩÔøΩÔøΩW
 	Vtx[0].Tex = D3DXVECTOR2(0, 0);
 	Vtx[1].Tex = D3DXVECTOR2(1, 0);
 	Vtx[2].Tex = D3DXVECTOR2(0, 1);
 	Vtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ÉoÉbÉtÉ@ÇÉAÉìÉçÉbÉN
+	//	ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÔøΩÔøΩAÔøΩÔøΩÔøΩÔøΩÔøΩbÔøΩN
 	m_VertexBuffer->Unlock();
 
 }
@@ -151,7 +149,7 @@ void Sprite2D::SetVertex(void)
 
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
-	//	í∏ì_ç¿ïW
+	//	ÔøΩÔøΩÔøΩ_ÔøΩÔøΩÔøΩW
 	Vtx[0].Pos = D3DXVECTOR3(position.x           , position.y, 0.0f);
 	Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x, position.y, 0.0f);
 	Vtx[2].Pos = D3DXVECTOR3(position.x           , position.y + m_Size.y, 0.0f);
@@ -159,11 +157,11 @@ void Sprite2D::SetVertex(void)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		Vtx[CountVertex].Color = m_Color;// í∏ì_ÉJÉâÅ[
+		Vtx[CountVertex].Color = m_Color;// ÔøΩÔøΩÔøΩ_ÔøΩJÔøΩÔøΩÔøΩ[
 	}
 
 
-	//	ÉoÉbÉtÉ@ÇÉAÉìÉçÉbÉN
+	//	ÔøΩoÔøΩbÔøΩtÔøΩ@ÔøΩÔøΩÔøΩAÔøΩÔøΩÔøΩÔøΩÔøΩbÔøΩN
 	m_VertexBuffer->Unlock();
 
 }

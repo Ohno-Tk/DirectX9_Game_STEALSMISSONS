@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒJƒƒ‰(DirectX)[ CameraDirectX.h ]
+ï¿½Jï¿½ï¿½ï¿½ï¿½(DirectX)[ CameraDirectX.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/16
 =============================================================================*/
 
@@ -36,7 +34,7 @@ public:
 	void SetPositionAt(const D3DXVECTOR3 position){ m_PositionAt = position; }
 
 	//	Getter
-	const D3DXMATRIX GetInversedView(void)const;//	‹ts—ñ
+	const D3DXMATRIX GetInversedView(void)const;//	ï¿½tï¿½sï¿½ï¿½
 	D3DXVECTOR3 GetPositionEye(void){ return m_PositionEye; }
 	D3DXVECTOR3 GetPositionAt(void){ return m_PositionAt; }
 	D3DXMATRIX GetViewMatrix(void){ return m_MtxView; }
@@ -44,7 +42,7 @@ public:
 	D3DXMATRIX GetViewProjectionMatrix(void);
 
 private:
-	void SetProjection(void); // ƒvƒƒWƒFƒNƒVƒ‡ƒ“
+	void SetProjection(void); // ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½
 	void NormalizeCamera(void);
 
 #ifdef _DEBUG
@@ -56,14 +54,14 @@ private:
 	static bool m_DebugCameraFlag;
 #endif
 
-	D3DXVECTOR3 m_PositionEye;	// ƒJƒƒ‰À•W
-	D3DXVECTOR3 m_PositionAt;	// ’‹“_
-	D3DXVECTOR3 m_VecUp;		// ã‚Ì‹“_
-	D3DXVECTOR3 m_FrontVector;	// ‘O•ûŒüƒxƒNƒgƒ‹
-	D3DXVECTOR3 m_RightVector;	// ‰E•ûŒüƒxƒNƒgƒ‹
+	D3DXVECTOR3 m_PositionEye;	// ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½W
+	D3DXVECTOR3 m_PositionAt;	// ï¿½ï¿½ï¿½ï¿½ï¿½_
+	D3DXVECTOR3 m_VecUp;		// ï¿½ï¿½Ìï¿½ï¿½_
+	D3DXVECTOR3 m_FrontVector;	// ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½
+	D3DXVECTOR3 m_RightVector;	// ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½
 
-	D3DXMATRIX m_MtxView;		// ƒrƒ…[s—ñƒ}ƒgƒŠƒNƒX
-	D3DXMATRIX m_mtxProj;		// ƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñƒ}ƒgƒŠƒNƒX
+	D3DXMATRIX m_MtxView;		// ï¿½rï¿½ï¿½ï¿½[ï¿½sï¿½ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+	D3DXMATRIX m_mtxProj;		// ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
 
 	CameraState* m_State;
 };

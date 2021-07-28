@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( „‰ñ )[ EnemyStatePatrol.h ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½ï¿½ )[ EnemyStatePatrol.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/20
 =============================================================================*/
 
@@ -38,19 +36,19 @@ private:
 	void Patrol(D3DXVECTOR3* position);
 
 private:
-	D3DXVECTOR3 m_ControlPoint; // §Œä“_
-	D3DXVECTOR3 m_InverseFrontVector; // ‘O•ûŒüƒxƒNƒgƒ‹‚Ì‹t
+	D3DXVECTOR3 m_ControlPoint; // ï¿½ï¿½ï¿½ï¿½_
+	D3DXVECTOR3 m_InverseFrontVector; // ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Nï¿½gï¿½ï¿½ï¿½Ì‹t
 
-	int m_NumLinear;	//	‚¢‚­‚Â•âŠÔ‚·‚é‚©
-	unsigned int m_LinearCnt;	//	•âŠÔƒJƒEƒ“ƒ^
-	unsigned int m_FrameTimeCount;	//	ƒtƒŒ[ƒ€ŠÔƒJƒEƒ“ƒg
+	int m_NumLinear;	//	ï¿½ï¿½ï¿½ï¿½ï¿½Â•ï¿½Ô‚ï¿½ï¿½é‚©
+	unsigned int m_LinearCnt;	//	ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½^
+	unsigned int m_FrameTimeCount;	//	ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½g
 
-	float m_NowRotation; // Œ»İ‚Ì‰ñ“]
+	float m_NowRotation; // ï¿½ï¿½ï¿½İ‚Ì‰ï¿½]
 
 
-	Enemy::LINEAR* m_Linear; // •âŠÔ\‘¢‘Ì
+	Enemy::LINEAR* m_Linear; // ï¿½ï¿½Ô\ï¿½ï¿½ï¿½ï¿½
 
-	Enemy* m_Owner; // Š—LÒ
+	Enemy* m_Owner; // ï¿½ï¿½ï¿½Lï¿½ï¿½
 };
 
 #endif

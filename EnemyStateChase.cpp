@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( ’ÇÕ )[ EnemyStateChase.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Çï¿½ )[ EnemyStateChase.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/22
 =============================================================================*/
 
@@ -36,7 +34,7 @@ EnemyStateChase::EnemyStateChase(Enemy* owner):m_Owner(owner)
 	m_Owner->SetHeadMarkActive(true);
 	m_Owner->SetHeadMarkTextureChange(TEXTURE_PATH"GAME/Mark_Find.png");
 
-	Debug::Log("“G : ’ÇÕó‘Ô");
+	Debug::Log("ï¿½G : ï¿½ÇÕï¿½ï¿½");
 
 #ifndef ENABLE_SOUND
 	Game::GetInstance()->GetSound()->Play(SoundDirectX::SOUND_SE_FOUND);
@@ -49,13 +47,13 @@ void EnemyStateChase::Update(D3DXVECTOR3 position)
 	m_Owner->SetMotionIndex(1);
 
 	if(m_Owner->AttackRangeCollision(position, m_Owner->GetVisionAngle(), m_Owner->GetAttackRange()))
-	{// UŒ‚‚Ì”ÍˆÍ”»’è
+	{// ï¿½Uï¿½ï¿½ï¿½Ì”ÍˆÍ”ï¿½ï¿½ï¿½
 
 		m_Owner->SetState(new EnemyStateAttack(m_Owner));
 	}
 	else if(m_Owner->DistanceWithinCollision(m_Owner->GetVisionDistance() * 1.1f))
 	{
-		// Œ©Ž¸‚Á‚½ˆ—
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		m_Owner->SetState(new EnemyStateLookOutOver(m_Owner, EnemyStateLookOutOver::LOST));
 	}
 	else

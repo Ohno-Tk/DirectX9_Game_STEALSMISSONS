@@ -1,12 +1,10 @@
 /*=============================================================================
 
-	ƒTƒEƒ“ƒh(DirectX)[ ConfigWindows.cpp ]
+	ï¿½Tï¿½Eï¿½ï¿½ï¿½h(DirectX)[ ConfigWindows.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -28,15 +26,15 @@ SoundDirectX::PARAM SoundDirectX::m_aParam[SoundDirectX::SOUND_LABEL_MAX] =
 {
 	{ BGM_PATH"Wild_Horse.wav", -1 },		// BGM
 	{ BGM_PATH"Siege.wav", -1},		// BGM
-	{ SE_PATH"Title_Gun.wav", 0 },	// ƒ^ƒCƒgƒ‹e‰¹
-	{ SE_PATH"Select.wav", 0},		// ‘I‘ğˆÚ“®‰¹
-	{ SE_PATH"End.wav", 0 },		// I—¹‰¹
-	{ SE_PATH"maoudamashii_9_jingle06_GameClear.wav", 0 },		// ƒQ[ƒ€ƒNƒŠƒA
-	{ SE_PATH"maoudamashii_9_jingle07_GameOver.wav", 0 },		// ƒQ[ƒ€ƒNƒŠƒA
-	{ SE_PATH"Found.wav", 0 },		// ”­Œ©‰¹
-	{ SE_PATH"nc26742.wav", 0 },		// call‰¹
-	{ SE_PATH"nc133461.wav", 0 },		// ‰ñ•œ‰¹
-	{ SE_PATH"ItemGet.wav", 0 },		// ƒAƒCƒeƒ€æ“¾
+	{ SE_PATH"Title_Gun.wav", 0 },	// ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½eï¿½ï¿½
+	{ SE_PATH"Select.wav", 0},		// ï¿½Iï¿½ï¿½ï¿½Ú“ï¿½ï¿½ï¿½
+	{ SE_PATH"End.wav", 0 },		// ï¿½Iï¿½ï¿½ï¿½ï¿½
+	{ SE_PATH"maoudamashii_9_jingle06_GameClear.wav", 0 },		// ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
+	{ SE_PATH"maoudamashii_9_jingle07_GameOver.wav", 0 },		// ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
+	{ SE_PATH"Found.wav", 0 },		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	{ SE_PATH"nc26742.wav", 0 },		// callï¿½ï¿½
+	{ SE_PATH"nc133461.wav", 0 },		// ï¿½ñ•œ‰ï¿½
+	{ SE_PATH"ItemGet.wav", 0 },		// ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½æ“¾
 };
 
 SoundDirectX::SoundDirectX()
@@ -54,35 +52,35 @@ HRESULT SoundDirectX::Initialize(void)
 {
 	HRESULT hr;
 
-	// COMƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šú‰»
+	// COMï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	CoInitializeEx(NULL, COINIT_MULTITHREADED);
 
-	// XAudio2ƒIƒuƒWƒFƒNƒg‚Ìì¬
+	// XAudio2ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìì¬
 	hr = XAudio2Create(&m_pXAudio2, 0);
 	if(FAILED(hr))
 	{
-		// COMƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
+		// COMï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ÌIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CoUninitialize();
 
 		return E_FAIL;
 	}
 	
-	// ƒ}ƒXƒ^[ƒ{ƒCƒX‚Ì¶¬
+	// ï¿½}ï¿½Xï¿½^ï¿½[ï¿½{ï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½
 	hr = m_pXAudio2->CreateMasteringVoice(&m_pMasteringVoice);
 	if(FAILED(hr))
 	{
 		if(m_pXAudio2)
 		{
-			// XAudio2ƒIƒuƒWƒFƒNƒg‚ÌŠJ•ú
+			// XAudio2ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠJï¿½ï¿½
 			m_pXAudio2->Release();
 			m_pXAudio2 = NULL;
 		}
 
-		// COMƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
+		// COMï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ÌIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CoUninitialize();
 	}
 
-	// ƒTƒEƒ“ƒhƒf[ƒ^‚Ì‰Šú‰»
+	// ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	for(int nCntSound = 0; nCntSound < SOUND_LABEL_MAX; nCntSound++)
 	{
 		HANDLE hFile;
@@ -92,20 +90,20 @@ HRESULT SoundDirectX::Initialize(void)
 		WAVEFORMATEXTENSIBLE wfx;
 		XAUDIO2_BUFFER buffer;
 
-		// ƒoƒbƒtƒ@‚ÌƒNƒŠƒA
+		// ï¿½oï¿½bï¿½tï¿½@ï¿½ÌƒNï¿½ï¿½ï¿½A
 		memset(&wfx, 0, sizeof(WAVEFORMATEXTENSIBLE));
 		memset(&buffer, 0, sizeof(XAUDIO2_BUFFER));
 
-		// ƒTƒEƒ“ƒhƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì¶¬
+		// ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½fï¿½[ï¿½^ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 		hFile = CreateFile(m_aParam[nCntSound].pFilename, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
 		if(hFile == INVALID_HANDLE_VALUE)
 		{
 		}
 		if(SetFilePointer(hFile, 0, NULL, FILE_BEGIN) == INVALID_SET_FILE_POINTER)
-		{// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğæ“ª‚ÉˆÚ“®
+		{// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½æ“ªï¿½ÉˆÚ“ï¿½
 		}
 	
-		// WAVEƒtƒ@ƒCƒ‹‚Ìƒ`ƒFƒbƒN
+		// WAVEï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 		hr = CheckChunk(hFile, 'FFIR', &dwChunkSize, &dwChunkPosition);
 		if(FAILED(hr))
 		{
@@ -121,7 +119,7 @@ HRESULT SoundDirectX::Initialize(void)
 			return E_FAIL;
 		}
 	
-		// ƒtƒH[ƒ}ƒbƒgƒ`ƒFƒbƒN
+		// ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½`ï¿½Fï¿½bï¿½N
 		hr = CheckChunk(hFile, ' tmf', &dwChunkSize, &dwChunkPosition);
 		if(FAILED(hr))
 		{
@@ -133,7 +131,7 @@ HRESULT SoundDirectX::Initialize(void)
 			return E_FAIL;
 		}
 
-		// ƒI[ƒfƒBƒIƒf[ƒ^“Ç‚İ‚İ
+		// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½fï¿½[ï¿½^ï¿½Ç‚İï¿½ï¿½ï¿½
 		hr = CheckChunk(hFile, 'atad', &m_aSizeAudio[nCntSound], &dwChunkPosition);
 		if(FAILED(hr))
 		{
@@ -146,7 +144,7 @@ HRESULT SoundDirectX::Initialize(void)
 			return E_FAIL;
 		}
 	
-		// ƒ\[ƒXƒ{ƒCƒX‚Ì¶¬
+		// ï¿½\ï¿½[ï¿½Xï¿½{ï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½
 		m_pXAudio2->CreateSourceVoice(&m_apSourceVoice[nCntSound], &(wfx.Format));
 
 		memset(&buffer, 0, sizeof(XAUDIO2_BUFFER));
@@ -155,7 +153,7 @@ HRESULT SoundDirectX::Initialize(void)
 		buffer.Flags      = XAUDIO2_END_OF_STREAM;
 		buffer.LoopCount  = m_aParam[nCntSound].nCntLoop;
 
-		// ƒI[ƒfƒBƒIƒoƒbƒtƒ@‚Ì“o˜^
+		// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½oï¿½bï¿½tï¿½@ï¿½Ì“oï¿½^
 		m_apSourceVoice[nCntSound]->SubmitSourceBuffer(&buffer);
 	}
 
@@ -164,41 +162,41 @@ HRESULT SoundDirectX::Initialize(void)
 
 void SoundDirectX::Uninitialize(void)
 {
-	// ˆê’â~
+	// ï¿½êï¿½ï¿½~
 	for(int nCntSound = 0; nCntSound < SOUND_LABEL_MAX; nCntSound++)
 	{
 		if(m_apSourceVoice[nCntSound])
 		{
-			// ˆê’â~
+			// ï¿½êï¿½ï¿½~
 			m_apSourceVoice[nCntSound]->Stop(0);
 	
-			// ƒ\[ƒXƒ{ƒCƒX‚Ì”jŠü
+			// ï¿½\ï¿½[ï¿½Xï¿½{ï¿½Cï¿½Xï¿½Ì”jï¿½ï¿½
 			m_apSourceVoice[nCntSound]->DestroyVoice();
 			m_apSourceVoice[nCntSound] = NULL;
 	
-			// ƒI[ƒfƒBƒIƒf[ƒ^‚ÌŠJ•ú
+			// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½fï¿½[ï¿½^ï¿½ÌŠJï¿½ï¿½
 			free(m_apDataAudio[nCntSound]);
 			m_apDataAudio[nCntSound] = NULL;
 		}
 	}
 	
-	// ƒ}ƒXƒ^[ƒ{ƒCƒX‚Ì”jŠü
+	// ï¿½}ï¿½Xï¿½^ï¿½[ï¿½{ï¿½Cï¿½Xï¿½Ì”jï¿½ï¿½
 	m_pMasteringVoice->DestroyVoice();
 	m_pMasteringVoice = NULL;
 	
 	if(m_pXAudio2)
 	{
-		// XAudio2ƒIƒuƒWƒFƒNƒg‚ÌŠJ•ú
+		// XAudio2ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠJï¿½ï¿½
 		m_pXAudio2->Release();
 		m_pXAudio2 = NULL;
 	}
 	
-	// COMƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
+	// COMï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ÌIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	CoUninitialize();
 }
 
 //=============================================================================
-// ƒZƒOƒƒ“ƒgÄ¶(’â~)
+// ï¿½Zï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½Äï¿½(ï¿½ï¿½~)
 //=============================================================================
 HRESULT SoundDirectX::Play(SOUND_LABEL label)
 {
@@ -211,63 +209,63 @@ HRESULT SoundDirectX::Play(SOUND_LABEL label)
 	buffer.Flags      = XAUDIO2_END_OF_STREAM;
 	buffer.LoopCount  = m_aParam[label].nCntLoop;
 
-	// ó‘Ôæ“¾
+	// ï¿½ï¿½Ôæ“¾
 	m_apSourceVoice[label]->GetState(&xa2state);
 	if(xa2state.BuffersQueued != 0)
-	{// Ä¶’†
-		// ˆê’â~
+	{// ï¿½Äï¿½ï¿½ï¿½
+		// ï¿½êï¿½ï¿½~
 		m_apSourceVoice[label]->Stop(0);
 
-		// ƒI[ƒfƒBƒIƒoƒbƒtƒ@‚Ìíœ
+		// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½oï¿½bï¿½tï¿½@ï¿½Ìíœ
 		m_apSourceVoice[label]->FlushSourceBuffers();
 	}
 
-	// ƒI[ƒfƒBƒIƒoƒbƒtƒ@‚Ì“o˜^
+	// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½oï¿½bï¿½tï¿½@ï¿½Ì“oï¿½^
 	m_apSourceVoice[label]->SubmitSourceBuffer(&buffer);
 
-	// Ä¶
+	// ï¿½Äï¿½
 	m_apSourceVoice[label]->Start(0);
 
 	return S_OK;
 }
 
 //=============================================================================
-// ƒZƒOƒƒ“ƒg’â~
+// ï¿½Zï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½~
 //=============================================================================
 void SoundDirectX::Stop(SOUND_LABEL label)
 {
 	XAUDIO2_VOICE_STATE xa2state;
 
-	// ó‘Ôæ“¾
+	// ï¿½ï¿½Ôæ“¾
 	m_apSourceVoice[label]->GetState(&xa2state);
 	if(xa2state.BuffersQueued != 0)
-	{// Ä¶’†
-		// ˆê’â~
+	{// ï¿½Äï¿½ï¿½ï¿½
+		// ï¿½êï¿½ï¿½~
 		m_apSourceVoice[label]->Stop(0);
 
-		// ƒI[ƒfƒBƒIƒoƒbƒtƒ@‚Ìíœ
+		// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½oï¿½bï¿½tï¿½@ï¿½Ìíœ
 		m_apSourceVoice[label]->FlushSourceBuffers();
 	}
 }
 
 //=============================================================================
-// ƒZƒOƒƒ“ƒg’â~
+// ï¿½Zï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½~
 //=============================================================================
 void SoundDirectX::Stop(void)
 {
-	// ˆê’â~
+	// ï¿½êï¿½ï¿½~
 	for(int nCntSound = 0; nCntSound < SOUND_LABEL_MAX; nCntSound++)
 	{
 		if(m_apSourceVoice[nCntSound])
 		{
-			// ˆê’â~
+			// ï¿½êï¿½ï¿½~
 			m_apSourceVoice[nCntSound]->Stop(0);
 		}
 	}
 }
 
 //=============================================================================
-// ƒ{ƒŠƒ…[ƒ€İ’è
+// ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½İ’ï¿½
 //=============================================================================
 void SoundDirectX::SetVolume(SOUND_LABEL label, float fValue)
 {
@@ -278,7 +276,7 @@ void SoundDirectX::SetVolume(SOUND_LABEL label, float fValue)
 }
 
 //=============================================================================
-// ƒ`ƒƒƒ“ƒN‚Ìƒ`ƒFƒbƒN
+// ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 //=============================================================================
 HRESULT SoundDirectX::CheckChunk(HANDLE hFile, DWORD dwFormat, DWORD *pChunkSize, DWORD *pChunkDataPosition)
 {
@@ -293,19 +291,19 @@ HRESULT SoundDirectX::CheckChunk(HANDLE hFile, DWORD dwFormat, DWORD *pChunkSize
 	DWORD dwOffset = 0;
 	
 	if(SetFilePointer(hFile, 0, NULL, FILE_BEGIN) == INVALID_SET_FILE_POINTER)
-	{// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğæ“ª‚ÉˆÚ“®
+	{// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½æ“ªï¿½ÉˆÚ“ï¿½
 		return HRESULT_FROM_WIN32(GetLastError());
 	}
 	
 	while(hr == S_OK)
 	{
 		if(ReadFile(hFile, &dwChunkType, sizeof(DWORD), &dwRead, NULL) == 0)
-		{// ƒ`ƒƒƒ“ƒNƒ^ƒCƒv‚Ì“Ç‚İ‚İ
+		{// ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Cï¿½vï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 			hr = HRESULT_FROM_WIN32(GetLastError());
 		}
 
 		if(ReadFile(hFile, &dwChunkDataSize, sizeof(DWORD), &dwRead, NULL) == 0)
-		{// ƒ`ƒƒƒ“ƒNƒf[ƒ^‚Ì“Ç‚İ‚İ
+		{// ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½fï¿½[ï¿½^ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 			hr = HRESULT_FROM_WIN32(GetLastError());
 		}
 
@@ -315,14 +313,14 @@ HRESULT SoundDirectX::CheckChunk(HANDLE hFile, DWORD dwFormat, DWORD *pChunkSize
 			dwRIFFDataSize  = dwChunkDataSize;
 			dwChunkDataSize = 4;
 			if(ReadFile(hFile, &dwFileType, sizeof(DWORD), &dwRead, NULL) == 0)
-			{// ƒtƒ@ƒCƒ‹ƒ^ƒCƒv‚Ì“Ç‚İ‚İ
+			{// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½^ï¿½Cï¿½vï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 				hr = HRESULT_FROM_WIN32(GetLastError());
 			}
 			break;
 
 		default:
 			if(SetFilePointer(hFile, dwChunkDataSize, NULL, FILE_CURRENT) == INVALID_SET_FILE_POINTER)
-			{// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğƒ`ƒƒƒ“ƒNƒf[ƒ^•ªi‚ß‚é
+			{// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½iï¿½ß‚ï¿½
 				return HRESULT_FROM_WIN32(GetLastError());
 			}
 		}
@@ -347,19 +345,19 @@ HRESULT SoundDirectX::CheckChunk(HANDLE hFile, DWORD dwFormat, DWORD *pChunkSize
 }
 
 //=============================================================================
-// ƒ`ƒƒƒ“ƒNƒf[ƒ^‚Ì“Ç‚İ‚İ
+// ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½fï¿½[ï¿½^ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 //=============================================================================
 HRESULT SoundDirectX::ReadChunkData(HANDLE hFile, void *pBuffer, DWORD dwBuffersize, DWORD dwBufferoffset)
 {
 	DWORD dwRead;
 	
 	if(SetFilePointer(hFile, dwBufferoffset, NULL, FILE_BEGIN) == INVALID_SET_FILE_POINTER)
-	{// ƒtƒ@ƒCƒ‹ƒ|ƒCƒ“ƒ^‚ğw’èˆÊ’u‚Ü‚ÅˆÚ“®
+	{// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½wï¿½ï¿½Ê’uï¿½Ü‚ÅˆÚ“ï¿½
 		return HRESULT_FROM_WIN32(GetLastError());
 	}
 	
 	if(ReadFile(hFile, pBuffer, dwBuffersize, &dwRead, NULL) == 0)
-	{// ƒf[ƒ^‚Ì“Ç‚İ‚İ
+	{// ï¿½fï¿½[ï¿½^ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 		return HRESULT_FROM_WIN32(GetLastError());
 	}
 	

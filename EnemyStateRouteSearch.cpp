@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( Œo˜H’Tõ )[ EnemyStateRouteSearch.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½oï¿½Hï¿½Tï¿½ï¿½ )[ EnemyStateRouteSearch.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/12/04
 =============================================================================*/
 
@@ -35,12 +33,12 @@ EnemyStateRouteSearch::EnemyStateRouteSearch(Enemy* owner)
 	D3DXVECTOR3 controlPointToEnemyVector = controlPoint - m_Owner->GetPosition();
 	m_Length = D3DXVec3Length(&controlPointToEnemyVector);
 
-	Debug::Log("“G : §Œä“_‚ÌŒŸõó‘Ô");
+	Debug::Log("ï¿½G : ï¿½ï¿½ï¿½ï¿½_ï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateRouteSearch::Update(D3DXVECTOR3 position)
 {
-	// ˆê”Ô‹ß‚¢‚Æ‚±‚ë‚ğŒŸõ
+	// ï¿½ï¿½Ô‹ß‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	for(int i = 0; i < m_NumLinear; i++)
 	{
 		D3DXVECTOR3 controlPoint = m_Owner->GetLinearStruct(i).ControlPoint;

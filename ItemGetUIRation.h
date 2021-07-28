@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€æ“¾UI( ƒŒ[ƒVƒ‡ƒ“ )[ ItemGetUIRation.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½æ“¾UI( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemGetUIRation.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -26,7 +24,7 @@ class ItemGetUIRation:public ItemGetUI
 public:
 	ItemGetUIRation(int priolity = 4);
 
-	static ItemGetUIRation* Create(D3DXVECTOR3 position);// ¶¬
+	static ItemGetUIRation* Create(D3DXVECTOR3 position);// ï¿½ï¿½ï¿½ï¿½
 
 	void Initialize(void)override;
 	void Uninitialize(void)override;
@@ -34,9 +32,9 @@ public:
 	void Draw(void)override;
 
 private:
-	void MakeVertex(void);// ’¸“_‚Ìì¬
-	void SetVertex(void);// ’¸“_‚Ì•ÏX
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	void MakeVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void SetVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;

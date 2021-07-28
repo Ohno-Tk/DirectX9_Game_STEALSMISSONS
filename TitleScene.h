@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ^ƒCƒgƒ‹ƒV[ƒ“[ TitleScene.h ]
+ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½[ TitleScene.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -36,19 +34,19 @@ public:
 	void Draw(void)override;
 
 private:
-	void SelectMode(void); // ‘I‘ğ
-	void SceneChange(void); // ƒV[ƒ“‚ğ•Ï‚¦‚é
-	void CursorControl(void); // ƒJ[ƒ\ƒ‹‘€ì
+	void SelectMode(void); // ï¿½Iï¿½ï¿½ï¿½ï¿½
+	void SceneChange(void); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+	void CursorControl(void); // ï¿½Jï¿½[ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 private:
 	enum SELECT
 	{
 		SELECT_NONE = 0,
-		SELECT_START,	//	ƒXƒ^[ƒg
-		SELECT_KEYGUID,			//	‘€ìà–¾
+		SELECT_START,	//	ï¿½Xï¿½^ï¿½[ï¿½g
+		SELECT_KEYGUID,			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		SELECT_MAX
 	};
-	int m_Select;	//	‘I‘ğ
+	int m_Select;	//	ï¿½Iï¿½ï¿½
 
 	DirectXKeyboard* m_KeyBoard;
 	SoundDirectX* m_Sound;

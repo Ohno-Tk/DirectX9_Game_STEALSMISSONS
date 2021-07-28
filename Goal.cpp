@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒS[ƒ‹’n“_[ Goal.cpp ]
+ï¿½Sï¿½[ï¿½ï¿½ï¿½nï¿½_[ Goal.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/15
 =============================================================================*/
 
@@ -31,16 +29,16 @@ Include Files
 Macro
 -----------------------------------------------------------------------------*/
 #define MODEL_FILE_PASS (MODEL_PATH"Goal.x")
-#define ROTATION_SPEED (1.0f) // ‰ñ“]ƒXƒs[ƒh
+#define ROTATION_SPEED (1.0f) // ï¿½ï¿½]ï¿½Xï¿½sï¿½[ï¿½h
 #define MODEL_VERTEXSHADER_PATH (SHADER_PATH"LightingOff_Vertex.hlsl")
 #define MODEL_PIXELSHADER_PATH (SHADER_PATH"LightingOff_Pixel.hlsl")
-#define SCALE (1.0f)// Šg‘å’l
+#define SCALE (1.0f)// ï¿½gï¿½ï¿½l
 
 /*-----------------------------------------------------------------------------
 Function:   Goal* Goal::Create(D3DXVECTOR3 pos)
 Parameter:  D3DXVECTOR3 pos
-              À•W
-Overview:   ¶¬
+              ï¿½ï¿½ï¿½W
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 Goal* Goal::Create(D3DXVECTOR3 pos)
 {
@@ -66,11 +64,11 @@ void Goal::Initialize(void)
 	RendererDirectX::GetDevice()->CreateVertexDeclaration(elements,&m_VertexDeclaration);
 
 	HRESULT hr;
-	// ƒNƒ[ƒ“‚Ìì¬
+	// ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìì¬
 	hr = m_ModelParam.Mesh->CloneMesh(D3DXMESH_MANAGED | D3DXMESH_WRITEONLY, elements, RendererDirectX::GetDevice(), &m_ModelParam.CloneMesh);
 	if (FAILED(hr))
 	{
-		MessageBox(NULL, "ƒƒbƒVƒ…‚ÌÅ“K‰»‚É¸”s", "Goal.cpp", MB_OK);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ÌÅ“Kï¿½ï¿½ï¿½Éï¿½ï¿½s", "Goal.cpp", MB_OK);
 	}
 
 
@@ -92,7 +90,7 @@ void Goal::Update(void)
 {
 	m_Rotation.y += ROTATION_SPEED;
 
-	Collision(); // Õ“Ë”»’è
+	Collision(); // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 }
 
 void Goal::Draw(void)
@@ -102,17 +100,17 @@ void Goal::Draw(void)
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
 
-	WorldTransform();// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	WorldTransform();// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
-	ConfigShader(Device);// ƒVƒF[ƒ_[‚Ìİ’è
+	ConfigShader(Device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 	Device->SetVertexShader(m_VertexShader->GetVertexShader());
 	Device->SetPixelShader(m_PixelShader->GetPixelShader());
 
-	// Œ»İƒfƒoƒCƒX‚Éİ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚Ìæ“¾
+	// ï¿½ï¿½ï¿½İƒfï¿½oï¿½Cï¿½Xï¿½Éİ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	UINT samplerIndex0 = m_PixelShader->GetPixelShaderConstantTable()->GetSamplerIndex("sampler0");
@@ -121,17 +119,17 @@ void Goal::Draw(void)
 	{
 		m_VertexShader->GetVertexShaderConstantTable()->SetValue(RendererDirectX::GetDevice(), "Diffuse", &m_ModelParam.Material[CountMaterial].MatD3D.Diffuse, sizeof(m_ModelParam.Material[CountMaterial].MatD3D.Diffuse));
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚Ìİ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetTexture(samplerIndex0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ğŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 
 }
@@ -139,7 +137,7 @@ void Goal::Draw(void)
 /*-----------------------------------------------------------------------------
 Function:   void Goal::Collision(void)
 Parameter:  
-Overview:   Õ“Ë”»’è
+Overview:   ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Goal::Collision(void)
 {
@@ -149,15 +147,15 @@ void Goal::Collision(void)
 	Collision_Sphere CollisionSphere(position, m_SphereRadius);
 
 	if (CollisionSphere.Judge(player->GetPosition(), player->GetSphereRadius()))
-	{ // Õ“Ë”»’è
+	{ // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 		
-		// ƒS[ƒ‹
+		// ï¿½Sï¿½[ï¿½ï¿½
 		GameScene::GameClear();
 	}
 }
 
 /*-----------------------------------------------------------------------------
-ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void Goal::WorldTransform(void)
 {
@@ -166,7 +164,7 @@ void Goal::WorldTransform(void)
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
 	D3DXMatrixScaling(&matrixScale,
 		SCALE,

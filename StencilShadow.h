@@ -1,12 +1,9 @@
 /*=============================================================================
 
-ƒXƒeƒ“ƒVƒ‹ƒVƒƒƒhƒE[ StencilShadow.h ]
-( Maybe-Later:std::string‚Ìƒƒ‚ƒŠ‰ğ•ú‚ªo—ˆ‚Ä‚¢‚È‚¢ )
+ï¿½Xï¿½eï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½hï¿½E[ StencilShadow.h ]
+( Maybe-Later:std::stringï¿½Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ )
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
-
-¡  Create
+ï¿½ï¿½  Create
 	2017/11/09
 =============================================================================*/
 
@@ -29,19 +26,19 @@ private:
 	void Update(void)override{}
 	void Draw(void)override;
 
-	void Polygon2DDraw(LPDIRECT3DDEVICE9 Device); // ‘S‰æ–Ê2Dƒ|ƒŠƒSƒ“•`‰æ
-	void ModelDraw(LPDIRECT3DDEVICE9 Device); // ƒ‚ƒfƒ‹•`‰æ
-	void MakeVerTex(void); // ’¸“_‚Ìì¬
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	void Polygon2DDraw(LPDIRECT3DDEVICE9 Device); // ï¿½Sï¿½ï¿½ï¿½2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
+	void ModelDraw(LPDIRECT3DDEVICE9 Device); // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½`ï¿½ï¿½
+	void MakeVerTex(void); // ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
 private:
-	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;	//	’¸“_ƒoƒbƒtƒ@
+	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;	//	ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
 
 	D3DXMATRIX m_MatrixWorld;
 
-	char* m_ModelFilePath;	//	ƒ‚ƒfƒ‹‚ÌƒpƒX
+	char* m_ModelFilePath;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒpï¿½X
 
-	MODEL_PARAM m_ModelParam;	//	ƒ‚ƒfƒ‹\‘¢‘Ì
+	MODEL_PARAM m_ModelParam;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 };
 
 #endif

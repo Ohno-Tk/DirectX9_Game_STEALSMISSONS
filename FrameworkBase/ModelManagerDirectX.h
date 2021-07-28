@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‚ƒfƒ‹ŠÇ—[ ModelManager.h ]
+ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ç—ï¿½[ ModelManager.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/08/25
 =============================================================================*/
 
@@ -23,13 +21,13 @@ Struct
 -----------------------------------------------------------------------------*/
 struct MODEL_PARAM
 {
-	DWORD				NumMaterial;	//	ƒ}ƒeƒŠƒAƒ‹î•ñ‚Ì”
-	LPD3DXBUFFER		BufferMaterial;	//	ƒ}ƒeƒŠƒAƒ‹î•ñ
-	LPD3DXBUFFER        AdjacecyBuffer; //  —×Úƒoƒbƒtƒ@
-	D3DXMATERIAL*		Material;		//	ƒ}ƒeƒŠƒAƒ‹ƒ|ƒCƒ“ƒ^
-	LPD3DXMESH			Mesh;			//	ƒƒbƒVƒ…î•ñ
+	DWORD				NumMaterial;	//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½
+	LPD3DXBUFFER		BufferMaterial;	//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½
+	LPD3DXBUFFER        AdjacecyBuffer; //  ï¿½×Úƒoï¿½bï¿½tï¿½@
+	D3DXMATERIAL*		Material;		//	ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^
+	LPD3DXMESH			Mesh;			//	ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½
 	LPD3DXMESH			CloneMesh;
-	LPDIRECT3DTEXTURE9*	Texture;		//	ƒeƒNƒXƒ`ƒƒ‚Ìƒ|ƒCƒ“ƒ^
+	LPDIRECT3DTEXTURE9*	Texture;		//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 };
 
 /*-----------------------------------------------------------------------------
@@ -45,11 +43,11 @@ public:
 	const MODEL_PARAM GetModelParam(std::string fileName)const;
 
 private:
-	void Load(std::string fileName); // ƒ‚ƒfƒ‹‚Ìƒ[ƒh
-	void UnloadAll(void); // ƒ‚ƒfƒ‹‚Ì‘Síœ
+	void Load(std::string fileName); // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
+	void UnloadAll(void); // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ì‘Sï¿½íœ
 
 private:
-	MODEL_PARAM m_Model; // ƒ‚ƒfƒ‹\‘¢‘Ì
+	MODEL_PARAM m_Model; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 
 	std::unordered_map< std::string, MODEL_PARAM > m_Model_Map;
 }; 

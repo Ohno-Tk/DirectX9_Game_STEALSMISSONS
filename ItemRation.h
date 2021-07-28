@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€( ƒŒ[ƒVƒ‡ƒ“ )[ ItemRation.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemRation.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -29,7 +27,7 @@ class ItemRation:public Item
 public:
 	ItemRation(int priolity = 3);
 
-	static ItemRation* Create(D3DXVECTOR3 position);// ¶¬
+	static ItemRation* Create(D3DXVECTOR3 position);// ï¿½ï¿½ï¿½ï¿½
 
 	void Initialize(void)override;
 	void Uninitialize(void)override;
@@ -37,12 +35,12 @@ public:
 	void Draw(void)override;
 
 private:
-	bool Collision(void)override;// “–‚½‚è”»’è
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ConfigShader(LPDIRECT3DDEVICE9 device);// ƒVƒF[ƒ_[‚Ìİ’è
+	bool Collision(void)override;// ï¿½ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ConfigShader(LPDIRECT3DDEVICE9 device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 private:
-	D3DXVECTOR3	m_Rotation;// ‰ñ“]
+	D3DXVECTOR3	m_Rotation;// ï¿½ï¿½]
 	D3DXMATRIX m_MatrixWorld;
 
 	MODEL_PARAM m_ModelParam;

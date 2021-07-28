@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒIƒuƒWƒFƒNƒg¶¬[ Object.h ]
+ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½[ Object.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -16,7 +14,7 @@ Ohno Takuya
 /*-----------------------------------------------------------------------------
 	Macro
 -----------------------------------------------------------------------------*/
-#define PRIOLITY_MAX (6) //	—Dæ‡ˆÊ
+#define PRIOLITY_MAX (6) //	ï¿½Dï¿½æ‡ï¿½ï¿½
 
 /*-----------------------------------------------------------------------------
 Class
@@ -26,14 +24,14 @@ class Object
 public:
 	enum OBJECT_TYPE
 	{
-		OBJECT_TYPE_NONE = 0,	//	‚È‚µ
-		OBJECT_TYPE_PLAYER,     // ƒvƒŒƒCƒ„[
-		OBJECT_TYPE_ENEMY,		//	“G
-		OBJECT_TYPEMESHSPHERE,	//	ƒƒbƒVƒ…‹…
-		OBJECT_TYPE_CONTROLPOINT, // §Œä“_
-		OBJECT_TYPE_VISION, // ‹ŠE
-		OBJECT_TYPE_OBSTACLE, // áŠQ•¨
-		OBJECT_TYPE_MAX			//	Å‘å”
+		OBJECT_TYPE_NONE = 0,	//	ï¿½È‚ï¿½
+		OBJECT_TYPE_PLAYER,     // ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[
+		OBJECT_TYPE_ENEMY,		//	ï¿½G
+		OBJECT_TYPEMESHSPHERE,	//	ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½
+		OBJECT_TYPE_CONTROLPOINT, // ï¿½ï¿½ï¿½ï¿½_
+		OBJECT_TYPE_VISION, // ï¿½ï¿½ï¿½E
+		OBJECT_TYPE_OBSTACLE, // ï¿½ï¿½Qï¿½ï¿½
+		OBJECT_TYPE_MAX			//	ï¿½Å‘å”
 	};
 
 	Object(int Priolity);
@@ -43,9 +41,9 @@ public:
 	virtual void Update(void) = 0;
 	virtual void Draw(void) = 0;
 
-	static void UpdateAll(void); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
-	static void DrawAll(void); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
-	static void ReleaseAll(void); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	static void UpdateAll(void); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
+	static void DrawAll(void); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
+	static void ReleaseAll(void); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 
 	// Setter
 	void SetPosition(const D3DXVECTOR3 position) { m_Position = position; }
@@ -60,19 +58,19 @@ public:
 	Object *GetNext(void) { return m_Next; }
 
 private:
-	D3DXVECTOR3 m_Position;	//	À•W
-	bool m_DeleteFlag;	//	íœƒtƒ‰ƒO
+	D3DXVECTOR3 m_Position;	//	ï¿½ï¿½ï¿½W
+	bool m_DeleteFlag;	//	ï¿½íœï¿½tï¿½ï¿½ï¿½O
 
-	OBJECT_TYPE m_ObjectType; // ƒIƒuƒWƒFƒNƒg‚Ìí—Ş
+	OBJECT_TYPE m_ObjectType; // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìï¿½ï¿½
 
-	static Object* m_Top[PRIOLITY_MAX];	//	æ“ª‚Ìƒ|ƒCƒ“ƒ^
-	Object* m_Next;	//	Ÿ‚Ìƒ|ƒCƒ“ƒ^
+	static Object* m_Top[PRIOLITY_MAX];	//	ï¿½æ“ªï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
+	Object* m_Next;	//	ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 
 protected:
 	// Setter
 	void SetObjeType(const OBJECT_TYPE objectType) { m_ObjectType = objectType; }
 
-	void Release(void) { m_DeleteFlag = true; }	//	ƒŠƒŠ[ƒX
+	void Release(void) { m_DeleteFlag = true; }	//	ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½X
 };
 
 #endif

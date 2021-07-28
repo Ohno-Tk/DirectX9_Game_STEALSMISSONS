@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( UŒ‚ )[ EnemyStateAttack.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Uï¿½ï¿½ )[ EnemyStateAttack.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/20
 =============================================================================*/
 
@@ -27,7 +25,7 @@ EnemyStateAttack::EnemyStateAttack(Enemy* owner)
 {
 	m_Owner = owner;
 
-	Debug::Log("“G : UŒ‚ó‘Ô");
+	Debug::Log("ï¿½G : ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateAttack::Uninitialize(void){}

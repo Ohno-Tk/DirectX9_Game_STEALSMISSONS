@@ -1,12 +1,10 @@
 /*=============================================================================
 
-lŒ^[ Human.h ]
+ï¿½lï¿½^[ Human.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/11/08
 =============================================================================*/
 
@@ -40,7 +38,7 @@ public:
 	void Update(void)override;
 	void Draw(void)override;
 
-	void SetState(HumanState* state); // ó‘Ô‚ÌƒZƒbƒg
+	void SetState(HumanState* state); // ï¿½ï¿½Ô‚ÌƒZï¿½bï¿½g
 
 	// Setter
 	void SetActive(bool flag){ m_Active = flag; }
@@ -48,7 +46,7 @@ public:
 private:
 	bool m_Active;
 
-	HumanState* m_State; // ó‘Ô
+	HumanState* m_State; // ï¿½ï¿½ï¿½
 
 };
 

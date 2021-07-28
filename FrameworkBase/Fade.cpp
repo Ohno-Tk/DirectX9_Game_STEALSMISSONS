@@ -1,12 +1,11 @@
 /*=============================================================================
 
-ƒtƒF[ƒh[ Fade.cpp ]
+ï¿½tï¿½Fï¿½[ï¿½h[ Fade.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Created Date
+
+ï¿½ï¿½  Created Date
 	2017/08/25
 =============================================================================*/
 
@@ -24,17 +23,17 @@
 	Macro
 -----------------------------------------------------------------------------*/
 #define OBJECT_TEXTURE_PATH (TEXTURE_PATH"Fade.jpg")
-#define FADE_RATE ( 1.0f / 60 )	//	‚Ç‚Ì‚­‚ç‚¢‚ÅƒtƒF[ƒh‚³‚¹‚é‚Ì‚©
+#define FADE_RATE ( 1.0f / 60 )	//	ï¿½Ç‚Ì‚ï¿½ï¿½ç‚¢ï¿½Åƒtï¿½Fï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½
 
 /*-----------------------------------------------------------------------------
 	Static
 -----------------------------------------------------------------------------*/
-Fade::FADE_STATE Fade::m_Fade = FADE_NONE;	//	ƒtƒF[ƒhó‘Ô
-Scene *Fade::m_Scene = NULL;			//	‰æ–Ê‘JˆÚ‚Ìƒ|ƒCƒ“ƒ^
+Fade::FADE_STATE Fade::m_Fade = FADE_NONE;	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½ï¿½ï¿½
+Scene *Fade::m_Scene = NULL;			//	ï¿½ï¿½Ê‘Jï¿½Ú‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 
 void Fade::Initialize(void)
 {
-	MakeVerTex();	//	’¸“_‚Ìì¬
+	MakeVerTex();	//	ï¿½ï¿½ï¿½_ï¿½Ìì¬
 }
 
 void Fade::Uninitialize(void)
@@ -48,59 +47,59 @@ void Fade::Update(void)
 {
 	if(m_Fade == FADE_NONE){return;}
 
-	AlphaFade();	//	ƒ¿’l‚ÌƒtƒF[ƒh
+	AlphaFade();	//	ï¿½ï¿½ï¿½lï¿½Ìƒtï¿½Fï¿½[ï¿½h
 
-	SetVerTex();	//	’¸“_‚Ì•ÏX
+	SetVerTex();	//	ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 }
 
 void Fade::Draw(void)
 {
-	//	ƒfƒoƒCƒX‚Ìæ“¾
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìæ“¾
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
 
 	Device->SetVertexShader(NULL);
 	Device->SetPixelShader(NULL);
 
-	// ’¸“_ƒoƒbƒtƒ@‚ğƒf[ƒ^ƒXƒgƒŠ[ƒ€‚Éİ’è
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Éİ’ï¿½
 	Device->SetStreamSource(0, m_VtxBuff, 0, sizeof(VERTEX_2D));
 
-	// ’¸“_ƒtƒH[ƒ}ƒbƒg‚Ìİ’è
+	// ï¿½ï¿½ï¿½_ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½Ìİ’ï¿½
 	Device->SetFVF(FVF_VERTEX_2D);
 
-	// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 	Device->SetTexture(0, Game::GetInstance()->GetTextureManager()->GetTextureInfo(OBJECT_TEXTURE_PATH).Texture);
 	//Device->SetTexture(0, NULL);
 
-	// •`‰æ
+	// ï¿½`ï¿½ï¿½
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ìì¬
+ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void Fade::MakeVerTex(void)
 {
-	//	ƒfƒoƒCƒX‚Ìæ“¾
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìæ“¾
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
 
-	// ’¸“_ƒoƒbƒtƒ@‚Ì¶¬
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VtxBuff, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚É¸”s", "Fade.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "Fade.cpp", MB_OK | MB_ICONHAND);
 		return;
 	}
 
 
-	// ’¸“_î•ñ‚ğİ’è
-	// \‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^éŒ¾
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
+	// ï¿½\ï¿½ï¿½ï¿½Ì‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½éŒ¾
 	VERTEX_2D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VtxBuff->Lock(0, 0, (void**)&pVtx, 0);
 
-	//	’¸“_À•W‚Ìİ’è
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Wï¿½Ìİ’ï¿½
 	pVtx[0].Pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3(SCREEN_WIDTH, 0.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3(0.0f, SCREEN_HEIGHT, 0.0f);
@@ -108,55 +107,55 @@ void Fade::MakeVerTex(void)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		pVtx[CountVertex].Rhw = 1.0f;//	À•W•ÏŠ·Ï‚İ’¸“_ƒtƒ‰ƒO‚Ìİ’è
-		pVtx[CountVertex].Color = m_Color;//	’¸“_F
+		pVtx[CountVertex].Rhw = 1.0f;//	ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½ï¿½Ï‚İ’ï¿½ï¿½_ï¿½tï¿½ï¿½ï¿½Oï¿½Ìİ’ï¿½
+		pVtx[CountVertex].Color = m_Color;//	ï¿½ï¿½ï¿½_ï¿½F
 	}
 
-	//	ƒeƒNƒXƒ`ƒƒÀ•W‚Ìİ’è
+	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ìİ’ï¿½
 	pVtx[0].Tex = D3DXVECTOR2(0, 0);
 	pVtx[1].Tex = D3DXVECTOR2(1, 0);
 	pVtx[2].Tex = D3DXVECTOR2(0, 1);
 	pVtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VtxBuff->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ì•ÏX
+ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 -----------------------------------------------------------------------------*/
 void Fade::SetVerTex(void)
 {
-	// ’¸“_î•ñ‚ğİ’è
-	// \‘¢‘Ì‚Ìƒ|ƒCƒ“ƒ^éŒ¾
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
+	// ï¿½\ï¿½ï¿½ï¿½Ì‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½éŒ¾
 	VERTEX_2D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VtxBuff->Lock(0, 0, (void**)&pVtx, 0);
 
 
-	//	’¸“_F‚Ìİ’è
+	//	ï¿½ï¿½ï¿½_ï¿½Fï¿½Ìİ’ï¿½
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
 		pVtx[CountVertex].Color = m_Color;
 	}
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VtxBuff->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
-ƒ¿’l‚ÌƒtƒF[ƒh
+ï¿½ï¿½ï¿½lï¿½Ìƒtï¿½Fï¿½[ï¿½h
 -----------------------------------------------------------------------------*/
 void Fade::AlphaFade(void)
 {
 	if (m_Fade == FADE_IN)
-	{	//	ƒtƒF[ƒhƒCƒ“‚Ìˆ—
+	{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 
-		m_Color.a -= FADE_RATE;	//	a’l‚ğŒ¸Z‚µ‚ÄŒã‚ë‚Ì‰æ–Ê‚ğ•‚‚©‚Ñã‚ª‚ç‚¹‚é
+		m_Color.a -= FADE_RATE;	//	aï¿½lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½ÄŒï¿½ï¿½Ì‰ï¿½Ê‚ğ•‚‚ï¿½ï¿½Ñã‚ªï¿½ç‚¹ï¿½ï¿½
 
 		if (m_Color.a < 0.0f)
-		{	//	ƒtƒF[ƒhƒCƒ“‚ÌI—¹
+		{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ÌIï¿½ï¿½
 
 			m_Color.a = 0.0f;
 			m_Fade = FADE_NONE;
@@ -164,17 +163,17 @@ void Fade::AlphaFade(void)
 	}
 
 	else if (m_Fade == FADE_OUT)
-	{	//	ƒtƒF[ƒhƒAƒEƒg‚Ìˆ—
+	{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 
-		m_Color.a += FADE_RATE;	//	a’l‚ğ‰ÁZ‚µ‚ÄŒã‚ë‚Ì‰æ–Ê‚ğÁ‚µ‚Ä‚¢‚­
+		m_Color.a += FADE_RATE;	//	aï¿½lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½ÄŒï¿½ï¿½Ì‰ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 
 		if (m_Color.a > 1.0f)
-		{	//	ƒtƒF[ƒhƒAƒEƒg‚ÌI—¹
+		{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ÌIï¿½ï¿½
 
 			m_Color.a = 1.0f;
-			m_Fade = FADE_IN;	//	ƒtƒF[ƒhƒCƒ“‚Éˆ—‚ÌØ‚è‘Ö‚¦
+			m_Fade = FADE_IN;	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ÌØ‚ï¿½Ö‚ï¿½
 
-			//	‘JˆÚ‚Ìİ’è
+			//	ï¿½Jï¿½Ú‚Ìİ’ï¿½
 			Game::GetInstance()->SetScene(m_Scene);
 		}
 	}

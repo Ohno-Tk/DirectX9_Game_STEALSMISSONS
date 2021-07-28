@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€æ“¾UI( ƒŒ[ƒVƒ‡ƒ“ )[ ItemGetUIRation.cpp ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½æ“¾UI( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemGetUIRation.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -26,13 +24,13 @@ Include Files
 Macro
 -----------------------------------------------------------------------------*/
 #define TEXTURE_FILEPATH (TEXTURE_PATH"GAME/ItemGetUI_Ration.png")
-#define SCALE (1.0f)// Šg‘å’l
+#define SCALE (1.0f)// ï¿½gï¿½ï¿½l
 #define VERTEX_SIZE_X (10.0f)
 #define VERTEX_SIZE_Y (3.5f)
 #define INTERPOLATION_TIME (90)
 
 /*-----------------------------------------------------------------------------
-ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 -----------------------------------------------------------------------------*/
 ItemGetUIRation::ItemGetUIRation(int priolity)
 	:ItemGetUI(priolity)
@@ -41,7 +39,7 @@ ItemGetUIRation::ItemGetUIRation(int priolity)
 {}
 
 /*-----------------------------------------------------------------------------
-‰Šú‰»
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::Initialize(void)
 {
@@ -51,7 +49,7 @@ void ItemGetUIRation::Initialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-I—¹
+ï¿½Iï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::Uninitialize(void)
 {
@@ -59,7 +57,7 @@ void ItemGetUIRation::Uninitialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-XV
+ï¿½Xï¿½V
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::Update(void)
 {
@@ -83,7 +81,7 @@ void ItemGetUIRation::Update(void)
 }
 
 /*-----------------------------------------------------------------------------
-•`‰æ
+ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::Draw(void)
 {
@@ -102,17 +100,17 @@ void ItemGetUIRation::Draw(void)
 
 	WorldTransform(Device);
 
-	// ‘S‘Ì‚Ìƒ‰ƒCƒg‚ğ–³Œø‚É‚·‚é
+	// ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ğ–³Œï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, FALSE);
 
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 
-	//	‘S‘Ì‚Ìƒ‰ƒCƒg‚ğ—LŒø‚É‚·‚é
+	//	ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ìì¬
+ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::MakeVertex(void)
 {
@@ -122,18 +120,18 @@ void ItemGetUIRation::MakeVertex(void)
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_3D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
 
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚É¸”s", "ItemGetUIRation.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "ItemGetUIRation.cpp", MB_OK | MB_ICONHAND);
 		return;
 	}
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_3D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&pVtx, 0);
 
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	pVtx[0].Pos = D3DXVECTOR3(-VERTEX_SIZE_X, VERTEX_SIZE_Y, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( VERTEX_SIZE_X, VERTEX_SIZE_Y, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3(-VERTEX_SIZE_X, 0.0f, 0.0f);
@@ -142,30 +140,30 @@ void ItemGetUIRation::MakeVertex(void)
 
 	for(unsigned int i = 0; i < NUM_VERTEX; i++)
 	{
-		pVtx[i].Nor = D3DXVECTOR3(0.0f, 0.0f, 0.0f);// –@ü
-		pVtx[i].Color = ItemGetUI::GetColor();// ’¸“_ƒJƒ‰[
+		pVtx[i].Nor = D3DXVECTOR3(0.0f, 0.0f, 0.0f);// ï¿½@ï¿½ï¿½
+		pVtx[i].Color = ItemGetUI::GetColor();// ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 	}
 
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	pVtx[0].Tex = D3DXVECTOR2(0, 0);
 	pVtx[1].Tex = D3DXVECTOR2(1, 0);
 	pVtx[2].Tex = D3DXVECTOR2(0, 1);
 	pVtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
 void ItemGetUIRation::SetVertex(void)
 {
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_3D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&pVtx, 0);
 
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	pVtx[0].Pos = D3DXVECTOR3(-VERTEX_SIZE_X, VERTEX_SIZE_Y, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( VERTEX_SIZE_X, VERTEX_SIZE_Y, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3(-VERTEX_SIZE_X, 0.0f, 0.0f);
@@ -173,26 +171,26 @@ void ItemGetUIRation::SetVertex(void)
 
 	for(unsigned int i = 0; i < NUM_VERTEX; i++)
 	{
-		pVtx[i].Color = ItemGetUI::GetColor();// ’¸“_ƒJƒ‰[
+		pVtx[i].Color = ItemGetUI::GetColor();// ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 	}
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
-ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void ItemGetUIRation::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
 	D3DXVECTOR3 Position = Object::GetPosition();
-	//	ƒrƒ…[s—ñ‚Ì‹ts—ñ‚ğæ“¾
+	//	ï¿½rï¿½ï¿½ï¿½[ï¿½sï¿½ï¿½Ì‹tï¿½sï¿½ï¿½ï¿½ï¿½æ“¾
 	D3DXMATRIX mtxViewInverse = Game::GetInstance()->GetCamera()->GetInversedView();
 
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
 	D3DXMatrixScaling(&matrixScale,
 		SCALE,

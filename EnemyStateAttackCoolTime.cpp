@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( UŒ‚‘Ò‚¿ŠÔ )[ EnemyStateAttackCoolTime.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Uï¿½ï¿½ï¿½Ò‚ï¿½ï¿½ï¿½ï¿½ï¿½ )[ EnemyStateAttackCoolTime.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/24
 =============================================================================*/
 
@@ -36,7 +34,7 @@ EnemyStateAttackCoolTime::EnemyStateAttackCoolTime(Enemy* owner):m_Owner(owner)
 {
 	m_CoolTimeCount = 0;
 
-	Debug::Log("“G : UŒ‚‘Ò‚¿ó‘Ô");
+	Debug::Log("ï¿½G : ï¿½Uï¿½ï¿½ï¿½Ò‚ï¿½ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateAttackCoolTime::Update(D3DXVECTOR3 position)

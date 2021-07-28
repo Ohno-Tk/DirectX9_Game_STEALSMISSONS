@@ -1,12 +1,9 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€•\¦UI( ƒŒ[ƒVƒ‡ƒ“ )[ ItemUIRation.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½\ï¿½ï¿½UI( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemUIRation.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
-
-¡  Create
+ï¿½ï¿½  Create
 2018/01/24
 =============================================================================*/
 
@@ -28,28 +25,28 @@ class ItemUIRation:public ItemUI
 public:
 	ItemUIRation(int priolity = 4);
 
-	static ItemUIRation* Create(D3DXVECTOR3 position);// ¶¬
+	static ItemUIRation* Create(D3DXVECTOR3 position);// ï¿½ï¿½ï¿½ï¿½
 
 	void Initialize(void)override;
 	void Uninitialize(void)override;
 	void Update(void)override;
 	void Draw(void)override;
 
-	void PlusNowPossession(const unsigned int plusValue);// Œ»İŠ”’Ç‰Á
-	void SubNowPossession(const unsigned int subValue);	 // Œ»İŠ”Œ¸Z
+	void PlusNowPossession(const unsigned int plusValue);// ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
+	void SubNowPossession(const unsigned int subValue);	 // ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Z
 
-	void Use(void)override;// g—p
+	void Use(void)override;// ï¿½gï¿½p
 
 private:
-	void MakeVertex(void);// ’¸“_‚Ìì¬
-	void SetVertex(void);// ’¸“_‚Ì•ÏX
+	void MakeVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void SetVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;
 	D3DXVECTOR2 m_Size;
 
-	unsigned int m_NowPossession;// Œ»İŠ”
-	unsigned int m_MaxPossession;// Å‘åŠ”
+	unsigned int m_NowPossession;// ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½
+	unsigned int m_MaxPossession;// ï¿½Å‘åŠï¿½ï¿½ï¿½ï¿½
 
 	ItemPossession* m_NowPossessionUI;
 	ItemPossession* m_MaxPossessionUI;

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( §Œä“_‚Ö‰ñ“] )[ EnemyStateControlPointRotation.h ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½ï¿½_ï¿½Ö‰ï¿½] )[ EnemyStateControlPointRotation.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/12/04
 =============================================================================*/
 
@@ -38,12 +36,12 @@ private:
 	void RotationControlPoint(void);
 
 private:
-	Enemy* m_Owner; // Š—LÒ
+	Enemy* m_Owner; // ï¿½ï¿½ï¿½Lï¿½ï¿½
 
 	float m_NowRotation;
 	float m_Angle;
 
-	int m_CountInterpolation; // •âŠÔ‚ÌƒJƒEƒ“ƒ^
+	int m_CountInterpolation; // ï¿½ï¿½Ô‚ÌƒJï¿½Eï¿½ï¿½ï¿½^
 	unsigned int m_CountLinear;
 };
 

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€•\¦UI[ ItemUI.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½\ï¿½ï¿½UI[ ItemUI.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/24
 =============================================================================*/
 
@@ -21,17 +19,17 @@ class ItemUI:public Object
 public:
 	enum ITEM_ID
 	{
-		ITEM_ID_RATION = 0,// ƒŒ[ƒVƒ‡ƒ“
+		ITEM_ID_RATION = 0,// ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½
 	};
 
 	ItemUI(int priolity):Object(priolity), m_Active(true){}
 
-	void Uninitialize(void)override;// I—¹
+	void Uninitialize(void)override;// ï¿½Iï¿½ï¿½
 
-	virtual void PlusNowPossession(const unsigned int plusValue) = 0;// Œ»İŠ”’Ç‰Á
-	virtual void SubNowPossession(const unsigned int subValue) = 0;  // Œ»İŠ”Œ¸Z
+	virtual void PlusNowPossession(const unsigned int plusValue) = 0;// ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
+	virtual void SubNowPossession(const unsigned int subValue) = 0;  // ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Z
 
-	virtual void Use(void) = 0;// g—p
+	virtual void Use(void) = 0;// ï¿½gï¿½p
 
 	//Setter
 	void SetActive(const bool flag){ m_Active = flag; }
@@ -40,7 +38,7 @@ public:
 	ITEM_ID GetItemID(void){ return m_ItemID; }
 
 private:
-	bool m_Active;// ‰Â‹‰»
+	bool m_Active;// ï¿½Âï¿½ï¿½ï¿½
 	ITEM_ID m_ItemID;
 
 protected:

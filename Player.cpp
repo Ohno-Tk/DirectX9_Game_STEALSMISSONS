@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒvƒŒƒCƒ„[[ Player.cpp ]
+ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[[ Player.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -40,8 +38,8 @@ Macro
 
 Player::Player(int Priolity):Human(Priolity)
 {
-	m_OldPosision = D3DXVECTOR3(0.0f,0.0f,0.0f); // ‘O‰ñ‚ÌÀ•W
-	m_SphereRadius = 9.0f; // ‹…”»’è‚Ì‚Ì”¼Œa
+	m_OldPosision = D3DXVECTOR3(0.0f,0.0f,0.0f); // ï¿½Oï¿½ï¿½Ìï¿½ï¿½W
+	m_SphereRadius = 9.0f; // ï¿½ï¿½ï¿½ï¿½ï¿½èï¿½Ì‚Ì”ï¿½ï¿½a
 	m_Move = 1.0f;
 
 	m_Shadow = NULL;
@@ -50,10 +48,10 @@ Player::Player(int Priolity):Human(Priolity)
 /*-----------------------------------------------------------------------------
 Function:   Player* Player::Create(D3DXVECTOR3 position, float rotation)
 Parameter:  D3DXVECTOR3 position
-              À•W
+              ï¿½ï¿½ï¿½W
 		    float rotation
-			  ‰ñ“]
-Overview:   ¶¬
+			  ï¿½ï¿½]
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 Player* Player::Create(D3DXVECTOR3 position, float rotation)
 {
@@ -74,7 +72,7 @@ void Player::Initialize(void)
 {
 	Human::Initialize();
 	
-	m_Shadow = StencilShadow::Create(MODEL_PATH"StecilShadow.x"); // ‰e‚Ì¶¬
+	m_Shadow = StencilShadow::Create(MODEL_PATH"StecilShadow.x"); // ï¿½eï¿½Ìï¿½ï¿½ï¿½
 
 	m_HitPoint = HitPointGauge::Create(D3DXVECTOR3(25.0f, 25.0f, 0.0f), D3DXVECTOR2(250.0f,50.0f),100);
 
@@ -102,7 +100,7 @@ void Player::Update(void)
 
 	Control(position);
 	
-	Collision(position);// Õ“Ë”»’è
+	Collision(position);// ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 
 	m_Shadow->SetPosition(*position);
 }
@@ -120,7 +118,7 @@ void Player::Control(D3DXVECTOR3* position)
 	float AnalogX = m_XInput->GetAnalogValue(XInput::CONTROLLER_1, XInput::LEFT).x;
 	float AnalogY = m_XInput->GetAnalogValue(XInput::CONTROLLER_1, XInput::LEFT).y;
 
-	//	ˆÚ“®ˆ—
+	//	ï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½
 	if (keyboard->GetKeyPress(DIK_W) && keyboard->GetKeyPress(DIK_D) || AnalogX > 0.8f && AnalogY > 0.8f)
 	{
 		rotation.y = 225.0f;
@@ -200,7 +198,7 @@ void Player::Control(D3DXVECTOR3* position)
 
 	Human::SetRotation(rotation);
 
-	// ƒAƒCƒeƒ€g—p
+	// ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½gï¿½p
 	if (keyboard->GetKeyTrigger(DIK_I) || Game::GetInstance()->GetXInput()->GetKeyTrigger(XInput::CONTROLLER_1, XINPUT_GAMEPAD_Y))
 	{
 		GameScene::GetItemUI()->Use();
@@ -210,12 +208,12 @@ void Player::Control(D3DXVECTOR3* position)
 /*-----------------------------------------------------------------------------
 Function:   void Player::Collision(D3DXVECTOR3* position)
 Parameter:  D3DXVECTOR3 position
-              À•W
-Overview:   Õ“Ë”»’è
+              ï¿½ï¿½ï¿½W
+Overview:   ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Player::Collision(D3DXVECTOR3* position)
 {
-	//	•Ç‚Æ‚ÌÕ“Ë”»’è
+	//	ï¿½Ç‚Æ‚ÌÕ“Ë”ï¿½ï¿½ï¿½
 	MeshWall* MeshWall00 = GameScene::GetMeshWall(0);
 	MeshWall* MeshWall01 = GameScene::GetMeshWall(1);
 	MeshWall* MeshWall02 = GameScene::GetMeshWall(2);
@@ -240,8 +238,8 @@ void Player::Collision(D3DXVECTOR3* position)
 /*-----------------------------------------------------------------------------
 Function:   bool Player::AttackHit(int damageValue)
 Parameter:  int damageValue
-              UŒ‚—Í
-Overview:   UŒ‚ƒqƒbƒg
+              ï¿½Uï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½Uï¿½ï¿½ï¿½qï¿½bï¿½g
 -----------------------------------------------------------------------------*/
 bool Player::AttackHit(int damageValue)
 {
@@ -271,7 +269,7 @@ bool Player::AttackHit(int damageValue)
 }
 
 /*-----------------------------------------------------------------------------
-‘Ì—Í‰ñ•œ
+ï¿½Ì—Í‰ï¿½
 -----------------------------------------------------------------------------*/
 void Player::HitPointRecovery(int recoveryValue)
 {

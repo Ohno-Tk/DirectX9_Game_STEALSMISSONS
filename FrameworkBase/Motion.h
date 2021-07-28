@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‚[ƒVƒ‡ƒ“[ Motion.h ]
+ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½[ Motion.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/08/07
 =============================================================================*/
 
@@ -21,7 +19,7 @@ Include Files
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-#define MAX_MOTION (10)	//	Å‘åƒ‚[ƒVƒ‡ƒ“”
+#define MAX_MOTION (10)	//	ï¿½Å‘åƒ‚ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 /*-----------------------------------------------------------------------------
 
@@ -60,21 +58,21 @@ public:
 	D3DXMATRIX GetMatrix(void){return m_MtxWorld;}
 
 private:
-	void MotionInterpolation(void);	//	ƒ‚[ƒVƒ‡ƒ“•âŠÔ
-	void MotionBlend(void);	//	ƒ‚[ƒVƒ‡ƒ“ƒuƒŒƒ“ƒh
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void PartWorldTransform(const int cntmodel, LPDIRECT3DDEVICE9 Device);	//	ƒp[ƒc‚²‚Æ‚Ìƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ReadText(void);											//	ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
-	void ReadNumModel(FILE *fp);									//	ƒ‚ƒfƒ‹”‚Ì“Ç‚İ‚İ
-	void ReadModelFileName(FILE *fp);								//	ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼‚Ì“Ç‚İ‚İ
-	void LoadModel(const int nummodel, char *modelfilename);		//	ƒ‚ƒfƒ‹‚Ìƒ[ƒh
-	void ReadCharacterInfo(FILE *fp);								//	ƒLƒƒƒ‰ƒNƒ^î•ñ‚Ì“Ç‚İ‚İ
-	void ReadPartsSet(FILE *fp);									//	ƒLƒƒƒ‰ƒNƒ^‚Ìƒp[ƒcî•ñ‚Ì“Ç‚İ‚İ
-	void ReadMotion(FILE *fp);										//	ƒ‚[ƒVƒ‡ƒ“î•ñ‚Ì“Ç‚İ‚İ
+	void MotionInterpolation(void);	//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void MotionBlend(void);	//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½h
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void PartWorldTransform(const int cntmodel, LPDIRECT3DDEVICE9 Device);	//	ï¿½pï¿½[ï¿½cï¿½ï¿½ï¿½Æ‚Ìƒï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ReadText(void);											//	ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadNumModel(FILE *fp);									//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadModelFileName(FILE *fp);								//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void LoadModel(const int nummodel, char *modelfilename);		//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
+	void ReadCharacterInfo(FILE *fp);								//	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadPartsSet(FILE *fp);									//	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Ìƒpï¿½[ï¿½cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadMotion(FILE *fp);										//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 	void InitializePartsData(void);
 	void InitializeMotionData(int countMotion);
-	bool MatchFileToken(char* buffer, char* fileToken);		// ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ìˆê’v
-	bool MisMatchFileToken(char* buffer, char* fileToken); // ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ì•sˆê’v
+	bool MatchFileToken(char* buffer, char* fileToken);		// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ìˆï¿½v
+	bool MisMatchFileToken(char* buffer, char* fileToken); // ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ì•sï¿½ï¿½v
 	virtual void ConfigShader(LPDIRECT3DDEVICE9 device);
 
 
@@ -115,49 +113,49 @@ private:
 
 	struct PART
 	{
-		int					Index;		//	ƒp[ƒc”Ô†
-		int					Parent;		//	eq\‘¢
-		D3DXVECTOR3			OffsetPos;	//	‰ŠúÀ•W
-		D3DXVECTOR3			OffsetRot;	//	‰Šú‰ñ“]
-		D3DXVECTOR3			Pos;		//	•âŠÔÀ•W
-		D3DXVECTOR3			Rot;		//	•âŠÔ‰ñ“]
+		int					Index;		//	ï¿½pï¿½[ï¿½cï¿½Ôï¿½
+		int					Parent;		//	ï¿½eï¿½qï¿½\ï¿½ï¿½
+		D3DXVECTOR3			OffsetPos;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½W
+		D3DXVECTOR3			OffsetRot;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]
+		D3DXVECTOR3			Pos;		//	ï¿½ï¿½Ôï¿½ï¿½W
+		D3DXVECTOR3			Rot;		//	ï¿½ï¿½Ô‰ï¿½]
 		D3DXVECTOR3			Scale;
-		D3DXMATRIX			MatrixWorld;	//	ƒ[ƒ‹ƒhƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX			MatrixScl;		//	Šg‘åƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX			MatrixRot;		//	‰ñ“]ƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX			MatrixPos;		//	À•Wƒ}ƒgƒŠƒNƒX
+		D3DXMATRIX			MatrixWorld;	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX			MatrixScl;		//	ï¿½gï¿½ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX			MatrixRot;		//	ï¿½ï¿½]ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX			MatrixPos;		//	ï¿½ï¿½ï¿½Wï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
 		MODEL_PARAM			ModelParam;
 	};
 
 	struct MOTION
 	{
-		int Loop;		//	ƒ‹[ƒv‚·‚é‚©
-		int NumKey;		//	ƒL[”
-		int *Frame;		//	ƒtƒŒ[ƒ€”
-		KEYINFO *Next;	//	Ÿ‚ÌêŠ
+		int Loop;		//	ï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½é‚©
+		int NumKey;		//	ï¿½Lï¿½[ï¿½ï¿½
+		int *Frame;		//	ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
+		KEYINFO *Next;	//	ï¿½ï¿½ï¿½ÌêŠ
 	};
 
 	struct CHARACTERDATA
 	{
-		PART* PartInfo; // ƒp[ƒcî•ñ
-		MOTION Motion[MAX_MOTION]; // ƒ‚[ƒVƒ‡ƒ“î•ñ
-		int NumModel; // ƒ‚ƒfƒ‹”
+		PART* PartInfo; // ï¿½pï¿½[ï¿½cï¿½ï¿½ï¿½
+		MOTION Motion[MAX_MOTION]; // ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int NumModel; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½
 	};
 
-	D3DXMATRIX	m_MtxWorld;	//	ƒ[ƒ‹ƒhƒ}ƒgƒŠƒNƒX
+	D3DXMATRIX	m_MtxWorld;	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
 
-	D3DXVECTOR3 m_Rotation;	//	‰ñ“]
-	D3DXVECTOR3 m_Scale;	//	Šg‘å
+	D3DXVECTOR3 m_Rotation;	//	ï¿½ï¿½]
+	D3DXVECTOR3 m_Scale;	//	ï¿½gï¿½ï¿½
 
-	int m_MotionIndex;	//	ƒ‚[ƒVƒ‡ƒ“”Ô†
-	int m_NumKeyCount;	//	ƒL[”
-	int m_MotionCount;	//	ƒ‚[ƒVƒ‡ƒ“ƒJƒEƒ“ƒ^
+	int m_MotionIndex;	//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ôï¿½
+	int m_NumKeyCount;	//	ï¿½Lï¿½[ï¿½ï¿½
+	int m_MotionCount;	//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½^
 
-	static char* m_FileToken[MAX_TOKEN];	//	ƒg[ƒNƒ“
-	static char m_Buffer[256];		//	ƒeƒLƒXƒgƒf[ƒ^“Ç‚İ‚İ‚Ìƒoƒbƒtƒ@
-	char* m_TextFileName;	//	ƒeƒLƒXƒg‚Ìƒtƒ@ƒCƒ‹–¼
+	static char* m_FileToken[MAX_TOKEN];	//	ï¿½gï¿½[ï¿½Nï¿½ï¿½
+	static char m_Buffer[256];		//	ï¿½eï¿½Lï¿½Xï¿½gï¿½fï¿½[ï¿½^ï¿½Ç‚İï¿½ï¿½İ‚Ìƒoï¿½bï¿½tï¿½@
+	char* m_TextFileName;	//	ï¿½eï¿½Lï¿½Xï¿½gï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
 
-	CHARACTERDATA m_CharacterData; // ƒLƒƒƒ‰ƒNƒ^[î•ñ
+	CHARACTERDATA m_CharacterData; // ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ï¿½ï¿½
 
 	bool m_MotionEnd;
 

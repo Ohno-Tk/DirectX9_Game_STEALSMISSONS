@@ -1,12 +1,11 @@
 /*=============================================================================
 
-	ƒRƒ“ƒ\[ƒ‹[ Console.cpp ]
+	ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½[ Console.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -34,22 +33,22 @@ HANDLE Console::ConsoleHandle = 0;
 
 void Console::Init(void)
 {
-	AllocConsole();	// ƒRƒ“ƒ\[ƒ‹‚ğì¬
+	AllocConsole();	// ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ì¬
 
-	freopen("CON", "r", stdin);     // •W€“ü—Í‚ÌŠ„‚è“–‚Ä
-	freopen("CON", "w", stdout);    // •W€o—Í‚ÌŠ„‚è“–‚Ä
+	freopen("CON", "r", stdin);     // ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Í‚ÌŠï¿½ï¿½è“–ï¿½ï¿½
+	freopen("CON", "w", stdout);    // ï¿½Wï¿½ï¿½ï¿½oï¿½Í‚ÌŠï¿½ï¿½è“–ï¿½ï¿½
 
-	ConsoleHandle = GetStdHandle(STD_OUTPUT_HANDLE); // ƒRƒ“ƒ\[ƒ‹ƒnƒ“ƒhƒ‹æ“¾
+	ConsoleHandle = GetStdHandle(STD_OUTPUT_HANDLE); // ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½æ“¾
 }
 
 void Console::Uninit(void)
 {
-	FreeConsole();	//	ƒRƒ“ƒ\[ƒ‹‚Ì‰ğ•ú
+	FreeConsole();	//	ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½Ì‰ï¿½ï¿½
 }
 
 void Console::SetColor(CONSOLECOLOR text, CONSOLECOLOR background)
 {
-	WORD attr = 0; //  API ‚É“n‚·ƒAƒgƒŠƒrƒ…[ƒg
+	WORD attr = 0; //  API ï¿½É“nï¿½ï¿½ï¿½Aï¿½gï¿½ï¿½ï¿½rï¿½ï¿½ï¿½[ï¿½g
 
 	if (text & CONSOLE_INTENSITY) { attr |= FOREGROUND_INTENSITY; }
 	if (text & CONSOLE_RED_MASK) { attr |= FOREGROUND_RED; }

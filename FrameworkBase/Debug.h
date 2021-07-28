@@ -1,12 +1,11 @@
 /*=============================================================================
 
-ƒfƒoƒbƒO—p[ Debug.h ]
+ï¿½fï¿½oï¿½bï¿½Oï¿½p[ Debug.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -23,8 +22,8 @@ Enum
 -----------------------------------------------------------------------------*/
 enum PROCESSPATTERN
 {
-	PATTERN_NETWORK = 0, // ƒlƒbƒgƒ[ƒN
-	PATTERN_WARNING, // Œx
+	PATTERN_NETWORK = 0, // ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½N
+	PATTERN_WARNING, // ï¿½xï¿½ï¿½
 };
 
 /*-----------------------------------------------------------------------------
@@ -33,10 +32,10 @@ Class
 class Debug
 {
 public:
-	static void Assert(std::string message); // Asserto—Í
+	static void Assert(std::string message); // Assertï¿½oï¿½ï¿½
 	static void Assert(std::string message, std::string filename, std::string line);
 
-	static void Log(std::string message); // ƒRƒ“ƒ\[ƒ‹o—Í
+	static void Log(std::string message); // ï¿½Rï¿½ï¿½ï¿½\ï¿½[ï¿½ï¿½ï¿½oï¿½ï¿½
 	static void Log(std::string message, PROCESSPATTERN pattern);
 	template <class T> static void Log(std::string message, T value){
 		std::cout << message << value << std::endl;

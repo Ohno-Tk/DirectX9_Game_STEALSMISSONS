@@ -1,12 +1,10 @@
 /*=============================================================================
 
-Œ»İŠ”ƒAƒCƒeƒ€[ NowPossessionItem.cpp ]
+ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Cï¿½eï¿½ï¿½[ NowPossessionItem.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/24
 =============================================================================*/
 
@@ -24,7 +22,7 @@ Include Files
 Macro
 -----------------------------------------------------------------------------*/
 #define OBJECT_TEXTURE_PATH (TEXTURE_PATH"GAME/Number003.png")
-#define BUNKATUSU ( 0.1f )	//	ƒeƒNƒXƒ`ƒƒ‚Ì•ªŠ„”
+#define BUNKATUSU ( 0.1f )	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 ItemPossession::ItemPossession(int priolity)
@@ -37,7 +35,7 @@ ItemPossession::ItemPossession(int priolity)
 {}
 
 /*-----------------------------------------------------------------------------
-¶¬
+ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 ItemPossession* ItemPossession::Create(D3DXVECTOR3 position, unsigned int digit)
 {
@@ -51,7 +49,7 @@ ItemPossession* ItemPossession::Create(D3DXVECTOR3 position, unsigned int digit)
 }
 
 /*-----------------------------------------------------------------------------
-‰Šú‰»
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemPossession::Initialize(void)
 {
@@ -59,7 +57,7 @@ void ItemPossession::Initialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-I—¹
+ï¿½Iï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemPossession::Uninitialize(void)
 {
@@ -68,7 +66,7 @@ void ItemPossession::Uninitialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-XV
+ï¿½Xï¿½V
 -----------------------------------------------------------------------------*/
 void ItemPossession::Update(void)
 {
@@ -76,7 +74,7 @@ void ItemPossession::Update(void)
 }
 
 /*-----------------------------------------------------------------------------
-•`‰æ
+ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemPossession::Draw(void)
 {
@@ -96,30 +94,30 @@ void ItemPossession::Draw(void)
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ìì¬
+ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void ItemPossession::MakeVertex(void)
 {
 	D3DXVECTOR3 position = Object::GetPosition();
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	// ’¸“_ƒoƒbƒtƒ@‚Ì¶¬
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX * m_Digit, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚É¸”s", "NowPossessionItem.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "NowPossessionItem.cpp", MB_OK | MB_ICONHAND);
 	}
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_2D* Vtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
 
 	for(unsigned int i = 0; i < m_Digit; i++)
 	{
 
-		//	’¸“_À•W
+		//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 		Vtx[0].Pos = D3DXVECTOR3(position.x            - m_Size.x * i, position.y, 0.0f);
 		Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x - m_Size.x * i, position.y, 0.0f);
 		Vtx[2].Pos = D3DXVECTOR3(position.x            - m_Size.x * i, position.y + m_Size.y, 0.0f);
@@ -127,11 +125,11 @@ void ItemPossession::MakeVertex(void)
 
 		for(unsigned int j = 0; j < NUM_VERTEX; j++)
 		{
-			Vtx[j].Rhw = 1.0f;//	À•W•ÏŠ·Ï‚İ’¸“_ƒtƒ‰ƒO
-			Vtx[j].Color = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);// ’¸“_ƒJƒ‰[
+			Vtx[j].Rhw = 1.0f;//	ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½ï¿½Ï‚İ’ï¿½ï¿½_ï¿½tï¿½ï¿½ï¿½O
+			Vtx[j].Color = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);// ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 		}
 
-		// ƒeƒNƒXƒ`ƒƒÀ•W
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 		Vtx[0].Tex = D3DXVECTOR2( m_TexCoord             , 0 );
 		Vtx[1].Tex = D3DXVECTOR2( m_TexCoord + BUNKATUSU , 0 );
 		Vtx[2].Tex = D3DXVECTOR2( m_TexCoord             , 1 );
@@ -140,26 +138,26 @@ void ItemPossession::MakeVertex(void)
 		Vtx += 4;
 	}
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ì•ÏX
+ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 -----------------------------------------------------------------------------*/
 void ItemPossession::SetVertex(void)
 {
-	int Number;		//	”š‚ğ•\¦‚·‚é•Ï”
-	int Value = m_Possession;		//	’l‚Ì•Û
+	int Number;		//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïï¿½
+	int Value = m_Possession;		//	ï¿½lï¿½Ì•Ûï¿½
 
 
 	D3DXVECTOR3 position = Object::GetPosition();
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_2D* Vtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
 
@@ -170,13 +168,13 @@ void ItemPossession::SetVertex(void)
 		m_TexCoord = Number * BUNKATUSU;
 
 
-		//	’¸“_À•W
+		//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 		Vtx[0].Pos = D3DXVECTOR3(position.x            - m_Size.x * i, position.y, 0.0f);
 		Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x - m_Size.x * i, position.y, 0.0f);
 		Vtx[2].Pos = D3DXVECTOR3(position.x            - m_Size.x * i, position.y + m_Size.y, 0.0f);
 		Vtx[3].Pos = D3DXVECTOR3(position.x + m_Size.x - m_Size.x * i, position.y + m_Size.y, 0.0f);
 
-		// ƒeƒNƒXƒ`ƒƒÀ•W
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 		Vtx[0].Tex = D3DXVECTOR2( m_TexCoord             , 0 );
 		Vtx[1].Tex = D3DXVECTOR2( m_TexCoord + BUNKATUSU , 0 );
 		Vtx[2].Tex = D3DXVECTOR2( m_TexCoord             , 1 );
@@ -186,13 +184,13 @@ void ItemPossession::SetVertex(void)
 
 	}
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 
 }
 
 /*-----------------------------------------------------------------------------
-”š‚Ìİ’è
+ï¿½ï¿½ï¿½ï¿½ï¿½Ìİ’ï¿½
 -----------------------------------------------------------------------------*/
 void ItemPossession::SetPossession(int possession)
 {

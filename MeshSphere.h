@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒƒbƒVƒ…‹…[ MeshSphere.h ]
-( Maybe-Later:std::string‚Ìƒƒ‚ƒŠ‰ğ•ú‚ªo—ˆ‚Ä‚¢‚È‚¢ )
+ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½[ MeshSphere.h ]
+( Maybe-Later:std::stringï¿½Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ )
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/05/12
 =============================================================================*/
 
@@ -20,10 +18,10 @@ class MeshSphere : public Object
 {
 public:
 	enum IDXBACK_DRAW
-	{	//	‚Ç‚Á‚¿ü‚è‚Å•`‰æ‚³‚¹‚é‚©
+	{	//	ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•`ï¿½æ‚³ï¿½ï¿½ï¿½é‚©
 
-		IDXBACK_DRAW_CLOCKWISE = 0,	//	Œv‰ñ‚è
-		IDXBACK_DRAW_INV_CLOCKWISE	//	‹tŒv‰ñ‚è
+		IDXBACK_DRAW_CLOCKWISE = 0,	//	ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½
+		IDXBACK_DRAW_INV_CLOCKWISE	//	ï¿½tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½
 
 	};
 
@@ -37,51 +35,51 @@ public:
 	void Draw(void)override;
 
 	// Setter
-	void SetColor(const D3DXCOLOR color) { m_Color = color; }//	F
-	void SetRotation(const D3DXVECTOR3 rotation){ m_Rotation = rotation; }// ‰ñ“]
-	void SetTexturePath(char* texturePath){ m_TexturePath = texturePath; }// ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+	void SetColor(const D3DXCOLOR color) { m_Color = color; }//	ï¿½F
+	void SetRotation(const D3DXVECTOR3 rotation){ m_Rotation = rotation; }// ï¿½ï¿½]
+	void SetTexturePath(char* texturePath){ m_TexturePath = texturePath; }// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
 
 	// Getter	
-	D3DXVECTOR3 GetRotation(void) {return m_Rotation;}//	‰ñ“]
+	D3DXVECTOR3 GetRotation(void) {return m_Rotation;}//	ï¿½ï¿½]
 
 private:
-	void MakeVerTex(LPDIRECT3DDEVICE9 Device);		//	’¸“_‚Ìì¬
-	void MakeIndex(LPDIRECT3DDEVICE9 Device);		//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void SetVerTex(void);							//	’¸“_‚Ì•ÏX
+	void MakeVerTex(LPDIRECT3DDEVICE9 Device);		//	ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void MakeIndex(LPDIRECT3DDEVICE9 Device);		//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìì¬
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void SetVerTex(void);							//	ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 
 private:
-	static LPDIRECT3DTEXTURE9 m_Texture;	// ƒeƒNƒXƒ`ƒƒ
-	LPDIRECT3DVERTEXBUFFER9	m_VertexBuffer;	// ’¸“_ƒoƒbƒtƒ@
-	LPDIRECT3DINDEXBUFFER9	m_IndexBuffer;	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@
+	static LPDIRECT3DTEXTURE9 m_Texture;	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½
+	LPDIRECT3DVERTEXBUFFER9	m_VertexBuffer;	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
+	LPDIRECT3DINDEXBUFFER9	m_IndexBuffer;	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@
 
-	D3DXVECTOR3	m_Rotation;		// ‰ñ“]
+	D3DXVECTOR3	m_Rotation;		// ï¿½ï¿½]
 
-	D3DXVECTOR2 m_TexturePositon;		//	ƒeƒNƒXƒ`ƒƒÀ•W
+	D3DXVECTOR2 m_TexturePositon;		//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 
-	D3DXCOLOR m_Color;			//	F
+	D3DXCOLOR m_Color;			//	ï¿½F
 
-	D3DXMATRIX	m_MatrixWorld;		// ƒ[ƒ‹ƒhƒ}ƒgƒŠƒbƒNƒX
+	D3DXMATRIX	m_MatrixWorld;		// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½}ï¿½gï¿½ï¿½ï¿½bï¿½Nï¿½X
 
-	UINT m_NumBlock_X;	//	‰¡‚Ì–‡”
-	UINT m_NumBlock_Y;	//	c‚Ì–‡”
+	UINT m_NumBlock_X;	//	ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
+	UINT m_NumBlock_Y;	//	ï¿½cï¿½Ì–ï¿½ï¿½ï¿½
 
-	int m_NumVertex;		//	’¸“_”
-	int m_NumIndexBuffer;	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@”
+	int m_NumVertex;		//	ï¿½ï¿½ï¿½_ï¿½ï¿½
+	int m_NumIndexBuffer;	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½
 
-	float m_Radius;		//	”¼Œa
+	float m_Radius;		//	ï¿½ï¿½ï¿½a
 
-	IDXBACK_DRAW m_IndexBackDraw;	//	‚Ç‚Á‚¿ü‚è‚Å•`‰æ‚³‚¹‚é‚©
+	IDXBACK_DRAW m_IndexBackDraw;	//	ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•`ï¿½æ‚³ï¿½ï¿½ï¿½é‚©
 
-	char* m_TexturePath;//	ƒeƒNƒXƒ`ƒƒƒpƒX
+	char* m_TexturePath;//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½pï¿½X
 
 protected:
 	// Setter
-	void SetNumBlock(const UINT numBlockX, const UINT numBlockY);//	–‡”
-	void SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y);// ’¸“_”‚ÌŒvZ
-	void SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y);// ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌŒvZ
-	void SetIndexBackDraw(const IDXBACK_DRAW indexBackDraw){ m_IndexBackDraw = indexBackDraw; }//	‚Ç‚Á‚¿ü‚è‚Å•`‰æ‚³‚¹‚é‚©
-	void SetRadius(const float radius) { m_Radius = radius; }//	”¼Œa
+	void SetNumBlock(const UINT numBlockX, const UINT numBlockY);//	ï¿½ï¿½ï¿½ï¿½
+	void SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y);// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÌŒvï¿½Z
+	void SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y);// ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ÌŒvï¿½Z
+	void SetIndexBackDraw(const IDXBACK_DRAW indexBackDraw){ m_IndexBackDraw = indexBackDraw; }//	ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•`ï¿½æ‚³ï¿½ï¿½ï¿½é‚©
+	void SetRadius(const float radius) { m_Radius = radius; }//	ï¿½ï¿½ï¿½a
 
 };
 

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-Ž‹ŠE( ƒfƒoƒbƒO—p )[ Vision.cpp ]
+ï¿½ï¿½ï¿½E( ï¿½fï¿½oï¿½bï¿½Oï¿½p )[ Vision.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/28
 =============================================================================*/
 
@@ -71,12 +69,12 @@ void Vision::Draw(void)
 
 	Device->SetTexture(0, Game::GetInstance()->GetTextureManager()->GetTextureInfo(OBJECT_TEXTURE_PATH).Texture);
 
-	// ‘S‘Ì‚Ìƒ‰ƒCƒg‚ð–³Œø‚É‚·‚é
+	// ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ð–³Œï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, FALSE);
 
 	Device->DrawPrimitive(D3DPT_TRIANGLEFAN, 0, NUM_POLYGON);
 
-	//	‘S‘Ì‚Ìƒ‰ƒCƒg‚ð—LŒø‚É‚·‚é
+	//	ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
 	Device->SetRenderState(D3DRS_LIGHTING, TRUE);
 }
 
@@ -88,14 +86,14 @@ void Vision::MakeVerTex(void)
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_3D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_3D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
 
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚ÉŽ¸”s", "Vision.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "Vision.cpp", MB_OK | MB_ICONHAND);
 		return;
 	}
 
-	// ’¸“_î•ñ‚ðÝ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½Ý’ï¿½
 	VERTEX_3D* Vtx;
 
-	// ƒoƒbƒtƒ@‚ðƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ðŽæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
 	int angle = (int)(m_Angle * 0.5f);
@@ -104,7 +102,7 @@ void Vision::MakeVerTex(void)
 	float i = tan(D3DXToRadian(angle));
 	float a = 2 * m_VisionDistance * i;
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	Vtx[0].Pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	Vtx[1].Pos = D3DXVECTOR3(a, 0.0f, -m_VisionDistance);
 	Vtx[2].Pos = D3DXVECTOR3(-a, 0.0f, -m_VisionDistance);
@@ -115,13 +113,13 @@ void Vision::MakeVerTex(void)
 		Vtx[i].Color = D3DXCOLOR(255, 255, 255, 255);
 	}
 
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	Vtx[0].Tex = D3DXVECTOR2(0, 0);
 	Vtx[1].Tex = D3DXVECTOR2(1, 0);
 	Vtx[2].Tex = D3DXVECTOR2(0, 1);
 
 
-	//	ƒoƒbƒtƒ@‚ðƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
@@ -154,7 +152,7 @@ void Vision::WorldTransform(LPDIRECT3DDEVICE9 Device)
 	D3DXMatrixMultiply(&matrixWorld, &matrixWorld, &matrixRotation);
 	D3DXMatrixMultiply(&matrixWorld, &matrixWorld, &matrixPosition);
 
-	D3DXMatrixMultiply(&matrixWorld, &matrixWorld, &m_OwnerMatrix); // e‚Ìƒ}ƒgƒŠƒNƒX‚Ì‚©‚¯‚é
+	D3DXMatrixMultiply(&matrixWorld, &matrixWorld, &m_OwnerMatrix); // ï¿½eï¿½Ìƒ}ï¿½gï¿½ï¿½ï¿½Nï¿½Xï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	Device->SetTransform(D3DTS_WORLD, &matrixWorld);
 }

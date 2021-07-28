@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“G[ Enemy.cpp ]
+ï¿½G[ Enemy.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -66,8 +64,8 @@ Enemy::Enemy(int Priolity):Human(Priolity)
 /*-----------------------------------------------------------------------------
 Function:   Enemy* Enemy::Create(char* filename)
 Parameter:  char* filename
-              ƒeƒLƒXƒgƒtƒ@ƒCƒ‹–¼
-Overview:   ¶¬
+              ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 Enemy* Enemy::Create(char* filename)
 {
@@ -86,15 +84,15 @@ void Enemy::Initialize(void)
 {
 	Human::Initialize();
 
-	RoadFile(); // ƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è
+	RoadFile(); // ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½
 
 	D3DXVECTOR3 position = Object::GetPosition();
 
-	SetObjeType(OBJECT_TYPE_ENEMY); // ƒIƒuƒWƒFƒNƒgí—Ş‚ÌƒZƒbƒg
+	SetObjeType(OBJECT_TYPE_ENEMY); // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Ş‚ÌƒZï¿½bï¿½g
 
 	Human::SetState(new EnemyStatePatrol(this));
 
-	m_Shadow = StencilShadow::Create(MODEL_PATH"StecilShadow.x"); // ‰e‚Ì¶¬
+	m_Shadow = StencilShadow::Create(MODEL_PATH"StecilShadow.x"); // ï¿½eï¿½Ìï¿½ï¿½ï¿½
 	m_HeadMark = HeadMark::Create(D3DXVECTOR3(position.x, position.y + 15.0f, position.z));
 	m_Vision = Vision::Create(m_VisionDistance, m_VisionAngle);
 }
@@ -135,12 +133,12 @@ void Enemy::Draw(void)
 /*-----------------------------------------------------------------------------
 Function:   void Enemy::VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 Parameter:  D3DXVECTOR3 Position
-              À•W
+              ï¿½ï¿½ï¿½W
 			int Angle
-			  Šp“x
+			  ï¿½pï¿½x
 			int Distance
-			  ‹——£
-Overview:   ”ÍˆÍ‚Ì”»’è
+			  ï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½ÍˆÍ‚Ì”ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 bool Enemy::VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 {
@@ -148,10 +146,10 @@ bool Enemy::VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 
 	D3DXVECTOR3 PlayerPos = GameScene::GetPlayer()->GetPosition();
 
-	//	“G‚©‚ç©•ª‚Ö‚ÌƒxƒNƒgƒ‹
+	//	ï¿½Gï¿½ï¿½ï¿½ç©ï¿½ï¿½ï¿½Ö‚Ìƒxï¿½Nï¿½gï¿½ï¿½
 	D3DXVECTOR3 VectorEnemyPlayer = PlayerPos - Position;
 
-	//	©•ª‚Ì³–ÊƒxƒNƒgƒ‹
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½Êƒxï¿½Nï¿½gï¿½ï¿½
 	D3DXVECTOR3 FrontPosition;
 	float i , j;
 	i = sinf(D3DXToRadian(Rot.y));
@@ -161,22 +159,22 @@ bool Enemy::VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 	FrontPosition.z = Position.z - j * Distance;
 	m_FrontVector = FrontPosition - Position;
 
-	// ‘O•û‚ÌŠp“x‚ğŒˆ‚ß‚é
+	// ï¿½Oï¿½ï¿½ï¿½ÌŠpï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	float w = Angle / 180.0f; 
 	float EnemyAngle = 1 - w;
 
-	//	2‚Â‚ÌƒxƒNƒgƒ‹‚Ì‚È‚·Šp“x‚ğ‹‚ß‚é
+	//	2ï¿½Â‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½Ì‚È‚ï¿½ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	Angle2Vector angle2vector(VectorEnemyPlayer);
 	float AngleVector = angle2vector.Angle(m_FrontVector);
 
 	if( int(AngleVector) < EnemyAngle)
-	{	//	Šp“x‚ğ”»’è
+	{	//	ï¿½pï¿½xï¿½ğ”»’ï¿½
 
 		float Len;
-		Len = D3DXVec3Length( &VectorEnemyPlayer);	//	’·‚³‚ğ‹‚ß‚é
+		Len = D3DXVec3Length( &VectorEnemyPlayer);	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 
 		if( int(Len) < Distance )
-		{	//	‹——£‚Ì”»’è
+		{	//	ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
 
 /*			for (int CntPriolity = 0; CntPriolity < PRIOLITY_MAX; CntPriolity++)
 			{
@@ -201,7 +199,7 @@ bool Enemy::VisionRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 					object = object->GetNext();
 				}
 			}*/
-//			Debug::Log("Œ©‚Â‚©‚Á‚½ ‚½‚¾‚Ì”»’è");
+//			Debug::Log("ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ï¿½ï¿½ï¿½");
 			return true;
 		}
 	}
@@ -215,10 +213,10 @@ bool Enemy::AttackRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 
 	D3DXVECTOR3 PlayerPos = GameScene::GetPlayer()->GetPosition();
 
-	//	“G‚©‚ç©•ª‚Ö‚ÌƒxƒNƒgƒ‹
+	//	ï¿½Gï¿½ï¿½ï¿½ç©ï¿½ï¿½ï¿½Ö‚Ìƒxï¿½Nï¿½gï¿½ï¿½
 	D3DXVECTOR3 VectorEnemyPlayer = PlayerPos - Position;
 
-	//	©•ª‚Ì³–ÊƒxƒNƒgƒ‹
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½Êƒxï¿½Nï¿½gï¿½ï¿½
 	D3DXVECTOR3 FrontPosition;
 	float i , j;
 	i = sinf(D3DXToRadian(Rot.y));
@@ -228,22 +226,22 @@ bool Enemy::AttackRangeCollision(D3DXVECTOR3 Position, int Angle, int Distance)
 	FrontPosition.z = Position.z - j * Distance;
 	m_FrontVector = FrontPosition - Position;
 
-	// ‘O•û‚ÌŠp“x‚ğŒˆ‚ß‚é
+	// ï¿½Oï¿½ï¿½ï¿½ÌŠpï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	float w = Angle / 180.0f; 
 	float EnemyAngle = 1 - w;
 
-	//	2‚Â‚ÌƒxƒNƒgƒ‹‚Ì‚È‚·Šp“x‚ğ‹‚ß‚é
+	//	2ï¿½Â‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½Ì‚È‚ï¿½ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	Angle2Vector angle2vector(VectorEnemyPlayer);
 	float AngleVector = angle2vector.Angle(m_FrontVector);
 
 	if( int(AngleVector) < EnemyAngle)
-	{	//	Šp“x‚ğ”»’è
+	{	//	ï¿½pï¿½xï¿½ğ”»’ï¿½
 
 		float Len;
-		Len = D3DXVec3Length( &VectorEnemyPlayer);	//	’·‚³‚ğ‹‚ß‚é
+		Len = D3DXVec3Length( &VectorEnemyPlayer);	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 
 		if( int(Len) < Distance )
-		{	//	‹——£‚Ì”»’è
+		{	//	ï¿½ï¿½ï¿½ï¿½ï¿½Ì”ï¿½ï¿½ï¿½
 			return true;
 		}
 	}
@@ -258,7 +256,7 @@ bool Enemy::AttackCollision(D3DXVECTOR3 Position)
 	Collision_Sphere CollisionSphere(Position, 5.0f);
 
 	if (CollisionSphere.Judge(player->GetPosition(), player->GetSphereRadius()))
-	{ // Õ“Ë”»’è
+	{ // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 		player->AttackHit(m_AttackPower);
 		return true;
 	}
@@ -270,7 +268,7 @@ bool Enemy::DistanceWithinCollision(float distance)
 {
 	D3DXVECTOR3 PlayerPos = GameScene::GetPlayer()->GetPosition();
 
-	//	“G‚©‚ç©•ª‚Ö‚ÌƒxƒNƒgƒ‹
+	//	ï¿½Gï¿½ï¿½ï¿½ç©ï¿½ï¿½ï¿½Ö‚Ìƒxï¿½Nï¿½gï¿½ï¿½
 	D3DXVECTOR3 VectorEnemyPlayer = PlayerPos - Object::GetPosition();
 
 	float length;
@@ -293,7 +291,7 @@ bool Enemy::ObstacleCollision(D3DXVECTOR3 aabbmin, D3DXVECTOR3 aabbmax, D3DXMATR
 	inverse._43 = 0.0f;
 	D3DXVec3TransformCoord( &dir_l, &m_FrontVector, &inverse );
 
-	// Œğ·”»’è
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	float p[ 3 ], d[ 3 ], min[ 3 ], max[ 3 ];
 	memcpy( p, &p_l, sizeof( D3DXVECTOR3 ) );
 	memcpy( d, &dir_l, sizeof( D3DXVECTOR3 ) );
@@ -310,19 +308,19 @@ bool Enemy::ObstacleCollision(D3DXVECTOR3 aabbmin, D3DXVECTOR3 aabbmax, D3DXMATR
 		{
 			//if(min[i] * d[h] > max[h] * d[i] || min[i] * d[i] > max[i] * d[h])
 			//{
-			// Debug::Log("Œ©‚Â‚©‚Á‚½ ƒIƒuƒWƒFƒNƒg‚ªŠÔ‚É‚¢‚È‚¢");
+			// Debug::Log("ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Ô‚É‚ï¿½ï¿½È‚ï¿½");
 			// return true;
 			//}
 								 
 		if ( p[ i ] < min[ i ] || p[ i ] > max[ i ] )
-		{ // Œğ·‚µ‚Ä‚¢‚È‚¢
-				Debug::Log("Œ©‚Â‚©‚Á‚½ ƒIƒuƒWƒFƒNƒg‚ªŠÔ‚É‚¢‚È‚¢");
+		{ // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½
+				Debug::Log("ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Ô‚É‚ï¿½ï¿½È‚ï¿½");
 				return false;
 		}
 		else
 		{
-			// ƒXƒ‰ƒu‚Æ‚Ì‹——£‚ğZo
-			// t1‚ª‹ßƒXƒ‰ƒuAt2‚ª‰“ƒXƒ‰ƒu‚Æ‚Ì‹——£
+			// ï¿½Xï¿½ï¿½ï¿½uï¿½Æ‚Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½o
+			// t1ï¿½ï¿½ï¿½ßƒXï¿½ï¿½ï¿½uï¿½At2ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½uï¿½Æ‚Ì‹ï¿½ï¿½ï¿½
 			float odd = 1.0f / d[ i ];
 			float t1 = ( min[ i ] - p[ i ] ) * odd;
 			float t2 = ( max[ i ] - p[ i ] ) * odd;
@@ -334,10 +332,10 @@ bool Enemy::ObstacleCollision(D3DXVECTOR3 aabbmin, D3DXVECTOR3 aabbmax, D3DXMATR
 			if ( t1 > t ) t = t1;
 			if ( t2 < t_max ) t_max = t2;
 
-			// ƒXƒ‰ƒuŒğ·ƒ`ƒFƒbƒN
+			// ï¿½Xï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
 			if ( t >= t_max )
 			{
-				Debug::Log("Œ©‚Â‚©‚Á‚½ ƒIƒuƒWƒFƒNƒg‚ªŠÔ‚É‚¢‚È‚¢");
+				Debug::Log("ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½Ô‚É‚ï¿½ï¿½È‚ï¿½");
 				return false;
 			}
 		}
@@ -349,7 +347,7 @@ bool Enemy::ObstacleCollision(D3DXVECTOR3 aabbmin, D3DXVECTOR3 aabbmax, D3DXMATR
 
 /*-----------------------------------------------------------------------------
 Function:   void Enemy::RoadFile(void)
-Overview:   ƒtƒ@ƒCƒ‹‚Ì“Ç‚İæ‚è
+Overview:   ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Enemy::RoadFile(void)
 {

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒ‹[ƒv[ GameLoop.cpp ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½v[ GameLoop.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -24,7 +22,7 @@ GameLoop* GameLoop::m_Instance = NULL;
 
 /*-----------------------------------------------------------------------------
 Function:   Game* Game::Instance(void)
-Overview:   ƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+Overview:   ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 GameLoop* GameLoop::Instance(void)
 {
@@ -38,7 +36,7 @@ GameLoop* GameLoop::Instance(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void GameLoop::Destroy(void)
-Overview:   ƒCƒ“ƒXƒ^ƒ“ƒX”jŠü
+Overview:   ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½jï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameLoop::Destroy(void)
 {
@@ -48,21 +46,21 @@ void GameLoop::Destroy(void)
 GameLoop::GameLoop()
 {
 	m_FrameCount = 0;
-	m_CurrentTime = 0; //	Œ»Ý‚ÌŽžŠÔ
-	m_ExecLastTime = 0; // Œ»Ý‚ÌŽž‚ðƒ~ƒŠ’PˆÊ‚ÅŽæ“¾
+	m_CurrentTime = 0; //	ï¿½ï¿½ï¿½Ý‚ÌŽï¿½ï¿½ï¿½
+	m_ExecLastTime = 0; // ï¿½ï¿½ï¿½Ý‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Pï¿½Ê‚ÅŽæ“¾
 	m_FPSLastTime = 0;
-	m_CountFPS = 0; // FPSƒJƒEƒ“ƒ^
+	m_CountFPS = 0; // FPSï¿½Jï¿½Eï¿½ï¿½ï¿½^
 }
 
 void GameLoop::Init(HINSTANCE hInstance, HWND hWnd)
 {
-	//	•ª‰ð”\‚ÌÝ’èiƒ^ƒCƒ}[‚Ì¸“x‚ð—Ç‚­‚·‚éj
+	//	ï¿½ï¿½ï¿½ï¿½\ï¿½ÌÝ’ï¿½iï¿½^ï¿½Cï¿½}ï¿½[ï¿½Ìï¿½ï¿½xï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½j
 	timeBeginPeriod(1);
 
-	//	ŠeƒJƒEƒ“ƒ^[‚Ì‰Šú‰»
+	//	ï¿½eï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	m_FrameCount = 0;
-	m_CurrentTime = 0;				//	Œ»Ý‚ÌŽžŠÔ
-	m_ExecLastTime = timeGetTime();	//	Œ»Ý‚ÌŽž‚ðƒ~ƒŠ’PˆÊ‚ÅŽæ“¾
+	m_CurrentTime = 0;				//	ï¿½ï¿½ï¿½Ý‚ÌŽï¿½ï¿½ï¿½
+	m_ExecLastTime = timeGetTime();	//	ï¿½ï¿½ï¿½Ý‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Pï¿½Ê‚ÅŽæ“¾
 	m_FPSLastTime = m_ExecLastTime;
 
 	Game::GetInstance()->Init(hInstance, hWnd);
@@ -70,7 +68,7 @@ void GameLoop::Init(HINSTANCE hInstance, HWND hWnd)
 
 void GameLoop::ClockFps(void)
 {
-	m_CurrentTime = timeGetTime();	//	Œ»Ý‚ÌŽž‚ðƒ~ƒŠ’PˆÊ‚ÅŽæ“¾
+	m_CurrentTime = timeGetTime();	//	ï¿½ï¿½ï¿½Ý‚ÌŽï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Pï¿½Ê‚ÅŽæ“¾
 
 	if ((m_CurrentTime - m_FPSLastTime) >= 500)
 	{
@@ -82,14 +80,14 @@ void GameLoop::ClockFps(void)
 	}
 
 	if ((m_CurrentTime - m_ExecLastTime) >= (1000 / 60))
-	{	//	Œ»Ý‚ÌƒtƒŒ[ƒ€‚©‚ç‚Ç‚êˆÊ‚½‚Á‚½‚Ì‚©( ·•ªŒvŽZ )	ƒfƒoƒbƒO‚ÅŒv‘ª‚µ‚½‚¢‚Æ‚«‚Íif‚ðƒRƒƒ“ƒgƒAƒEƒg
+	{	//	ï¿½ï¿½ï¿½Ý‚Ìƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½( ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Z )	ï¿½fï¿½oï¿½bï¿½Oï¿½ÅŒvï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ifï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½gï¿½Aï¿½Eï¿½g
 
-		m_ExecLastTime = m_CurrentTime;	//	ˆ—‚µ‚½ŽžŠÔ‚ð•Û‘¶
+		m_ExecLastTime = m_CurrentTime;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½Û‘ï¿½
 
-		// XVˆ—
+		// ï¿½Xï¿½Vï¿½ï¿½ï¿½ï¿½
 		Game::GetInstance()->Update();
 
-		// •`‰æˆ—
+		// ï¿½`ï¿½æˆï¿½ï¿½
 		Game::GetInstance()->Draw();
 
 		m_FrameCount++;
