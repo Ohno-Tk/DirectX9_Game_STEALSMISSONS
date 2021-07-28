@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( U‚è•Ô‚é )[ EnemyStateLookBack.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Uï¿½ï¿½Ô‚ï¿½ )[ EnemyStateLookBack.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/20
 =============================================================================*/
 
@@ -28,7 +26,7 @@ EnemyStateLookBack::EnemyStateLookBack(Enemy* owner)
 {
 	m_Owner = owner;
 
-	m_LinearCnt = m_Owner->GetCountLinear(); //	•âŠÔƒJƒEƒ“ƒ^
+	m_LinearCnt = m_Owner->GetCountLinear(); //	ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½^
 	m_WaitCount = 0;
 	m_NowRotation = m_Owner->GetNowRotation();
 
@@ -41,7 +39,7 @@ EnemyStateLookBack::EnemyStateLookBack(Enemy* owner)
 		m_Linear[i] = m_Owner->GetLinearStruct(i);
 	}
 
-	Debug::Log("“G : U‚è•Ô‚èó‘Ô");
+	Debug::Log("ï¿½G : ï¿½Uï¿½ï¿½Ô‚ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateLookBack::Uninitialize(void)
@@ -54,7 +52,7 @@ void EnemyStateLookBack::Update(D3DXVECTOR3 position)
 	m_Owner->SetMotionIndex(0);
 
 	if(m_Owner->VisionRangeCollision(position, m_Owner->GetVisionAngle(), m_Owner->GetVisionDistance()))
-	{ // Ž‹ŠE‚Ì”»’è
+	{ // ï¿½ï¿½ï¿½Eï¿½Ì”ï¿½ï¿½ï¿½
 		m_Owner->SetState(new EnemyStateChase(m_Owner));
 	}
 	else

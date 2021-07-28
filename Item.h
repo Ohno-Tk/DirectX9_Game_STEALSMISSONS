@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€[ Item.h ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½[ Item.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -23,17 +21,17 @@ class Item:public Object
 public:
 	Item(int priolity):Object(priolity), m_Active(true){}
 
-	void Uninitialize(void)override;// I—¹
-	void Update(void)override;// XV
+	void Uninitialize(void)override;// ï¿½Iï¿½ï¿½
+	void Update(void)override;// ï¿½Xï¿½V
 
 	//Setter
 	void SetActive(bool flag){ m_Active = flag; }
 
 private:
-	virtual bool Collision(void) = 0;// “–‚½‚è”»’è
+	virtual bool Collision(void) = 0;// ï¿½ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
 
 private:
-	bool m_Active;// ‰Â‹‰»
+	bool m_Active;// ï¿½Âï¿½ï¿½ï¿½
 
 	ItemGetUI* m_ItemGetUI;
 

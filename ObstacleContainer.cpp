@@ -1,12 +1,9 @@
 /*=============================================================================
 
-áŠQ•¨( ƒRƒ“ƒeƒi )[ ObstacleContainer.cpp ]
+ï¿½ï¿½Qï¿½ï¿½( ï¿½Rï¿½ï¿½ï¿½eï¿½i )[ ObstacleContainer.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
-
-¡  Create
+ï¿½ï¿½  Create
 2018/01/17
 =============================================================================*/
 
@@ -34,7 +31,7 @@ Macro
 #define OBJECT_MODEL_PATH  (MODEL_PATH"Container.x")
 #define MODEL_VERTEXSHADER_PATH (SHADER_PATH"ObstacleContainer_Vertex.hlsl")
 #define MODEL_PIXELSHADER_PATH (SHADER_PATH"ObstacleContainer_Pixel.hlsl")
-#define SCALE (1.0f)// Šg‘å’l
+#define SCALE (1.0f)// ï¿½gï¿½ï¿½l
 
 
 ObstacleContainer::ObstacleContainer(int Priolity)
@@ -75,7 +72,7 @@ void ObstacleContainer::Uninitialize(void)
 
 void ObstacleContainer::Update(void)
 {
-	Collision(); // Õ“Ë”»’è
+	Collision(); // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 }
 
 void ObstacleContainer::Draw(void)
@@ -93,41 +90,41 @@ void ObstacleContainer::Draw(void)
 	};
 	RendererDirectX::GetDevice()->CreateVertexDeclaration(elements,&m_VertexDeclaration);
 
-	WorldTransform(Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	WorldTransform(Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
-	ConfigShader(Device);// ƒVƒF[ƒ_[‚ÌÝ’è
+	ConfigShader(Device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½ÌÝ’ï¿½
 
 	Device->SetVertexShader(m_VertexShader->GetVertexShader());
 	Device->SetPixelShader(m_PixelShader->GetPixelShader());
 
-	// Œ»ÝƒfƒoƒCƒX‚ÉÝ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚ÌŽæ“¾
+	// ï¿½ï¿½ï¿½Ýƒfï¿½oï¿½Cï¿½Xï¿½ÉÝ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ÌŽæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ðŽæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	for (int CountMaterial = 0; CountMaterial < (int)m_ModelParam.NumMaterial; CountMaterial++)
 	{
 		m_PixelShader->GetPixelShaderConstantTable()->SetValue(RendererDirectX::GetDevice(), "Diffuse", &m_ModelParam.Material[CountMaterial].MatD3D.Diffuse, sizeof(m_ModelParam.Material[CountMaterial].MatD3D.Diffuse));
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
 
 		UINT samplerIndex0 = m_PixelShader->GetPixelShaderConstantTable()->GetSamplerIndex("sampler0");
-		// ƒeƒNƒXƒ`ƒƒ‚ÌÝ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetTexture(samplerIndex0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ðŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
 /*-----------------------------------------------------------------------------
-ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void ObstacleContainer::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
@@ -136,7 +133,7 @@ void ObstacleContainer::WorldTransform(LPDIRECT3DDEVICE9 Device)
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ð’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
 	D3DXMatrixScaling(&matrixScale,
 		SCALE,
@@ -162,7 +159,7 @@ void ObstacleContainer::WorldTransform(LPDIRECT3DDEVICE9 Device)
 /*-----------------------------------------------------------------------------
 Function:   void ObstacleContainer::Collision(void)
 Parameter:  
-Overview:   Õ“Ë”»’è
+Overview:   ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ObstacleContainer::Collision(void)
 {
@@ -172,7 +169,7 @@ void ObstacleContainer::Collision(void)
 	Collision_Sphere CollisionSphere(position, m_SphereRadius);
 
 	if (CollisionSphere.Judge(player->GetPosition(), player->GetSphereRadius()))
-	{ // Õ“Ë”»’è
+	{ // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 		player->SetOldPosition();
 	}
 

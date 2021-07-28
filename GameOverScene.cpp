@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒI[ƒo[ƒV[ƒ“[ GameOverScene.cpp ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½Vï¿½[ï¿½ï¿½[ GameOverScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -31,9 +29,9 @@ Include Files
 
 void GameOverScene::Initialize(void)
 {
-	Debug::Log("ƒQ[ƒ€ƒI[ƒo[ƒV[ƒ“");
+	Debug::Log("ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½Vï¿½[ï¿½ï¿½");
 
-	// ‰Šú‰»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	m_KeyBoard = Game::GetInstance()->GetKeyboard();
 	m_XInput = Game::GetInstance()->GetXInput();
 	m_Select = SELECT_CONTINUE;
@@ -65,14 +63,14 @@ void GameOverScene::Uninitialize(void)
 	m_EndLogo = NULL;
 	m_SelectFrame = NULL;
 
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void GameOverScene::Update(void)
 {
 	KeyboardControl();
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 
 #ifdef _DEBUG
 	if(m_KeyBoard->GetKeyTrigger(DIK_SPACE))
@@ -84,19 +82,19 @@ void GameOverScene::Update(void)
 
 void GameOverScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameOverScene::SceneChange(void)
 {
 	switch (m_Select)
 	{
-	case SELECT_CONTINUE:	//	ƒRƒ“ƒeƒBƒjƒ…[
-		//	ƒXƒNƒ[ƒ‹ƒXƒs[ƒh‚Ì•ÏX
+	case SELECT_CONTINUE:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
+		//	ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Xï¿½sï¿½[ï¿½hï¿½Ì•ÏX
 		m_BackGround->SetScrollSpeed(D3DXVECTOR2(0.0f, 0.01f));
 
 		Fade::SetFade(Fade::FADE_OUT, new GameScene);
@@ -107,7 +105,7 @@ void GameOverScene::SceneChange(void)
 #endif
 
 		break;
-	case SELECT_END:	//	ƒGƒ“ƒh
+	case SELECT_END:	//	ï¿½Gï¿½ï¿½ï¿½h
 
 		Fade::SetFade(Fade::FADE_OUT, new TitleScene);
 
@@ -122,13 +120,13 @@ void GameOverScene::SceneChange(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::SelectMode(void)
-Overview:   ‘I‘ğ
+Overview:   ï¿½Iï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameOverScene::SelectMode(void)
 {
 	switch (m_Select)
 	{
-	case SELECT_CONTINUE:	//	ƒRƒ“ƒeƒBƒjƒ…[
+	case SELECT_CONTINUE:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
 
 		m_ContiueLogo->SetFadeFlag(true);
 		m_EndLogo->SetFadeFlag(false);
@@ -136,7 +134,7 @@ void GameOverScene::SelectMode(void)
 
 		m_SelectFrame->SetPosition(m_ContiueLogo->GetPosition());
 		break;
-	case SELECT_END:	//	ƒGƒ“ƒh
+	case SELECT_END:	//	ï¿½Gï¿½ï¿½ï¿½h
 
 		m_ContiueLogo->SetFadeFlag(false);
 		m_ContiueLogo->SetAlphaColor(0.5f);
@@ -149,7 +147,7 @@ void GameOverScene::SelectMode(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::KeyboardControl(void)
-Overview:   ƒL[ƒ{[ƒh‘€ì
+Overview:   ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void GameOverScene::KeyboardControl(void)
 {
@@ -174,10 +172,10 @@ void GameOverScene::KeyboardControl(void)
 		}
 	}
 
-	SelectMode(); // ‘I‘ğ
+	SelectMode(); // ï¿½Iï¿½ï¿½ï¿½ï¿½
 
 	if(m_KeyBoard->GetKeyTrigger(DIK_RETURN) ||  m_XInput->GetKeyTrigger(XInput::CONTROLLER_1, XINPUT_GAMEPAD_B))
 	{
-		SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+		SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 	}
 }

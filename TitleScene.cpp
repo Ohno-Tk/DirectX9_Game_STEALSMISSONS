@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ^ƒCƒgƒ‹ƒV[ƒ“[ TitleScene.cpp ]
+ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½[ TitleScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -46,7 +44,7 @@ using namespace std;
 
 void TitleScene::Initialize(void)
 {
-	Debug::Log("ƒ^ƒCƒgƒ‹ƒV[ƒ“");
+	Debug::Log("ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½");
 
 #ifndef ENABLE_SOUND
 	m_Sound = Game::GetInstance()->GetSound();
@@ -89,38 +87,38 @@ void TitleScene::Initialize(void)
 
 void TitleScene::Uninitialize(void)
 {
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void TitleScene::Update(void)
 {
 	CursorControl();
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 
 	if(m_KeyBoard->GetKeyTrigger(DIK_RETURN) ||  m_XInput->GetKeyTrigger(XInput::CONTROLLER_1, XINPUT_GAMEPAD_B))
 	{
-		SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+		SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 	}
 
 }
 
 void TitleScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
-‘I‘ğ
+ï¿½Iï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void TitleScene::SelectMode(void)
 {
 	switch (m_Select)
 	{
-	case SELECT_START:	//	ƒRƒ“ƒeƒBƒjƒ…[
+	case SELECT_START:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
 		m_SelectFrame->SetPosition(m_Start_Logo->GetPosition());
 		break;
-	case SELECT_KEYGUID:	//	ƒGƒ“ƒh
+	case SELECT_KEYGUID:	//	ï¿½Gï¿½ï¿½ï¿½h
 		m_SelectFrame->SetPosition(m_KeyGuid_Logo->GetPosition());
 		break;
 	}
@@ -128,13 +126,13 @@ void TitleScene::SelectMode(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void TitleScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void TitleScene::SceneChange(void)
 {
 	switch (m_Select)
 	{
-	case SELECT_START:	//	ƒRƒ“ƒeƒBƒjƒ…[
+	case SELECT_START:	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
 		Fade::SetFade(Fade::FADE_OUT, new TutorialScene);
 
 #ifndef ENABLE_SOUND
@@ -143,7 +141,7 @@ void TitleScene::SceneChange(void)
 #endif
 
 		break;
-	case SELECT_KEYGUID:	//	ƒGƒ“ƒh
+	case SELECT_KEYGUID:	//	ï¿½Gï¿½ï¿½ï¿½h
 		Fade::SetFade(Fade::FADE_OUT, new KeyGuidScene);
 
 #ifndef ENABLE_SOUND
@@ -178,5 +176,5 @@ void TitleScene::CursorControl(void)
 		}
 	}
 
-	SelectMode(); // ‘I‘ğ
+	SelectMode(); // ï¿½Iï¿½ï¿½ï¿½ï¿½
 }

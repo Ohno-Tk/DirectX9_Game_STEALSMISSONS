@@ -1,12 +1,10 @@
 /*=============================================================================
 
-Œ»İŠ”ƒAƒCƒeƒ€[ NowPossessionItem.h ]
+ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Cï¿½eï¿½ï¿½[ NowPossessionItem.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/24
 =============================================================================*/
 
@@ -21,25 +19,25 @@ class ItemPossession:public Object
 public:
 	ItemPossession(int priolity = 4);
 
-	static ItemPossession* Create(D3DXVECTOR3 position, unsigned int digit);// ¶¬
+	static ItemPossession* Create(D3DXVECTOR3 position, unsigned int digit);// ï¿½ï¿½ï¿½ï¿½
 
 	void Initialize(void);
 	void Uninitialize(void);
 	void Update(void);
 	void Draw(void);
 
-	void SetPossession(int possession);// Š”‚Ìİ’è
+	void SetPossession(int possession);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìİ’ï¿½
 
 private:
-	void MakeVertex(void);// ’¸“_‚Ìì¬
-	void SetVertex(void);// ’¸“_‚Ì•ÏX
+	void MakeVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void SetVertex(void);// ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 
 private:
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;
 	D3DXVECTOR2 m_Size;
-	unsigned int m_Digit;// Œ…”
+	unsigned int m_Digit;// ï¿½ï¿½ï¿½ï¿½
 	unsigned int m_Possession;
-	float m_TexCoord;// ƒeƒNƒXƒ`ƒƒÀ•W
+	float m_TexCoord;// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 };
 
 #endif

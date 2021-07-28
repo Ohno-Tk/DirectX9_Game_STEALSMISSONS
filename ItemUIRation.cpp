@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€•\¦UI( ƒŒ[ƒVƒ‡ƒ“ )[ ItemUIRation.cpp ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½\ï¿½ï¿½UI( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemUIRation.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/24
 =============================================================================*/
 
@@ -30,7 +28,7 @@ Macro
 
 
 /*-----------------------------------------------------------------------------
-ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 -----------------------------------------------------------------------------*/
 ItemUIRation::ItemUIRation(int priolity)
 	:ItemUI(priolity)
@@ -41,7 +39,7 @@ ItemUIRation::ItemUIRation(int priolity)
 {}
 
 /*-----------------------------------------------------------------------------
-¶¬
+ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 ItemUIRation* ItemUIRation::Create(D3DXVECTOR3 position)
 {
@@ -54,7 +52,7 @@ ItemUIRation* ItemUIRation::Create(D3DXVECTOR3 position)
 }
 
 /*-----------------------------------------------------------------------------
-‰Šú‰»
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemUIRation::Initialize(void)
 {
@@ -68,7 +66,7 @@ void ItemUIRation::Initialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-I—¹
+ï¿½Iï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemUIRation::Uninitialize(void)
 {
@@ -79,7 +77,7 @@ void ItemUIRation::Uninitialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-XV
+ï¿½Xï¿½V
 -----------------------------------------------------------------------------*/
 void ItemUIRation::Update(void)
 {
@@ -87,7 +85,7 @@ void ItemUIRation::Update(void)
 }
 
 /*-----------------------------------------------------------------------------
-•`‰æ
+ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemUIRation::Draw(void)
 {
@@ -97,40 +95,40 @@ void ItemUIRation::Draw(void)
 	Device->SetVertexShader(NULL);
 	Device->SetPixelShader(NULL);
 
-	// ’¸“_ƒoƒbƒtƒ@‚ğƒf[ƒ^ƒXƒgƒŠ[ƒ€‚Éİ’è
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Éİ’ï¿½
 	Device->SetStreamSource(0, m_VertexBuffer, 0, sizeof(VERTEX_2D));
 
-	// ’¸“_ƒtƒH[ƒ}ƒbƒg‚Ìİ’è
+	// ï¿½ï¿½ï¿½_ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½Ìİ’ï¿½
 	Device->SetFVF(FVF_VERTEX_2D);
 
-	// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 	Device->SetTexture(0, Game::GetInstance()->GetTextureManager()->GetTextureInfo(OBJECT_TEXTURE_PATH).Texture);
 
-	// •`‰æ
+	// ï¿½`ï¿½ï¿½
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ìì¬
+ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void ItemUIRation::MakeVertex(void)
 {
 	D3DXVECTOR3 position = Object::GetPosition();
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	// ’¸“_ƒoƒbƒtƒ@‚Ì¶¬
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚É¸”s", "Sprite2D.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "Sprite2D.cpp", MB_OK | MB_ICONHAND);
 	}
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_2D* Vtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	Vtx[0].Pos = D3DXVECTOR3(position.x           , position.y, 0.0f);
 	Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x, position.y, 0.0f);
 	Vtx[2].Pos = D3DXVECTOR3(position.x           , position.y + m_Size.y, 0.0f);
@@ -138,46 +136,46 @@ void ItemUIRation::MakeVertex(void)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		Vtx[CountVertex].Rhw = 1.0f;//	À•W•ÏŠ·Ï‚İ’¸“_ƒtƒ‰ƒO
-		Vtx[CountVertex].Color = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);// ’¸“_ƒJƒ‰[
+		Vtx[CountVertex].Rhw = 1.0f;//	ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½ï¿½Ï‚İ’ï¿½ï¿½_ï¿½tï¿½ï¿½ï¿½O
+		Vtx[CountVertex].Color = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);// ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 	}
 
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	Vtx[0].Tex = D3DXVECTOR2(0, 0);
 	Vtx[1].Tex = D3DXVECTOR2(1, 0);
 	Vtx[2].Tex = D3DXVECTOR2(0, 1);
 	Vtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 
 }
 
 /*-----------------------------------------------------------------------------
-’¸“_‚Ì•ÏX
+ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 -----------------------------------------------------------------------------*/
 void ItemUIRation::SetVertex(void)
 {
 	D3DXVECTOR3 position = Object::GetPosition();
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_2D* Vtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&Vtx, 0);
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	Vtx[0].Pos = D3DXVECTOR3(position.x           , position.y, 0.0f);
 	Vtx[1].Pos = D3DXVECTOR3(position.x + m_Size.x, position.y, 0.0f);
 	Vtx[2].Pos = D3DXVECTOR3(position.x           , position.y + m_Size.y, 0.0f);
 	Vtx[3].Pos = D3DXVECTOR3(position.x + m_Size.x, position.y + m_Size.y, 0.0f);
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
-Œ»İŠ”’Ç‰Á
+ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
 -----------------------------------------------------------------------------*/
 void ItemUIRation::PlusNowPossession(const unsigned int plusValue)
 {
@@ -187,7 +185,7 @@ void ItemUIRation::PlusNowPossession(const unsigned int plusValue)
 }
 
 /*-----------------------------------------------------------------------------
-Œ»İŠ”Œ¸Z
+ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Z
 -----------------------------------------------------------------------------*/
 void ItemUIRation::SubNowPossession(const unsigned int subValue)
 {
@@ -197,7 +195,7 @@ void ItemUIRation::SubNowPossession(const unsigned int subValue)
 }
 
 /*-----------------------------------------------------------------------------
-Œ»İŠ”Œ¸Z
+ï¿½ï¿½ï¿½İï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Z
 -----------------------------------------------------------------------------*/
 void ItemUIRation::Use(void)
 {

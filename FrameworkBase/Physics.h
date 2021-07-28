@@ -1,12 +1,10 @@
 /*=============================================================================
 
-•¨—Œn[ Physics.h ]
+ï¿½ï¿½ï¿½ï¿½ï¿½n[ Physics.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/28
 =============================================================================*/
 
@@ -20,10 +18,10 @@ class Physics
 {
 public:
 	Physics(const float mass):m_Mass(mass){}
-	void ObliqueProjectile(D3DXVECTOR3* Out, D3DXVECTOR3* Velocity); // Î•û“ŠË
+	void ObliqueProjectile(D3DXVECTOR3* Out, D3DXVECTOR3* Velocity); // ï¿½Î•ï¿½ï¿½ï¿½ï¿½ï¿½
 
 private:
-	float m_Mass; // ¿—Ê
+	float m_Mass; // ï¿½ï¿½ï¿½ï¿½
 };
 
 #endif

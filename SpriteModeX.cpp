@@ -1,12 +1,9 @@
 /*=============================================================================
 
-Xƒ‚ƒfƒ‹•`‰æ[ SpriteModeLX.cpp ]
+Xï¿½ï¿½ï¿½fï¿½ï¿½ï¿½`ï¿½ï¿½[ SpriteModeLX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
-
-¡  Create
+ï¿½ï¿½  Create
 	2017/08/25
 =============================================================================*/
 
@@ -38,21 +35,21 @@ using namespace std;
 
 SpriteModelX::SpriteModelX(int Priolity) :Object(Priolity)
 {
-	m_Rotation = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	//	‰ñ“]
-	m_Scale = D3DXVECTOR3(1.0f, 1.0f, 1.0f);	//	Šg‘å—¦
+	m_Rotation = D3DXVECTOR3(0.0f, 0.0f, 0.0f);	//	ï¿½ï¿½]
+	m_Scale = D3DXVECTOR3(1.0f, 1.0f, 1.0f);	//	ï¿½gï¿½å—¦
 }
 
 /*-----------------------------------------------------------------------------
 Function:   SpriteModelX* SpriteModelX::Create(D3DXVECTOR3 position, char* modelFilePath, int priolity)
 Parameter:  D3DXVECTOR3 position
-              À•W
+              ï¿½ï¿½ï¿½W
             D3DXVECTOR2 size
-			  ‘å‚«‚³
+			  ï¿½å‚«ï¿½ï¿½
             string modelFilePath
-			  ƒ‚ƒfƒ‹‚ÌƒpƒX
+			  ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒpï¿½X
 			int priolity
-			  —Dæ“x
-Overview:   ¶¬
+			  ï¿½Dï¿½ï¿½x
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 SpriteModelX* SpriteModelX::Create(D3DXVECTOR3 position, D3DXVECTOR3 rotation, char* modelFilePath, int priolity)
 {
@@ -99,10 +96,10 @@ void SpriteModelX::Draw(void)
 
 
 
-	// Œ»İƒfƒoƒCƒX‚Éİ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚Ìæ“¾
+	// ï¿½ï¿½ï¿½İƒfï¿½oï¿½Cï¿½Xï¿½Éİ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	UINT samplerIndex0 = m_PixelShader->GetPixelShaderConstantTable()->GetSamplerIndex("sampler0");
@@ -110,28 +107,28 @@ void SpriteModelX::Draw(void)
 	for (int CountMaterial = 0; CountMaterial < (int)m_ModelParam.NumMaterial; CountMaterial++)
 	{
 		m_PixelShader->GetPixelShaderConstantTable()->SetValue(RendererDirectX::GetDevice(), "Diffuse", &m_ModelParam.Material[CountMaterial].MatD3D.Diffuse, sizeof(m_ModelParam.Material[CountMaterial].MatD3D.Diffuse));
-		//	ƒAƒ“ƒrƒGƒ“ƒgŒõ‚Ìİ’è
+		//	ï¿½Aï¿½ï¿½ï¿½rï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Ìİ’ï¿½
 //		m_ModelParam.Material[CountMaterial].MatD3D.Ambient = m_ModelParam.Material[CountMaterial].MatD3D.Diffuse;
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚Ìİ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetTexture(samplerIndex0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ğŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void SpriteModelX::WorldTransform(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-			  ƒfƒoƒCƒX
-Overview:   ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+			  ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void SpriteModelX::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
@@ -140,28 +137,28 @@ void SpriteModelX::WorldTransform(LPDIRECT3DDEVICE9 Device)
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
-	//	Šg‘ås—ñ‚ğì‚é
-	D3DXMatrixScaling(&matrixScale,	//Šg‘ås—ñ‚ªì‚ç‚ê‚é
-		m_Scale.x,	//	X²Šg‘å
-		m_Scale.y,	//	Y²Šg‘å
-		m_Scale.z);	//	Z²Šg‘å
+	//	ï¿½gï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	D3DXMatrixScaling(&matrixScale,	//ï¿½gï¿½ï¿½sï¿½ñ‚ªï¿½ï¿½ï¿½ï¿½
+		m_Scale.x,	//	Xï¿½ï¿½ï¿½gï¿½ï¿½
+		m_Scale.y,	//	Yï¿½ï¿½ï¿½gï¿½ï¿½
+		m_Scale.z);	//	Zï¿½ï¿½ï¿½gï¿½ï¿½
 
-	//	‰ñ“]s—ñ‚ğì‚é
-	D3DXMatrixRotationYawPitchRoll(&matrixRotation,	//	‰ñ“]s—ñ‚ªì‚ç‚ê‚é
-		D3DXToRadian(m_Rotation.y), //	Y²‰ñ“]
-		D3DXToRadian(m_Rotation.x), //	X²‰ñ“]
-		D3DXToRadian(m_Rotation.z)); //	Z²‰ñ“]
+	//	ï¿½ï¿½]ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	D3DXMatrixRotationYawPitchRoll(&matrixRotation,	//	ï¿½ï¿½]ï¿½sï¿½ñ‚ªï¿½ï¿½ï¿½ï¿½
+		D3DXToRadian(m_Rotation.y), //	Yï¿½ï¿½ï¿½ï¿½]
+		D3DXToRadian(m_Rotation.x), //	Xï¿½ï¿½ï¿½ï¿½]
+		D3DXToRadian(m_Rotation.z)); //	Zï¿½ï¿½ï¿½ï¿½]
 
-	//	•½sˆÚ“®s—ñ‚ğì‚é
+	//	ï¿½ï¿½ï¿½sï¿½Ú“ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	D3DXMatrixTranslation(&matrixPosition,
-		Position.x,	//	X²ˆÚ“®
-		Position.y,	//	Y²ˆÚ“®
-		Position.z);	//	Z²ˆÚ“®
+		Position.x,	//	Xï¿½ï¿½ï¿½Ú“ï¿½
+		Position.y,	//	Yï¿½ï¿½ï¿½Ú“ï¿½
+		Position.z);	//	Zï¿½ï¿½ï¿½Ú“ï¿½
 
 
-	//	Šes—ñ‚ğ‚©‚¯‚é
+	//	ï¿½eï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixScale);
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixRotation);
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixPosition);

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( Œ©“n‚· )[ EnemyStateLookOutOver.h ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½nï¿½ï¿½ )[ EnemyStateLookOutOver.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/28
 =============================================================================*/
 
@@ -46,14 +44,14 @@ private:
 private:
 	NEXT m_Next;
 
-	Enemy* m_Owner; // Š—LÒ
+	Enemy* m_Owner; // ï¿½ï¿½ï¿½Lï¿½ï¿½
 
 	D3DXVECTOR3 m_NowRotation;
 
-	int m_CountInterpolation; // •âŠÔ‚ÌƒJƒEƒ“ƒ^
-	int m_CountLookOut; // Œ©“n‚·ƒJƒEƒ“ƒg
+	int m_CountInterpolation; // ï¿½ï¿½Ô‚ÌƒJï¿½Eï¿½ï¿½ï¿½^
+	int m_CountLookOut; // ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
 
-	D3DXVECTOR3 m_LookRotation[3]; // Œ©“n‚·Šp“x
+	D3DXVECTOR3 m_LookRotation[3]; // ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½pï¿½x
 };
 
 #endif

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-’¸“_ƒVƒF[ƒ_[[ VertexShader.cpp ]
+ï¿½ï¿½ï¿½_ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[[ VertexShader.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/16
 =============================================================================*/
 
@@ -35,15 +33,15 @@ HRESULT VertexShader::Initialize(string filePath, string entryFunction)
 
 	LPDIRECT3DDEVICE9 device = RendererDirectX::GetDevice();
 
-	// ƒVƒF[ƒ_[ƒtƒ@ƒCƒ‹“Ç‚Ýž‚Ý
-	hr = D3DXCompileShaderFromFile(filePath.c_str(), // ƒtƒ@ƒCƒ‹–¼
+	// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ç‚Ýï¿½ï¿½ï¿½
+	hr = D3DXCompileShaderFromFile(filePath.c_str(), // ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
 		NULL,NULL,
-		entryFunction.c_str(), // ƒGƒ“ƒgƒŠ[ŠÖ”
-		"vs_3_0", // ƒo[ƒeƒbƒNƒXƒVƒF[ƒ_[ƒo[ƒWƒ‡ƒ“
+		entryFunction.c_str(), // ï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½Öï¿½
+		"vs_3_0", // ï¿½oï¿½[ï¿½eï¿½bï¿½Nï¿½Xï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½
 		0,
-		&code, // ƒoƒCƒiƒŠƒR[ƒh
-		&error, // ƒGƒ‰[•¶Žš(¬Œ÷‚ÍNULL)
-		&m_VertexShaderConstantTable); // ƒRƒ“ƒXƒ^ƒ“ƒgƒe[ƒuƒ‹‚ðŠÇ—‚µ‚Ä‚­‚ê‚él‚ÌƒAƒhƒŒƒX
+		&code, // ï¿½oï¿½Cï¿½iï¿½ï¿½ï¿½Rï¿½[ï¿½h
+		&error, // ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NULL)
+		&m_VertexShaderConstantTable); // ï¿½Rï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½gï¿½eï¿½[ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½lï¿½ÌƒAï¿½hï¿½ï¿½ï¿½X
 	if(FAILED(hr))
 	{
 		MessageBox(NULL, (LPCSTR)error->GetBufferPointer(), "D3DXCompileShaderFromFile(VertexShader)", MB_OK);
@@ -53,11 +51,11 @@ HRESULT VertexShader::Initialize(string filePath, string entryFunction)
 		return E_FAIL;
 	}
 
-	// ƒo[ƒeƒbƒNƒXƒVƒF[ƒ_[‚Ì¶¬
+	// ï¿½oï¿½[ï¿½eï¿½bï¿½Nï¿½Xï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìï¿½ï¿½ï¿½
 	hr = device->CreateVertexShader((LPDWORD)code->GetBufferPointer(),&m_VertexShader);
 	if(FAILED(hr))
 	{
-		MessageBox(NULL, "ƒo[ƒeƒbƒNƒXƒVƒF[ƒ_[‚Ì¶¬‚ÉŽ¸”s", "ƒGƒ‰[", MB_OK);
+		MessageBox(NULL, "ï¿½oï¿½[ï¿½eï¿½bï¿½Nï¿½Xï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "ï¿½Gï¿½ï¿½ï¿½[", MB_OK);
 
 		m_VertexShader->Release();
 		code->Release();	

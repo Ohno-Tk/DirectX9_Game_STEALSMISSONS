@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒIƒuƒWƒFƒNƒg¶¬[ Object.cpp ]
+ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½[ Object.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -20,7 +18,7 @@ Include Files
 /*-----------------------------------------------------------------------------
 Static
 -----------------------------------------------------------------------------*/
-Object *Object::m_Top[] = { NULL };	// æ“ª‚Ìƒ|ƒCƒ“ƒ^
+Object *Object::m_Top[] = { NULL };	// ï¿½æ“ªï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 
 Object::Object(int Priolity)
 {
@@ -40,7 +38,7 @@ Object::Object(int Priolity)
 
 		while (object->m_Next != NULL)
 		{
-			//	m_Next‚ÌŽw‚µŽ¦‚·æ‚Ìƒ|ƒCƒ“ƒ^‚ð“ü‚ê‚Ä‚¢‚é
+			//	m_Nextï¿½ÌŽwï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 			object = object->m_Next;
 		}
 		object->m_Next = this;
@@ -51,7 +49,7 @@ Object::Object(int Priolity)
 
 /*-----------------------------------------------------------------------------
 Function:   void Object::UpdateAll(void)
-Overview:   ‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+Overview:   ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 -----------------------------------------------------------------------------*/
 void Object::UpdateAll(void)
 {
@@ -59,22 +57,22 @@ void Object::UpdateAll(void)
 	{
 
 		Object *object = m_Top[CntPriolity];
-		Object *objectPrev = m_Top[CntPriolity]; //	‘O‚ÌƒV[ƒ“ƒ|ƒCƒ“ƒ^
-		Object *objectNext; // ŽŸ‚ÌƒV[ƒ“ƒ|ƒCƒ“ƒ^
+		Object *objectPrev = m_Top[CntPriolity]; //	ï¿½Oï¿½ÌƒVï¿½[ï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^
+		Object *objectNext; // ï¿½ï¿½ï¿½ÌƒVï¿½[ï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^
 
 		while (object != NULL)
 		{
-			object->Update();	//	XV
+			object->Update();	//	ï¿½Xï¿½V
 
 			object = object->m_Next;
 		}
 		while (object != NULL)
-		{	//	ƒŠƒXƒg\‘¢‚ð1‚Â‚¸‚Â’²‚×‚Ä‚¢‚­
+		{	//	ï¿½ï¿½ï¿½Xï¿½gï¿½\ï¿½ï¿½ï¿½ï¿½1ï¿½Â‚ï¿½ï¿½Â’ï¿½ï¿½×‚Ä‚ï¿½ï¿½ï¿½
 
 			objectNext = object->m_Next;
 
 			if (object->m_DeleteFlag == true)
-			{	//	íœƒtƒ‰ƒO‚ªtrue‚¾‚Á‚½‚ç
+			{	//	ï¿½íœï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 				if (object == m_Top[CntPriolity])
 				{
@@ -82,11 +80,11 @@ void Object::UpdateAll(void)
 				}
 				else
 				{					
-					objectPrev->m_Next = object->m_Next;	//	ƒŠƒXƒg\‘¢‚Ì‚Â‚È‚¬•Ï‚¦
+					objectPrev->m_Next = object->m_Next;	//	ï¿½ï¿½ï¿½Xï¿½gï¿½\ï¿½ï¿½ï¿½Ì‚Â‚È‚ï¿½ï¿½Ï‚ï¿½
 				}
 
-				object->Uninitialize();	//	I—¹
-				delete object;		//	íœ
+				object->Uninitialize();	//	ï¿½Iï¿½ï¿½
+				delete object;		//	ï¿½íœ
 			}
 			else
 			{
@@ -99,7 +97,7 @@ void Object::UpdateAll(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void Object::DrawAll(void)
-Overview:   ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+Overview:   ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Object::DrawAll(void)
 {
@@ -109,16 +107,16 @@ void Object::DrawAll(void)
 
 		while (object != NULL)
 		{			
-			object->Draw();	//	•`‰æ
+			object->Draw();	//	ï¿½`ï¿½ï¿½
 		
-			object = object->m_Next;	//	ŽŸ‚ðŽw‚µŽ¦‚·ƒ|ƒCƒ“ƒ^‚ðŠi”[
+			object = object->m_Next;	//	ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½iï¿½[
 		}
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void Object::ReleaseAll(void)
-Overview:   ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ð•ú
+Overview:   ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void Object::ReleaseAll(void)
 {
@@ -131,15 +129,15 @@ void Object::ReleaseAll(void)
 		while (object != NULL)
 		{
 	
-			objectNext = object->m_Next; //	ŽŸ‚Ìƒ|ƒCƒ“ƒ^‚ð•Û‘¶
+			objectNext = object->m_Next; //	ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½Û‘ï¿½
 			
-			object->Uninitialize();	//	I—¹
+			object->Uninitialize();	//	ï¿½Iï¿½ï¿½
 
-			delete object;	//	ƒV[ƒ“‚ÌƒfƒŠ[ƒg
+			delete object;	//	ï¿½Vï¿½[ï¿½ï¿½ï¿½Ìƒfï¿½ï¿½ï¿½[ï¿½g
 
-			object = objectNext; //	ƒV[ƒ“‚ÉŽŸ‚ÌƒV[ƒ“‚ð“ü‚ê‚é
+			object = objectNext; //	ï¿½Vï¿½[ï¿½ï¿½ï¿½ÉŽï¿½ï¿½ÌƒVï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		}	
-		m_Top[ CntPriolity ] = NULL; //	ƒgƒbƒv‚ÉNULL‚ð‚¢‚ê‚é
+		m_Top[ CntPriolity ] = NULL; //	ï¿½gï¿½bï¿½vï¿½ï¿½NULLï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 }

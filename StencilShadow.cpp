@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒXƒeƒ“ƒVƒ‹ƒVƒƒƒhƒE[ StencilShadow.cpp ]
+ï¿½Xï¿½eï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½hï¿½E[ StencilShadow.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/11/09
 =============================================================================*/
 
@@ -23,8 +21,8 @@ Include Files
 /*-----------------------------------------------------------------------------
 Function:   StencilShadow* StencilShadow::Create(char* modelFileName)
 Parameter:  char* modelFileName
-              ƒ‚ƒfƒ‹‚Ìƒtƒ@ƒCƒ‹–¼
-Overview:   ¶¬
+              ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 StencilShadow* StencilShadow::Create(char* modelFileName)
 {
@@ -39,14 +37,14 @@ StencilShadow* StencilShadow::Create(char* modelFileName)
 
 void StencilShadow::Initialize(void)
 {
-	MakeVerTex(); // ’¸“_‚Ìì¬
+	MakeVerTex(); // ï¿½ï¿½ï¿½_ï¿½Ìì¬
 }
 
 void StencilShadow::Uninitialize(void)
 {
 	SAFE_RELEASE(m_VertexBuffer);
 
-	Object::Release();	//	ƒIƒuƒWƒFƒNƒg©g‚Ì‰ğ•ú
+	Object::Release();	//	ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void StencilShadow::Draw(void)
@@ -56,10 +54,10 @@ void StencilShadow::Draw(void)
 	Device->SetVertexShader(NULL);
 	Device->SetPixelShader(NULL);
 	
-	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 	WorldTransform(Device);
 	
-	// •\–Ê•`‰æ
+	// ï¿½\ï¿½Ê•`ï¿½ï¿½
 	Device->SetRenderState(D3DRS_STENCILENABLE, TRUE);
 	Device->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
 	Device->SetRenderState(D3DRS_COLORWRITEENABLE, 0);
@@ -70,7 +68,7 @@ void StencilShadow::Draw(void)
 	
 	ModelDraw(Device);
 	
-	// — –Ê•`‰æ
+	// ï¿½ï¿½ï¿½Ê•`ï¿½ï¿½
 	Device->SetRenderState(D3DRS_STENCILPASS, D3DSTENCILOP_DECR);
 	Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
 	
@@ -80,7 +78,7 @@ void StencilShadow::Draw(void)
 	Device->SetRenderState(D3DRS_COLORWRITEENABLE, 0xf);
 	Device->SetRenderState(D3DRS_STENCILFUNC, D3DCMP_EQUAL);
 	
-	// 2Dƒ|ƒŠƒSƒ“•`‰æ
+	// 2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
 	Polygon2DDraw( Device);
 	
 	Device->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
@@ -90,8 +88,8 @@ void StencilShadow::Draw(void)
 /*-----------------------------------------------------------------------------
 Function:   void StencilShadow::ModelDraw(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ƒ‚ƒfƒ‹•`‰æ
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void StencilShadow::ModelDraw(LPDIRECT3DDEVICE9 Device)
 {
@@ -99,80 +97,80 @@ void StencilShadow::ModelDraw(LPDIRECT3DDEVICE9 Device)
 
 	ModelManagerDirectX* ModelManager = Game::GetInstance()->GetModelManager();
 
-	// ƒ‚ƒfƒ‹‚Ìæ“¾
+	// ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìæ“¾
 	m_ModelParam = ModelManager->GetModelParam(m_ModelFilePath);
 
 	WorldTransform(Device);
 
-	//	Œ»İƒfƒoƒCƒX‚Éİ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚Ìæ“¾
+	//	ï¿½ï¿½ï¿½İƒfï¿½oï¿½Cï¿½Xï¿½Éİ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ìæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// Œ»İ‚Ìƒ}ƒeƒŠƒAƒ‹‚ğæ“¾
+	// ï¿½ï¿½ï¿½İ‚Ìƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	for (int CountMaterial = 0; CountMaterial < (int)m_ModelParam.NumMaterial; CountMaterial++)
 	{
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚Ìİ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 		Device->SetTexture(0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ğŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void StencilShadow::Polygon2DDraw(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ‘S‰æ–Ê2Dƒ|ƒŠƒSƒ“•`‰æ
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½Sï¿½ï¿½ï¿½2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void StencilShadow::Polygon2DDraw(LPDIRECT3DDEVICE9 Device)
 {
-	// ’¸“_ƒoƒbƒtƒ@‚ğƒf[ƒ^ƒXƒgƒŠ[ƒ€‚Éİ’è
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Éİ’ï¿½
 	Device->SetStreamSource(0, m_VertexBuffer, 0, sizeof(VERTEX_2D));
 
-	// ’¸“_ƒtƒH[ƒ}ƒbƒg‚Ìİ’è
+	// ï¿½ï¿½ï¿½_ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½Ìİ’ï¿½
 	Device->SetFVF(FVF_VERTEX_2D);
 
-	// ƒeƒNƒXƒ`ƒƒ‚Ìİ’è
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìİ’ï¿½
 	Device->SetTexture(0, NULL);
 
-	// •`‰æ
+	// ï¿½`ï¿½ï¿½
 	Device->DrawPrimitive(D3DPT_TRIANGLESTRIP, 0, NUM_POLYGON);
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void StencilShadow::MakeVerTex(void)
 Parameter:  
-Overview:   ’¸“_‚Ìì¬
+Overview:   ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void StencilShadow::MakeVerTex(void)
 {
-	//	ƒfƒoƒCƒX‚Ìæ“¾
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìæ“¾
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	// ’¸“_ƒoƒbƒtƒ@‚Ì¶¬
+	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚É¸”s", "StencilShadow.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "StencilShadow.cpp", MB_OK | MB_ICONHAND);
 	}
 
-	// ’¸“_î•ñ‚ğİ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½İ’ï¿½
 	VERTEX_2D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ğƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ğæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&pVtx, 0);
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	pVtx[0].Pos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3(SCREEN_WIDTH, 0.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3(0.0f, SCREEN_HEIGHT, 0.0f);
@@ -180,25 +178,25 @@ void StencilShadow::MakeVerTex(void)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		pVtx[CountVertex].Rhw = 1.0f; //	À•W•ÏŠ·Ï‚İ’¸“_ƒtƒ‰ƒO
-		pVtx[CountVertex].Color = D3DXCOLOR(0.0f,0.0f,0.0f,0.4f); // ’¸“_ƒJƒ‰[
+		pVtx[CountVertex].Rhw = 1.0f; //	ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½ï¿½Ï‚İ’ï¿½ï¿½_ï¿½tï¿½ï¿½ï¿½O
+		pVtx[CountVertex].Color = D3DXCOLOR(0.0f,0.0f,0.0f,0.4f); // ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 	}
 
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	pVtx[0].Tex = D3DXVECTOR2(0, 0);
 	pVtx[1].Tex = D3DXVECTOR2(1, 0);
 	pVtx[2].Tex = D3DXVECTOR2(0, 1);
 	pVtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void StencilShadow::WorldTransform(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ‘S‰æ–Ê2Dƒ|ƒŠƒSƒ“•`‰æ
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½Sï¿½ï¿½ï¿½2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void StencilShadow::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
@@ -209,9 +207,9 @@ void StencilShadow::WorldTransform(LPDIRECT3DDEVICE9 Device)
 	D3DXMatrixIdentity(&m_MatrixWorld);
 
 	D3DXMatrixTranslation(&matrixPosition,
-		position.x,	//	X²ˆÚ“®
-		position.y,	//	Y²ˆÚ“®
-		position.z);	//	Z²ˆÚ“®
+		position.x,	//	Xï¿½ï¿½ï¿½Ú“ï¿½
+		position.y,	//	Yï¿½ï¿½ï¿½Ú“ï¿½
+		position.z);	//	Zï¿½ï¿½ï¿½Ú“ï¿½
 
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixPosition);
 

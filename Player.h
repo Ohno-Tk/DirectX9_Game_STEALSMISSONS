@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒvƒŒƒCƒ„[[ Player.h ]
+ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[[ Player.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -41,8 +39,8 @@ public:
 	void Update(void)override;
 	void Draw(void)override;
 
-	bool AttackHit(int damageValue); // UŒ‚ƒqƒbƒg
-	void HitPointRecovery(int recoveryValue);// ‘Ì—Í‰ñ•œ
+	bool AttackHit(int damageValue); // ï¿½Uï¿½ï¿½ï¿½qï¿½bï¿½g
+	void HitPointRecovery(int recoveryValue);// ï¿½Ì—Í‰ï¿½
 
 	// Setter
 	void SetOldPosition(void){ Object::SetPosition(m_OldPosision); }
@@ -54,14 +52,14 @@ public:
 	int GetMaxHitPoint(void);
 
 private:
-	void Control(D3DXVECTOR3* position); // ‘€ì
-	void Collision(D3DXVECTOR3* position); // Õ“Ë”»’è
+	void Control(D3DXVECTOR3* position); // ï¿½ï¿½ï¿½ï¿½
+	void Collision(D3DXVECTOR3* position); // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 
 private:
-	D3DXVECTOR3 m_OldPosision; // ‘O‰ñ‚ÌÀ•W
+	D3DXVECTOR3 m_OldPosision; // ï¿½Oï¿½ï¿½Ìï¿½ï¿½W
 
-	float m_Move; // ˆÚ“®—Ê
-	float m_SphereRadius; // ‹…”»’è‚Ì‚Ì”¼Œa
+	float m_Move; // ï¿½Ú“ï¿½ï¿½ï¿½
+	float m_SphereRadius; // ï¿½ï¿½ï¿½ï¿½ï¿½èï¿½Ì‚Ì”ï¿½ï¿½a
 
 	StencilShadow* m_Shadow;
 	HitPointGauge* m_HitPoint;

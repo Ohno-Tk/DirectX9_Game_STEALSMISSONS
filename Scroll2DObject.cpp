@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒXƒNƒ[ƒ‹ƒIƒuƒWƒFƒNƒg(2D)[ Scroll2DObject.cpp ]
+ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g(2D)[ Scroll2DObject.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/17
 =============================================================================*/
 
@@ -22,16 +20,16 @@ Include Files
 /*-----------------------------------------------------------------------------
 Function:   Scroll2DObject* Scroll2DObject::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, char* textureFilePath, D3DXVECTOR2 scrollSpeed, int priolity)
 Parameter:  D3DXVECTOR3 positon
-              À•W
+              ï¿½ï¿½ï¿½W
             D3DXVECTOR2 size
-			  ‘å‚«‚³
+			  ï¿½å‚«ï¿½ï¿½
 			char* textureFilePath
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
 			 D3DXVECTOR2 scrollSpeed
-			   ƒXƒNƒ[ƒ‹ƒXƒs[ƒh
+			   ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Xï¿½sï¿½[ï¿½h
 			int priolity
-			  —Dæ“x
-Overview:   ¶¬
+			  ï¿½Dï¿½ï¿½x
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 Scroll2DObject* Scroll2DObject::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, char* textureFilePath, D3DXVECTOR2 scrollSpeed, int priolity)
 {

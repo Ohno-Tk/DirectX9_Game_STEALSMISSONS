@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒeƒNƒXƒ`ƒƒ(DirectX)[ TextureDirectX.cpp ]
+ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½(DirectX)[ TextureDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/22
 =============================================================================*/
 
@@ -63,20 +61,20 @@ void TextureManagerDirectX::Initialize(void)
 /*-----------------------------------------------------------------------------
 Function:   void TextureManagerDirectX::Load(string FileName, D3DXVECTOR2 Div)
 Parameter:  string FileName
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
             D3DXVECTOR2 Div
-			  ƒeƒNƒXƒ`ƒƒ‚Ì•ªŠ„”
-Overview:   ƒeƒNƒXƒ`ƒƒ‚Ì“Ç‚Ýž‚Ý
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½
+Overview:   ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì“Ç‚Ýï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void TextureManagerDirectX::Load(string FileName, D3DXVECTOR2 Div)
 {
 	m_TextureInfo.Div = Div;
 
-	//	“¯‚¶ƒtƒ@ƒCƒ‹‚ª‘¶Ý‚·‚é‚©‚ÌŒŸõ
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½é‚©ï¿½ÌŒï¿½ï¿½ï¿½
 	auto it = m_Texture_Map.find(FileName);
 
 	if (it == m_Texture_Map.end())
-	{	//	‘¶Ý‚µ‚È‚©‚Á‚½‚ç
+	{	//	ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		HRESULT hr;
 
@@ -86,25 +84,25 @@ void TextureManagerDirectX::Load(string FileName, D3DXVECTOR2 Div)
 
 		if (FAILED(hr))
 		{
-			MessageBox(NULL, "ƒeƒNƒXƒ`ƒƒ‚ª“Ç‚Ýž‚ß‚Ü‚¹‚ñ‚Å‚µ‚½", "TextureDirectX.cpp", MB_OK | MB_ICONHAND);
+			MessageBox(NULL, "ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚Ýï¿½ï¿½ß‚Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½", "TextureDirectX.cpp", MB_OK | MB_ICONHAND);
 			return;
 		}
 
-		//ƒeƒNƒXƒ`ƒƒÚ×î•ñŽæ“¾
+		//ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ú×ï¿½ï¿½æ“¾
 		D3DXIMAGE_INFO ImageInfo;
 		D3DXGetImageInfoFromFile(FileName.c_str(), &ImageInfo);
 		m_TextureInfo.Size.x = ImageInfo.Width / Div.x;
 		m_TextureInfo.Size.y = ImageInfo.Height / Div.y;
 
 
-		//	ƒL[‚Æ’l‚ð˜AŒ‹‚³‚¹‚é
+		//	ï¿½Lï¿½[ï¿½Æ’lï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		m_Texture_Map[FileName] = m_TextureInfo;
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TextureManagerDirectX::UnloadAll(void)
-Overview:   ƒeƒNƒXƒ`ƒƒ‚Ì‘Síœ
+Overview:   ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì‘Sï¿½íœ
 -----------------------------------------------------------------------------*/
 void TextureManagerDirectX::UnloadAll(void)
 {
@@ -113,23 +111,23 @@ void TextureManagerDirectX::UnloadAll(void)
 		SAFE_RELEASE(it->second.Texture);
 	}
 
-	m_Texture_Map.clear();	//	‘S—v‘f‚Ìíœ
+	m_Texture_Map.clear();	//	ï¿½Sï¿½vï¿½fï¿½Ìíœ
 }
 
 /*-----------------------------------------------------------------------------
 Function:   const TEXTUREINFO TextureManagerDirectX::GetTextureInfo(string fileName)const
 Parameter:  string fileName
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-Overview:   ƒeƒNƒXƒ`ƒƒî•ñ‚ÌŽæ“¾
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
+Overview:   ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ÌŽæ“¾
 -----------------------------------------------------------------------------*/
 const TEXTUREINFO TextureManagerDirectX::GetTextureInfo(string fileName)const
 {
-	//	ƒtƒ@ƒCƒ‹‚ª‘¶Ý‚·‚é‚©‚Ìƒ`ƒFƒbƒN
+	//	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½é‚©ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	auto it = m_Texture_Map.find(fileName);
 
-	if (it != m_Texture_Map.end()){ return it->second; } //	‘¶Ý‚µ‚Ä‚¢‚½‚ç
+	if (it != m_Texture_Map.end()){ return it->second; } //	ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	Debug::Assert(fileName+"‚ªŽæ“¾‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½", "TextureDirectX.cpp", "");
+	Debug::Assert(fileName+"ï¿½ï¿½ï¿½æ“¾ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½", "TextureDirectX.cpp", "");
 
 	TEXTUREINFO error;
 

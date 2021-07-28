@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒXƒNƒ[ƒ‹ƒIƒuƒWƒFƒNƒg(2D)[ Scroll2DObject.h ]
+ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g(2D)[ Scroll2DObject.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/17
 =============================================================================*/
 
@@ -32,7 +30,7 @@ public:
 	void SetScrollSpeed(const D3DXVECTOR2 scrollSpeed){ m_ScrollSpeed = scrollSpeed; }
 
 private:
-	void SetVertex(void); // ’¸“_‚Ì•ÏX
+	void SetVertex(void); // ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 
 private:
 	D3DXVECTOR2 m_TexCoord;

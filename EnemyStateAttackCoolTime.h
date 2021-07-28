@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( UŒ‚‘Ò‚¿ŠÔ )[ EnemyStateAttackCoolTime.h ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Uï¿½ï¿½ï¿½Ò‚ï¿½ï¿½ï¿½ï¿½ï¿½ )[ EnemyStateAttackCoolTime.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/24
 =============================================================================*/
 
@@ -35,7 +33,7 @@ public:
 	void Update(D3DXVECTOR3 position)override;
 
 private:
-	Enemy* m_Owner; // Š—LÒ
+	Enemy* m_Owner; // ï¿½ï¿½ï¿½Lï¿½ï¿½
 
 	int m_CoolTimeCount;
 };

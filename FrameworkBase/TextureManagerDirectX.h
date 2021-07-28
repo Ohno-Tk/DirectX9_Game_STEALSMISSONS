@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒeƒNƒXƒ`ƒƒ(DirectX)[ TextureManagerDirectX.h ]
+ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½(DirectX)[ TextureManagerDirectX.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/22
 =============================================================================*/
 
@@ -23,9 +21,9 @@ Include Files
 -----------------------------------------------------------------------------*/
 struct TEXTUREINFO
 {
-	LPDIRECT3DTEXTURE9 Texture;	//	ƒeƒNƒXƒ`ƒƒ‚Ìƒ|ƒCƒ“ƒ^
-	D3DXVECTOR2 Size;			//	‘å‚«‚³
-	D3DXVECTOR2 Div;			//	•ªŠ„”
+	LPDIRECT3DTEXTURE9 Texture;	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
+	D3DXVECTOR2 Size;			//	ï¿½å‚«ï¿½ï¿½
+	D3DXVECTOR2 Div;			//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 };
 
 /*-----------------------------------------------------------------------------
@@ -41,11 +39,11 @@ public:
 	const TEXTUREINFO GetTextureInfo(std::string fileName)const;
 
 private:
-	void Load(std::string FileName, D3DXVECTOR2 Div = D3DXVECTOR2(1.f, 1.f)); // ƒeƒNƒXƒ`ƒƒ‚Ì“Ç‚İ‚İ
-	void UnloadAll(void); // ƒeƒNƒXƒ`ƒƒ‚Ì‘Síœ
+	void Load(std::string FileName, D3DXVECTOR2 Div = D3DXVECTOR2(1.f, 1.f)); // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void UnloadAll(void); // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì‘Sï¿½íœ
 
 private:
-	TEXTUREINFO m_TextureInfo;	//	ƒeƒNƒXƒ`ƒƒî•ñ
+	TEXTUREINFO m_TextureInfo;	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	std::unordered_map< std::string, TEXTUREINFO > m_Texture_Map;
 };

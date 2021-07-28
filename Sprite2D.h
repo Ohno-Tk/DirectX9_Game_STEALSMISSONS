@@ -1,12 +1,10 @@
 /*=============================================================================
 
-2D•`‰æ[ Sprite2D.h ]
-( Maybe-Later:std::string‚Ìƒƒ‚ƒŠ‰ğ•ú‚ªo—ˆ‚Ä‚¢‚È‚¢ )
+2Dï¿½`ï¿½ï¿½[ Sprite2D.h ]
+( Maybe-Later:std::stringï¿½Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ )
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/17
 =============================================================================*/
 
@@ -39,16 +37,16 @@ public:
 	D3DXCOLOR GetColor(void){ return m_Color; }
 
 private:
-	void MakeVertex(LPDIRECT3DDEVICE9 Device);// ’¸“_‚Ìì¬
-	virtual void SetVertex(void); // ’¸“_‚Ì•ÏX
+	void MakeVertex(LPDIRECT3DDEVICE9 Device);// ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	virtual void SetVertex(void); // ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
 
 private:
-	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer; // ’¸“_ƒoƒbƒtƒ@
+	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer; // ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
 
-	D3DXVECTOR2 m_Size;	//	‘å‚«‚³
-	D3DXCOLOR m_Color;	//	F
+	D3DXVECTOR2 m_Size;	//	ï¿½å‚«ï¿½ï¿½
+	D3DXCOLOR m_Color;	//	ï¿½F
 
-	char* m_TexturePath; // ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+	char* m_TexturePath; // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
 
 protected:
 	void SetTexturePath(char* texturePath){ m_TexturePath = texturePath; }

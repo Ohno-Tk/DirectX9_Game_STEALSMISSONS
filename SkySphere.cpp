@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒXƒJƒCƒXƒtƒBƒA[ SkySphere.cpp ]
+ï¿½Xï¿½Jï¿½Cï¿½Xï¿½tï¿½Bï¿½A[ SkySphere.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/15
 =============================================================================*/
 
@@ -24,14 +22,14 @@ Include Files
 Macro
 -----------------------------------------------------------------------------*/
 #define OBJECT_TEXTURE_PATH (TEXTURE_PATH"GAME/sky2.png")
-#define ROTATION_SPEED (0.05f) // ‰ñ“]ƒXƒs[ƒh
-#define SPHERE_NUMBLOCK_X (50) // ‹…‚Ì‰¡‚Ì–‡”
-#define SPHERE_NUMBLOCK_Y (50) // ‹…‚Ìc‚Ì–‡”
-#define SPHERE_RADIUS (800.0f) // ‹…‚Ì”¼Œa
+#define ROTATION_SPEED (0.05f) // ï¿½ï¿½]ï¿½Xï¿½sï¿½[ï¿½h
+#define SPHERE_NUMBLOCK_X (50) // ï¿½ï¿½ï¿½Ì‰ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
+#define SPHERE_NUMBLOCK_Y (50) // ï¿½ï¿½ï¿½Ìcï¿½Ì–ï¿½ï¿½ï¿½
+#define SPHERE_RADIUS (800.0f) // ï¿½ï¿½ï¿½Ì”ï¿½ï¿½a
 
 /*-----------------------------------------------------------------------------
 Function:   SkySphere* SkySphere::Create(void)
-Overview:   ¶¬
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 SkySphere* SkySphere::Create(void)
 {

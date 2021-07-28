@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒtƒF[ƒhƒIƒuƒWƒFƒNƒg(2D)[ Fade2DObject.cpp ]
+ï¿½tï¿½Fï¿½[ï¿½hï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g(2D)[ Fade2DObject.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/17
 =============================================================================*/
 
@@ -35,18 +33,18 @@ m_FadeFlag(true){}
 /*-----------------------------------------------------------------------------
 Function:   Fade2DObject* Fade2DObject::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, string texturePath, float upperLimit, float lowerLimit)
 Parameter:  D3DXVECTOR3 position
-              À•W
+              ï¿½ï¿½ï¿½W
             D3DXVECTOR2 size
-			  ‘å‚«‚³
+			  ï¿½å‚«ï¿½ï¿½
             string texturePath
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
 			float upperLimit
-			  ãŒÀ
+			  ï¿½ï¿½ï¿½
 			float lowerLimit
-			  ‰ºŒÀ
+			  ï¿½ï¿½ï¿½ï¿½
 			float fadeRate
-			  ƒtƒF[ƒh‚·‚éŠ„‡
-Overview:   ¶¬
+			  ï¿½tï¿½Fï¿½[ï¿½hï¿½ï¿½ï¿½éŠ„ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 Fade2DObject* Fade2DObject::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, char* texturePath, float upperLimit, float lowerLimit, D3DXVECTOR4 color, float fadeRate)
 {

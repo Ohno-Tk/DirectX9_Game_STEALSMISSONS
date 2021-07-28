@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‰ƒCƒg(DirectX)[ LightDirectX.h ]
+ï¿½ï¿½ï¿½Cï¿½g(DirectX)[ LightDirectX.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/16
 =============================================================================*/
 
@@ -22,10 +20,10 @@ public:
 	LightDirectX();
 
 	void DirectionalLight(void);
-	void PointLight(void); // ƒ|ƒCƒ“ƒgƒ‰ƒCƒg
+	void PointLight(void); // ï¿½|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Cï¿½g
 
 private:
-	D3DLIGHT9 m_Light;	//	ƒ‰ƒCƒg\‘¢‘Ì
+	D3DLIGHT9 m_Light;	//	ï¿½ï¿½ï¿½Cï¿½gï¿½\ï¿½ï¿½ï¿½ï¿½
 };
 
 #endif

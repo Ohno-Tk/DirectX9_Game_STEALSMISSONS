@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‚ƒfƒ‹ŠÇ—[ ModelManagerDirectX.cpp ]
+ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ç—ï¿½[ ModelManagerDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/08/25
 =============================================================================*/
 
@@ -44,41 +42,41 @@ void ModelManagerDirectX::Initialize(void)
 /*-----------------------------------------------------------------------------
 Function:   void ModelManagerDirectX::Load(string fileName)
 Parameter:  string fileName
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-Overview:   ƒ‚ƒfƒ‹‚Ìƒ[ƒh
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
 -----------------------------------------------------------------------------*/
 void ModelManagerDirectX::Load(string fileName)
 {
-	//	“¯‚¶ƒtƒ@ƒCƒ‹‚ª‘¶Ý‚·‚é‚©‚Ìƒ`ƒFƒbƒN
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½é‚©ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	auto it = m_Model_Map.find(fileName);
 
 	if (it == m_Model_Map.end())
-	{	//	‘¶Ý‚µ‚È‚©‚Á‚½‚ç
+	{	//	ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		HRESULT hr;
 
-		//	ƒfƒoƒCƒX‚ÌŽæ“¾
+		//	ï¿½fï¿½oï¿½Cï¿½Xï¿½ÌŽæ“¾
 		LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-		// Xƒtƒ@ƒCƒ‹‚Ì“Ç‚Ýž‚Ý
-		hr = D3DXLoadMeshFromX(fileName.c_str(), // ƒtƒ@ƒCƒ‹–¼
+		// Xï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚Ýï¿½ï¿½ï¿½
+		hr = D3DXLoadMeshFromX(fileName.c_str(), // ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
 			D3DXMESH_SYSTEMMEM,
-			Device, // ƒfƒoƒCƒX
-			&m_Model.AdjacecyBuffer, // —×Úƒoƒbƒtƒ@
-			&m_Model.BufferMaterial, // ƒ}ƒeƒŠƒAƒ‹î•ñ‚ðŠi”[
+			Device, // ï¿½fï¿½oï¿½Cï¿½X
+			&m_Model.AdjacecyBuffer, // ï¿½×Úƒoï¿½bï¿½tï¿½@
+			&m_Model.BufferMaterial, // ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½iï¿½[
 			NULL,
-			&m_Model.NumMaterial, // ƒ}ƒeƒŠƒAƒ‹”
-			&m_Model.Mesh);	 //	ƒƒbƒVƒ…
+			&m_Model.NumMaterial, // ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½
+			&m_Model.Mesh);	 //	ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½
 
 		if (FAILED(hr))
 		{
-			fileName += "‚ª“Ç‚Ýž‚ß‚Ü‚¹‚ñ‚Å‚µ‚½";
+			fileName += "ï¿½ï¿½ï¿½Ç‚Ýï¿½ï¿½ß‚Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½";
 			Debug::Assert(fileName, "ModelManagerDirectX.cpp", "");
 			return;
 		}
 
 
-		//	ƒeƒNƒXƒ`ƒƒ‚Ì“Ç‚Ýž‚Ý
+		//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ì“Ç‚Ýï¿½ï¿½ï¿½
 		m_Model.Material = (D3DXMATERIAL*)m_Model.BufferMaterial->GetBufferPointer();
 		m_Model.Texture = new LPDIRECT3DTEXTURE9[m_Model.NumMaterial];
 		for (int i = 0; i < (int)m_Model.NumMaterial; i++)
@@ -96,7 +94,7 @@ void ModelManagerDirectX::Load(string fileName)
 
 				if (FAILED(hr))
 				{
-					Debug::Assert(fileName+"‚Ì"+filePath+"‚ª“Ç‚Ýž‚ß‚Ü‚¹‚ñ‚Å‚µ‚½", "ModelManagerDirectX.cpp", "");
+					Debug::Assert(fileName+"ï¿½ï¿½"+filePath+"ï¿½ï¿½ï¿½Ç‚Ýï¿½ï¿½ß‚Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½", "ModelManagerDirectX.cpp", "");
 					return;
 				}
 			}
@@ -106,25 +104,25 @@ void ModelManagerDirectX::Load(string fileName)
 			}
 		}
 
-		// ƒƒbƒVƒ…‚ÌÅ“K‰»
+		// ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ÌÅ“Kï¿½ï¿½
 		hr = m_Model.Mesh->OptimizeInplace(D3DXMESHOPT_COMPACT | D3DXMESHOPT_ATTRSORT | D3DXMESHOPT_VERTEXCACHE,
 			(DWORD*)m_Model.AdjacecyBuffer->GetBufferPointer(), NULL, NULL, NULL);
 
 		if (FAILED(hr))
 		{
-			MessageBox(NULL, "ƒƒbƒVƒ…‚ÌÅ“K‰»‚ÉŽ¸”s", "ModelManagerDirectX.cpp", MB_OK);
+			MessageBox(NULL, "ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ÌÅ“Kï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "ModelManagerDirectX.cpp", MB_OK);
 		}
 
 		SAFE_RELEASE(m_Model.AdjacecyBuffer);
 
-		//	ƒL[‚Æ’l‚ð˜AŒ‹‚³‚¹‚é
+		//	ï¿½Lï¿½[ï¿½Æ’lï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		m_Model_Map[fileName] = m_Model;
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TextureManagerDirectX::UnloadAll(void)
-Overview:   ƒ‚ƒfƒ‹‚Ì‘Síœ
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ì‘Sï¿½íœ
 -----------------------------------------------------------------------------*/
 void ModelManagerDirectX::UnloadAll(void)
 {
@@ -144,29 +142,29 @@ void ModelManagerDirectX::UnloadAll(void)
 		SAFE_RELEASE(it->second.BufferMaterial);
 	}
 
-	m_Model_Map.clear(); // ‘S—v‘f‚Ìíœ
+	m_Model_Map.clear(); // ï¿½Sï¿½vï¿½fï¿½Ìíœ
 }
 
 /*-----------------------------------------------------------------------------
 Function:   const MODEL_PARAM ModelManagerDirectX::GetModelParam(string fileName)const
 Parameter:  string fileName
-			  ƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-Overview:   ƒ‚ƒfƒ‹Žæ“¾
+			  ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒpï¿½X
+Overview:   ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½æ“¾
 -----------------------------------------------------------------------------*/
 const MODEL_PARAM ModelManagerDirectX::GetModelParam(string fileName)const
 {
 
-	//	ƒtƒ@ƒCƒ‹‚ª‘¶Ý‚·‚é‚©‚Ìƒ`ƒFƒbƒN
+	//	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½é‚©ï¿½Ìƒ`ï¿½Fï¿½bï¿½N
 	auto it = m_Model_Map.find(fileName);
 
 	if (it != m_Model_Map.end())
-	{//	‘¶Ý‚µ‚Ä‚¢‚½‚ç
+	{//	ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 		return it->second;
 	} 
 
-	fileName += "‚ªŽæ“¾‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½";
+	fileName += "ï¿½ï¿½ï¿½æ“¾ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½";
 	Debug::Assert(fileName, "ModelManagerDirectX.cpp", "");
 
 	MODEL_PARAM error;

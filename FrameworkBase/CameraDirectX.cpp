@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒJƒƒ‰(DirectX)[ CameraDirectX.cpp ]
+ï¿½Jï¿½ï¿½ï¿½ï¿½(DirectX)[ CameraDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/16
 =============================================================================*/
 
@@ -68,31 +66,31 @@ void CameraDirectX::Update(void)
 
 void CameraDirectX::SetProjection(void)
 {
-	//	ƒfƒoƒCƒX‚Ìæ“¾
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìæ“¾
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	//	ƒ[ƒ‹ƒhƒ}ƒgƒŠƒNƒX‚Ìì¬
+	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½Xï¿½Ìì¬
 	D3DXMATRIX mtxWorld;
 
-	D3DXMatrixIdentity(&mtxWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&mtxWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
-	//	ƒfƒoƒCƒX‚Éƒ[ƒ‹ƒh•ÏŠ·s—ñ‚ğİ’è
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ÏŠï¿½ï¿½sï¿½ï¿½ï¿½İ’ï¿½
 	Device->SetTransform(D3DTS_WORLD, &mtxWorld);
 
-	//	ƒrƒ…[À•W•ÏŠ·
+	//	ï¿½rï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 	D3DXMatrixLookAtLH(&m_MtxView, &m_PositionEye, &m_PositionAt, &m_VecUp);
 
-	//	ƒfƒoƒCƒX‚Éƒrƒ…[•ÏŠ·s—ñ‚ğİ’è
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒrï¿½ï¿½ï¿½[ï¿½ÏŠï¿½ï¿½sï¿½ï¿½ï¿½İ’ï¿½
 	Device->SetTransform(D3DTS_VIEW, &m_MtxView);
 
-	//	ƒvƒƒWƒFƒNƒVƒ‡ƒ“•ÏŠ·
+	//	ï¿½vï¿½ï¿½ï¿½Wï¿½Fï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ÏŠï¿½
 
-	//	ƒp[ƒXƒyƒNƒeƒBƒus—ñ
+	//	ï¿½pï¿½[ï¿½Xï¿½yï¿½Nï¿½eï¿½Bï¿½uï¿½sï¿½ï¿½
 	D3DXMatrixPerspectiveFovLH(&m_mtxProj,
-		D3DX_PI / 3.0f,	//	‰æŠp
-		(float)SCREEN_WIDTH / SCREEN_HEIGHT,	//	ƒAƒXƒyƒNƒg”ä
-		CAMERA_NEAR,	//	near	’l‚ğâ‘Î0ˆÈ‰º‚É‚µ‚È‚¢
+		D3DX_PI / 3.0f,	//	ï¿½ï¿½p
+		(float)SCREEN_WIDTH / SCREEN_HEIGHT,	//	ï¿½Aï¿½Xï¿½yï¿½Nï¿½gï¿½ï¿½
+		CAMERA_NEAR,	//	near	ï¿½lï¿½ï¿½ï¿½ï¿½0ï¿½È‰ï¿½ï¿½É‚ï¿½ï¿½È‚ï¿½
 		CAMERA_FAR);	//	far
 	Device->SetTransform(D3DTS_PROJECTION, &m_mtxProj);
 }
@@ -102,21 +100,21 @@ void CameraDirectX::NormalizeCamera(void)
 	m_FrontVector = m_PositionAt - m_PositionEye;
 
 	D3DXVec3Normalize(&m_FrontVector, &m_FrontVector);
-	D3DXVec3Cross(&m_RightVector, &m_VecUp, &m_FrontVector);	//	ŠOÏ
+	D3DXVec3Cross(&m_RightVector, &m_VecUp, &m_FrontVector);	//	ï¿½Oï¿½ï¿½
 	D3DXVec3Normalize(&m_RightVector, &m_RightVector);
 }
 
 /*-----------------------------------------------------------------------------
-ƒrƒ…[s—ñ‚Ì‹ts—ñæ“¾
+ï¿½rï¿½ï¿½ï¿½[ï¿½sï¿½ï¿½Ì‹tï¿½sï¿½ï¿½æ“¾
 -----------------------------------------------------------------------------*/
 const D3DXMATRIX CameraDirectX::GetInversedView(void)const
 {
 	D3DXMATRIX mtxViewInverse;
 
-	//	“]’us—ñ
+	//	ï¿½]ï¿½uï¿½sï¿½ï¿½
 	D3DXMatrixTranspose(&mtxViewInverse, &m_MtxView);
 
-	//	•½sˆÚ“®¬•ª‚ğƒJƒbƒg
+	//	ï¿½ï¿½ï¿½sï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½bï¿½g
 	mtxViewInverse._14 = 0.0f;
 	mtxViewInverse._24 = 0.0f;
 	mtxViewInverse._34 = 0.0f;
@@ -126,7 +124,7 @@ const D3DXMATRIX CameraDirectX::GetInversedView(void)const
 
 #ifdef _DEBUG
 /*-----------------------------------------------------------------------------
-ƒfƒoƒbƒO—p‚Ì‘€ì
+ï¿½fï¿½oï¿½bï¿½Oï¿½pï¿½Ì‘ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void CameraDirectX::DebugCamera(void)
 {

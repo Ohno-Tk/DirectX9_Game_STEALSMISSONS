@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒI[ƒo[ƒV[ƒ“[ GameOverScene.h ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[ï¿½Vï¿½[ï¿½ï¿½[ GameOverScene.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -40,19 +38,19 @@ public:
 	void Draw(void)override;
 
 private:
-	void SceneChange(void); // ƒV[ƒ“‚ğ•Ï‚¦‚é
-	void SelectMode(void); // ‘I‘ğ
-	void KeyboardControl(void); // ƒL[ƒ{[ƒh‘€ì
+	void SceneChange(void); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
+	void SelectMode(void); // ï¿½Iï¿½ï¿½ï¿½ï¿½
+	void KeyboardControl(void); // ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½
 
 private:
 	enum SELECT
 	{
-		SELECT_CONTINUE = 0,	//	ƒRƒ“ƒeƒBƒjƒ…[
-		SELECT_END,			//	ƒGƒ“ƒh
+		SELECT_CONTINUE = 0,	//	ï¿½Rï¿½ï¿½ï¿½eï¿½Bï¿½jï¿½ï¿½ï¿½[
+		SELECT_END,			//	ï¿½Gï¿½ï¿½ï¿½h
 		SELECT_MAX
 	};
 
-	int m_Select;	//	‘I‘ğ
+	int m_Select;	//	ï¿½Iï¿½ï¿½
 
 	DirectXKeyboard* m_KeyBoard;
 	XInput* m_XInput;

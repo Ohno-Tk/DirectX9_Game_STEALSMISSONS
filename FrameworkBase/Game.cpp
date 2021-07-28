@@ -1,12 +1,12 @@
 /*=============================================================================
 
-ƒQ[ƒ€•”•ª[ Game.cpp ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ Game.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
+ï¿½ï¿½  Author
 Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -47,7 +47,7 @@ Macro
 
 /*-----------------------------------------------------------------------------
 Function:   Game* Game::GetInstance(void)
-Overview:   ƒCƒ“ƒXƒ^ƒ“ƒXæ“¾
+Overview:   ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½æ“¾
 -----------------------------------------------------------------------------*/
 Game* Game::GetInstance(void)
 {
@@ -78,34 +78,34 @@ void Game::Init(HINSTANCE instance, HWND wnd)
 	Console::Init();
 #endif
 
-	// ƒŒƒ“ƒ_ƒ‰[
+	// ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[
 	m_Renderer = new RendererDirectX;
 	hr = m_Renderer->Initialize(wnd);
-	if (FAILED(hr)){ Debug::Assert("ƒŒƒ“ƒ_ƒ‰[ƒNƒ‰ƒX‚Ì¶¬‚É¸”s", "Game.cpp", ""); }
+	if (FAILED(hr)){ Debug::Assert("ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "Game.cpp", ""); }
 
-	// ƒJƒƒ‰
+	// ï¿½Jï¿½ï¿½ï¿½ï¿½
 	m_Camera = new CameraDirectX;
 
-	// ƒ‰ƒCƒg
+	// ï¿½ï¿½ï¿½Cï¿½g
 	m_Light = new LightDirectX;
 	m_Light->DirectionalLight();
 
-	// ƒtƒF[ƒh
+	// ï¿½tï¿½Fï¿½[ï¿½h
 	m_Fade = new Fade;
 	m_Fade->Initialize();
 
-	// ƒeƒNƒXƒ`ƒƒ‚ÌŠÇ—
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ÌŠÇ—ï¿½
 	m_TextureManager = new TextureManagerDirectX;
 	m_TextureManager->Initialize();
 
-	// ƒ‚ƒfƒ‹ŠÇ—
+	// ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ç—ï¿½
 	m_ModelManager = new ModelManagerDirectX;
 	m_ModelManager->Initialize();
 
-	// ƒL[ƒ{[ƒh
+	// ï¿½Lï¿½[ï¿½{ï¿½[ï¿½h
 	m_Keyboard = new DirectXKeyboard;
 	hr = m_Keyboard->Initialize(instance, wnd);
-	if (FAILED(hr)){ Debug::Assert("ƒL[ƒ{[ƒhƒNƒ‰ƒX‚Ì¶¬‚É¸”s", "Game.cpp", ""); }
+	if (FAILED(hr)){ Debug::Assert("ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Nï¿½ï¿½ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "Game.cpp", ""); }
 
 #ifdef _DEBUG
 	m_Mouse = new DirectXMouse;
@@ -115,13 +115,13 @@ void Game::Init(HINSTANCE instance, HWND wnd)
 	// XInput
 	m_XInput = new XInput;
 
-	// ƒTƒEƒ“ƒh
+	// ï¿½Tï¿½Eï¿½ï¿½ï¿½h
 	m_Sound = new SoundDirectX;
 	hr = m_Sound->Initialize();
-	if (FAILED(hr)){ Debug::Assert("ƒTƒEƒ“ƒhƒNƒ‰ƒX‚Ì¶¬‚É¸”s", "Game.cpp", ""); }
+	if (FAILED(hr)){ Debug::Assert("ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½Nï¿½ï¿½ï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½Éï¿½ï¿½s", "Game.cpp", ""); }
 
 #ifdef ENABLE_CHARDATA
-	// ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^
+	// ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^
 	m_MotionCharacterData = new MotionCharacterData;
 	m_MotionCharacterData->Initialize();
 #endif
@@ -130,7 +130,7 @@ void Game::Init(HINSTANCE instance, HWND wnd)
 
 	DebugMenu::Initialize();
 
-	// ‰æ–Ê‘JˆÚ
+	// ï¿½ï¿½Ê‘Jï¿½ï¿½
 	m_Scene->Initialize();
 }
 
@@ -214,8 +214,8 @@ void Game::Draw(void)
 /*-----------------------------------------------------------------------------
 Function:   void Game::SetScene(Scene* scene)
 Parameter:  Scene *scene
-              ƒV[ƒ“‚Ìƒ|ƒCƒ“ƒ^
-Overview:   ƒV[ƒ“‚ÌØ‚è‘Ö‚¦
+              ï¿½Vï¿½[ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ÌØ‚ï¿½Ö‚ï¿½
 -----------------------------------------------------------------------------*/
 void Game::SetScene(Scene* scene)
 {

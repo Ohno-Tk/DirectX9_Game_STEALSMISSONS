@@ -1,12 +1,10 @@
 /*=============================================================================
 
-•Ší[ Weapon.h ]
+ï¿½ï¿½ï¿½ï¿½[ Weapon.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/19
 =============================================================================*/
 
@@ -32,14 +30,14 @@ public:
 	void SetModelPath(char* modelFilePath){ m_ModelFilePath = modelFilePath; }
 
 private:
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
 private:
-	D3DXVECTOR3	m_Rotation;	//	‰ñ“]
-	D3DXVECTOR3	m_Scale;	//	Šg‘å—¦
+	D3DXVECTOR3	m_Rotation;	//	ï¿½ï¿½]
+	D3DXVECTOR3	m_Scale;	//	ï¿½gï¿½å—¦
 
 	D3DXMATRIX m_MatrixWorld;
-	D3DXMATRIX m_OwnerMatrix; // Š—LÒ‚Ìƒ}ƒgƒŠƒNƒX
+	D3DXMATRIX m_OwnerMatrix; // ï¿½ï¿½ï¿½Lï¿½Ò‚Ìƒ}ï¿½gï¿½ï¿½ï¿½Nï¿½X
 
 	MODEL_PARAM m_ModelParam;
 	char* m_ModelFilePath;

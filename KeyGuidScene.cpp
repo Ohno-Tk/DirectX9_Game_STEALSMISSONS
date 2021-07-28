@@ -3,10 +3,8 @@
 [ KeyGuidScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/02/23
 =============================================================================*/
 
@@ -28,7 +26,7 @@ Include Files
 
 void KeyGuidScene::Initialize(void)
 {
-	Debug::Log("‘€ìà–¾ƒV[ƒ“");
+	Debug::Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½");
 
 #ifndef ENABLE_SOUND
 	Game::GetInstance()->GetSound()->Play(SoundDirectX::SOUND_SE_CALL);
@@ -45,7 +43,7 @@ void KeyGuidScene::Initialize(void)
 
 void KeyGuidScene::Uninitialize(void)
 {
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void KeyGuidScene::Update(void)
@@ -64,19 +62,19 @@ void KeyGuidScene::Update(void)
 	}
 
 
-	SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+	SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 }
 
 void KeyGuidScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void KeyGuidScene::SceneChange(void)
 {

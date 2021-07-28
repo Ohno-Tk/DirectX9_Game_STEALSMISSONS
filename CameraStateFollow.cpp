@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒJƒƒ‰ó‘Ô( ’Ç] )[ CameraStateFollow.cpp ]
+ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½( ï¿½Ç] )[ CameraStateFollow.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/22
 =============================================================================*/
 
@@ -24,7 +22,7 @@ Include Files
 
 CameraStateFollow::CameraStateFollow(CameraDirectX* owner):m_Owner(owner)
 {
-	Debug::Log("ƒJƒƒ‰ : ’Ç]ó‘Ô");
+	Debug::Log("ï¿½Jï¿½ï¿½ï¿½ï¿½ : ï¿½Ç]ï¿½ï¿½ï¿½");
 }
 void CameraStateFollow::Update(void)
 {

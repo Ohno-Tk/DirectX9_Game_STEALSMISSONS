@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒŒƒ“ƒ_ƒ‰[(DirectX)[ RendererDirectX.h ]
+ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[(DirectX)[ RendererDirectX.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/14
 =============================================================================*/
 
@@ -23,18 +21,18 @@ Include Files
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-//	’¸“_ƒtƒH[ƒ}ƒbƒg
+//	ï¿½ï¿½ï¿½_ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½g
 #define FVF_VERTEX_2D (D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)	//	2D
 #define FVF_VERTEX_3D (D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1 | D3DFVF_NORMAL)	//	3D
 
-#define NUM_VERTEX ( 4 )	//	’¸“_”
-#define NUM_POLYGON ( 2 )	//	ƒ|ƒŠƒSƒ“”
+#define NUM_VERTEX ( 4 )	//	ï¿½ï¿½ï¿½_ï¿½ï¿½
+#define NUM_POLYGON ( 2 )	//	ï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½ï¿½
 
-#define SAFE_RELEASE(p) if(p){ p->Release(); p = NULL; }// ƒ|ƒCƒ“ƒ^‚Ì‰ğ•úˆ—ƒ}ƒNƒ
+#define SAFE_RELEASE(p) if(p){ p->Release(); p = NULL; }// ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½Ì‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½Nï¿½ï¿½
 
 /*-----------------------------------------------------------------------------
 Library
-[\¬ƒvƒƒpƒeƒB]->[ƒŠƒ“ƒJ[]->[“ü—Í]->[’Ç‰Á‚ÌˆË‘¶ƒtƒ@ƒCƒ‹]‚É‹Lq‚µ‚Ä‚à‰Â”\
+[ï¿½\ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½B]->[ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½[]->[ï¿½ï¿½ï¿½ï¿½]->[ï¿½Ç‰ï¿½ï¿½ÌˆË‘ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½]ï¿½É‹Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Â”\
 -----------------------------------------------------------------------------*/
 #pragma comment(lib , "d3d9.lib")
 #define DIRECTINPUT_VERSION (0x0800)
@@ -51,18 +49,18 @@ Struct
 -----------------------------------------------------------------------------*/
 struct VERTEX_2D
 {
-	D3DXVECTOR3 Pos;	//	’¸“_À•W
-	float Rhw;			//	À•W•ÏŠ·Ï‚İ’¸“_ƒtƒ‰ƒOiDirectX‚É‚µ‚©‚È‚¢d—lj•K‚¸1.0f‚ğ“ü‚ê‚é
-	D3DCOLOR Color;		//	’¸“_ƒJƒ‰[
-	D3DXVECTOR2 Tex;	//	ƒeƒNƒXƒ`ƒƒÀ•W
+	D3DXVECTOR3 Pos;	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
+	float Rhw;			//	ï¿½ï¿½ï¿½Wï¿½ÏŠï¿½ï¿½Ï‚İ’ï¿½ï¿½_ï¿½tï¿½ï¿½ï¿½Oï¿½iDirectXï¿½É‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½dï¿½lï¿½jï¿½Kï¿½ï¿½1.0fï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	D3DCOLOR Color;		//	ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
+	D3DXVECTOR2 Tex;	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 };
 
 struct VERTEX_3D
 {
-	D3DXVECTOR3 Pos;	//	’¸“_À•W
-	D3DXVECTOR3 Nor;	//	–@ü
-	D3DCOLOR Color;		//	’¸“_ƒJƒ‰[
-	D3DXVECTOR2 Tex;	//	ƒeƒNƒXƒ`ƒƒÀ•W
+	D3DXVECTOR3 Pos;	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
+	D3DXVECTOR3 Nor;	//	ï¿½@ï¿½ï¿½
+	D3DCOLOR Color;		//	ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
+	D3DXVECTOR2 Tex;	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 };
 
 /*-----------------------------------------------------------------------------
@@ -78,44 +76,44 @@ public:
 	void DrawBegin(void)override;
 	void DrawEnd(void)override;
 
-	void Normal(void); // ’Êí
-	void WireFrame(void); // ƒƒCƒ„[ƒtƒŒ[ƒ€
+	void Normal(void); // ï¿½Êí
+	void WireFrame(void); // ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½
 
 	//	Getter
 	static LPDIRECT3DDEVICE9 GetDevice(void) { return m_D3DDevice; }
 
 private:
-	//	ƒfƒoƒCƒX‚Ì‰Šú‰»
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	HRESULT SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE d3ddm, HWND Wnd, bool Window);
-	void SetRenderState(void);			//	ƒŒƒ“ƒ_[ƒXƒe[ƒg‚Ìİ’è
-	void SetSamplerState(void);			//	ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚Ìİ’è
-	void SetTextureStageState(void);	//	ƒeƒNƒXƒ`ƒƒƒXƒe[ƒWƒXƒe[ƒg‚Ìİ’è
-	void InitRenderTarget(void);		 // ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ì‰Šú‰»
+	void SetRenderState(void);			//	ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½Ìİ’ï¿½
+	void SetSamplerState(void);			//	ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½Ìİ’ï¿½
+	void SetTextureStageState(void);	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Xï¿½eï¿½[ï¿½gï¿½Ìİ’ï¿½
+	void InitRenderTarget(void);		 // ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	void Polygon2DInitialize(void);
 	void Polygon2DDraw(void);
 	void PolygonScreenInit(void);
 	void PolygonScreenDraw(void);
 
 #ifdef _DEBUG
-	void DrawFPS(void); // FPS•\¦
+	void DrawFPS(void); // FPSï¿½\ï¿½ï¿½
 #endif
 
 private:
-	static D3DXCOLOR m_BackBufferColor;	//	ƒoƒbƒNƒoƒbƒtƒ@F
-	static LPDIRECT3DDEVICE9 m_D3DDevice;	// DeviceƒIƒuƒWƒFƒNƒg(•`‰æ‚É•K—v)
+	static D3DXCOLOR m_BackBufferColor;	//	ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@ï¿½F
+	static LPDIRECT3DDEVICE9 m_D3DDevice;	// Deviceï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g(ï¿½`ï¿½ï¿½É•Kï¿½v)
 
-	LPDIRECT3D9 m_D3D;	// Direct3DƒIƒuƒWƒFƒNƒg
+	LPDIRECT3D9 m_D3D;	// Direct3Dï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
 
-	LPDIRECT3DTEXTURE9 m_BlurTexture_1;// ƒeƒNƒXƒ`ƒƒ
-    LPDIRECT3DSURFACE9 m_BlurSurface_1;// ƒT[ƒtƒFƒX
+	LPDIRECT3DTEXTURE9 m_BlurTexture_1;// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½
+    LPDIRECT3DSURFACE9 m_BlurSurface_1;// ï¿½Tï¿½[ï¿½tï¿½Fï¿½X
 	LPDIRECT3DTEXTURE9 m_BlurTexture_2;
     LPDIRECT3DSURFACE9 m_BlurSurface_2;
-    LPDIRECT3DSURFACE9 m_BackBufferSurface;// ƒoƒbƒNƒoƒbƒtƒ@
+    LPDIRECT3DSURFACE9 m_BackBufferSurface;// ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer;
 	LPDIRECT3DVERTEXBUFFER9 m_VertexBuffer2;
 
 #ifdef _DEBUG
-	LPD3DXFONT m_Font;	// ƒtƒHƒ“ƒg‚Ö‚Ìƒ|ƒCƒ“ƒ^
+	LPD3DXFONT m_Font;	// ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 #endif
 };
 

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-HPƒQ[ƒW[ HitPointGauge.cpp ]
+HPï¿½Qï¿½[ï¿½W[ HitPointGauge.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/18
 =============================================================================*/
 
@@ -34,12 +32,12 @@ HitPointGauge::HitPointGauge(int priolity):Sprite2D(priolity)
 /*-----------------------------------------------------------------------------
 Function:   HitPointGauge* HitPointGauge::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, int maxHitPoint)
 Parameter:  D3DXVECTOR3 position
-              À•W
+              ï¿½ï¿½ï¿½W
 			D3DXVECTOR2 size
-			  ‘å‚«‚³
+			  ï¿½å‚«ï¿½ï¿½
 			int maxHitPoint
-			  Å‘åƒqƒbƒgƒ|ƒCƒ“ƒg
-Overview:   ¶¬
+			  ï¿½Å‘ï¿½qï¿½bï¿½gï¿½|ï¿½Cï¿½ï¿½ï¿½g
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 HitPointGauge* HitPointGauge::Create(D3DXVECTOR3 position, D3DXVECTOR2 size, int maxHitPoint)
 {
@@ -73,9 +71,9 @@ void HitPointGauge::Update(void)
 	D3DXCOLOR color = Sprite2D::GetColor();
 	D3DXVECTOR2 size = Sprite2D::GetSize();
 
-	m_HitPointRate = (float)m_NowHitPoint / m_MaxHitPoint; // ‰½Š„Á¸‚µ‚½‚©
+	m_HitPointRate = (float)m_NowHitPoint / m_MaxHitPoint; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	size.x = m_HitPointRate * m_MaxSize; // ‘å‚«‚³‚ÌŒvZ
+	size.x = m_HitPointRate * m_MaxSize; // ï¿½å‚«ï¿½ï¿½ï¿½ÌŒvï¿½Z
 
 	Sprite2D::SetSize(size);
 	Sprite2D::SetColor(color);
@@ -105,17 +103,17 @@ void HitPointGauge::SetVertex(D3DXVECTOR2 size, D3DXCOLOR color)
 
 	for(unsigned int CountVertex = 0; CountVertex < NUM_VERTEX; CountVertex++)
 	{
-		Vtx[CountVertex].Color = color;// ’¸“_ƒJƒ‰[
+		Vtx[CountVertex].Color = color;// ï¿½ï¿½ï¿½_ï¿½Jï¿½ï¿½ï¿½[
 	}
 
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	Vtx[0].Tex = D3DXVECTOR2(0             , 0);
 	Vtx[1].Tex = D3DXVECTOR2(m_HitPointRate, 0);
 	Vtx[2].Tex = D3DXVECTOR2(0             , 1);
 	Vtx[3].Tex = D3DXVECTOR2(m_HitPointRate, 1);
 
 
-	//	ƒoƒbƒtƒ@‚ğƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	vertexBuffer->Unlock();
 }
 

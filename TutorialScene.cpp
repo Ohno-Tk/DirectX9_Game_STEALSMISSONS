@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ`ƒ…[ƒgƒŠƒAƒ‹ƒV[ƒ“[ TutorialScene.cpp ]
+ï¿½`ï¿½ï¿½ï¿½[ï¿½gï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½[ TutorialScene.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -28,7 +26,7 @@ Include Files
 
 void TutorialScene::Initialize(void)
 {
-	Debug::Log("ƒ`ƒ…[ƒgƒŠƒAƒ‹ƒV[ƒ“");
+	Debug::Log("ï¿½`ï¿½ï¿½ï¿½[ï¿½gï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½");
 
 #ifndef ENABLE_SOUND
 	Game::GetInstance()->GetSound()->Play(SoundDirectX::SOUND_SE_CALL);
@@ -51,7 +49,7 @@ void TutorialScene::Initialize(void)
 
 void TutorialScene::Uninitialize(void)
 {
-	Object::ReleaseAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì‰ğ•ú
+	Object::ReleaseAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì‰ï¿½ï¿½
 }
 
 void TutorialScene::Update(void)
@@ -70,19 +68,19 @@ void TutorialScene::Update(void)
 	}
 
 
-	SceneChange(); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+	SceneChange(); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 
-	Object::UpdateAll(); //	‘SƒIƒuƒWƒFƒNƒg‚ÌXV
+	Object::UpdateAll(); //	ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌXï¿½V
 }
 
 void TutorialScene::Draw(void)
 {
-	Object::DrawAll(); // ‘SƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	Object::DrawAll(); // ï¿½Sï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ì•`ï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void TutorialScene::SceneChange(void)
-Overview:   ƒV[ƒ“‚ğ•Ï‚¦‚é
+Overview:   ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void TutorialScene::SceneChange(void)
 {

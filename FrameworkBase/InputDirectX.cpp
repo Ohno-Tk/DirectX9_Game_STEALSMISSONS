@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“ü—ÍƒfƒoƒCƒX(DirectX)[ InputDirectX.cpp ]
+ï¿½ï¿½ï¿½Íƒfï¿½oï¿½Cï¿½X(DirectX)[ InputDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -19,8 +17,8 @@ Include Files
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-#define	COUNT_WAIT_REPEAT	( 20 )	// ƒŠƒs[ƒg‘Ò‚¿ŠÔ
-#define MOUSE_KEY_MAX ( 8 )	//	ƒ}ƒEƒXƒL[‚ÌÅ‘å”
+#define	COUNT_WAIT_REPEAT	( 20 )	// ï¿½ï¿½ï¿½sï¿½[ï¿½gï¿½Ò‚ï¿½ï¿½ï¿½ï¿½ï¿½
+#define MOUSE_KEY_MAX ( 8 )	//	ï¿½}ï¿½Eï¿½Xï¿½Lï¿½[ï¿½ÌÅ‘å”
 #define ANALOG_METER_MAX (32767.0f)
 
 /*-----------------------------------------------------------------------------
@@ -30,9 +28,9 @@ LPDIRECTINPUT8	InputDirectX::m_DInput = NULL;
 
 void InputDirectX::Initialize(HINSTANCE hInstance)
 {
-	// DirectInputƒIƒuƒWƒFƒNƒg‚Ìì¬
+	// DirectInputï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìì¬
 	if (!m_DInput)
-	{	//	ƒfƒoƒCƒX‚ª–³‚©‚Á‚½‚ç
+	{	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		DirectInput8Create(hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&m_DInput, NULL);
 	}
 }
@@ -40,14 +38,14 @@ void InputDirectX::Initialize(HINSTANCE hInstance)
 void InputDirectX::Uninitialize(void)
 {
 	if (m_DIDevice)
-	{	// ƒfƒoƒCƒXƒIƒuƒWƒFƒNƒg‚ÌŠJ•ú
-		m_DIDevice->Unacquire(); // ƒfƒoƒCƒX‚Ö‚ÌƒAƒNƒZƒXŒ ‚ğ‰ğ•ú
+	{	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠJï¿½ï¿½
+		m_DIDevice->Unacquire(); // ï¿½fï¿½oï¿½Cï¿½Xï¿½Ö‚ÌƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		m_DIDevice->Release();
 		m_DIDevice = NULL;
 	}
 
 	if (m_DInput)
-	{	// DirectInputƒIƒuƒWƒFƒNƒg‚ÌŠJ•ú
+	{	// DirectInputï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŠJï¿½ï¿½
 		m_DInput->Release();
 		m_DInput = NULL;
 	}
@@ -56,7 +54,7 @@ void InputDirectX::Uninitialize(void)
 
 DirectXKeyboard::DirectXKeyboard()
 {
-	// Šeƒ[ƒN‚ÌƒNƒŠƒA
+	// ï¿½eï¿½ï¿½ï¿½[ï¿½Nï¿½ÌƒNï¿½ï¿½ï¿½A
 	ZeroMemory(m_KeyState, sizeof m_KeyState);
 	ZeroMemory(m_KeyStateTrigger, sizeof m_KeyStateTrigger);
 	ZeroMemory(m_KeyStateRelease, sizeof m_KeyStateRelease);
@@ -70,31 +68,31 @@ HRESULT DirectXKeyboard::Initialize(HINSTANCE instance, HWND wnd)
 
 	InputDirectX::Initialize(instance);
 
-	// ƒfƒoƒCƒXƒIƒuƒWƒFƒNƒg‚ğì¬
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ì¬
 	hr = m_DInput->CreateDevice(GUID_SysKeyboard, &m_DIDevice, NULL);
 	if (FAILED(hr) || !m_DIDevice )
 	{
-		MessageBox(wnd, "ƒL[ƒ{[ƒh‚ª‚ ‚è‚Ü‚¹‚ñ", "InputDirectX.cpp", MB_ICONWARNING);
+		MessageBox(wnd, "ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½", "InputDirectX.cpp", MB_ICONWARNING);
 		return E_FAIL;
 	}
 
-	// ƒf[ƒ^ƒtƒH[ƒ}ƒbƒg‚ğİ’è
+	// ï¿½fï¿½[ï¿½^ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½ï¿½İ’ï¿½
 	hr = m_DIDevice->SetDataFormat(&c_dfDIKeyboard);
 	if (FAILED(hr))
 	{
-		MessageBox(wnd, "ƒL[ƒ{[ƒh‚Ìƒf[ƒ^ƒtƒH[ƒ}ƒbƒg‚ğİ’è‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B", "InputDirectX.cpp", MB_ICONWARNING);
+		MessageBox(wnd, "ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ìƒfï¿½[ï¿½^ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½ï¿½İ’ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½B", "InputDirectX.cpp", MB_ICONWARNING);
 		return E_FAIL;
 	}
 
-	// ‹¦’²ƒ‚[ƒh‚ğİ’èiƒtƒHƒAƒOƒ‰ƒEƒ“ƒh•”ñ”r‘¼ƒ‚[ƒhj
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½İ’ï¿½iï¿½tï¿½Hï¿½Aï¿½Oï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½j
 	hr = m_DIDevice->SetCooperativeLevel(wnd, (DISCL_FOREGROUND | DISCL_NONEXCLUSIVE));
 	if (FAILED(hr))
 	{
-		MessageBox(wnd, "ƒL[ƒ{[ƒh‚Ì‹¦’²ƒ‚[ƒh‚ğİ’è‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B", "InputDirectX.cpp", MB_ICONWARNING);
+		MessageBox(wnd, "ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½İ’ï¿½Å‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½B", "InputDirectX.cpp", MB_ICONWARNING);
 		return E_FAIL;
 	}
 
-	// m_pDIDeviceƒAƒNƒZƒXŒ ‚ğŠl“¾( “ü—Í§ŒäŠJn )
+	// m_pDIDeviceï¿½Aï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½( ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½Jï¿½n )
 	m_DIDevice->Acquire();
 
 	return S_OK;
@@ -112,19 +110,19 @@ void DirectXKeyboard::Update(void)
 
 	if (!m_DIDevice){ return; }
 
-	// ƒfƒoƒCƒX‚©‚çƒf[ƒ^‚ğæ“¾
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½æ“¾
 	hr = m_DIDevice->GetDeviceState(sizeof(KeyState), KeyState);
 	if (SUCCEEDED(hr))
 	{
 		for (int nCntKey = 0; nCntKey < NUM_KEY_MAX; nCntKey++)
 		{
-			// ƒL[ƒgƒŠƒK[ ƒŠƒŠ[ƒXî•ñ‚Ìì¬
-			// 1ƒtƒŒ[ƒ€‘O‚ÌƒL[ó‹µ‚Æ¡‚ÌƒL[ó‹µ‚ğXOR‚µ‚½‚à‚Ì‚ğ¡‚ÌƒL[ó‹µ‚ÆAND‚ğ‚Æ‚é
+			// ï¿½Lï¿½[ï¿½gï¿½ï¿½ï¿½Kï¿½[ ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Xï¿½ï¿½ï¿½Ìì¬
+			// 1ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Oï¿½ÌƒLï¿½[ï¿½ó‹µ‚Æï¿½ï¿½ÌƒLï¿½[ï¿½ó‹µ‚ï¿½XORï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ÌƒLï¿½[ï¿½ó‹µ‚ï¿½ANDï¿½ï¿½ï¿½Æ‚ï¿½
 			m_KeyStateTrigger[nCntKey] = (m_KeyState[nCntKey] ^ KeyState[nCntKey]) & KeyState[nCntKey];
 			m_KeyStateRelease[nCntKey] = (m_KeyState[nCntKey] ^ KeyState[nCntKey]) & ~KeyState[nCntKey];
 			m_KeyStateRepeat[nCntKey] = m_KeyStateTrigger[nCntKey];
 
-			// ƒL[ƒŠƒs[ƒgî•ñ‚Ì¶¬
+			// ï¿½Lï¿½[ï¿½ï¿½ï¿½sï¿½[ï¿½gï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 			if (KeyState[nCntKey])
 			{
 				m_KeyStateRepeatCnt[nCntKey]++;
@@ -139,13 +137,13 @@ void DirectXKeyboard::Update(void)
 				m_KeyStateRepeatCnt[nCntKey] = 0;
 				m_KeyStateRepeat[nCntKey] = 0;
 			}
-			// ƒL[î•ñ‚ğ•Û‘¶
+			// ï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½Û‘ï¿½
 			m_KeyState[nCntKey] = KeyState[nCntKey];
 		}
 	}
 	else
 	{
-		m_DIDevice->Acquire(); // m_pDIDeviceƒAƒNƒZƒXŒ ‚ğŠl“¾( “ü—Í§ŒäŠJn )
+		m_DIDevice->Acquire(); // m_pDIDeviceï¿½Aï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½( ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½Jï¿½n )
 	}
 }
 
@@ -288,31 +286,31 @@ void DirectXMouse::Initialize(HINSTANCE instance, HWND wnd)
 {
 	HRESULT hr;
 
-	// “ü—Íˆ—‚Ì‰Šú‰»
+	// ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	InputDirectX::Initialize(instance);
 
-	// ƒfƒoƒCƒXƒIƒuƒWƒFƒNƒg‚ğ¶¬
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ğ¶ï¿½
 	hr = m_DInput->CreateDevice(GUID_SysMouse, &m_DIDevice, NULL);
 	if (FAILED(hr) || !m_DIDevice)
 	{
-		MessageBox(wnd, "ƒ}ƒEƒX‚ª‚ ‚è‚Ü‚¹‚ñ", "InputDirectX.cpp", MB_OK);
+		MessageBox(wnd, "ï¿½}ï¿½Eï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½", "InputDirectX.cpp", MB_OK);
 	}
 
-	// ƒf[ƒ^ƒtƒH[ƒ}ƒbƒg‚ğw’è
+	// ï¿½fï¿½[ï¿½^ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½ï¿½ï¿½wï¿½ï¿½
 	hr = m_DIDevice->SetDataFormat(&c_dfDIMouse2);
 	if (FAILED(hr))
 	{
-		MessageBox(wnd, "ƒ}ƒEƒX‚Ìƒf[ƒ^ƒtƒH[ƒ}ƒbƒg", "InputDirectX.cpp", MB_OK);
+		MessageBox(wnd, "ï¿½}ï¿½Eï¿½Xï¿½Ìƒfï¿½[ï¿½^ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½g", "InputDirectX.cpp", MB_OK);
 	}
 
-	// ‹¦’²ƒ‚[ƒh‚ğİ’è(ƒtƒHƒAƒOƒ‰ƒ“ƒh•”ñ”r‘¼
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½İ’ï¿½(ï¿½tï¿½Hï¿½Aï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½rï¿½ï¿½
 	hr = m_DIDevice->SetCooperativeLevel(wnd, (DISCL_FOREGROUND | DISCL_NONEXCLUSIVE));
 	if (FAILED(hr))
 	{
-		MessageBox(wnd, "ƒ}ƒEƒX‚Ì‹¦’²ƒ‚[ƒh‚ğİ’è", "InputDirectX.cpp", MB_OK);
+		MessageBox(wnd, "ï¿½}ï¿½Eï¿½Xï¿½Ì‹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½İ’ï¿½", "InputDirectX.cpp", MB_OK);
 	}
 
-	// ƒfƒoƒCƒX‚Ìİ’è
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìİ’ï¿½
 	DIPROPDWORD dipdw;
 
 	dipdw.diph.dwSize = sizeof(dipdw);
@@ -325,13 +323,13 @@ void DirectXMouse::Initialize(HINSTANCE instance, HWND wnd)
 
 	if (FAILED(hr))
 	{
-		MessageBox(wnd, "ƒ}ƒEƒX‚ÌƒfƒoƒCƒXİ’è‚É¸”s", "InputDirectX.cpp", MB_OK);
+		MessageBox(wnd, "ï¿½}ï¿½Eï¿½Xï¿½Ìƒfï¿½oï¿½Cï¿½Xï¿½İ’ï¿½Éï¿½ï¿½s", "InputDirectX.cpp", MB_OK);
 	}
 
-	// ƒL[ƒ{[ƒh‚ÖƒAƒNƒZƒXŒ ‚ğŠl“¾(“ü—Í§ŒäŠJn)
+	// ï¿½Lï¿½[ï¿½{ï¿½[ï¿½hï¿½ÖƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½(ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½Jï¿½n)
 	m_DIDevice->Acquire();
 
-	//	ƒ}ƒEƒX‚Ì²‚Ì‰Šú‰»
+	//	ï¿½}ï¿½Eï¿½Xï¿½Ìï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	m_MouseState.lX = (LONG)0.0f;
 	m_MouseState.lY = (LONG)0.0f;
 	m_MouseState.lZ = (LONG)0.0f;
@@ -349,7 +347,7 @@ void DirectXMouse::Update(void)
 
 	if (!m_DIDevice) return;
 
-	// ƒfƒoƒCƒX‚©‚çƒf[ƒ^‚ğæ“¾
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½æ“¾
 	hr = m_DIDevice->GetDeviceState(sizeof(mouseState), &mouseState);
 
 	if (SUCCEEDED(hr))
@@ -365,12 +363,12 @@ void DirectXMouse::Update(void)
 
 		m_MouseState = mouseState;
 
-		// ƒXƒNƒŠ[ƒ“À•W‚ğæ“¾
+		// ï¿½Xï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½æ“¾
 		GetCursorPos(&m_PosMouseWorld);
 	}
 	else
 	{
-		m_DIDevice->Acquire();	// m_pDIDeviceƒAƒNƒZƒXŒ ‚ğŠl“¾( “ü—Í§ŒäŠJn )
+		m_DIDevice->Acquire();	// m_pDIDeviceï¿½Aï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½( ï¿½ï¿½ï¿½Íï¿½ï¿½ï¿½Jï¿½n )
 	}
 }
 
@@ -422,7 +420,7 @@ void XInput::Update(void)
 		result = XInputGetState(nCount, &State);
 
 		if(result == ERROR_SUCCESS)
-		{// ƒRƒ“ƒgƒ[ƒ‰‚ªÚ‘±‚³‚ê‚Ä‚¢‚é‚©
+		{// ï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
 			m_Active[nCount] = true;
 		}
 		else
@@ -502,7 +500,7 @@ BOOL XInput::AnyKeyDown(CONTROLLER_NUM index)
 }
 
 //=============================================================================
-// XBOXƒRƒ“ƒgƒ[ƒ‰[ƒf[ƒ^æ“¾(ƒvƒŒƒX)
+// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½fï¿½[ï¿½^ï¿½æ“¾(ï¿½vï¿½ï¿½ï¿½X)
 //=============================================================================
 bool XInput::GetKeyPress(CONTROLLER_NUM index, WORD Key)
 {
@@ -517,7 +515,7 @@ bool XInput::GetKeyPress(CONTROLLER_NUM index, WORD Key)
 	return (m_KeyState[index][nkey]) ? TRUE : FALSE;
 }
 //=============================================================================
-// XBOXƒRƒ“ƒgƒ[ƒ‰[ƒf[ƒ^æ“¾(ƒgƒŠƒK[)
+// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½fï¿½[ï¿½^ï¿½æ“¾(ï¿½gï¿½ï¿½ï¿½Kï¿½[)
 //=============================================================================
 bool XInput::GetKeyTrigger(CONTROLLER_NUM index, WORD Key)
 {
@@ -532,7 +530,7 @@ bool XInput::GetKeyTrigger(CONTROLLER_NUM index, WORD Key)
 }
 
 //=============================================================================
-// XBOXƒRƒ“ƒgƒ[ƒ‰[ƒf[ƒ^æ“¾(ƒŠƒŠ[ƒX)
+// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½fï¿½[ï¿½^ï¿½æ“¾(ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½X)
 //=============================================================================
 bool XInput::GetKeyRelease(CONTROLLER_NUM index, WORD Key)
 {
@@ -547,7 +545,7 @@ bool XInput::GetKeyRelease(CONTROLLER_NUM index, WORD Key)
 }
 
 //=============================================================================
-// XBOXƒRƒ“ƒgƒ[ƒ‰[ƒf[ƒ^æ“¾(ƒŠƒs[ƒg)
+// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½fï¿½[ï¿½^ï¿½æ“¾(ï¿½ï¿½ï¿½sï¿½[ï¿½g)
 //=============================================================================
 bool XInput::GetKeyRepeat(CONTROLLER_NUM index, WORD Key)
 {
@@ -563,7 +561,7 @@ bool XInput::GetKeyRepeat(CONTROLLER_NUM index, WORD Key)
 }
 
 //=============================================================================
-// XBOXƒRƒ“ƒgƒ[ƒ‰[ƒf[ƒ^íœ(ƒgƒŠƒK[)
+// XBOXï¿½Rï¿½ï¿½ï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½fï¿½[ï¿½^ï¿½íœ(ï¿½gï¿½ï¿½ï¿½Kï¿½[)
 //=============================================================================
 void XInput::FlushKeyTrigger(CONTROLLER_NUM index, WORD Key)
 {
@@ -578,14 +576,14 @@ void XInput::FlushKeyTrigger(CONTROLLER_NUM index, WORD Key)
 	m_KeyStateTrigger[index][nkey] = 0;
 }
 //=============================================================================
-// ƒAƒiƒƒO’l
+// ï¿½Aï¿½iï¿½ï¿½ï¿½Oï¿½l
 //=============================================================================
 D3DXVECTOR2 XInput::GetAnalogValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type)
 {
 	return m_Analog[index][type];
 }
 //=============================================================================
-// ƒgƒŠƒK[’l
+// ï¿½gï¿½ï¿½ï¿½Kï¿½[ï¿½l
 //=============================================================================
 int XInput::GetTriggerValue(CONTROLLER_NUM index, XInput::VALUE_TYPE type)
 {

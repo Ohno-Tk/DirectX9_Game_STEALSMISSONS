@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( Œ©“n‚· )[ EnemyStateLookOutOver.cpp ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½ï¿½ï¿½nï¿½ï¿½ )[ EnemyStateLookOutOver.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/28
 =============================================================================*/
 
@@ -51,7 +49,7 @@ EnemyStateLookOutOver::EnemyStateLookOutOver(Enemy* owner, NEXT next)
 	m_LookRotation[2] = D3DXVECTOR3(m_NowRotation.x, m_NowRotation.y,      m_NowRotation.z);
 
 
-	Debug::Log("“G : Œ©“n‚·ó‘Ô");
+	Debug::Log("ï¿½G : ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½");
 }
 
 void EnemyStateLookOutOver::Uninitialize(void)
@@ -61,7 +59,7 @@ void EnemyStateLookOutOver::Uninitialize(void)
 void EnemyStateLookOutOver::Update(D3DXVECTOR3 position)
 {
 	if(m_Owner->VisionRangeCollision(position, m_Owner->GetVisionAngle(), m_Owner->GetVisionDistance()))
-	{ // Ž‹ŠE‚Ì”»’è
+	{ // ï¿½ï¿½ï¿½Eï¿½Ì”ï¿½ï¿½ï¿½
 		m_Owner->SetState(new EnemyStateChase(m_Owner));
 	}
 	else
@@ -91,7 +89,7 @@ void EnemyStateLookOutOver::LookOutOver(void)
 	m_Owner->SetRotation(rotation);
 
 	if (m_CountInterpolation > INTERPOLATION_TIME)
-	{ // ƒtƒŒ[ƒ€”‚ð’´‚¦‚½‚ç
+	{ // ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ð’´‚ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		m_NowRotation = m_Owner->GetRotation();
 		m_CountInterpolation = 0;

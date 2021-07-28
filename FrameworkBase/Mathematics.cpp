@@ -1,12 +1,10 @@
 /*=============================================================================
 
-		”ŠwŒnŠÖ”[ Mathematics.cpp ]
+		ï¿½ï¿½ï¿½wï¿½nï¿½Öï¿½[ Mathematics.cpp ]
 
 -------------------------------------------------------------------------------
-	¡  Author
-		Ohno Takuya
 
-	¡  Created Date
+	ï¿½ï¿½  Created Date
 		2017/07/20
 =============================================================================*/
 
@@ -17,22 +15,22 @@
 #include "Mathematics.h"
 
 /*-----------------------------------------------------------------------------
-2‚Â‚ÌƒxƒNƒgƒ‹‚Ì‚È‚·Šp“x‚ğ‹‚ß‚é
+2ï¿½Â‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½Ì‚È‚ï¿½ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 -----------------------------------------------------------------------------*/
 float Angle2Vector::Angle(D3DXVECTOR3 VectorB)
 {
-	//	’·‚³‚ğ‹‚ß‚é
+	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	float len1 = D3DXVec3Length(&m_VectorA);
 	float len2 = D3DXVec3Length(&VectorB);
 
-	//	Šp“x‚ğ‹‚ß‚é
+	//	ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 	float angle = (float)(acos(D3DXVec3Dot(&VectorB, &m_VectorA) / (len1*len2)));
 
 	return angle;
 }
 
 /*-----------------------------------------------------------------------------
-OŸ®•âŠÔ
+ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void CubicExpressionInterpolation::Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Start, D3DXVECTOR3 End, int Time)
 {
@@ -51,7 +49,7 @@ void CubicExpressionInterpolation::Interpolation(float* Out, float Start, float 
 
 
 /*-----------------------------------------------------------------------------
-üŒ`•âŠÔ
+ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void LinearInterpolation::Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Start, D3DXVECTOR3 End, int Time)
 {
@@ -68,7 +66,7 @@ void LinearInterpolation::Interpolation(float* Out, float Start, float End, int 
 }
 
 /*-----------------------------------------------------------------------------
-ƒGƒ‹ƒ~[ƒg•âŠÔ
+ï¿½Gï¿½ï¿½ï¿½~ï¿½[ï¿½gï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void HermiteInterpolation::Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Pos1, D3DXVECTOR3 Vector1, D3DXVECTOR3 Pos2, D3DXVECTOR3 Vector2, int Time)
 {
@@ -84,7 +82,7 @@ void HermiteInterpolation::Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Pos1, D3D
 }
 
 /*-----------------------------------------------------------------------------
-ƒAƒXƒeƒƒCƒh‹Èü
+ï¿½Aï¿½Xï¿½eï¿½ï¿½ï¿½Cï¿½hï¿½Èï¿½
 -----------------------------------------------------------------------------*/
 AstroidCurve::AstroidCurve(D3DXVECTOR3 op, float rotvalue, float radius)
 {
@@ -113,15 +111,15 @@ D3DXVECTOR3 AstroidCurve::Curve(void)
 }
 
 /*-----------------------------------------------------------------------------
-ƒCƒ“ƒ{ƒŠƒ…[ƒg‹Èü
+ï¿½Cï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½gï¿½Èï¿½
 -----------------------------------------------------------------------------*/
 InvoluteCurve::InvoluteCurve(D3DXVECTOR3 op, float rotvalue, float radius)
 {
-	m_OriginPoint = op;		//	Œ´“_
+	m_OriginPoint = op;		//	ï¿½ï¿½ï¿½_
 
-	m_Rot = 0.0f;			//	Šp“x
-	m_RotValue = rotvalue;	//	Šp“x•Ï‰»—Ê
-	m_Radius = radius;		//	”¼Œa
+	m_Rot = 0.0f;			//	ï¿½pï¿½x
+	m_RotValue = rotvalue;	//	ï¿½pï¿½xï¿½Ï‰ï¿½ï¿½ï¿½
+	m_Radius = radius;		//	ï¿½ï¿½ï¿½a
 }
 
 D3DXVECTOR3 InvoluteCurve::Curve(void)

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-	”ŠwŒnŠÖ”[ Mathematics.h ]
+	ï¿½ï¿½ï¿½wï¿½nï¿½Öï¿½[ Mathematics.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Creat
+ï¿½ï¿½  Creat
 	2017/10/16
 =============================================================================*/
 
@@ -16,9 +14,9 @@
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-#define PI ((float)3.141592654f)	//	‰~ü—¦
-#define DegreeToRadian( degree ) ((degree) * (PI / 180.0f))//	Šp“x‚ğ‹‚ß‚é
-#define RadianToDegree( radian ) ((radian) * (180.0f / PI))//	“x‚ğ‹‚ß‚é
+#define PI ((float)3.141592654f)	//	ï¿½~ï¿½ï¿½ï¿½ï¿½
+#define DegreeToRadian( degree ) ((degree) * (PI / 180.0f))//	ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
+#define RadianToDegree( radian ) ((radian) * (180.0f / PI))//	ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 
 /*-----------------------------------------------------------------------------
 Struct
@@ -28,19 +26,19 @@ struct VECTOR2
 public:
 	VECTOR2(float x = 0.0f, float y = 0.0f) :x(x), y(y) {}
 
-	//“¯‚¶Œ^‚Æ‚ÌŒvZ
-	const VECTOR2 operator + (const VECTOR2 &f) const { return VECTOR2(x + f.x, y + f.y); }//‰ÁZ
-	const VECTOR2 operator - (const VECTOR2 &f) const { return VECTOR2(x - f.x, y - f.y); }//Œ¸Z
-	const VECTOR2 operator * (const VECTOR2 &f) const { return VECTOR2(x * f.x, y * f.y); }//æZ
-	const VECTOR2 operator / (const VECTOR2 &f) const { return VECTOR2(x / f.x, y / f.y); }//œZ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½Æ‚ÌŒvï¿½Z
+	const VECTOR2 operator + (const VECTOR2 &f) const { return VECTOR2(x + f.x, y + f.y); }//ï¿½ï¿½ï¿½Z
+	const VECTOR2 operator - (const VECTOR2 &f) const { return VECTOR2(x - f.x, y - f.y); }//ï¿½ï¿½ï¿½Z
+	const VECTOR2 operator * (const VECTOR2 &f) const { return VECTOR2(x * f.x, y * f.y); }//ï¿½ï¿½Z
+	const VECTOR2 operator / (const VECTOR2 &f) const { return VECTOR2(x / f.x, y / f.y); }//ï¿½ï¿½ï¿½Z
 
-	const VECTOR2 operator - () const{ return VECTOR2(x * -1.0f, y * -1.0f); }//è‘O‚É-‚ğ•t‚¯‚½‚Æ‚«
+	const VECTOR2 operator - () const{ return VECTOR2(x * -1.0f, y * -1.0f); }//ï¿½ï¿½Oï¿½ï¿½-ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
 
-	VECTOR2 &operator = (const VECTOR2 &f) { x = f.x; y = f.y; return *this; }//‘ã“ü
-	VECTOR2 &operator += (const VECTOR2 &f) { x += f.x; y += f.y; return *this; }//{ƒCƒR[ƒ‹
-	VECTOR2 &operator -= (const VECTOR2 &f) { x -= f.x; y -= f.y; return *this; }//|ƒCƒR[ƒ‹
-	VECTOR2 &operator *= (const VECTOR2 &f) { x *= f.x; y *= f.y; return *this; }//~ƒCƒR[ƒ‹
-	VECTOR2 &operator /= (const VECTOR2 &f) { x /= f.x; y /= f.y; return *this; }//€ƒCƒR[ƒ‹
+	VECTOR2 &operator = (const VECTOR2 &f) { x = f.x; y = f.y; return *this; }//ï¿½ï¿½ï¿½
+	VECTOR2 &operator += (const VECTOR2 &f) { x += f.x; y += f.y; return *this; }//ï¿½{ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR2 &operator -= (const VECTOR2 &f) { x -= f.x; y -= f.y; return *this; }//ï¿½|ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR2 &operator *= (const VECTOR2 &f) { x *= f.x; y *= f.y; return *this; }//ï¿½~ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR2 &operator /= (const VECTOR2 &f) { x /= f.x; y /= f.y; return *this; }//ï¿½ï¿½ï¿½Cï¿½Rï¿½[ï¿½ï¿½
 
 public:
 	float x, y;
@@ -51,33 +49,33 @@ struct VECTOR3
 public:
 	VECTOR3(float x = 0.0f, float y = 0.0f, float z = 0.0f) :x(x), y(y), z(z) {}
 
-	//“¯‚¶Œ^‚Æ‚ÌŒvZ
-	const VECTOR3 operator + (const VECTOR3 &f) const { return VECTOR3(x + f.x, y + f.y, z + f.z); }//‰ÁZ
-	const VECTOR3 operator - (const VECTOR3 &f) const { return VECTOR3(x - f.x, y - f.y, z - f.z); }//Œ¸Z
-	const VECTOR3 operator * (const VECTOR3 &f) const { return VECTOR3(x * f.x, y * f.y, z * f.z); }//æZ
-	const VECTOR3 operator / (const VECTOR3 &f) const { return VECTOR3(x / f.x, y / f.y, z / f.z); }//œZ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½Æ‚ÌŒvï¿½Z
+	const VECTOR3 operator + (const VECTOR3 &f) const { return VECTOR3(x + f.x, y + f.y, z + f.z); }//ï¿½ï¿½ï¿½Z
+	const VECTOR3 operator - (const VECTOR3 &f) const { return VECTOR3(x - f.x, y - f.y, z - f.z); }//ï¿½ï¿½ï¿½Z
+	const VECTOR3 operator * (const VECTOR3 &f) const { return VECTOR3(x * f.x, y * f.y, z * f.z); }//ï¿½ï¿½Z
+	const VECTOR3 operator / (const VECTOR3 &f) const { return VECTOR3(x / f.x, y / f.y, z / f.z); }//ï¿½ï¿½ï¿½Z
 
-	const VECTOR3 operator - () const { return VECTOR3(x * -1.0f, y * -1.0f, z * -1.0f); }	//è‘O‚É-‚ğ•t‚¯‚½‚Æ‚«
+	const VECTOR3 operator - () const { return VECTOR3(x * -1.0f, y * -1.0f, z * -1.0f); }	//ï¿½ï¿½Oï¿½ï¿½-ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
 
-	VECTOR3 &operator = (const VECTOR3 &f) { x = f.x; y = f.y; z = f.z; return *this; }	//‘ã“ü
-	VECTOR3 &operator += (const VECTOR3 &f) { x += f.x; y += f.y; z += f.z; return *this; }	//{ƒCƒR[ƒ‹
-	VECTOR3 &operator -= (const VECTOR3 &f) { x -= f.x; y -= f.y; z -= f.z; return *this; }	//|ƒCƒR[ƒ‹
-	VECTOR3 &operator *= (const VECTOR3 &f) { x *= f.x; y *= f.y; z *= f.z; return *this; }	//~ƒCƒR[ƒ‹
-	VECTOR3 &operator /= (const VECTOR3 &f) { x /= f.x; y /= f.y; z /= f.z; return *this; }	//€ƒCƒR[ƒ‹
+	VECTOR3 &operator = (const VECTOR3 &f) { x = f.x; y = f.y; z = f.z; return *this; }	//ï¿½ï¿½ï¿½
+	VECTOR3 &operator += (const VECTOR3 &f) { x += f.x; y += f.y; z += f.z; return *this; }	//ï¿½{ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR3 &operator -= (const VECTOR3 &f) { x -= f.x; y -= f.y; z -= f.z; return *this; }	//ï¿½|ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR3 &operator *= (const VECTOR3 &f) { x *= f.x; y *= f.y; z *= f.z; return *this; }	//ï¿½~ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR3 &operator /= (const VECTOR3 &f) { x /= f.x; y /= f.y; z /= f.z; return *this; }	//ï¿½ï¿½ï¿½Cï¿½Rï¿½[ï¿½ï¿½
 
-																							//“àÏ
+																							//ï¿½ï¿½ï¿½ï¿½
 	float dot(const VECTOR3 &r) const {
 		return x * r.x + y * r.y + z * r.z;
 	}
-	//ŠOÏ
+	//ï¿½Oï¿½ï¿½
 	VECTOR3 cross(const VECTOR3 &r) const {
 		return VECTOR3(y * r.z - z * r.y, z * r.x - x * r.z, x * r.y - y * r.x);
 	}
-	//’·‚³
+	//ï¿½ï¿½ï¿½ï¿½
 	float length() const {
 		return sqrtf(lengthSq());
 	}
-	//•½•ûª
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	float lengthSq() const {
 		return x * x + y * y + z * z;
 	}
@@ -91,19 +89,19 @@ struct VECTOR4
 public:
 	VECTOR4(float x = 0.0f, float y = 0.0f, float z = 0.0f, float w = 0.0f) :x(x), y(y), z(z), w(w) {}
 
-	//“¯‚¶Œ^‚Æ‚ÌŒvZ
-	const VECTOR4 operator + (const VECTOR4 &f) const { return VECTOR4(x + f.x, y + f.y, z + f.z, w + f.w); }//‰ÁZ
-	const VECTOR4 operator - (const VECTOR4 &f) const { return VECTOR4(x - f.x, y - f.y, z - f.z, w - f.w); }//Œ¸Z
-	const VECTOR4 operator * (const VECTOR4 &f) const { return VECTOR4(x * f.x, y * f.y, z * f.z, w * f.w); }//æZ
-	const VECTOR4 operator / (const VECTOR4 &f) const { return VECTOR4(x / f.x, y / f.y, z / f.z, w / f.w); }//œZ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½Æ‚ÌŒvï¿½Z
+	const VECTOR4 operator + (const VECTOR4 &f) const { return VECTOR4(x + f.x, y + f.y, z + f.z, w + f.w); }//ï¿½ï¿½ï¿½Z
+	const VECTOR4 operator - (const VECTOR4 &f) const { return VECTOR4(x - f.x, y - f.y, z - f.z, w - f.w); }//ï¿½ï¿½ï¿½Z
+	const VECTOR4 operator * (const VECTOR4 &f) const { return VECTOR4(x * f.x, y * f.y, z * f.z, w * f.w); }//ï¿½ï¿½Z
+	const VECTOR4 operator / (const VECTOR4 &f) const { return VECTOR4(x / f.x, y / f.y, z / f.z, w / f.w); }//ï¿½ï¿½ï¿½Z
 
-	const VECTOR4 operator - () const { return VECTOR4(x * -1.0f, y * -1.0f, z * -1.0f, w * -1.0f); }	//è‘O‚É-‚ğ•t‚¯‚½‚Æ‚«
+	const VECTOR4 operator - () const { return VECTOR4(x * -1.0f, y * -1.0f, z * -1.0f, w * -1.0f); }	//ï¿½ï¿½Oï¿½ï¿½-ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
 
-	VECTOR4 &operator = (const VECTOR4 &f) { x = f.x; y = f.y; z = f.z; w = f.w; return *this; }	//‘ã“ü
-	VECTOR4 &operator += (const VECTOR4 &f) { x += f.x; y += f.y; z += f.z; w += f.w; return *this; }	//{ƒCƒR[ƒ‹
-	VECTOR4 &operator -= (const VECTOR4 &f) { x -= f.x; y -= f.y; z -= f.z; w -= f.w; return *this; }	//|ƒCƒR[ƒ‹
-	VECTOR4 &operator *= (const VECTOR4 &f) { x *= f.x; y *= f.y; z *= f.z; w *= f.w; return *this; }	//~ƒCƒR[ƒ‹
-	VECTOR4 &operator /= (const VECTOR4 &f) { x /= f.x; y /= f.y; z /= f.z; w /= f.w; return *this; }	//€ƒCƒR[ƒ‹
+	VECTOR4 &operator = (const VECTOR4 &f) { x = f.x; y = f.y; z = f.z; w = f.w; return *this; }	//ï¿½ï¿½ï¿½
+	VECTOR4 &operator += (const VECTOR4 &f) { x += f.x; y += f.y; z += f.z; w += f.w; return *this; }	//ï¿½{ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR4 &operator -= (const VECTOR4 &f) { x -= f.x; y -= f.y; z -= f.z; w -= f.w; return *this; }	//ï¿½|ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR4 &operator *= (const VECTOR4 &f) { x *= f.x; y *= f.y; z *= f.z; w *= f.w; return *this; }	//ï¿½~ï¿½Cï¿½Rï¿½[ï¿½ï¿½
+	VECTOR4 &operator /= (const VECTOR4 &f) { x /= f.x; y /= f.y; z /= f.z; w /= f.w; return *this; }	//ï¿½ï¿½ï¿½Cï¿½Rï¿½[ï¿½ï¿½
 
 public:
 	float x, y, z, w;
@@ -114,7 +112,7 @@ public:
 Class
 -----------------------------------------------------------------------------*/
 class Angle2Vector
-{// 2‚Â‚ÌƒxƒNƒgƒ‹‚Ì‚È‚·Šp“x‚ğ‹‚ß‚é
+{// 2ï¿½Â‚Ìƒxï¿½Nï¿½gï¿½ï¿½ï¿½Ì‚È‚ï¿½ï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ß‚ï¿½
 public:
 	Angle2Vector(D3DXVECTOR3 VectorA) :m_VectorA(VectorA) {}
 
@@ -124,7 +122,7 @@ private:
 };
 
 class CubicExpressionInterpolation
-{// 3Ÿ®•âŠÔ
+{// 3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 public:
 	CubicExpressionInterpolation(int FrameCount) :m_Count(FrameCount) {}
 
@@ -136,11 +134,11 @@ private:
 };
 
 class LinearInterpolation
-{// üŒ`•âŠÔ
+{// ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½
 public:
 	LinearInterpolation(int FrameCount) :m_Count(FrameCount) {}
 
-	// •âŠÔ
+	// ï¿½ï¿½ï¿½
 	void Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Start, D3DXVECTOR3 End, int Time);
 	void Interpolation(float* Out, float Start, float End, int Time);
 
@@ -149,11 +147,11 @@ private:
 };
 
 class HermiteInterpolation
-{// ƒGƒ‹ƒ~[ƒg•âŠÔ
+{// ï¿½Gï¿½ï¿½ï¿½~ï¿½[ï¿½gï¿½ï¿½ï¿½
 public:
 	HermiteInterpolation(int FrameCount):m_Count(FrameCount){}
 
-	// •âŠÔ
+	// ï¿½ï¿½ï¿½
 	void Interpolation(D3DXVECTOR3* Out, D3DXVECTOR3 Pos1, D3DXVECTOR3 Vector1, D3DXVECTOR3 Pos2, D3DXVECTOR3 Vector2, int Time);
 
 private:
@@ -161,35 +159,35 @@ private:
 };
 
 class AstroidCurve
-{// ƒAƒXƒeƒƒCƒh‹Èü
+{// ï¿½Aï¿½Xï¿½eï¿½ï¿½ï¿½Cï¿½hï¿½Èï¿½
 public:
 	AstroidCurve(D3DXVECTOR3 op, float rotvalue, float radius);
 
-	//	‹ÈüŒvZ
+	//	ï¿½Èï¿½ï¿½vï¿½Z
 	D3DXVECTOR3 Curve(void);
 
 private:
-	D3DXVECTOR3 m_OriginPoint;	//	Œ´“_
+	D3DXVECTOR3 m_OriginPoint;	//	ï¿½ï¿½ï¿½_
 
-	float m_Rot;				//	Šp“x
-	float m_RotValue;			//	Šp“x•Ï‰»—Ê
-	float m_Radius;				//	”¼Œa
+	float m_Rot;				//	ï¿½pï¿½x
+	float m_RotValue;			//	ï¿½pï¿½xï¿½Ï‰ï¿½ï¿½ï¿½
+	float m_Radius;				//	ï¿½ï¿½ï¿½a
 };
 
 class InvoluteCurve
-{// ƒCƒ“ƒ{ƒŠƒ…[ƒg‹Èü
+{// ï¿½Cï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½gï¿½Èï¿½
 public:
 	InvoluteCurve(D3DXVECTOR3 op, float rotvalue, float radius);
 
-	//	‹ÈüŒvZ
+	//	ï¿½Èï¿½ï¿½vï¿½Z
 	D3DXVECTOR3 Curve(void);
 
 private:
-	D3DXVECTOR3 m_OriginPoint;	//	Œ´“_
+	D3DXVECTOR3 m_OriginPoint;	//	ï¿½ï¿½ï¿½_
 
-	float m_Rot;				//	Šp“x
-	float m_RotValue;			//	Šp“x•Ï‰»—Ê
-	float m_Radius;				//	”¼Œa
+	float m_Rot;				//	ï¿½pï¿½x
+	float m_RotValue;			//	ï¿½pï¿½xï¿½Ï‰ï¿½ï¿½ï¿½
+	float m_Radius;				//	ï¿½ï¿½ï¿½a
 };
 
 #endif

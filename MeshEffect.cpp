@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒƒbƒVƒ…ƒGƒtƒFƒNƒg[ MeshEffect.cpp ]
+ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½Gï¿½tï¿½Fï¿½Nï¿½g[ MeshEffect.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -41,8 +39,8 @@ MeshEffect::MeshEffect(int Priolity):Object(Priolity)
 /*-----------------------------------------------------------------------------
 Function:   MeshEffect* MeshEffect::Create(UINT numBlock_X)
 Parameter:  UINT numBlock_X
-              ‰¡‚Ì–‡”
-Overview:   ¶¬
+              ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 MeshEffect* MeshEffect::Create(UINT numBlock_X)
 {
@@ -57,16 +55,16 @@ MeshEffect* MeshEffect::Create(UINT numBlock_X)
 
 void MeshEffect::Initialize(void)
 {
-	SetVertexCount(m_NumBlock_X, m_NumBlock_Y); // ’¸“_”‚ÌŒvZ
-	SetIndexBufferCount(m_NumBlock_X, m_NumBlock_Y);   // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌŒvZ
+	SetVertexCount(m_NumBlock_X, m_NumBlock_Y); // ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÌŒvï¿½Z
+	SetIndexBufferCount(m_NumBlock_X, m_NumBlock_Y);   // ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ÌŒvï¿½Z
 
 
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	MakeVerTex(Device); // ’¸“_‚Ìì¬
-	MakeIndex(Device);  // ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬
+	MakeVerTex(Device); // ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	MakeIndex(Device);  // ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìì¬
 
-	// ‰Šú‰»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	for(int i = 0; i < m_NumVertex; i++)
 	{
 		m_VertexPosition.push_back(D3DXVECTOR3(0.0f,0.0f,0.0f));
@@ -75,8 +73,8 @@ void MeshEffect::Initialize(void)
 
 void MeshEffect::Uninitialize(void)
 {
-	m_VertexPosition.clear(); // —v‘f‚Ì‰ğ•ú
-	std::vector<D3DXVECTOR3>().swap(m_VertexPosition); // ƒƒ‚ƒŠ‚Ì‰ğ•ú
+	m_VertexPosition.clear(); // ï¿½vï¿½fï¿½Ì‰ï¿½ï¿½
+	std::vector<D3DXVECTOR3>().swap(m_VertexPosition); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‰ï¿½ï¿½
 
 	SAFE_RELEASE(m_VertexBuffer);
 
@@ -95,7 +93,7 @@ void MeshEffect::Update(void)
 	m_VertexPosition[m_NumBlock_X*2] = m_TopPosition;
 	m_VertexPosition[m_NumBlock_X*2+1] = m_ButtomPosition;
 
-	SetUpVerTex(); // ’¸“_‚Ìİ’è
+	SetUpVerTex(); // ï¿½ï¿½ï¿½_ï¿½Ìİ’ï¿½
 }
 
 void MeshEffect::Draw(void)
@@ -114,32 +112,32 @@ void MeshEffect::Draw(void)
 
 	WorldTransform(Device);
 
-	// ƒJƒŠƒ“ƒOoff
+	// ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ooff
 	Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
 	Device->DrawIndexedPrimitive(D3DPT_TRIANGLESTRIP, 0, 0, m_NumIndexBuffer, 0, m_NumIndexBuffer - 2);
 
-	// ƒJƒŠƒ“ƒOon
+	// ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Oon
 	Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::MakeVerTex(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ’¸“_‚Ìì¬
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½ï¿½ï¿½_ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void MeshEffect::MakeVerTex(LPDIRECT3DDEVICE9 Device)
 {
 	if (FAILED(Device->CreateVertexBuffer(sizeof(VERTEX_3D) * NUM_VERTEX * m_NumVertex, D3DUSAGE_WRITEONLY, FVF_VERTEX_3D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬ƒGƒ‰[", "MeshEffect.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[", "MeshEffect.cpp", MB_OK | MB_ICONHAND);
 	}
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::SetUpVerTex(void)
-Overview:   ’¸“_‚Ìİ’è
+Overview:   ï¿½ï¿½ï¿½_ï¿½Ìİ’ï¿½
 -----------------------------------------------------------------------------*/
 void MeshEffect::SetUpVerTex(void)
 {
@@ -148,25 +146,25 @@ void MeshEffect::SetUpVerTex(void)
 
 	m_VertexBuffer->Lock(0, 0, (void**)&pVtx, 0);
 
-	//	c
+	//	ï¿½c
 	for (UINT i = 0; i < m_NumBlock_Y; i++)
 	{
 
 		Index = i * (m_NumBlock_X + 1);
 
-		//	‰¡
+		//	ï¿½ï¿½
 		for (UINT j = 0; j < (m_NumBlock_X + 1) * 2; j++)
 		{
-			//	’¸“_À•W
+			//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 			pVtx[j + Index].Pos = m_VertexPosition[j + Index];
 
-			//	–@ü
+			//	ï¿½@ï¿½ï¿½
 			pVtx[j + Index].Nor = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 
-			//	’¸“_F
+			//	ï¿½ï¿½ï¿½_ï¿½F
 			pVtx[j + Index].Color = D3DXCOLOR(1.0f,1.0f,1.0f,1.0f);
 
-			//	ƒeƒNƒXƒ`ƒƒÀ•W
+			//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 			pVtx[j + Index].Tex = D3DXVECTOR2((float)j, (float)i);
 		}
 	}
@@ -177,8 +175,8 @@ void MeshEffect::SetUpVerTex(void)
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::MakeIndex(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìì¬
 -----------------------------------------------------------------------------*/
 void MeshEffect::MakeIndex(LPDIRECT3DDEVICE9 Device)
 {
@@ -186,82 +184,82 @@ void MeshEffect::MakeIndex(LPDIRECT3DDEVICE9 Device)
 
 	WORD* pIdx;
 
-	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì¶¬
+	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½
 	hr = Device->CreateIndexBuffer(
-		sizeof(WORD) * m_NumIndexBuffer,	//	ƒoƒbƒtƒ@—Ê
-		D3DUSAGE_WRITEONLY,	//	g—p•û–@ƒtƒ‰ƒO
-		D3DFMT_INDEX16, //	ƒCƒ“ƒfƒbƒNƒXƒtƒH[ƒ}ƒbƒg
-		D3DPOOL_MANAGED, //	ƒƒ‚ƒŠ‚ÌŠÇ—•û–@
-		&m_IndexBuffer,	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@ƒCƒ“ƒ^[ƒtƒF[ƒX‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ÌƒAƒhƒŒƒX
+		sizeof(WORD) * m_NumIndexBuffer,	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½
+		D3DUSAGE_WRITEONLY,	//	ï¿½gï¿½pï¿½ï¿½ï¿½@ï¿½tï¿½ï¿½ï¿½O
+		D3DFMT_INDEX16, //	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½g
+		D3DPOOL_MANAGED, //	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÌŠÇ—ï¿½ï¿½ï¿½ï¿½@
+		&m_IndexBuffer,	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½[ï¿½Xï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ÌƒAï¿½hï¿½ï¿½ï¿½X
 		NULL);
 
 
 	if (FAILED(hr))
 	{
-		MessageBox(NULL, "ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ì¶¬¸”s", "MeshEffect.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½s", "MeshEffect.cpp", MB_OK | MB_ICONHAND);
 	}
 
 
-	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ğƒƒbƒN
+	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_IndexBuffer->Lock(0, 0, (void**)&pIdx, 0);
 
-	//	Œv‰ñ‚è‚ğ— –Ê‚Æ‚·‚é
-	//	c
+	//	ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ğ— –Ê‚Æ‚ï¿½ï¿½ï¿½
+	//	ï¿½c
 	for (UINT Cnt1 = 0; Cnt1 < m_NumBlock_Y; Cnt1++)
 	{
 
-		//	‚Í‚¶‚ß‚¶‚á‚È‚©‚Á‚½‚ç
-		//	k‘Şƒ|ƒŠƒSƒ“
+		//	ï¿½Í‚ï¿½ï¿½ß‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//	ï¿½kï¿½Şƒ|ï¿½ï¿½ï¿½Sï¿½ï¿½
 		if (Cnt1 != 0)
 		{
 
-			//	1“_‘Å‚Â
+			//	1ï¿½_ï¿½Å‚ï¿½
 			pIdx[0] = (WORD)((Cnt1 + 1) * (m_NumBlock_X + 1));
 
-			pIdx++;	//	ƒ|ƒCƒ“ƒ^‚ğ‚¸‚ç‚·
+			pIdx++;	//	ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ç‚·
 		}
 
-		//	2“_‘Å‚Â
+		//	2ï¿½_ï¿½Å‚ï¿½
 		pIdx[0] = (WORD)((Cnt1 + 1) * (m_NumBlock_X + 1));
 		pIdx[1] = (WORD)((Cnt1 + 1) * (m_NumBlock_X + 1) - (m_NumBlock_X + 1));
 
-		pIdx += 2;	//	ƒ|ƒCƒ“ƒ^‚ğ‚¸‚ç‚·
+		pIdx += 2;	//	ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ç‚·
 
-		//	‰¡
+		//	ï¿½ï¿½
 		for (UINT Cnt2 = 0; Cnt2 < m_NumBlock_X; Cnt2++)
 		{
 
-			//	2“_‘Å‚Â
+			//	2ï¿½_ï¿½Å‚ï¿½
 			pIdx[0] = (WORD)(((Cnt1 + 1) * (m_NumBlock_X + 1) + 1) + Cnt2);
 			pIdx[1] = (WORD)(((Cnt1 + 1) * (m_NumBlock_X + 1) + 1) - (m_NumBlock_X + 1) + Cnt2);
 
-			pIdx += 2;	//	ƒ|ƒCƒ“ƒ^‚ğ‚¸‚ç‚·
+			pIdx += 2;	//	ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ç‚·
 
 		}
 
-		//	ÅŒã‚¶‚á‚È‚©‚Á‚½‚ç
-		//	k‘Şƒ|ƒŠƒSƒ“
+		//	ï¿½ÅŒã‚¶ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//	ï¿½kï¿½Şƒ|ï¿½ï¿½ï¿½Sï¿½ï¿½
 		if (Cnt1 != m_NumBlock_Y - 1)
 		{
 
-			//	1“_‘Å‚Â
+			//	1ï¿½_ï¿½Å‚ï¿½
 			pIdx[0] = (WORD)((Cnt1 + 1) * (m_NumBlock_X + 1) - 1);
 
-			pIdx++;	//	ƒ|ƒCƒ“ƒ^‚ğ‚¸‚ç‚·
+			pIdx++;	//	ï¿½|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ç‚·
 		}
 	}
 
-	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌƒAƒ“ƒƒbƒN
+	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ÌƒAï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_IndexBuffer->Unlock();
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::SetIdxVerTex(const UINT NumBlock_X, const UINT NumBlock_Y)
 Parameter:  const UINT NumBlock_X
-              ‰¡‚Ì–‡”
+              ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
             const UINT NumBlock_Y
-              c‚Ì–‡”
-Overview:   ’¸“_”‚ÌŒvZ
+              ï¿½cï¿½Ì–ï¿½ï¿½ï¿½
+Overview:   ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ÌŒvï¿½Z
 -----------------------------------------------------------------------------*/
 void MeshEffect::SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y)
 {
@@ -271,10 +269,10 @@ void MeshEffect::SetVertexCount(const UINT NumBlock_X, const UINT NumBlock_Y)
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y)
 Parameter:  const UINT NumBlock_X
-              ‰¡‚Ì–‡”
+              ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
             const UINT NumBlock_Y
-              c‚Ì–‡”
-Overview:   ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚ÌŒvZ
+              ï¿½cï¿½Ì–ï¿½ï¿½ï¿½
+Overview:   ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ÌŒvï¿½Z
 -----------------------------------------------------------------------------*/
 void MeshEffect::SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_Y)
 {
@@ -284,15 +282,15 @@ void MeshEffect::SetIndexBufferCount(const UINT NumBlock_X, const UINT NumBlock_
 /*-----------------------------------------------------------------------------
 Function:   void MeshEffect::WorldTransform(LPDIRECT3DDEVICE9 Device)
 Parameter:  LPDIRECT3DDEVICE9 Device
-              ƒfƒoƒCƒX
-Overview:   ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+              ï¿½fï¿½oï¿½Cï¿½X
+Overview:   ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void MeshEffect::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
 	D3DXMATRIX matrixWorld;
 
-	D3DXMatrixIdentity(&matrixWorld);	//	s—ñ‚ğ’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&matrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
-	//	ƒfƒoƒCƒX‚Éƒ[ƒ‹ƒh•ÏŠ·s—ñ‚ğİ’è
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ÏŠï¿½ï¿½sï¿½ï¿½ï¿½İ’ï¿½
 	Device->SetTransform(D3DTS_WORLD, &matrixWorld);
 }

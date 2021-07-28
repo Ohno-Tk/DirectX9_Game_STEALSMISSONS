@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒŒƒ“ƒ_ƒ‰[(DirectX)[ RendererDirectX.cpp ]
+ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½[(DirectX)[ RendererDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/14
 =============================================================================*/
 
@@ -49,43 +47,43 @@ HRESULT RendererDirectX::Initialize(HWND hWnd)
 	D3DDISPLAYMODE d3ddm = {};
 
 
-	// Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬
+	// Direct3Dï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìì¬
 	m_D3D = Direct3DCreate9(D3D_SDK_VERSION);
 	if (!m_D3D)
 	{
-		MessageBox(NULL, "Direct3DƒIƒuƒWƒFƒNƒg‚Ìì¬‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "Direct3Dï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìì¬ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 		return E_FAIL;
 	}
 
-	// Œ»Ý‚ÌƒfƒBƒXƒvƒŒƒCƒ‚[ƒh‚ðŽæ“¾
+	// ï¿½ï¿½ï¿½Ý‚Ìƒfï¿½Bï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½æ“¾
 	hr = m_D3D->GetAdapterDisplayMode(D3DADAPTER_DEFAULT, &d3ddm);
 	if (FAILED(hr))
 	{
-		MessageBox(NULL, "ƒfƒBƒXƒvƒŒƒCƒ‚[ƒh‚ÌŽæ“¾‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½fï¿½Bï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½hï¿½ÌŽæ“¾ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 		return E_FAIL;
 	}
 
-	hr = SetUpDevice(d3dpp, d3ddm, hWnd, true);	//	ƒfƒoƒCƒX‚Ì‰Šú‰»
+	hr = SetUpDevice(d3dpp, d3ddm, hWnd, true);	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	if (FAILED(hr))
 	{
-		MessageBox(NULL, "ƒfƒoƒCƒX‚Ì‰Šú‰»‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 		return E_FAIL;
 	}
 
-	SetRenderState();	//	ƒŒƒ“ƒ_[ƒXƒe[ƒg‚ÌÝ’è
+	SetRenderState();	//	ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 
-	SetSamplerState();	//	ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚ÌÝ’è
+	SetSamplerState();	//	ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 
-	SetTextureStageState();	//	ƒeƒNƒXƒ`ƒƒƒXƒe[ƒWƒXƒe[ƒg‚ÌÝ’è
+	SetTextureStageState();	//	ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 
 #ifdef ENABLE_RENDERTARGET
-	InitRenderTarget(); // ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ì‰Šú‰»
+	InitRenderTarget(); // ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 	Polygon2DInitialize();
 	PolygonScreenInit();
 #endif
 
 #ifdef _DEBUG
-	// ƒfƒoƒbƒOî•ñ•\Ž¦—pƒtƒHƒ“ƒg‚ð¶¬
+	// ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ð¶ï¿½
 	D3DXCreateFont(m_D3DDevice, 18, 0, 0, 0, FALSE, SHIFTJIS_CHARSET,
 		OUT_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Terminal", &m_Font);
 #endif
@@ -96,12 +94,12 @@ HRESULT RendererDirectX::Initialize(HWND hWnd)
 void RendererDirectX::Uninitialize(void)
 {
 #ifdef _DEBUG
-	SAFE_RELEASE(m_Font);// î•ñ•\Ž¦—pƒtƒHƒ“ƒg
+	SAFE_RELEASE(m_Font);// ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½ï¿½ï¿½g
 #endif
 
-	SAFE_RELEASE(m_D3D);//	Direct3DƒIƒuƒWƒFƒNƒg
+	SAFE_RELEASE(m_D3D);//	Direct3Dï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½g
 
-	SAFE_RELEASE(m_D3DDevice);// ƒfƒoƒCƒX‚Ì”jŠü
+	SAFE_RELEASE(m_D3DDevice);// ï¿½fï¿½oï¿½Cï¿½Xï¿½Ì”jï¿½ï¿½
 
 #ifdef ENABLE_RENDERTARGET
 	SAFE_RELEASE(m_BlurTexture_1);
@@ -120,24 +118,24 @@ void RendererDirectX::DrawBegin(void)
 	m_D3DDevice->SetRenderTarget(0, m_BlurSurface_2);
 #endif
 
-	// ƒoƒbƒNƒoƒbƒtƒ@•‚yƒoƒbƒtƒ@‚ÌƒNƒŠƒA
+	// ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½yï¿½oï¿½bï¿½tï¿½@ï¿½ÌƒNï¿½ï¿½ï¿½A
 	m_D3DDevice->Clear(0, NULL, (D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL), m_BackBufferColor, 1.0f, 0);
 
-	m_D3DDevice->BeginScene(); // DirectX‚É‚æ‚é•`‰æ‚ÌŠJŽn
+	m_D3DDevice->BeginScene(); // DirectXï¿½É‚ï¿½ï¿½`ï¿½ï¿½ÌŠJï¿½n
 }
 
 void RendererDirectX::DrawEnd(void)
 {
 #ifdef _DEBUG
-	DrawFPS(); // FPS•\Ž¦
+	DrawFPS(); // FPSï¿½\ï¿½ï¿½
 #endif
 
-	m_D3DDevice->EndScene(); // DirectX‚É‚æ‚é•`‰æ‚ÌI—¹
+	m_D3DDevice->EndScene(); // DirectXï¿½É‚ï¿½ï¿½`ï¿½ï¿½ÌIï¿½ï¿½
 
 #ifdef ENABLE_RENDERTARGET
 	m_D3DDevice->SetTexture(0, m_BlurTexture_1);
 
-	// 2Dƒ|ƒŠƒSƒ“•`‰æ
+	// 2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
 	Polygon2DDraw();
 
 	m_D3DDevice->EndScene();
@@ -150,13 +148,13 @@ void RendererDirectX::DrawEnd(void)
 
 	m_D3DDevice->SetTexture(0, m_BlurTexture_2);
 
-	//2Dƒ|ƒŠƒSƒ“•`‰æ
+	//2Dï¿½|ï¿½ï¿½ï¿½Sï¿½ï¿½ï¿½`ï¿½ï¿½
 	PolygonScreenDraw();
 
 	m_D3DDevice->EndScene();
 
 
-	// “ü‚ê‘Ö‚¦
+	// ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½
 	LPDIRECT3DTEXTURE9 texture;
 	texture = m_BlurTexture_1;
 	m_BlurTexture_1 = m_BlurTexture_2;
@@ -168,35 +166,35 @@ void RendererDirectX::DrawEnd(void)
 	m_BlurSurface_2 = surface;
 #endif
 	
-	m_D3DDevice->Present(NULL, NULL, NULL, NULL); // ƒoƒbƒNƒoƒbƒtƒ@‚Æƒtƒƒ“ƒgƒoƒbƒtƒ@‚Ì“ü‚ê‘Ö‚¦
+	m_D3DDevice->Present(NULL, NULL, NULL, NULL); // ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@ï¿½Æƒtï¿½ï¿½ï¿½ï¿½ï¿½gï¿½oï¿½bï¿½tï¿½@ï¿½Ì“ï¿½ï¿½ï¿½Ö‚ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::SetTextureStageState(void)
 Parameter:  D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE d3ddm, HWND Wnd, bool Window
-Overview:   ƒfƒoƒCƒX‚Ì‰Šú‰»
+Overview:   ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 HRESULT RendererDirectX::SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE d3ddm, HWND Wnd, bool Window)
 {
-	// ƒfƒoƒCƒX‚ÌƒvƒŒƒ[ƒ“ƒe[ƒVƒ‡ƒ“ƒpƒ‰ƒ[ƒ^‚ÌÝ’è
-	ZeroMemory(&d3dpp, sizeof(d3dpp));							// ƒ[ƒN‚ðƒ[ƒƒNƒŠƒA
-	d3dpp.BackBufferCount = 1;									// ƒoƒbƒNƒoƒbƒtƒ@‚Ì”
-	d3dpp.BackBufferWidth = SCREEN_WIDTH;						// ƒQ[ƒ€‰æ–ÊƒTƒCƒY(•)
-	d3dpp.BackBufferHeight = SCREEN_HEIGHT;						// ƒQ[ƒ€‰æ–ÊƒTƒCƒY(‚‚³)
-	d3dpp.BackBufferFormat = d3ddm.Format;						// ƒJƒ‰[ƒ‚[ƒh‚ÌŽw’è
-	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;					// ‰f‘œM†‚É“¯Šú‚µ‚ÄƒtƒŠƒbƒv‚·‚é
-	d3dpp.EnableAutoDepthStencil = TRUE;						// ƒfƒvƒXƒoƒbƒtƒ@i‚yƒoƒbƒtƒ@j‚ÆƒXƒeƒ“ƒVƒ‹ƒoƒbƒtƒ@‚ðì¬
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìƒvï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½eï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ÌÝ’ï¿½
+	ZeroMemory(&d3dpp, sizeof(d3dpp));							// ï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
+	d3dpp.BackBufferCount = 1;									// ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½
+	d3dpp.BackBufferWidth = SCREEN_WIDTH;						// ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ÊƒTï¿½Cï¿½Y(ï¿½ï¿½)
+	d3dpp.BackBufferHeight = SCREEN_HEIGHT;						// ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ÊƒTï¿½Cï¿½Y(ï¿½ï¿½ï¿½ï¿½)
+	d3dpp.BackBufferFormat = d3ddm.Format;						// ï¿½Jï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½ÌŽwï¿½ï¿½
+	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;					// ï¿½fï¿½ï¿½ï¿½Mï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äƒtï¿½ï¿½ï¿½bï¿½vï¿½ï¿½ï¿½ï¿½
+	d3dpp.EnableAutoDepthStencil = TRUE;						// ï¿½fï¿½vï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½iï¿½yï¿½oï¿½bï¿½tï¿½@ï¿½jï¿½ÆƒXï¿½eï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ì¬
 	d3dpp.AutoDepthStencilFormat = D3DFMT_D24S8;
-	d3dpp.Windowed = Window;									// ƒEƒBƒ“ƒhƒEƒ‚[ƒh
-	d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;	// ƒŠƒtƒŒƒbƒVƒ…ƒŒ[ƒg
-	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// ƒCƒ“ƒ^[ƒoƒ‹
+	d3dpp.Windowed = Window;									// ï¿½Eï¿½Bï¿½ï¿½ï¿½hï¿½Eï¿½ï¿½ï¿½[ï¿½h
+	d3dpp.FullScreen_RefreshRateInHz = D3DPRESENT_RATE_DEFAULT;	// ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½g
+	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_DEFAULT;	// ï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½oï¿½ï¿½
 
 
 	HRESULT hr;
 
-	// ƒfƒoƒCƒX‚Ì¶¬
-	// ƒfƒBƒXƒvƒŒƒCƒAƒ_ƒvƒ^‚ð•\‚·‚½‚ß‚ÌƒfƒoƒCƒX‚ðì¬
-	// •`‰æ‚Æ’¸“_ˆ—‚ðƒn[ƒhƒEƒFƒA‚Ås‚È‚¤
+	// ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½
+	// ï¿½fï¿½Bï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½Aï¿½_ï¿½vï¿½^ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ìƒfï¿½oï¿½Cï¿½Xï¿½ï¿½ï¿½ì¬
+	// ï¿½`ï¿½ï¿½Æ’ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nï¿½[ï¿½hï¿½Eï¿½Fï¿½Aï¿½Åsï¿½È‚ï¿½
 	hr = m_D3D->CreateDevice(D3DADAPTER_DEFAULT,
 		D3DDEVTYPE_HAL,
 		Wnd,
@@ -204,8 +202,8 @@ HRESULT RendererDirectX::SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE
 		&d3dpp, &m_D3DDevice);
 	if (FAILED(hr))
 	{
-		// ã‹L‚ÌÝ’è‚ªŽ¸”s‚µ‚½‚ç
-		// •`‰æ‚ðƒn[ƒhƒEƒFƒA‚Ås‚¢A’¸“_ˆ—‚ÍCPU‚Ås‚È‚¤
+		// ï¿½ï¿½Lï¿½ÌÝ’è‚ªï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½`ï¿½ï¿½ï¿½ï¿½nï¿½[ï¿½hï¿½Eï¿½Fï¿½Aï¿½Åsï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CPUï¿½Åsï¿½È‚ï¿½
 		hr = m_D3D->CreateDevice(D3DADAPTER_DEFAULT,
 			D3DDEVTYPE_HAL,
 			Wnd,
@@ -213,8 +211,8 @@ HRESULT RendererDirectX::SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE
 			&d3dpp, &m_D3DDevice);
 		if (FAILED(hr))
 		{
-			// ã‹L‚ÌÝ’è‚ªŽ¸”s‚µ‚½‚ç
-			// •`‰æ‚Æ’¸“_ˆ—‚ðCPU‚Ås‚È‚¤
+			// ï¿½ï¿½Lï¿½ÌÝ’è‚ªï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			// ï¿½`ï¿½ï¿½Æ’ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CPUï¿½Åsï¿½È‚ï¿½
 			hr = m_D3D->CreateDevice(D3DADAPTER_DEFAULT,
 				D3DDEVTYPE_REF, Wnd,
 				D3DCREATE_SOFTWARE_VERTEXPROCESSING,
@@ -222,7 +220,7 @@ HRESULT RendererDirectX::SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE
 			if (FAILED(hr))
 			{
 
-				MessageBox(NULL, "ƒfƒoƒCƒX‚Ì¶¬‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+				MessageBox(NULL, "ï¿½fï¿½oï¿½Cï¿½Xï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 				return E_FAIL;
 			}
 		}
@@ -233,44 +231,44 @@ HRESULT RendererDirectX::SetUpDevice(D3DPRESENT_PARAMETERS d3dpp, D3DDISPLAYMODE
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::SetTextureStageState(void)
-Overview:   ƒŒƒ“ƒ_[ƒXƒe[ƒg‚ÌÝ’è
+Overview:   ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::SetRenderState(void)
 {
-	m_D3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW); // ƒJƒŠƒ“ƒO‚ðs‚í‚È‚¢
-	m_D3DDevice->SetRenderState(D3DRS_ZENABLE, TRUE); // Zƒoƒbƒtƒ@‚ðŽg—p
-	m_D3DDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE); // ƒ¿ƒuƒŒƒ“ƒh‚ðs‚¤
-	m_D3DDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA); // ƒ¿ƒ\[ƒXƒJƒ‰[‚ÌŽw’è
-	m_D3DDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);	// ƒ¿ƒfƒXƒeƒBƒl[ƒVƒ‡ƒ“ƒJƒ‰[‚ÌŽw’è
+	m_D3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW); // ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½sï¿½ï¿½È‚ï¿½
+	m_D3DDevice->SetRenderState(D3DRS_ZENABLE, TRUE); // Zï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½gï¿½p
+	m_D3DDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE); // ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½sï¿½ï¿½
+	m_D3DDevice->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA); // ï¿½ï¿½ï¿½\ï¿½[ï¿½Xï¿½Jï¿½ï¿½ï¿½[ï¿½ÌŽwï¿½ï¿½
+	m_D3DDevice->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);	// ï¿½ï¿½ï¿½fï¿½Xï¿½eï¿½Bï¿½lï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½[ï¿½ÌŽwï¿½ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::SetTextureStageState(void)
-Overview:   ƒTƒ“ƒvƒ‰[ƒXƒe[ƒg‚ÌÝ’è
+Overview:   ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::SetSamplerState(void)
 {
-	m_D3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP); // ƒeƒNƒXƒ`ƒƒ‚t’l‚ÌŒJ‚è•Ô‚µÝ’è
-	m_D3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP); // ƒeƒNƒXƒ`ƒƒ‚u’l‚ÌŒJ‚è•Ô‚µÝ’è
-	m_D3DDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);	// ƒeƒNƒXƒ`ƒƒŠg‘åŽž‚Ì•âŠÔÝ’è
-	m_D3DDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);	// ƒeƒNƒXƒ`ƒƒk¬Žž‚Ì•âŠÔÝ’è
+	m_D3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSU, D3DTADDRESS_WRAP); // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½tï¿½lï¿½ÌŒJï¿½ï¿½Ô‚ï¿½ï¿½Ý’ï¿½
+	m_D3DDevice->SetSamplerState(0, D3DSAMP_ADDRESSV, D3DTADDRESS_WRAP); // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½uï¿½lï¿½ÌŒJï¿½ï¿½Ô‚ï¿½ï¿½Ý’ï¿½
+	m_D3DDevice->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½gï¿½åŽžï¿½Ì•ï¿½ÔÝ’ï¿½
+	m_D3DDevice->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ÔÝ’ï¿½
 }
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::SetTextureStageState(void)
-Overview:   ƒeƒNƒXƒ`ƒƒƒXƒe[ƒWƒXƒe[ƒg‚ÌÝ’è
+Overview:   ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½Xï¿½eï¿½[ï¿½gï¿½ÌÝ’ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::SetTextureStageState(void)
 {
-	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);	// ƒAƒ‹ƒtƒ@ƒuƒŒƒ“ƒfƒBƒ“ƒOˆ—(‰Šú’l‚ÍD3DTOP_SELECTARG1)
-	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);	// Å‰‚ÌƒAƒ‹ƒtƒ@ˆø”(‰Šú’l‚ÍD3DTA_TEXTUREAƒeƒNƒXƒ`ƒƒ‚ª‚È‚¢ê‡‚ÍD3DTA_DIFFUSE)
-	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);	// ‚Q”Ô–Ú‚ÌƒAƒ‹ƒtƒ@ˆø”(‰Šú’l‚ÍD3DTA_CURRENT)
+	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);	// ï¿½Aï¿½ï¿½ï¿½tï¿½@ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½fï¿½Bï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½D3DTOP_SELECTARG1)
+	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);	// ï¿½Åï¿½ï¿½ÌƒAï¿½ï¿½ï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½D3DTA_TEXTUREï¿½Aï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ï¿½D3DTA_DIFFUSE)
+	m_D3DDevice->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);	// ï¿½Qï¿½Ô–Ú‚ÌƒAï¿½ï¿½ï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½D3DTA_CURRENT)
 }
 
 #ifdef _DEBUG
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::DrawFPS(void)
-Overview:   FPS•\Ž¦
+Overview:   FPSï¿½\ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::DrawFPS(void)
 {
@@ -278,18 +276,18 @@ void RendererDirectX::DrawFPS(void)
 	char str[256];
 	int nCountFPS;
 
-	// FPSŽæ“¾
+	// FPSï¿½æ“¾
 	nCountFPS = GameLoop::Instance()->GetFPS();
 	wsprintf(str, "FPS:%d\n", nCountFPS);
 
-	// ƒeƒLƒXƒg•`‰æ
+	// ï¿½eï¿½Lï¿½Xï¿½gï¿½`ï¿½ï¿½
 	m_Font->DrawText(NULL, str, -1, &rect, DT_LEFT, D3DCOLOR_ARGB(0xff, 0xff, 0xff, 0xff));
 }
 #endif
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::Normal(void)
-Overview:   ƒƒCƒ„[ƒtƒŒ[ƒ€
+Overview:   ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::Normal(void)
 {
@@ -298,7 +296,7 @@ void RendererDirectX::Normal(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::WireFrame(void)
-Overview:   ’ÊíŽž
+Overview:   ï¿½ÊíŽž
 -----------------------------------------------------------------------------*/
 void RendererDirectX::WireFrame(void)
 {
@@ -307,26 +305,26 @@ void RendererDirectX::WireFrame(void)
 
 /*-----------------------------------------------------------------------------
 Function:   void RendererDirectX::InitRenderTarget(void)
-Overview:   ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ì‰Šú‰»
+Overview:   ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½[ï¿½^ï¿½[ï¿½Qï¿½bï¿½gï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void RendererDirectX::InitRenderTarget(void)
 {
-	D3DXCreateTexture(m_D3DDevice,SCREEN_WIDTH, // ƒeƒNƒXƒ`ƒƒ‚ÌƒsƒNƒZƒ‹”(‰¡)
-	 SCREEN_HEIGHT, // ƒeƒNƒXƒ`ƒƒ‚ÌƒsƒNƒZƒ‹”(c)
-	 1, // ƒ~ƒbƒvƒ}ƒbƒv‚ÌƒŒƒxƒ‹”
-	 D3DUSAGE_RENDERTARGET, // ‚Ç‚¤‚¢‚¤—p“r‚ÅŽg—p‚·‚é‚©
-	 D3DFMT_A8R8G8B8, // ƒsƒNƒZƒ‹ƒtƒH[ƒ}ƒbƒg
+	D3DXCreateTexture(m_D3DDevice,SCREEN_WIDTH, // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒsï¿½Nï¿½Zï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½)
+	 SCREEN_HEIGHT, // ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½Ìƒsï¿½Nï¿½Zï¿½ï¿½ï¿½ï¿½(ï¿½c)
+	 1, // ï¿½~ï¿½bï¿½vï¿½}ï¿½bï¿½vï¿½Ìƒï¿½ï¿½xï¿½ï¿½ï¿½ï¿½
+	 D3DUSAGE_RENDERTARGET, // ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½rï¿½ÅŽgï¿½pï¿½ï¿½ï¿½é‚©
+	 D3DFMT_A8R8G8B8, // ï¿½sï¿½Nï¿½Zï¿½ï¿½ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½g
 	 D3DPOOL_DEFAULT,
 	 &m_BlurTexture_1);
 
-	// ƒT[ƒtƒF[ƒX‚ÌŽæ“¾
+	// ï¿½Tï¿½[ï¿½tï¿½Fï¿½[ï¿½Xï¿½ÌŽæ“¾
 	m_BlurTexture_1->GetSurfaceLevel(0, &m_BlurSurface_1);
 
 	D3DXCreateTexture(m_D3DDevice, SCREEN_WIDTH, SCREEN_HEIGHT, 1, D3DUSAGE_RENDERTARGET, D3DFMT_A8R8G8B8, D3DPOOL_DEFAULT, &m_BlurTexture_2);
 
 	m_BlurTexture_2->GetSurfaceLevel(0, &m_BlurSurface_2);
 
-	// ƒoƒbƒNƒoƒbƒtƒ@‚ÌƒT[ƒtƒF[ƒX‚ðŽæ“¾
+	// ï¿½oï¿½bï¿½Nï¿½oï¿½bï¿½tï¿½@ï¿½ÌƒTï¿½[ï¿½tï¿½Fï¿½[ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_D3DDevice->GetRenderTarget(0, &m_BackBufferSurface);
 
 }
@@ -335,32 +333,32 @@ void RendererDirectX::Polygon2DInitialize(void)
 {
 	if (FAILED(m_D3DDevice->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 		return;
 	}
 
-	// ’¸“_î•ñ‚ðÝ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½Ý’ï¿½
 	VERTEX_2D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ðƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ðŽæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer->Lock(0, 0, (void**)&pVtx, 0);
 
 
-	//	’¸“_À•W
- // ƒuƒ‰[‚ª‚©‚©‚é  ’¸“_‚ð­‚µ‘å‚«‚­‚µ‚½
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
+ // ï¿½uï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	pVtx[0].Pos = D3DXVECTOR3( -10.0f            ,-10.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( SCREEN_WIDTH+10.0f,-10.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3( -10.0f            , SCREEN_HEIGHT+10.0f, 0.0f);
 	pVtx[3].Pos = D3DXVECTOR3( SCREEN_WIDTH+10.0f, SCREEN_HEIGHT+10.0f, 0.0f);
 
 
-/* // ­‚µ‚Ú‚â‚¯‚é   ’¸“_‚ð“™‚µ‚­‚µ‚½
+/* // ï¿½ï¿½ï¿½ï¿½ï¿½Ú‚â‚¯ï¿½ï¿½   ï¿½ï¿½ï¿½_ï¿½ð“™‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	pVtx[0].Pos = D3DXVECTOR3( 0.0f        , 0.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( SCREEN_WIDTH, 0.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3( 0.0f        , SCREEN_HEIGHT, 0.0f);
 	pVtx[3].Pos = D3DXVECTOR3( SCREEN_WIDTH ,SCREEN_HEIGHT, 0.0f);
 */
-/* // ’†S‚É‹ß‚Ã‚­‚æ‚¤‚É‚È‚é@’¸“_‚ð­‚µ¬‚³‚­‚µ‚½
+/* // ï¿½ï¿½ï¿½Sï¿½É‹ß‚Ã‚ï¿½ï¿½æ‚¤ï¿½É‚È‚ï¿½@ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	pVtx[0].Pos = D3DXVECTOR3( 5.0f              , 5.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( SCREEN_WIDTH-5.0f , 5.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3( 5.0f              , SCREEN_HEIGHT-5.0f, 0.0f);
@@ -372,13 +370,13 @@ void RendererDirectX::Polygon2DInitialize(void)
 		pVtx[i].Rhw = 1.0f;
 		pVtx[i].Color = D3DXCOLOR(1.0f,1.0f,1.0f, 0.99f);
 	}
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	pVtx[0].Tex = D3DXVECTOR2(0, 0);
 	pVtx[1].Tex = D3DXVECTOR2(1, 0);
 	pVtx[2].Tex = D3DXVECTOR2(0, 1);
 	pVtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ðƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer->Unlock();
 }
 
@@ -395,18 +393,18 @@ void RendererDirectX::PolygonScreenInit(void)
 {
 	if (FAILED(m_D3DDevice->CreateVertexBuffer(sizeof(VERTEX_2D) * NUM_VERTEX, D3DUSAGE_WRITEONLY, FVF_VERTEX_2D, D3DPOOL_MANAGED, &m_VertexBuffer2, NULL)))
 	{
-		MessageBox(NULL, "’¸“_ƒoƒbƒtƒ@‚Ì¶¬‚ÉŽ¸”s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@ï¿½Ìï¿½ï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "RendererDirectX.cpp", MB_OK | MB_ICONHAND);
 		return;
 	}
 
-	// ’¸“_î•ñ‚ðÝ’è
+	// ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½Ý’ï¿½
 	VERTEX_2D* pVtx;
 
-	// ƒoƒbƒtƒ@‚ðƒƒbƒN‚µA‰¼‘zƒAƒhƒŒƒX‚ðŽæ“¾
+	// ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½æ“¾
 	m_VertexBuffer2->Lock(0, 0, (void**)&pVtx, 0);
 
 
-	//	’¸“_À•W
+	//	ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½W
 	pVtx[0].Pos = D3DXVECTOR3( 0.0f        ,  0.0f, 0.0f);
 	pVtx[1].Pos = D3DXVECTOR3( SCREEN_WIDTH,  0.0f, 0.0f);
 	pVtx[2].Pos = D3DXVECTOR3( 0.0f        , SCREEN_HEIGHT, 0.0f);
@@ -418,13 +416,13 @@ void RendererDirectX::PolygonScreenInit(void)
 		pVtx[i].Rhw = 1.0f;
 		pVtx[i].Color = D3DXCOLOR(1.0f,1.0f,1.0f, 1.0f);
 	}
-	// ƒeƒNƒXƒ`ƒƒÀ•W
+	// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½W
 	pVtx[0].Tex = D3DXVECTOR2(0, 0);
 	pVtx[1].Tex = D3DXVECTOR2(1, 0);
 	pVtx[2].Tex = D3DXVECTOR2(0, 1);
 	pVtx[3].Tex = D3DXVECTOR2(1, 1);
 
-	//	ƒoƒbƒtƒ@‚ðƒAƒ“ƒƒbƒN
+	//	ï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½bï¿½N
 	m_VertexBuffer2->Unlock();
 }
 

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒfƒoƒbƒO•¶š•\¦[ DebugFont.h ]
+ï¿½fï¿½oï¿½bï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½[ DebugFont.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/06/21
 =============================================================================*/
 
@@ -23,13 +21,13 @@ public:
 	static void Uninitialize(void);
 	static void Draw(void);
 
-	static void ClarText(void);			//	•¶š‚ÌÁ‹
-	static void AddText(char *Text);	//	•¶š‚Ì’Ç‰Á
+	static void ClarText(void);			//	ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
+	static void AddText(char *Text);	//	ï¿½ï¿½ï¿½ï¿½ï¿½Ì’Ç‰ï¿½
 
 private:
 	static char m_Text[1024];
 
-	static LPD3DXFONT m_Font;	// ƒtƒHƒ“ƒg‚Ö‚Ìƒ|ƒCƒ“ƒ^
+	static LPD3DXFONT m_Font;	// ï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 };
 
 #endif

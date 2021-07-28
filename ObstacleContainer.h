@@ -1,12 +1,10 @@
 /*=============================================================================
 
-áŠQ•¨( ƒRƒ“ƒeƒi )[ ObstacleContainer.h ]
+ï¿½ï¿½Qï¿½ï¿½( ï¿½Rï¿½ï¿½ï¿½eï¿½i )[ ObstacleContainer.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/17
 =============================================================================*/
 
@@ -32,17 +30,17 @@ public:
 	void Draw(void)override;
 
 private:
-	void Collision(void); // Õ“Ë”»’è
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ConfigShader(LPDIRECT3DDEVICE9 device);// ƒVƒF[ƒ_[‚Ìİ’è
+	void Collision(void); // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ConfigShader(LPDIRECT3DDEVICE9 device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 
 private:
-	D3DXVECTOR3	m_Rotation;	//	‰ñ“]
-	float m_SphereRadius; // ‹…”»’è‚Ì‚Ì”¼Œa
+	D3DXVECTOR3	m_Rotation;	//	ï¿½ï¿½]
+	float m_SphereRadius; // ï¿½ï¿½ï¿½ï¿½ï¿½èï¿½Ì‚Ì”ï¿½ï¿½a
 	D3DXMATRIX m_MatrixWorld;
 
-	MODEL_PARAM m_ModelParam;	//	ƒ‚ƒfƒ‹\‘¢‘Ì
+	MODEL_PARAM m_ModelParam;	//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 
 	VertexShader* m_VertexShader;
 	PixelShader* m_PixelShader;

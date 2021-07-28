@@ -1,12 +1,10 @@
 /*=============================================================================
 
-HPƒQ[ƒW[ HitPointGauge.h ]
+HPï¿½Qï¿½[ï¿½W[ HitPointGauge.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/18
 =============================================================================*/
 
@@ -47,11 +45,11 @@ private:
 	void SetVertex(D3DXVECTOR2 size, D3DXCOLOR color);
 
 private:
-	int m_MaxHitPoint; // Å‘åHP
-	int m_NowHitPoint; // Œ»İHP
+	int m_MaxHitPoint; // ï¿½Å‘ï¿½HP
+	int m_NowHitPoint; // ï¿½ï¿½ï¿½ï¿½HP
 
-	float m_MaxSize; // Å‘å‘å‚«‚³
-	float m_HitPointRate; // HPŠ„‡
+	float m_MaxSize; // ï¿½Å‘ï¿½å‚«ï¿½ï¿½
+	float m_HitPointRate; // HPï¿½ï¿½ï¿½ï¿½
 };
 
 #endif

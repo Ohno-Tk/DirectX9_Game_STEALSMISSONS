@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ^ƒCƒgƒ‹”wŒi[ TitleBackGround.h ]
+ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½wï¿½i[ TitleBackGround.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/27
 =============================================================================*/
 
@@ -22,40 +20,40 @@ Class
 class TitleBackGround:public Object
 {
 public:
-	TitleBackGround(int priolity = 1);// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	TitleBackGround(int priolity = 1);// ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 
-	static TitleBackGround *Create(D3DXVECTOR3 position, D3DXVECTOR3 rotation);// ¶¬
+	static TitleBackGround *Create(D3DXVECTOR3 position, D3DXVECTOR3 rotation);// ï¿½ï¿½ï¿½ï¿½
 
-	void Initialize(void)override;// ‰Šú‰»
-	void Uninitialize(void)override;// I—¹
-	void Update(void)override;// XV
-	void Draw(void)override;// •`‰æ
+	void Initialize(void)override;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void Uninitialize(void)override;// ï¿½Iï¿½ï¿½
+	void Update(void)override;// ï¿½Xï¿½V
+	void Draw(void)override;// ï¿½`ï¿½ï¿½
 
 	// Setter
 	void SetNormal(D3DXVECTOR3 normal){ m_Normal = normal; }
 
 private:
-	void MakeVerTex(LPDIRECT3DDEVICE9 Device);	//	’¸“_‚Ìì¬
-	void ChangeVerTex(void);	//	’¸“_‚Ì•ÏX
-	void MakeIndex(LPDIRECT3DDEVICE9 Device);	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@‚Ìì¬
-	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ƒ[ƒ‹ƒhÀ•W•ÏŠ·
-	void ConfigShader(LPDIRECT3DDEVICE9 device);// ƒVƒF[ƒ_[‚Ìİ’è
+	void MakeVerTex(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void ChangeVerTex(void);	//	ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
+	void MakeIndex(LPDIRECT3DDEVICE9 Device);	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½Ìì¬
+	void WorldTransform(LPDIRECT3DDEVICE9 Device);	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
+	void ConfigShader(LPDIRECT3DDEVICE9 device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½Ìİ’ï¿½
 
 private:
-	static LPDIRECT3DTEXTURE9	m_Texture;		// ƒeƒNƒXƒ`ƒƒ
-	LPDIRECT3DVERTEXBUFFER9		m_VertexBuffer;	// ’¸“_ƒoƒbƒtƒ@
-	LPDIRECT3DINDEXBUFFER9		m_IndexBuffer;	//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@
+	static LPDIRECT3DTEXTURE9	m_Texture;		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½
+	LPDIRECT3DVERTEXBUFFER9		m_VertexBuffer;	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
+	LPDIRECT3DINDEXBUFFER9		m_IndexBuffer;	//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@
 
 	D3DXVECTOR3 m_Normal;
-	D3DXVECTOR3	m_Rotation;	// ‰ñ“]
+	D3DXVECTOR3	m_Rotation;	// ï¿½ï¿½]
 	D3DXMATRIX	m_MatrixWorld;
 
-	int m_NumVertex;			//	’¸“_”
-	int m_NumIndexBuffer;		//	ƒCƒ“ƒfƒbƒNƒXƒoƒbƒtƒ@”
-	UINT m_NumBlock_X;		//	‰¡‚Ì–‡”
-	UINT m_NumBlock_Y;		//	c‚Ì–‡”
-	float m_SizeBlock_X;	//	‰¡‚Ì‘å‚«‚³
-	float m_SizeBlock_Z;	//	‰¡‚Ì‘å‚«‚³
+	int m_NumVertex;			//	ï¿½ï¿½ï¿½_ï¿½ï¿½
+	int m_NumIndexBuffer;		//	ï¿½Cï¿½ï¿½ï¿½fï¿½bï¿½Nï¿½Xï¿½oï¿½bï¿½tï¿½@ï¿½ï¿½
+	UINT m_NumBlock_X;		//	ï¿½ï¿½ï¿½Ì–ï¿½ï¿½ï¿½
+	UINT m_NumBlock_Y;		//	ï¿½cï¿½Ì–ï¿½ï¿½ï¿½
+	float m_SizeBlock_X;	//	ï¿½ï¿½ï¿½Ì‘å‚«ï¿½ï¿½
+	float m_SizeBlock_Z;	//	ï¿½ï¿½ï¿½Ì‘å‚«ï¿½ï¿½
 
 	float m_TexCoord;
 

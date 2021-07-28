@@ -1,12 +1,11 @@
 /*=============================================================================
 
-ƒtƒF[ƒh[ Fade.h ]
+ï¿½tï¿½Fï¿½[ï¿½h[ Fade.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Created Date
+
+ï¿½ï¿½  Created Date
 	2017/08/25
 =============================================================================*/
 
@@ -25,15 +24,15 @@ class Fade
 {
 public:
 	enum FADE_STATE
-	{	//	ƒtƒF[ƒh‚Ìó‘Ô
+	{	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Ìï¿½ï¿½
 		FADE_NONE = 0,
-		FADE_IN,	//	ƒtƒF[ƒhƒCƒ“
-		FADE_OUT,	//	ƒtƒF[ƒhƒAƒEƒg
+		FADE_IN,	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½
+		FADE_OUT,	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½g
 	};
 
 	Fade():m_VtxBuff(NULL),m_Color(D3DXCOLOR(1.0f, 1.0f, 1.0f, 0.0f)){}
 
-	//	ƒtƒF[ƒh‚ÌƒZƒbƒg
+	//	ï¿½tï¿½Fï¿½[ï¿½hï¿½ÌƒZï¿½bï¿½g
 	static void SetFade(const FADE_STATE Fade, Scene *Mode) { m_Fade = Fade, m_Scene = Mode; }
 
 	void Initialize(void);
@@ -42,17 +41,17 @@ public:
 	void Draw(void);
 
 private:
-	void MakeVerTex(void);		//	’¸“_‚Ìì¬
-	void SetVerTex(void);	//	’¸“_‚Ì•ÏX
-	void AlphaFade(void);		//	ƒ¿’l‚ÌƒtƒF[ƒh
+	void MakeVerTex(void);		//	ï¿½ï¿½ï¿½_ï¿½Ìì¬
+	void SetVerTex(void);	//	ï¿½ï¿½ï¿½_ï¿½Ì•ÏX
+	void AlphaFade(void);		//	ï¿½ï¿½ï¿½lï¿½Ìƒtï¿½Fï¿½[ï¿½h
 
 private:
-	LPDIRECT3DVERTEXBUFFER9 m_VtxBuff;	// ’¸“_ƒoƒbƒtƒ@
+	LPDIRECT3DVERTEXBUFFER9 m_VtxBuff;	// ï¿½ï¿½ï¿½_ï¿½oï¿½bï¿½tï¿½@
 
-	D3DXCOLOR m_Color;	//	F
+	D3DXCOLOR m_Color;	//	ï¿½F
 
-	static FADE_STATE m_Fade;		//	ƒtƒF[ƒhó‘Ô
-	static Scene* m_Scene;	//	ƒV[ƒ“‚Ìƒ|ƒCƒ“ƒ^
+	static FADE_STATE m_Fade;		//	ï¿½tï¿½Fï¿½[ï¿½hï¿½ï¿½ï¿½
+	static Scene* m_Scene;	//	ï¿½Vï¿½[ï¿½ï¿½ï¿½Ìƒ|ï¿½Cï¿½ï¿½ï¿½^
 };
 
 #endif

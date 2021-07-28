@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‚[ƒVƒ‡ƒ“ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^[ MotionCharacterData.h ]
-(Maybe-Later:Uninitialize‚ÅƒGƒ‰[‚ğ“f‚¢‚Ä‚¢‚é)
+ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^[ MotionCharacterData.h ]
+(Maybe-Later:Uninitializeï¿½ÅƒGï¿½ï¿½ï¿½[ï¿½ï¿½fï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½)
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/13
 =============================================================================*/
 
@@ -22,7 +20,7 @@ Include Files
 /*-----------------------------------------------------------------------------
 Macro
 -----------------------------------------------------------------------------*/
-#define MAX_MOTION (10)	//	Å‘åƒ‚[ƒVƒ‡ƒ“”
+#define MAX_MOTION (10)	//	ï¿½Å‘åƒ‚ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 /*-----------------------------------------------------------------------------
 Class
@@ -38,33 +36,33 @@ public:
 
 	struct PART
 	{
-		int			Index;			//	ƒp[ƒc”Ô†
-		int			Parent;			//	eq\‘¢
-		D3DXVECTOR3	OffsetPosition;	//	‰ŠúÀ•W
-		D3DXVECTOR3	OffsetRotation;	//	‰Šú‰ñ“]
-		D3DXVECTOR3	Position;		//	•âŠÔÀ•W
-		D3DXVECTOR3	Rotation;		//	•âŠÔ‰ñ“]
-		D3DXVECTOR3	Scale;			//	Šg‘å
-		D3DXMATRIX	MatrixWorld;	//	ƒ[ƒ‹ƒhƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX	MatrixRotation;	//	‰ñ“]ƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX	MatrixPosition;	//	À•Wƒ}ƒgƒŠƒNƒX
-		D3DXMATRIX	MatrixScale;	//	Šg‘åƒ}ƒgƒŠƒNƒX		
-		MODEL_PARAM	ModelParam; // ƒ‚ƒfƒ‹î•ñ
+		int			Index;			//	ï¿½pï¿½[ï¿½cï¿½Ôï¿½
+		int			Parent;			//	ï¿½eï¿½qï¿½\ï¿½ï¿½
+		D3DXVECTOR3	OffsetPosition;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½W
+		D3DXVECTOR3	OffsetRotation;	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½]
+		D3DXVECTOR3	Position;		//	ï¿½ï¿½Ôï¿½ï¿½W
+		D3DXVECTOR3	Rotation;		//	ï¿½ï¿½Ô‰ï¿½]
+		D3DXVECTOR3	Scale;			//	ï¿½gï¿½ï¿½
+		D3DXMATRIX	MatrixWorld;	//	ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX	MatrixRotation;	//	ï¿½ï¿½]ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX	MatrixPosition;	//	ï¿½ï¿½ï¿½Wï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X
+		D3DXMATRIX	MatrixScale;	//	ï¿½gï¿½ï¿½}ï¿½gï¿½ï¿½ï¿½Nï¿½X		
+		MODEL_PARAM	ModelParam; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½
 	};
 
 	struct MOTION
 	{
-		int Loop;		//	ƒ‹[ƒv‚·‚é‚©
-		int NumKey;		//	ƒL[”
-		int* Frame; // ƒtƒŒ[ƒ€”
-		KEYINFO *Next;	//	Ÿ‚ÌêŠ
+		int Loop;		//	ï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½ï¿½é‚©
+		int NumKey;		//	ï¿½Lï¿½[ï¿½ï¿½
+		int* Frame; // ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
+		KEYINFO *Next;	//	ï¿½ï¿½ï¿½ÌêŠ
 	};
 
 	struct CHARACTERDATA
 	{
-		PART* PartInfo; // ƒp[ƒcî•ñ
-		MOTION Motion[MAX_MOTION]; // ƒ‚[ƒVƒ‡ƒ“î•ñ
-		int NumModel; // ƒ‚ƒfƒ‹”
+		PART* PartInfo; // ï¿½pï¿½[ï¿½cï¿½ï¿½ï¿½
+		MOTION Motion[MAX_MOTION]; // ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		int NumModel; // ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½
 	};
 
 public:
@@ -77,21 +75,21 @@ public:
 	const CHARACTERDATA GetCharacterData(std::string motionFilePass)const;
 
 private:
-	void Load(std::string motionFilePass);		// ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^ƒ[ƒh
-	void UnloadAll(void);						// ƒ‚[ƒVƒ‡ƒ“ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ì‘Síœ
-	void InitCharaData(void);					// ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ì‰Šú‰»
-	void InitMotionData(const int countMotion);	// ƒ‚[ƒVƒ‡ƒ“ƒf[ƒ^‚Ì‰Šú‰»
+	void Load(std::string motionFilePass);		// ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½[ï¿½h
+	void UnloadAll(void);						// ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ì‘Sï¿½íœ
+	void InitCharaData(void);					// ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
+	void InitMotionData(const int countMotion);	// ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½
 
-	void ReadText(std::string motionFilePass);							//	ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
-	void ReadNumModel(void);											//	ƒ‚ƒfƒ‹”‚Ì“Ç‚İ‚İ
-	void ReadModelFileName(void);										// ƒ‚ƒfƒ‹ƒtƒ@ƒCƒ‹–¼‚Ì“Ç‚İ‚İ
-	void LoadModel(const int nummodel, std::string modelfilename);		//	ƒ‚ƒfƒ‹‚Ìƒ[ƒh
-	void ReadCharacterInfo(void);										//	ƒLƒƒƒ‰ƒNƒ^î•ñ‚Ì“Ç‚İ‚İ
-	void ReadPartsSet(void);											//	ƒLƒƒƒ‰ƒNƒ^‚Ìƒp[ƒcî•ñ‚Ì“Ç‚İ‚İ
-	void ReadMotion(void);												//	ƒ‚[ƒVƒ‡ƒ“î•ñ‚Ì“Ç‚İ‚İ
+	void ReadText(std::string motionFilePass);							//	ï¿½eï¿½Lï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadNumModel(void);											//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadModelFileName(void);										// ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void LoadModel(const int nummodel, std::string modelfilename);		//	ï¿½ï¿½ï¿½fï¿½ï¿½ï¿½Ìƒï¿½ï¿½[ï¿½h
+	void ReadCharacterInfo(void);										//	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadPartsSet(void);											//	ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½Ìƒpï¿½[ï¿½cï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
+	void ReadMotion(void);												//	ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì“Ç‚İï¿½ï¿½ï¿½
 
-	bool MatchFileToken(std::string buffer, std::string fileToken);		// ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ìˆê’v
-	bool MisMatchFileToken(std::string buffer, std::string fileToken); // ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“‚Ì•sˆê’v
+	bool MatchFileToken(std::string buffer, std::string fileToken);		// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ìˆï¿½v
+	bool MisMatchFileToken(std::string buffer, std::string fileToken); // ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½ï¿½Ì•sï¿½ï¿½v
 
 private:
 	enum TOKEN
@@ -121,11 +119,11 @@ private:
 		MAX_TOKEN
 	};
 
-	CHARACTERDATA m_CharacterData; // ƒLƒƒƒ‰ƒNƒ^[î•ñ
+	CHARACTERDATA m_CharacterData; // ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½ï¿½ï¿½
 
 	std::string m_Buffer;
-	std::vector<std::string> m_TextFileToken;	// ƒtƒ@ƒCƒ‹ƒg[ƒNƒ“
-	std::ifstream m_ReadFile;					// ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	std::vector<std::string> m_TextFileToken;	// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½gï¿½[ï¿½Nï¿½ï¿½
+	std::ifstream m_ReadFile;					// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½
 	std::unordered_map< std::string, CHARACTERDATA > m_Motion_Map;
 };
 

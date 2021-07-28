@@ -1,12 +1,10 @@
 /*=============================================================================
 
-•Ší[ Weapon.cpp ]
+ï¿½ï¿½ï¿½ï¿½[ Weapon.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/19
 =============================================================================*/
 
@@ -40,28 +38,28 @@ void Weapon::Draw(void)
 
 	WorldTransform(Device);
 
-	// Œ»ÝƒfƒoƒCƒX‚ÉÝ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚ÌŽæ“¾
+	// ï¿½ï¿½ï¿½Ýƒfï¿½oï¿½Cï¿½Xï¿½ÉÝ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ÌŽæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ðŽæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	for (int CountMaterial = 0; CountMaterial < (int)m_ModelParam.NumMaterial; CountMaterial++)
 	{
-		//	ƒAƒ“ƒrƒGƒ“ƒgŒõ‚ÌÝ’è
+		//	ï¿½Aï¿½ï¿½ï¿½rï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ÌÝ’ï¿½
 		m_ModelParam.Material[CountMaterial].MatD3D.Ambient = m_ModelParam.Material[CountMaterial].MatD3D.Diffuse;
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚ÌÝ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetTexture(0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ðŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
@@ -74,26 +72,26 @@ void Weapon::WorldTransform(LPDIRECT3DDEVICE9 Device)
 	D3DXMatrixIdentity(&m_MatrixWorld);
 
 	D3DXMatrixScaling(&matrixScale,
-		m_Scale.x,	//	XŽ²Šg‘å
-		m_Scale.y,	//	YŽ²Šg‘å
-		m_Scale.z);	//	ZŽ²Šg‘å
+		m_Scale.x,	//	Xï¿½ï¿½ï¿½gï¿½ï¿½
+		m_Scale.y,	//	Yï¿½ï¿½ï¿½gï¿½ï¿½
+		m_Scale.z);	//	Zï¿½ï¿½ï¿½gï¿½ï¿½
 
 	D3DXMatrixRotationYawPitchRoll(&matrixRotation,
-		D3DXToRadian(m_Rotation.y), //	YŽ²‰ñ“]
-		D3DXToRadian(m_Rotation.x), //	XŽ²‰ñ“]
-		D3DXToRadian(m_Rotation.z)); //	ZŽ²‰ñ“]
+		D3DXToRadian(m_Rotation.y), //	Yï¿½ï¿½ï¿½ï¿½]
+		D3DXToRadian(m_Rotation.x), //	Xï¿½ï¿½ï¿½ï¿½]
+		D3DXToRadian(m_Rotation.z)); //	Zï¿½ï¿½ï¿½ï¿½]
 
 	D3DXMatrixTranslation(&matrixPosition,
-		position.x,	//	XŽ²ˆÚ“®
-		position.y,	//	YŽ²ˆÚ“®
-		position.z);	//	ZŽ²ˆÚ“®
+		position.x,	//	Xï¿½ï¿½ï¿½Ú“ï¿½
+		position.y,	//	Yï¿½ï¿½ï¿½Ú“ï¿½
+		position.z);	//	Zï¿½ï¿½ï¿½Ú“ï¿½
 
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixScale);
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixRotation);
 	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &matrixPosition);
 
-	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &m_OwnerMatrix); // e‚Ìƒ}ƒgƒŠƒNƒX‚Ì‚©‚¯‚é
+	D3DXMatrixMultiply(&m_MatrixWorld, &m_MatrixWorld, &m_OwnerMatrix); // ï¿½eï¿½Ìƒ}ï¿½gï¿½ï¿½ï¿½Nï¿½Xï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	//	ƒfƒoƒCƒX‚Éƒ[ƒ‹ƒh•ÏŠ·s—ñ‚ðÝ’è
+	//	ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ÏŠï¿½ï¿½sï¿½ï¿½ï¿½Ý’ï¿½
 	Device->SetTransform(D3DTS_WORLD, &m_MatrixWorld);
 }

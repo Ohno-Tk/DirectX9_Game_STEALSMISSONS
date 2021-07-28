@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒTƒEƒ“ƒh(DirectX)[ ConfigWindows.h ]
+ï¿½Tï¿½Eï¿½ï¿½ï¿½h(DirectX)[ ConfigWindows.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/15
 =============================================================================*/
 
@@ -26,51 +24,51 @@ class SoundDirectX
 public:
 	SoundDirectX();
 
-	// ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹
+	// ï¿½Tï¿½Eï¿½ï¿½ï¿½hï¿½tï¿½@ï¿½Cï¿½ï¿½
 	enum SOUND_LABEL
 	{
-		SOUND_BGM_TITLESCENE = 0,	//	ƒ^ƒCƒgƒ‹BGM
-		SOUND_BGM_GAMESCENE,		// ƒQ[ƒ€BGM
-		SOUND_SE_TITLEGUN,	//	ƒ^ƒCƒgƒ‹e‰¹
-		SOUND_SE_SELECT,		// ‘I‘ðˆÚ“®‰¹
-		SOUND_SE_EXIT,		// I—¹‰¹
-		SOUND_SE_GAMECLEAR,		// ƒQ[ƒ€ƒNƒŠƒA
-		SOUND_SE_GAMEOVER,		// ƒQ[ƒ€ƒI[ƒo[
-		SOUND_SE_FOUND,	//	”­Œ©‰¹
-		SOUND_SE_CALL,	//	call‰¹
-		SOUND_SE_HEAL,	// ‰ñ•œ‰¹
-		SOUND_SE_GETITEM,// ƒAƒCƒeƒ€Žæ“¾
+		SOUND_BGM_TITLESCENE = 0,	//	ï¿½^ï¿½Cï¿½gï¿½ï¿½BGM
+		SOUND_BGM_GAMESCENE,		// ï¿½Qï¿½[ï¿½ï¿½BGM
+		SOUND_SE_TITLEGUN,	//	ï¿½^ï¿½Cï¿½gï¿½ï¿½ï¿½eï¿½ï¿½
+		SOUND_SE_SELECT,		// ï¿½Iï¿½ï¿½ï¿½Ú“ï¿½ï¿½ï¿½
+		SOUND_SE_EXIT,		// ï¿½Iï¿½ï¿½ï¿½ï¿½
+		SOUND_SE_GAMECLEAR,		// ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
+		SOUND_SE_GAMEOVER,		// ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[
+		SOUND_SE_FOUND,	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		SOUND_SE_CALL,	//	callï¿½ï¿½
+		SOUND_SE_HEAL,	// ï¿½ñ•œ‰ï¿½
+		SOUND_SE_GETITEM,// ï¿½Aï¿½Cï¿½eï¿½ï¿½ï¿½æ“¾
 		SOUND_LABEL_MAX
 
 	};
 
-	HRESULT Initialize(void);	//	‰Šú‰»
-	void Uninitialize(void);	//	I—¹
+	HRESULT Initialize(void);	//	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void Uninitialize(void);	//	ï¿½Iï¿½ï¿½
 
-	HRESULT Play(SOUND_LABEL label);					//	‰¹ŠyÄ¶
-	void Stop(SOUND_LABEL label);						//	‰½”Ô–Ú‚Ì‰¹‚ðŽ~‚ß‚é
-	void Stop(void);									//	’âŽ~
-	void SetVolume(SOUND_LABEL label, float fValue);	//	ƒ{ƒŠƒ…[ƒ€Ý’è
+	HRESULT Play(SOUND_LABEL label);					//	ï¿½ï¿½ï¿½yï¿½Äï¿½
+	void Stop(SOUND_LABEL label);						//	ï¿½ï¿½ï¿½Ô–Ú‚Ì‰ï¿½ï¿½ï¿½ï¿½~ï¿½ß‚ï¿½
+	void Stop(void);									//	ï¿½ï¿½~
+	void SetVolume(SOUND_LABEL label, float fValue);	//	ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ý’ï¿½
 
 private:
-	// ƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+	// ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½\ï¿½ï¿½ï¿½ï¿½
 	struct PARAM
 	{
-		char *pFilename;	// ƒtƒ@ƒCƒ‹–¼
-		int nCntLoop;		// ƒ‹[ƒvƒJƒEƒ“ƒ^
+		char *pFilename;	// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+		int nCntLoop;		// ï¿½ï¿½ï¿½[ï¿½vï¿½Jï¿½Eï¿½ï¿½ï¿½^
 
 	};
 
 	HRESULT CheckChunk(HANDLE hFile, DWORD dwFormat, DWORD *pChunkSize, DWORD *pChunkDataPosition);
 	HRESULT ReadChunkData(HANDLE hFile, void *pBuffer, DWORD dwBuffersize, DWORD dwBufferoffset);
 
-	IXAudio2 *m_pXAudio2;									// XAudio2ƒIƒuƒWƒFƒNƒg‚Ö‚ÌƒCƒ“ƒ^[ƒtƒFƒCƒX
-	IXAudio2MasteringVoice *m_pMasteringVoice;				// ƒ}ƒXƒ^[ƒ{ƒCƒX
-	IXAudio2SourceVoice *m_apSourceVoice[SOUND_LABEL_MAX];	// ƒ\[ƒXƒ{ƒCƒX
-	BYTE *m_apDataAudio[SOUND_LABEL_MAX];					// ƒI[ƒfƒBƒIƒf[ƒ^
-	DWORD m_aSizeAudio[SOUND_LABEL_MAX];					// ƒI[ƒfƒBƒIƒf[ƒ^ƒTƒCƒY
+	IXAudio2 *m_pXAudio2;									// XAudio2ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ö‚ÌƒCï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½X
+	IXAudio2MasteringVoice *m_pMasteringVoice;				// ï¿½}ï¿½Xï¿½^ï¿½[ï¿½{ï¿½Cï¿½X
+	IXAudio2SourceVoice *m_apSourceVoice[SOUND_LABEL_MAX];	// ï¿½\ï¿½[ï¿½Xï¿½{ï¿½Cï¿½X
+	BYTE *m_apDataAudio[SOUND_LABEL_MAX];					// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½fï¿½[ï¿½^
+	DWORD m_aSizeAudio[SOUND_LABEL_MAX];					// ï¿½Iï¿½[ï¿½fï¿½Bï¿½Iï¿½fï¿½[ï¿½^ï¿½Tï¿½Cï¿½Y
 
-	static PARAM m_aParam[SOUND_LABEL_MAX];					// ƒpƒ‰ƒ[ƒ^
+	static PARAM m_aParam[SOUND_LABEL_MAX];					// ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^
 };
 
 #endif

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒV[ƒ“[ GameScene.h ]
+ï¿½Qï¿½[ï¿½ï¿½ï¿½Vï¿½[ï¿½ï¿½[ GameScene.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -45,7 +43,7 @@ public:
 	void Update(void)override;
 	void Draw(void)override;
 
-	// ƒQ[ƒ€ğŒ
+	// ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	static void GameClear(void){ m_GameClear = true; }
 	static void GameOver(void){ m_GameOver = true; }
 
@@ -56,17 +54,17 @@ public:
 	static ItemUI* GetItemUI(void){ return m_ItemUI; }
 
 private:
-	void SceneChange(void); // ƒV[ƒ“‚ğ•Ï‚¦‚é
+	void SceneChange(void); // ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½ï¿½
 
 private:
-	static bool m_GameClear; // ƒQ[ƒ€ƒNƒŠƒA
-	static bool m_GameOver; // ƒQ[ƒ€ƒI[ƒo[
+	static bool m_GameClear; // ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
+	static bool m_GameOver; // ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½oï¿½[
 	bool m_SceneChangeFlag;
 
-	static Player* m_Player; // ƒvƒŒƒCƒ„[
-	static MeshField* m_MeshField; // ƒƒbƒVƒ…ƒtƒB[ƒ‹ƒh
-	static MeshWall* m_MeshWall[MESHWALL_NUM]; // ƒƒbƒVƒ…ƒEƒH[ƒ‹
-	static Goal* m_Goal; // ƒS[ƒ‹
+	static Player* m_Player; // ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[
+	static MeshField* m_MeshField; // ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½tï¿½Bï¿½[ï¿½ï¿½ï¿½h
+	static MeshWall* m_MeshWall[MESHWALL_NUM]; // ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½Eï¿½Hï¿½[ï¿½ï¿½
+	static Goal* m_Goal; // ï¿½Sï¿½[ï¿½ï¿½
 	static ItemUI* m_ItemUI;
 
 	DirectXKeyboard* m_KeyBoard;

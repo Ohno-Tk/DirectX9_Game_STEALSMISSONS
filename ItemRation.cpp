@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒAƒCƒeƒ€( ƒŒ[ƒVƒ‡ƒ“ )[ ItemRation.cpp ]
+ï¿½Aï¿½Cï¿½eï¿½ï¿½( ï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ )[ ItemRation.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2018/01/22
 =============================================================================*/
 
@@ -35,13 +33,13 @@ Macro
 #define MODEL_FILEPATH (MODEL_PATH"Ration.x")
 #define MODEL_VERTEXSHADER_PATH (SHADER_PATH"LightingOff_Vertex.hlsl")
 #define MODEL_PIXELSHADER_PATH (SHADER_PATH"LightingOff_Pixel.hlsl")
-#define ROTATION_SPEED (-2.5f)// ‰ñ“]ƒXƒs[ƒh
-#define SCALE (1.0f)// Šg‘å’l
-#define SHHERE_RADIUS (1.0f)// ‹…‚Ì”¼Œa
+#define ROTATION_SPEED (-2.5f)// ï¿½ï¿½]ï¿½Xï¿½sï¿½[ï¿½h
+#define SCALE (1.0f)// ï¿½gï¿½ï¿½l
+#define SHHERE_RADIUS (1.0f)// ï¿½ï¿½ï¿½Ì”ï¿½ï¿½a
 
 
 /*-----------------------------------------------------------------------------
-ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 -----------------------------------------------------------------------------*/
 ItemRation::ItemRation(int priolity)
 	:Item(priolity)
@@ -49,7 +47,7 @@ ItemRation::ItemRation(int priolity)
 {}
 
 /*-----------------------------------------------------------------------------
-‰Šú‰»
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemRation::Initialize(void)
 {
@@ -66,11 +64,11 @@ void ItemRation::Initialize(void)
 	RendererDirectX::GetDevice()->CreateVertexDeclaration(elements,&m_VertexDeclaration);
 
 	HRESULT hr;
-	// ƒNƒ[ƒ“‚Ìì¬
+	// ï¿½Nï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ìì¬
 	hr = m_ModelParam.Mesh->CloneMesh(D3DXMESH_MANAGED | D3DXMESH_WRITEONLY, elements, RendererDirectX::GetDevice(), &m_ModelParam.CloneMesh);
 	if (FAILED(hr))
 	{
-		MessageBox(NULL, "ƒƒbƒVƒ…‚ÌÅ“K‰»‚ÉŽ¸”s", "ItemRation.cpp", MB_OK);
+		MessageBox(NULL, "ï¿½ï¿½ï¿½bï¿½Vï¿½ï¿½ï¿½ÌÅ“Kï¿½ï¿½ï¿½ÉŽï¿½ï¿½s", "ItemRation.cpp", MB_OK);
 	}
 
 
@@ -82,7 +80,7 @@ void ItemRation::Initialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-I—¹
+ï¿½Iï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemRation::Uninitialize(void)
 {
@@ -93,7 +91,7 @@ void ItemRation::Uninitialize(void)
 }
 
 /*-----------------------------------------------------------------------------
-XV
+ï¿½Xï¿½V
 -----------------------------------------------------------------------------*/
 void ItemRation::Update(void)
 {
@@ -105,7 +103,7 @@ void ItemRation::Update(void)
 }
 
 /*-----------------------------------------------------------------------------
-•`‰æ
+ï¿½`ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 void ItemRation::Draw(void)
 {
@@ -116,17 +114,17 @@ void ItemRation::Draw(void)
 
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
-	WorldTransform(Device);// ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+	WorldTransform(Device);// ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 
-	ConfigShader(Device);// ƒVƒF[ƒ_[‚ÌÝ’è
+	ConfigShader(Device);// ï¿½Vï¿½Fï¿½[ï¿½_ï¿½[ï¿½ÌÝ’ï¿½
 
 	Device->SetVertexShader(m_VertexShader->GetVertexShader());
 	Device->SetPixelShader(m_PixelShader->GetPixelShader());
 
-	// Œ»ÝƒfƒoƒCƒX‚ÉÝ’è‚³‚ê‚Ä‚¢‚éƒ}ƒeƒŠƒAƒ‹î•ñ‚ÌŽæ“¾
+	// ï¿½ï¿½ï¿½Ýƒfï¿½oï¿½Cï¿½Xï¿½ÉÝ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ÌŽæ“¾
 	Device->GetMaterial(&materialDefault);
 
-	// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ðŽæ“¾
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½ï¿½æ“¾
 	m_ModelParam.Material = (D3DXMATERIAL*)m_ModelParam.BufferMaterial->GetBufferPointer();
 
 	UINT samplerIndex0 = m_PixelShader->GetPixelShaderConstantTable()->GetSamplerIndex("sampler0");
@@ -135,22 +133,22 @@ void ItemRation::Draw(void)
 	{
 		m_VertexShader->GetVertexShaderConstantTable()->SetValue(RendererDirectX::GetDevice(), "Diffuse", &m_ModelParam.Material[CountMaterial].MatD3D.Diffuse, sizeof(m_ModelParam.Material[CountMaterial].MatD3D.Diffuse));
 
-		// ƒfƒoƒCƒX‚Éƒ}ƒeƒŠƒAƒ‹‚ÌÝ’è
+		// ï¿½fï¿½oï¿½Cï¿½Xï¿½Éƒ}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetMaterial(&m_ModelParam.Material[CountMaterial].MatD3D);
 
-		// ƒeƒNƒXƒ`ƒƒ‚ÌÝ’è
+		// ï¿½eï¿½Nï¿½Xï¿½`ï¿½ï¿½ï¿½ÌÝ’ï¿½
 		Device->SetTexture(samplerIndex0, m_ModelParam.Texture[CountMaterial]);
 
-		// •`‰æ
+		// ï¿½`ï¿½ï¿½
 		m_ModelParam.Mesh->DrawSubset(CountMaterial);
 	}
 
-	// ƒ}ƒeƒŠƒAƒ‹‚ðŒ³‚É–ß‚·
+	// ï¿½}ï¿½eï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É–ß‚ï¿½
 	Device->SetMaterial(&materialDefault);
 }
 
 /*-----------------------------------------------------------------------------
-ƒ[ƒ‹ƒhÀ•W•ÏŠ·
+ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½hï¿½ï¿½ï¿½Wï¿½ÏŠï¿½
 -----------------------------------------------------------------------------*/
 void ItemRation::WorldTransform(LPDIRECT3DDEVICE9 Device)
 {
@@ -159,7 +157,7 @@ void ItemRation::WorldTransform(LPDIRECT3DDEVICE9 Device)
 
 	D3DXMATRIX matrixScale, matrixRotation, matrixPosition;
 
-	D3DXMatrixIdentity(&m_MatrixWorld);	//	s—ñ‚ð’PˆÊs—ñ‚É‚·‚é
+	D3DXMatrixIdentity(&m_MatrixWorld);	//	ï¿½sï¿½ï¿½ï¿½Pï¿½Êsï¿½ï¿½É‚ï¿½ï¿½ï¿½
 
 	D3DXMatrixScaling(&matrixScale,
 		SCALE,
@@ -182,7 +180,7 @@ void ItemRation::WorldTransform(LPDIRECT3DDEVICE9 Device)
 }
 
 /*-----------------------------------------------------------------------------
-¶¬
+ï¿½ï¿½ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 ItemRation* ItemRation::Create(D3DXVECTOR3 position)
 {
@@ -195,7 +193,7 @@ ItemRation* ItemRation::Create(D3DXVECTOR3 position)
 }
 
 /*-----------------------------------------------------------------------------
-“–‚½‚è”»’è
+ï¿½ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
 -----------------------------------------------------------------------------*/
 bool ItemRation::Collision(void)
 {
@@ -206,7 +204,7 @@ bool ItemRation::Collision(void)
 	Collision_Sphere CollisionSphere(position, SHHERE_RADIUS);
 
 	if (CollisionSphere.Judge(player->GetPosition(), player->GetSphereRadius()))
-	{ // Õ“Ë”»’è
+	{ // ï¿½Õ“Ë”ï¿½ï¿½ï¿½
 		
 		Item::SetActive(false);
 		Item::GetItemGetUI()->SetActive(true);

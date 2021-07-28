@@ -1,12 +1,10 @@
 /*=============================================================================
 
-ƒ‰ƒCƒg(DirectX)[ LightDirectX.cpp ]
+ï¿½ï¿½ï¿½Cï¿½g(DirectX)[ LightDirectX.cpp ]
 
 -------------------------------------------------------------------------------
-¡  Author
-	Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 	2017/10/16
 =============================================================================*/
 
@@ -26,17 +24,17 @@ void LightDirectX::DirectionalLight(void)
 	LPDIRECT3DDEVICE9 Device = RendererDirectX::GetDevice();
 
 	m_Light.Type = D3DLIGHT_DIRECTIONAL;
-	m_Light.Diffuse = D3DXCOLOR(0.2f, 0.2f, 0.2f, 1.0f);//•½sŒõŒ¹‚ÌF
-	m_Light.Ambient = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//ŠÂ‹«Œõ‚ÌF
+	m_Light.Diffuse = D3DXCOLOR(0.2f, 0.2f, 0.2f, 1.0f);//ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ÌF
+	m_Light.Ambient = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//ï¿½Â‹ï¿½ï¿½ï¿½ï¿½ÌF
 
-	D3DXVECTOR3 vecDir(0.0f, 1.0f, 1.0f);//•½sŒõŒ¹‚ÌŒü‚«
+	D3DXVECTOR3 vecDir(0.0f, 1.0f, 1.0f);//ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½
 	D3DXVec3Normalize((D3DXVECTOR3 *)&m_Light.Direction, &vecDir);
 
 //	Device->SetLight(0, &m_Light);
 
-	Device->LightEnable(0, TRUE);//ƒ‰ƒCƒg‚ğON‚É‚·‚é
+	Device->LightEnable(0, TRUE);//ï¿½ï¿½ï¿½Cï¿½gï¿½ï¿½ONï¿½É‚ï¿½ï¿½ï¿½
 
-	Device->SetRenderState(D3DRS_LIGHTING, TRUE);//‘S‘Ì‚Ìƒ‰ƒCƒg‚ğ—LŒø‚É‚·‚é
+	Device->SetRenderState(D3DRS_LIGHTING, TRUE);//ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½Cï¿½gï¿½ï¿½Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½
 }
 
 void LightDirectX::PointLight(void)
@@ -50,8 +48,8 @@ void LightDirectX::PointLight(void)
 	m_Light.Position.z = 0.0f;
 	m_Light.Falloff = 10.0f;
 	m_Light.Direction = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
-	m_Light.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//•½sŒõŒ¹‚ÌF
-	m_Light.Ambient = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//ŠÂ‹«Œõ‚ÌF
+	m_Light.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ÌF
+	m_Light.Ambient = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);//ï¿½Â‹ï¿½ï¿½ï¿½ï¿½ÌF
 	m_Light.Specular = D3DXCOLOR(0.0f, 0.0f, 0.0f, 0.0f);
 
 	m_Light.Attenuation0 = 1.0f;

@@ -1,12 +1,10 @@
 /*=============================================================================
 
-“Gó‘Ô( U‚è•Ô‚é )[ EnemyStateLookBack.h ]
+ï¿½Gï¿½ï¿½ï¿½( ï¿½Uï¿½ï¿½Ô‚ï¿½ )[ EnemyStateLookBack.h ]
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/20
 =============================================================================*/
 
@@ -38,14 +36,14 @@ private:
 	void LookBack(void);
 
 private:
-	int m_NumLinear;	//	‚¢‚­‚Â•âŠÔ‚·‚é‚©
-	unsigned int m_LinearCnt;	//	•âŠÔƒJƒEƒ“ƒ^
-	unsigned int m_WaitCount;	//	‘Ò‹@ŠÔƒJƒEƒ“ƒg
+	int m_NumLinear;	//	ï¿½ï¿½ï¿½ï¿½ï¿½Â•ï¿½Ô‚ï¿½ï¿½é‚©
+	unsigned int m_LinearCnt;	//	ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½^
+	unsigned int m_WaitCount;	//	ï¿½Ò‹@ï¿½ï¿½ï¿½ÔƒJï¿½Eï¿½ï¿½ï¿½g
 
-	float m_NowRotation; // Œ»İ‚Ì‰ñ“]
+	float m_NowRotation; // ï¿½ï¿½ï¿½İ‚Ì‰ï¿½]
 
-	Enemy::LINEAR* m_Linear; // •âŠÔ\‘¢‘Ì
-	Enemy* m_Owner; // Š—LÒ
+	Enemy::LINEAR* m_Linear; // ï¿½ï¿½Ô\ï¿½ï¿½ï¿½ï¿½
+	Enemy* m_Owner; // ï¿½ï¿½ï¿½Lï¿½ï¿½
 };
 
 #endif

@@ -1,13 +1,11 @@
 /*=============================================================================
 
-ƒQ[ƒ€ƒ‹[ƒv[ GameLoop.h ]
-(ƒVƒ“ƒOƒ‹ƒgƒ“ƒpƒ^[ƒ“)
+ï¿½Qï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½v[ GameLoop.h ]
+(ï¿½Vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½gï¿½ï¿½ï¿½pï¿½^ï¿½[ï¿½ï¿½)
 
 -------------------------------------------------------------------------------
-¡  Author
-Ohno Takuya
 
-¡  Create
+ï¿½ï¿½  Create
 2017/11/11
 =============================================================================*/
 
@@ -16,7 +14,7 @@ Ohno Takuya
 
 /*-----------------------------------------------------------------------------
 Library
-[\¬ƒvƒƒpƒeƒB]->[ƒŠƒ“ƒJ[]->[“ü—Í]->[’Ç‰Á‚ÌˆË‘¶ƒtƒ@ƒCƒ‹]‚É‹Lq‚µ‚Ä‚à‰Â”\
+[ï¿½\ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½B]->[ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½[]->[ï¿½ï¿½ï¿½ï¿½]->[ï¿½Ç‰ï¿½ï¿½ÌˆË‘ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½]ï¿½É‹Lï¿½qï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Â”\
 -----------------------------------------------------------------------------*/
 #pragma comment( lib , "winmm.lib" )
 
@@ -26,15 +24,15 @@ Class
 class GameLoop
 {
 public:
-	static GameLoop* Instance(void); // ƒCƒ“ƒXƒ^ƒ“ƒX¶¬
-	static void Destroy(void); // ƒCƒ“ƒXƒ^ƒ“ƒX”jŠü
+	static GameLoop* Instance(void); // ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½
+	static void Destroy(void); // ï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½jï¿½ï¿½
 
-	void Init(HINSTANCE hInstance, HWND hWnd); // ‰Šú‰»
-	void ClockFps(void); //	FPSŒv‘ª
-	void Uninit(void); // I—¹
+	void Init(HINSTANCE hInstance, HWND hWnd); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void ClockFps(void); //	FPSï¿½vï¿½ï¿½
+	void Uninit(void); // ï¿½Iï¿½ï¿½
 
 	// Getter
-	const int GetFPS(void){ return m_CountFPS; } // FPSæ“¾
+	const int GetFPS(void){ return m_CountFPS; } // FPSï¿½æ“¾
 
 private:
 	GameLoop();
@@ -43,10 +41,10 @@ private:
 	static GameLoop* m_Instance;
 
 	DWORD m_FrameCount;
-	DWORD m_CurrentTime; // Œ»İ‚ÌŠÔ
-	DWORD m_ExecLastTime; // Œ»İ‚Ì‚ğƒ~ƒŠ’PˆÊ‚Åæ“¾
+	DWORD m_CurrentTime; // ï¿½ï¿½ï¿½İ‚Ìï¿½ï¿½ï¿½
+	DWORD m_ExecLastTime; // ï¿½ï¿½ï¿½İ‚Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½Pï¿½Ê‚Åæ“¾
 	DWORD m_FPSLastTime;
-	int m_CountFPS; //	FPSƒJƒEƒ“ƒ^
+	int m_CountFPS; //	FPSï¿½Jï¿½Eï¿½ï¿½ï¿½^
 };
 
 #endif
